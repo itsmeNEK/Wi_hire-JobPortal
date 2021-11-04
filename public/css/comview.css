@@ -1,0 +1,64 @@
+.conc {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+@media screen and (max-width: 400px) {
+    #main {
+        font-size: 16px;
+    }
+    #main .container .row .tit h2 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    #main .container .contain .details .row .comdet h5 {
+        font-size: 16px;
+    }
+    #main .container .row .backbtn a button {
+        font-size: 9px;
+        height: auto;
+        width: auto;
+    }
+    #main .container {
+        padding-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .table-responsive-stack th {
+        font-size: 14px;
+    }
+    .table {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        table-layout: fixed;
+    }
+    .table-responsive-stack tr {
+        margin: 0 0 0 0;
+        width: auto;
+        height: auto;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    /*  IE9 FIX   */
+    .table-responsive-stack td {
+        width: 100%;
+        font-size: 16px;
+    }
+    .table-responsive-stack th {
+        font-size: 16px;
+    }
+    .table {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        table-layout: fixed;
+    }
+}

@@ -1,0 +1,242 @@
+/* The sidebar menu */
+
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+body {
+    font-family: "Muli", sans-serif;
+}
+
+.card-box {
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px #c5c5c5;
+    margin-bottom: 30px;
+    float: none;
+    border-radius: 10px;
+    display: inline-table;
+    width: 300px;
+    margin: 5px 5px 5px 5px;
+    background: rgb(255, 255, 255);
+    text-align: left;
+    min-height: 400px;
+}
+
+.mask {
+    justify-content: center;
+}
+
+.mask h4 {
+    font-size: 30px;
+}
+
+.card-box .footer {
+    padding: 0.75rem 1.25rem;
+    min-width: 100%;
+    color: rgb(175, 172, 172);
+    text-align: right;
+}
+
+.list-group {
+    text-align: left;
+    justify-content: left;
+}
+
+.card-box .card-thumbnail {
+    max-height: 70px;
+    max-width: 70px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.con {
+    margin-left: 17%;
+    margin-right: 17%;
+}
+
+.commar {
+    justify-content: center;
+}
+
+.con .content {
+    justify-content: center;
+}
+
+.c-container {
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px #c5c5c5;
+    background: white;
+}
+
+.card-box-c {
+    padding: 20px;
+    margin-bottom: 30px;
+    float: none;
+    border-radius: 10px;
+    display: inline-block;
+    max-width: 200px;
+    margin: 5px 5px 5px 5px;
+    background: white;
+}
+
+.card-box-c .card-thumbnail-c {
+    max-height: 100px;
+    max-width: 100px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: 1s;
+    box-shadow: 0px 0px 10px 0px #aeaeae;
+}
+
+.card-box:hover {
+    transform: scale(1.1);
+}
+
+.card-box-c .card-thumbnail-c:hover {
+    transform: scale(1.1);
+}
+
+.card-box h3 a {
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.btna {
+    border: none;
+    opacity: 30%;
+    font-size: 60px;
+}
+
+@media screen and (max-width: 1550px) {
+    .con {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .commar {
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+    .mask {
+        justify-content: center;
+    }
+    .mask h4 {
+        font-size: 25px;
+    }
+    .mask .index-btn {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .btna {
+        font-size: 50px;
+        text-align: center;
+        width: auto;
+        height: 20px;
+        margin-top: -7%;
+    }
+    h1 {
+        font-size: 25px;
+    }
+    .commar {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    .card-box {
+        max-width: 300px;
+        font-size: 20px;
+        float: none;
+        height: 350px;
+    }
+    .card-box h3 a {
+        font-size: 14px;
+    }
+    .card-box .card-thumbnail {
+        max-width: 50px;
+        max-height: 50px;
+    }
+    .list-group-item {
+        margin: 0 0 0 0;
+        border: none;
+        padding: 0 0 0 0;
+        padding-top: 2px;
+    }
+    .list-group {
+        align-items: left;
+    }
+    .card-box-c .card-thumbnail-c {
+        max-width: 70px;
+    }
+    .con .content {
+        font-size: 16px;
+    }
+    .con {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+}
+
+@media screen and (max-width: 574px) {
+    .btna {
+        font-size: 50px;
+        text-align: center;
+        width: auto;
+        height: 15px;
+        margin-top: -15%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .btna {
+        font-size: 40px;
+        text-align: center;
+        width: auto;
+        height: 15px;
+        margin-top: -24%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .commar {
+        margin: 5% 5% 5% 5%;
+    }
+    .card-box {
+        font-size: 18px;
+        height: auto;
+        width: 100%;
+    }
+    .card-box h3 a {
+        font-size: 16px;
+    }
+    .card-box .card-thumbnail {
+        max-width: 50px;
+        max-height: 50px;
+        background-size: cover;
+    }
+    .list-group-item {
+        margin: 0 0 0 0;
+        border: none;
+        padding: 0 0 0 0;
+        padding-top: 2px;
+    }
+    .list-group {
+        align-items: left;
+    }
+    .card-box-c .card-thumbnail-c {
+        max-width: 30px;
+        max-height: 30px;
+    }
+    .mask .index-btn {
+        font-size: 12px;
+    }
+    .mask h4 {
+        font-size: 16px;
+    }
+    .con .content {
+        font-size: 14px;
+    }
+    .con {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+}

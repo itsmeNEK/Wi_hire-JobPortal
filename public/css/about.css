@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+body {
+    font-family: "Muli", sans-serif;
+}
+
+.header-text {
+    background: linear-gradient( 0deg, rgba(160, 77, 77, 0), rgba(0, 0, 0, 0.199));
+    height: 500px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover !important;
+}
+
+.header-text img {
+    height: 100px;
+    width: 100px;
+}
+
+.header-text h1 {
+    font-size: 60px;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.header-text h2 {
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.company-section {
+    background: rgba(0, 0, 0, 0.042);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover !important;
+}
+
+.company-section .card-box-a {
+    padding: 20px;
+    margin-bottom: 30px;
+    float: none;
+    border-radius: 10px;
+    display: inline-table;
+    width: 200px;
+    margin: 5px 5px 5px 5px;
+    text-align: left;
+}
+
+.company-section .card-box-a .container i {
+    font-size: 22px;
+    background: rgba(0, 0, 0, 0.165);
+    padding: 15px 15px 15px 15px;
+    border-radius: 50%;
+}
+
+@media screen and (min-height: 1145px) {
+    footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1370px) {
+    .header-text h1 {
+        font-size: 50px;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    .header-text h2 {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .header-text h1 {
+        font-size: 50px;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .header-text h2 {
+        font-size: 25px;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .company-section .card-box-a {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header-text {
+        height: 450px;
+    }
+    .header-text img {
+        height: 70px;
+        width: 70px;
+    }
+    .header-text h1 {
+        font-size: 35px;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .header-text h2 {
+        font-size: 20px;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .header-text {
+        height: 400px;
+    }
+    .header-text h1 {
+        font-size: 25px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .header-text h2 {
+        font-size: 16px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .company-section .card-box-a {
+        padding: 5px;
+        margin-bottom: 30px;
+        float: none;
+        border-radius: 10px;
+        display: inline-table;
+        width: 100%;
+        margin: 0 0 0 0;
+        text-align: left;
+    }
+    .company-section .card-box-a .container i {
+        font-size: 22px;
+        background: rgba(0, 0, 0, 0.165);
+        padding: 5px 5px 5px 5px;
+        border-radius: 50%;
+    }
+}

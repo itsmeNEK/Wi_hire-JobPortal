@@ -1,0 +1,210 @@
+/* The sidebar menu */
+
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+body {
+    font-family: 'Muli', sans-serif;
+    word-break: break-all;
+}
+
+.offcanvas {
+    max-width: 250px;
+    overflow-x: block;
+    transition: 0.5s;
+}
+
+#notif {
+    width: 450px;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 30;
+    left: 0;
+    overflow-x: block;
+    padding-top: 0px;
+    transition: 0.5s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+    background: #dc3545;
+}
+
+.offcanvas a:hover {
+    color: #f1f1f1;
+    background: #dc3545;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 20;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.openbtn {
+    display: none;
+}
+
+.closebtn {
+    display: none;
+}
+
+.openbtn:hover {
+    background-color: transparent;
+}
+
+.sidebar span {
+    font-size: 16px;
+}
+
+.sidebar li .submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+}
+
+#main {
+    padding: 20px;
+    margin-left: 250px;
+}
+
+.bell-nonfull {
+    display: none;
+}
+
+@media screen and (max-width: 450px) {
+    .openbtn {
+        display: block;
+        font-size: 15px;
+        cursor: pointer;
+        background-color: transparent;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+    }
+    .closebtn {
+        display: block;
+        width: 20;
+        height: 20px;
+    }
+    .sidebar {
+        font-size: 10px;
+        width: 0;
+        z-index: 1;
+        top: 30;
+        left: 0;
+        overflow-x: hidden;
+        transition: 0.5s;
+    }
+    #main {
+        margin-left: 0px;
+        padding: 0px 10px;
+    }
+    .avatar {
+        width: 30px;
+        height: 30px;
+    }
+    .offcanvas {
+        max-width: 170px;
+    }
+    .offcanvas .offcanvas-body ul li {
+        font-size: 12px;
+    }
+    .offcanvas span {
+        font-size: 12px;
+    }
+    #notif {
+        width: 200px;
+        font-size: 12px;
+    }
+    .list-group .list-group-item {
+        padding: 0 0 0 0;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .sidebar {
+        font-size: 10px;
+        width: 0;
+        z-index: 1;
+        top: 30;
+        left: 0;
+        overflow-x: hidden;
+        padding-top: 60px;
+        transition: 0.5s;
+    }
+    #main {
+        margin-left: 0px;
+        padding: 0px 10px;
+    }
+    .bell-full {
+        display: none;
+    }
+    .bell-nonfull {
+        display: flex;
+    }
+    #notif {
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .openbtn {
+        display: block;
+        font-size: 20px;
+        cursor: pointer;
+        background-color: transparent;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+    }
+    .closebtn {
+        display: block;
+    }
+    .avatar {
+        width: 30px;
+        height: 30px;
+    }
+    #notif {
+        width: 300px;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    #mySidebar {
+        width: 250px;
+    }
+    #main {
+        margin-left: 250px;
+    }
+    .closebtn {
+        display: none;
+    }
+    .sidebar {
+        font-size: 20px;
+        width: 0;
+        z-index: 1;
+        top: 30;
+        left: 0;
+        overflow-x: hidden;
+        padding-top: 0px;
+        transition: 0.5s;
+    }
+    .avatar {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.iActive {
+    font-size: 6px;
+    justify-content: center;
+    position: absolute;
+}

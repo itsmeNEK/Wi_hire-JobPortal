@@ -1,0 +1,159 @@
+/* The sidebar menu */
+
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+body {
+    font-family: 'Muli', sans-serif;
+}
+
+.picture-container {
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+}
+
+.picture {
+    width: 80px;
+    height: 80px;
+    background-color: #999999;
+    border: 2px solid #CCCCCC;
+    color: #FFFFFF;
+    margin: 0px;
+    margin-top: 15px;
+    margin-left: 0px;
+    overflow: hidden;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+}
+
+.picture:hover {
+    border-color: #000000;
+    background-color: black;
+    opacity: 40%;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.picture input[type="file"] {
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0 !important;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.picture-src {
+    width: 100%;
+}
+
+.fileIn {
+    font-size: 14px;
+    text-align: center;
+    width: 200px;
+    height: 30px;
+    border: black;
+    border-color: black;
+}
+
+@media screen and (max-width: 730px) {
+    .picture-container {
+        position: fixed center;
+        cursor: pointer;
+        text-align: center;
+    }
+    .picture {
+        width: 60px;
+        height: 60px;
+    }
+    #main {
+        font-size: 14px;
+    }
+    h6 {
+        font-size: 18px;
+    }
+    td {
+        font-size: 14px;
+    }
+    th {
+        font-size: 14px;
+    }
+    input {
+        font-size: 14px;
+    }
+    .fileIn {
+        font-size: 14px;
+        text-align: center;
+        width: 170px;
+        height: 25px;
+        border: black;
+        border-color: black;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .picture-container {
+        position: fixed center;
+        cursor: pointer;
+        text-align: center;
+    }
+    .picture {
+        width: 60px;
+        height: 60px;
+    }
+    #main {
+        font-size: 12px;
+    }
+    h6 {
+        font-size: 16px;
+    }
+    a {
+        font-size: 12px;
+    }
+    .fileIn {
+        font-size: 12px;
+        text-align: center;
+        width: 220px;
+        height: 40px;
+        border: black;
+        border-color: black;
+    }
+    .btnUp {
+        font-size: 12px;
+        text-align: center;
+        width: 70px;
+        height: 25px;
+    }
+}
+
+
+/*Profile Pic End*/
+
+@media screen and (max-width: 400px) {
+    .table-responsive-stack th {
+        font-size: 14px;
+    }
+    .table-responsive-stack tr {
+        margin: 0 0 0 0;
+        width: auto;
+        height: auto;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    /*  IE9 FIX   */
+    .table-responsive-stack td {
+        width: 100%;
+        font-size: 16px;
+    }
+    .table-responsive-stack th {
+        font-size: 16px;
+    }
+}

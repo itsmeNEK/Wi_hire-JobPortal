@@ -1,0 +1,72 @@
+/* The sidebar menu */
+
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+body {
+    font-family: 'Muli', sans-serif;
+}
+
+@media screen and (max-width: 320px) {
+    h4 {
+        text-align: center;
+        font-size: 30px;
+        justify-content: center;
+        float: left;
+    }
+}
+
+@media screen and (max-width: 7500px) {
+    h4 {
+        text-align: center;
+        font-size: 40px;
+    }
+}
+
+
+/*Profile Pic Start*/
+
+.picture-container {
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+}
+
+img.picture {
+    width: 80px;
+    height: 80px;
+    background-color: #999999;
+    border: 2px solid #CCCCCC;
+    color: #FFFFFF;
+    margin: 0px;
+    margin-left: 0px;
+    overflow: hidden;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+}
+
+.picture input[type="file"] {
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0 !important;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.picture-src {
+    width: 100%;
+}
+
+@media screen and (max-height: 300px) {
+    .picture-container {
+        position: fixed center;
+        cursor: pointer;
+        text-align: center;
+    }
+    .picture {
+        width: 40px;
+        height: 40px;
+    }
+}
