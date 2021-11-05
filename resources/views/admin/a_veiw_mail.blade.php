@@ -99,7 +99,7 @@
                                         <img class="avatar rounded-circle border border-light " width="40px"
                                             src="/company/images/{{ $receiverinfo['prof_pic'] }}"><strong
                                             class="align-middle px-0 ms-1 d-sm-inline">
-                                            <b class="text-dark"> {{ $receiverinfo['cname'] }}</b></strong>
+                                              <b class="text-dark"> {{ $receiverinfo['cname'] }}</b></strong>
                                     </div><br>
                                 @else
                                     <div class="col-6 text-left text-danger">
