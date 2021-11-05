@@ -28,6 +28,6 @@ class c_verificationEmail extends Mailable
      */
     public function build()
     {
-        return $this->from(address: 'gaspar.nekken0505@gmail.com')->subject(subject:'Wihire-Welcome!')->view('mailling.c_verifyMail',['mail_data'=>$this->signup_mail_data]);
+        return $this->subject(subject:'Wihire-Welcome!')->view('mailling.verifyMail',['mail_data'=>$this->signup_mail_data]);
     }
 }
