@@ -198,62 +198,56 @@
         <div class="con text-center">
             <div>
 
-                @if ($user != null)
-                    @foreach ($user as $info)
-                        <div class="content" id="content_{{ $info->id }}">
-                            <div class="rounded bg-white c-container">
-                                <div class="text-right">
-                                    <a id="{{ $info->id }}" onclick="hidecontent(this.id)" style="font-size: 20px"
-                                        class="text-danger font-weight-bold"> <i class="bi bi-x-square-fill"></i></a>
-                                </div>
-                                <div class="content-detail">
-                                    <div class="card-thumbnail">
-                                        <img src="/users/images/{{ $info->prof_pic }}" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="job-details">
-                                        <span class="text-md text-lg text-sm font-weight-bold text-secondary">
-                                            <b class="text-black">{{ $info->fname }}
-                                                {{ substr($info->mname, 0, 1) }} {{ $info->lname }}</span></b><br>
+                @forelse ( $user as $info )
+                <div class="content" id="content_{{ $info->id }}">
+                    <div class="rounded bg-white c-container">
+                        <div class="text-right">
+                            <a id="{{ $info->id }}" onclick="hidecontent(this.id)" style="font-size: 20px"
+                                class="text-danger font-weight-bold"> <i class="bi bi-x-square-fill"></i></a>
+                        </div>
+                        <div class="content-detail">
+                            <div class="card-thumbnail">
+                                <img src="/users/images/{{ $info->prof_pic }}" class="img-fluid" alt="">
+                            </div>
+                            <div class="job-details">
+                                <span class="text-md text-lg text-sm font-weight-bold text-secondary">
+                                    <b class="text-black">{{ $info->fname }}
+                                        {{ substr($info->mname, 0, 1) }} {{ $info->lname }}</span></b><br>
 
-                                        </span><br>
-                                        <span class="text-md text-lg text-sm">
-                                            <b>Field of Study: </b> {{ $info->field }}
-                                        </span>
-                                        <br>
-                                        <span class="text-md text-lg text-sm">
-                                            <b>Major: </b>{{ $info->major }}
-                                        </span>
-                                        <br>
-                                        <span class="text-md text-lg text-sm">
-                                            <b>Specialization: </b>{{ $info->specialization }}
-                                        </span>
-                                        <br>
-                                        <span class="text-md text-lg text-sm">
-                                            <b>Gender: </b> {{ $info->gender }}
-                                        </span>
-                                        <br>
-                                        <span class="text-md text-lg text-sm">
-                                            <b>City: </b> {{ $info->city }}
-                                        </span>
-                                        <br>
-                                        <span class="text-md text-lg text-sm">
-                                            <b>Civil Status: </b> {{ $info->civilstat }}
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="text-right">
-                                    <a type="submit" href="View_Candidate/{{ Crypt::encrypt($info->id) }}"
-                                        class="btn btn-danger text-white font-weight-bold">
-                                        <i class="bi bi-arrow-bar-up"></i> View Profile
-                                    </a>
-                                </div>
+                                </span><br>
+                                <span class="text-md text-lg text-sm">
+                                    <b>Field of Study: </b> {{ $info->field }}
+                                </span>
+                                <br>
+                                <span class="text-md text-lg text-sm">
+                                    <b>Major: </b>{{ $info->major }}
+                                </span>
+                                <br>
+                                <span class="text-md text-lg text-sm">
+                                    <b>Specialization: </b>{{ $info->specialization }}
+                                </span>
+                                <br>
+                                <span class="text-md text-lg text-sm">
+                                    <b>Gender: </b> {{ $info->gender }}
+                                </span>
+                                <br>
+                                <span class="text-md text-lg text-sm">
+                                    <b>City: </b> {{ $info->city }}
+                                </span>
+                                <br>
+                                <span class="text-md text-lg text-sm">
+                                    <b>Civil Status: </b> {{ $info->civilstat }}
+                                </span>
                             </div>
                         </div>
-                    @endforeach
-                @endif
-
-
-                @forelse ( $user as $info )
+                        <div class="text-right">
+                            <a type="submit" href="View_Candidate/{{ Crypt::encrypt($info->id) }}"
+                                class="btn btn-danger text-white font-weight-bold">
+                                <i class="bi bi-arrow-bar-up"></i> View Profile
+                            </a>
+                        </div>
+                    </div>
+                </div>
                     <a class="text-decoration-none text-black" onclick="showcontent(this.id)" id="{{ $info->id }}">
                         <div class="card-box-t">
                             <div class="card-thumbnail-t">
