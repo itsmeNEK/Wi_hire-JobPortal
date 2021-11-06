@@ -439,7 +439,7 @@
                                                         href="/u_view_file/{{ Crypt::encrypt($info->id) }}">{{ $info->file_path }}</a>
                                                 </td>
                                                 <td>
-                                                    <a href="https://view.officeapps.live.com/op/view.aspx?src={{url()->current()}}/{{$info->file_path}}"
+                                                    <a href="https://view.officeapps.live.com/op/view.aspx?src={{urlendoe($info->file_path)}}"
                                                     target="_blank" >view</a>
                                                 </td>
                                                 <td class="text-right">
