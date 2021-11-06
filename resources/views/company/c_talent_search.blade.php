@@ -153,36 +153,43 @@
         <!-- Navbar -->
     </header>
     <!-- End Header -->
-
+    <br>
     <!-- Background image -->
-    <div class="card card-outline-secondary">
+    <div class="p-4 py-2">
         <div class="p-5 text-center bg-image" style="
             background: linear-gradient(0deg,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('/img/header.jpg') no-repeat center center fixed !important;
               -webkit-background-size: cover;
          -moz-background-size: cover;
+              border-radius:10px;
             -o-background-size: cover;
             background-size: cover !important;
             ">
             <div class="align-items-center">
-                <form action="" method="GET">
+                <form action="{{ route('talent') }}" method="GET">
                     <div class="search">
                         <div class="form-floating mb-3">
-                        <input @if ($searchinfo == null) @else
-                            value="{{ $searchinfo['skm'] }}" @endif type="text"
-                            class="input form-control text-white" id="floatingInput" name="skm"
-                            placeholder="Search by Job Name">
+                            <input @if ($searchinfo == null)
+
+                        @else
+                            value="{{ $searchinfo['skm'] }}"
+                            @endif
+                            type="text" class="input form-control text-white" id="floatingInput"
+                            name="skm" placeholder="Search by Job Name">
                             <label class="label" for="floatingInput"><i class="bi text-white bi-search"></i>
                                 Skills / Field / Major</label>
                         </div>
                         <div class="form-floating mb-3">
-                        <input @if ($searchinfo == null) @else
-                            value="{{ $searchinfo['town'] }}" @endif type="text"
-                            class="input form-control text-white" id="floatingInput" name="town"
+                            <input @if ($searchinfo == null)
+
+                        @else
+                            value="{{ $searchinfo['town'] }}"
+                            @endif
+                            type="text" class="input form-control text-white" id="floatingInput" name="town"
                             placeholder="Search by Job Name">
                             <label class="label" for="floatingInput"><i class="bi text-white bi-geo-alt"></i>
-                                City / Town</label>
+                                Area / Town</label>
                         </div>
-                        <button class="btn btn-danger" type="submit">Search</button>
+                        <button class="btn btn-danger" type="submit"><b>Search</b></button>
 
                     </div>
                 </form>
@@ -199,55 +206,55 @@
             <div>
 
                 @forelse ( $user as $info )
-                <div class="content" id="content_{{ $info->id }}">
-                    <div class="rounded bg-white c-container">
-                        <div class="text-right">
-                            <a id="{{ $info->id }}" onclick="hidecontent(this.id)" style="font-size: 20px"
-                                class="text-danger font-weight-bold"> <i class="bi bi-x-square-fill"></i></a>
-                        </div>
-                        <div class="content-detail">
-                            <div class="card-thumbnail">
-                                <img src="/users/images/{{ $info->prof_pic }}" class="img-fluid" alt="">
+                    <div class="content" id="content_{{ $info->id }}">
+                        <div class="rounded bg-white c-container">
+                            <div class="text-right">
+                                <a id="{{ $info->id }}" onclick="hidecontent(this.id)" style="font-size: 20px"
+                                    class="text-danger font-weight-bold"> <i class="bi bi-x-square-fill"></i></a>
                             </div>
-                            <div class="job-details">
-                                <span class="text-md text-lg text-sm font-weight-bold text-secondary">
-                                    <b class="text-black">{{ $info->fname }}
-                                        {{ substr($info->mname, 0, 1) }} {{ $info->lname }}</span></b><br>
+                            <div class="content-detail">
+                                <div class="card-thumbnail">
+                                    <img src="/users/images/{{ $info->prof_pic }}" class="img-fluid" alt="">
+                                </div>
+                                <div class="job-details">
+                                    <span class="text-md text-lg text-sm font-weight-bold text-secondary">
+                                        <b class="text-black">{{ $info->fname }}
+                                            {{ substr($info->mname, 0, 1) }} {{ $info->lname }}</span></b><br>
 
-                                </span><br>
-                                <span class="text-md text-lg text-sm">
-                                    <b>Field of Study: </b> {{ $info->field }}
-                                </span>
-                                <br>
-                                <span class="text-md text-lg text-sm">
-                                    <b>Major: </b>{{ $info->major }}
-                                </span>
-                                <br>
-                                <span class="text-md text-lg text-sm">
-                                    <b>Specialization: </b>{{ $info->specialization }}
-                                </span>
-                                <br>
-                                <span class="text-md text-lg text-sm">
-                                    <b>Gender: </b> {{ $info->gender }}
-                                </span>
-                                <br>
-                                <span class="text-md text-lg text-sm">
-                                    <b>City: </b> {{ $info->city }}
-                                </span>
-                                <br>
-                                <span class="text-md text-lg text-sm">
-                                    <b>Civil Status: </b> {{ $info->civilstat }}
-                                </span>
+                                    </span><br>
+                                    <span class="text-md text-lg text-sm">
+                                        <b>Field of Study: </b> {{ $info->field }}
+                                    </span>
+                                    <br>
+                                    <span class="text-md text-lg text-sm">
+                                        <b>Major: </b>{{ $info->major }}
+                                    </span>
+                                    <br>
+                                    <span class="text-md text-lg text-sm">
+                                        <b>Specialization: </b>{{ $info->specialization }}
+                                    </span>
+                                    <br>
+                                    <span class="text-md text-lg text-sm">
+                                        <b>Gender: </b> {{ $info->gender }}
+                                    </span>
+                                    <br>
+                                    <span class="text-md text-lg text-sm">
+                                        <b>City: </b> {{ $info->city }}
+                                    </span>
+                                    <br>
+                                    <span class="text-md text-lg text-sm">
+                                        <b>Civil Status: </b> {{ $info->civilstat }}
+                                    </span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="text-right">
-                            <a type="submit" href="View_Candidate/{{ Crypt::encrypt($info->id) }}"
-                                class="btn btn-danger text-white font-weight-bold">
-                                <i class="bi bi-arrow-bar-up"></i> View Profile
-                            </a>
+                            <div class="but text-right">
+                                <a type="submit" href="View_Candidate/{{ Crypt::encrypt($info->id) }}"
+                                    class="btn btn-danger text-white font-weight-bold">
+                                    <i class="bi bi-arrow-bar-up"></i> View Profile
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
                     <a class="text-decoration-none text-black" onclick="showcontent(this.id)" id="{{ $info->id }}">
                         <div class="card-box-t">
                             <div class="card-thumbnail-t">
