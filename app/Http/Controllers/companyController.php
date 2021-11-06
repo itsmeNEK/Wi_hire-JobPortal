@@ -966,89 +966,56 @@ class companyController extends Controller
         }
         if ($request->skm != "" && $request->town != "") {
             $user = DB::table('users')
-                ->join('user_prof_e_b_s', 'user_prof_e_b_s.user_id', '=', 'users.id')
-                ->join('user_prof_work_exes', 'user_prof_work_exes.user_id', '=', 'users.id')
-                ->join('user_prof_skills', 'user_prof_skills.user_id', '=', 'users.id')
+                ->leftjoin('user_prof_e_b_s', 'user_prof_e_b_s.user_id', '=', 'users.id')
+                ->leftjoin('user_prof_work_exes', 'user_prof_work_exes.user_id', '=', 'users.id')
+                ->leftjoin('user_prof_skills', 'user_prof_skills.user_id', '=', 'users.id')
+                ->select('users.id','users.city','users.fname','users.lname','users.mname','users.prof_pic','users.gender','users.city','users.civilstat','user_prof_skills.skills','user_prof_e_b_s.field','user_prof_e_b_s.major','user_prof_work_exes.specialization')
                 ->where('user_prof_skills.skills', 'LIKE', '%' . $request->skm . '%')
+                ->orWhere('user_prof_e_b_s.major', 'LIKE', '%' . $request->skm . '%')
+                ->orWhere('user_prof_e_b_s.field', 'LIKE', '%' . $request->skm . '%')
                 ->where('users.city', 'LIKE', '%' . $request->town . '%')
-                ->limit(20)
                 ->inRandomOrder()
-                ->get();
+                ->paginate(20);
 
-            $user = $user->unique('user_id');
-            $data = [
-                'searchinfo' => $search,
-                'user' => $user,
-                'active' => $inbox,
-                'comcountnew' => $comcountnew,
-                'comcountnew_info' => $comcountnew_info,
-                'adminLogged' => Admin::where('id', '=', session('adminLogged'))->first(),
-                'LoggedCompanyInfo' => company::where('id', '=', session('Loggedcompany'))->first(),
-            ];
-            return view('company.c_talent_search', $data);
         } elseif ($request->skm != "") {
             $user = DB::table('users')
-                ->join('user_prof_e_b_s', 'user_prof_e_b_s.user_id', '=', 'users.id')
-                ->join('user_prof_work_exes', 'user_prof_work_exes.user_id', '=', 'users.id')
-                ->join('user_prof_skills', 'user_prof_skills.user_id', '=', 'users.id')
-                ->where('user_prof_skills.skills', 'LIKE', '%' . $request->skm . '%')
-                ->limit(20)
-                ->inRandomOrder()
-                ->get();
-
-            $user = $user->unique('user_id');
-            $data = [
-                'searchinfo' => $search,
-                'user' => $user,
-                'active' => $inbox,
-                'comcountnew' => $comcountnew,
-                'comcountnew_info' => $comcountnew_info,
-                'adminLogged' => Admin::where('id', '=', session('adminLogged'))->first(),
-                'LoggedCompanyInfo' => company::where('id', '=', session('Loggedcompany'))->first(),
-            ];
-            return view('company.c_talent_search', $data);
+            ->leftjoin('user_prof_e_b_s', 'user_prof_e_b_s.user_id', '=', 'users.id')
+            ->leftjoin('user_prof_work_exes', 'user_prof_work_exes.user_id', '=', 'users.id')
+            ->leftjoin('user_prof_skills', 'user_prof_skills.user_id', '=', 'users.id')
+            ->select('users.id','users.city','users.fname','users.lname','users.mname','users.prof_pic','users.gender','users.city','users.civilstat','user_prof_skills.skills','user_prof_e_b_s.field','user_prof_e_b_s.major','user_prof_work_exes.specialization')
+            ->where('user_prof_skills.skills', 'LIKE', '%' . $request->skm . '%')
+            ->orWhere('user_prof_e_b_s.major', 'LIKE', '%' . $request->skm . '%')
+            ->orWhere('user_prof_e_b_s.field', 'LIKE', '%' . $request->skm . '%')
+            ->inRandomOrder()
+            ->paginate(20);
         } elseif ($request->town != "") {
             $user = DB::table('users')
-                ->join('user_prof_e_b_s', 'user_prof_e_b_s.user_id', '=', 'users.id')
-                ->join('user_prof_work_exes', 'user_prof_work_exes.user_id', '=', 'users.id')
-                ->join('user_prof_skills', 'user_prof_skills.user_id', '=', 'users.id')
-                ->where('users.city', 'LIKE', '%' . $request->town . '%')
-                ->limit(20)
-                ->inRandomOrder()
-                ->get();
-
-            $user = $user->unique('user_id');
-            $data = [
-                'searchinfo' => $search,
-                'user' => $user,
-                'active' => $inbox,
-                'comcountnew' => $comcountnew,
-                'comcountnew_info' => $comcountnew_info,
-                'adminLogged' => Admin::where('id', '=', session('adminLogged'))->first(),
-                'LoggedCompanyInfo' => company::where('id', '=', session('Loggedcompany'))->first(),
-            ];
-            return view('company.c_talent_search', $data);
+            ->leftjoin('user_prof_e_b_s', 'user_prof_e_b_s.user_id', '=', 'users.id')
+            ->leftjoin('user_prof_work_exes', 'user_prof_work_exes.user_id', '=', 'users.id')
+            ->leftjoin('user_prof_skills', 'user_prof_skills.user_id', '=', 'users.id')
+            ->select('users.id','users.city','users.fname','users.lname','users.mname','users.prof_pic','users.gender','users.city','users.civilstat','user_prof_skills.skills','user_prof_e_b_s.field','user_prof_e_b_s.major','user_prof_work_exes.specialization')
+            ->where('users.city', 'LIKE', '%' . $request->town . '%')
+            ->inRandomOrder()
+            ->paginate(20);
         } else {
             $user = DB::table('users')
-                ->join('user_prof_e_b_s', 'user_prof_e_b_s.user_id', '=', 'users.id')
-                ->join('user_prof_work_exes', 'user_prof_work_exes.user_id', '=', 'users.id')
-                ->join('user_prof_skills', 'user_prof_skills.user_id', '=', 'users.id')
-                ->limit(20)
-                ->inRandomOrder()
-                ->get();
-
-            $user = $user->unique('user_id');
-            $data = [
-                'searchinfo' => $search,
-                'user' => $user,
-                'active' => $inbox,
-                'comcountnew' => $comcountnew,
-                'comcountnew_info' => $comcountnew_info,
-                'adminLogged' => Admin::where('id', '=', session('adminLogged'))->first(),
-                'LoggedCompanyInfo' => company::where('id', '=', session('Loggedcompany'))->first(),
-            ];
-            return view('company.c_talent_search', $data);
+            ->leftjoin('user_prof_e_b_s', 'user_prof_e_b_s.user_id', '=', 'users.id')
+            ->leftjoin('user_prof_work_exes', 'user_prof_work_exes.user_id', '=', 'users.id')
+            ->leftjoin('user_prof_skills', 'user_prof_skills.user_id', '=', 'users.id')
+            ->select('users.id','users.city','users.fname','users.lname','users.mname','users.prof_pic','users.gender','users.city','users.civilstat','user_prof_skills.skills','user_prof_e_b_s.field','user_prof_e_b_s.major','user_prof_work_exes.specialization')
+            ->inRandomOrder()
+            ->paginate(20);
         }
+        $data = [
+            'searchinfo' => $search,
+            'user' => $user,
+            'active' => $inbox,
+            'comcountnew' => $comcountnew,
+            'comcountnew_info' => $comcountnew_info,
+            'adminLogged' => Admin::where('id', '=', session('adminLogged'))->first(),
+            'LoggedCompanyInfo' => company::where('id', '=', session('Loggedcompany'))->first(),
+        ];
+        return view('company.c_talent_search', $data);
     }
 
     //sign up company

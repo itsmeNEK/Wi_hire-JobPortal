@@ -105,6 +105,7 @@ class AuthController extends Controller
             // update password
             $user = User::find($request->id);
             $user->password = Hash::make($request->npassword);
+            $user->email_verified_at = $date;
             $user->updated_at = $date;
             $save = $user->save();
 
@@ -134,6 +135,7 @@ class AuthController extends Controller
             // update password
             $user = company::find($request->id);
             $user->password = Hash::make($request->npassword);
+            $user->email_verified_at = $date;
             $user->updated_at = $date;
             $save = $user->save();
 
