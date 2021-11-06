@@ -176,7 +176,7 @@
                             type="text" class="input form-control text-white" id="floatingInput"
                             name="skm" placeholder="Search by Job Name">
                             <label class="label" for="floatingInput"><i class="bi text-white bi-search"></i>
-                                Skills / Field / Major</label>
+                                Skills / Field / Major </label>
                         </div>
                         <div class="form-floating mb-3">
                             <input @if ($searchinfo == null)
