@@ -939,9 +939,14 @@ class companyController extends Controller
             $user111 = company::where('id', '=', session('Loggedcompany'))->first();
         } elseif (session('adminLogged')) {
             $user111 = Admin::where('id', '=', session('adminLogged'))->first();
+        }elseif (session('LoggedUser')) {
+            $user111 = User::where('id', '=', session('LoggedUser'))->first();
+        }else {
+            $user111 = null;
         }
 
-        $inbox = DB::table('mailings')
+        if ((session('Loggedcompany')) || (session('adminLogged')) || (session('LoggedUser'))){
+            $inbox = DB::table('mailings')
             ->leftjoin('users', 'mailings.from', '=', 'users.email')
             ->select('mailings.id', 'users.fname', 'mailings.subject', 'mailings.created_at', 'mailings.mail_active', 'mailings.from')
             ->where('mailings.to', $user111->email)
@@ -954,6 +959,11 @@ class companyController extends Controller
         $comcountnew_info = DB::table('companies')
             ->where('approved', '=', '1')
             ->get();
+        }else{
+            $inbox = null;
+            $comcountnew = null;
+            $comcountnew_info = null;
+        }
         if ($request->skm != "" && $request->town != "") {
             $user = DB::table('users')
                 ->join('user_prof_e_b_s', 'user_prof_e_b_s.user_id', '=', 'users.id')
