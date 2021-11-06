@@ -151,7 +151,7 @@
         <div class="offcanvas-body bg-dark">
             <span class="d-flex align-items-center text-light text-decoration-none" aria-expanded="false">
                 <img class="avatar rounded-circle border border-light " width="40px"
-                    src="users/images/{{ $LoggedUserInfo['prof_pic'] }}">
+                    src="/users/images/{{ $LoggedUserInfo['prof_pic'] }}">
                 <strong class="align-middle px-0 ms-1 d-sm-inline"><b> {{ $LoggedUserInfo['fname'] }}
                         {{ $LoggedUserInfo['lname'] }}</b></strong>
             </span>
@@ -206,7 +206,7 @@
             <hr class="bg-light">
             <span class="d-flex align-items-center text-light text-decoration-none" aria-expanded="false">
                 <img class="avatar rounded-circle border border-light " width="40px"
-                    src="users/images/{{ $LoggedUserInfo['prof_pic'] }}">
+                    src="/users/images/{{ $LoggedUserInfo['prof_pic'] }}">
                 <strong class="align-middle px-0 ms-1 d-sm-inline"><b> {{ $LoggedUserInfo['fname'] }}
                         {{ $LoggedUserInfo['lname'] }}</b></strong>
             </span>

@@ -40,7 +40,7 @@
                             <div class="text-center">
                                 <div class="picture-container">
                                     <div class="picture">
-                                        <img src="company/images/{{ $LoggedUserInfo['prof_pic'] }}" alt="your image"
+                                        <img src="/company/images/{{ $LoggedUserInfo['prof_pic'] }}" alt="your image"
                                             class="picture-src" id="avatarPicturePreview" title="">
                                         <input accept="image/*" onchange="readURL(this);" class="picture-src"
                                             type="file" id="avatar-picture" name="avatar">

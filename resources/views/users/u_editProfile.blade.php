@@ -44,7 +44,7 @@
                                     <div class="text-center">
                                         <div class="picture-container">
                                             <div class="picture">
-                                                <img src="users/images/{{ $LoggedUserInfo['prof_pic'] }}"
+                                                <img src="/users/images/{{ $LoggedUserInfo['prof_pic'] }}"
                                                     alt="your image" class="picture-src" id="avatarPicturePreview"
                                                     title="">
                                                 <input accept="image/*" onchange="readURL(this);" class="picture-src"

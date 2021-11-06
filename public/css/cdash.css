@@ -223,11 +223,12 @@ body {
         align-items: left;
     }
     .card-box-c .card-thumbnail-c {
-        max-width: 30px;
-        max-height: 30px;
+        max-width: 50px;
+        max-height: 50px;
     }
     .mask .index-btn {
         font-size: 12px;
+        margin: 5px 5px 5px 5px;
     }
     .mask h4 {
         font-size: 16px;
@@ -238,5 +239,9 @@ body {
     .con {
         margin-left: 2%;
         margin-right: 2%;
+    }
+    .con .head-text h1 {
+        margin-left: 5%;
+        margin-right: 5%;
     }
 }

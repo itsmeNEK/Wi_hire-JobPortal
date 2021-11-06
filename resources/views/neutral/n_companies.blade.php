@@ -76,7 +76,7 @@
                                     <button type="button" class="btn btn-dark font-weight-bold" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">
                                         <img class="border border-dark" width="30px" type="button"
-                                            src="users/images/{{ $LoggedUserInfo['prof_pic'] }}">
+                                            src="/users/images/{{ $LoggedUserInfo['prof_pic'] }}">
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-right bg bg-dark"
                                         aria-labelledby="dropdownMenuButton">
@@ -116,7 +116,7 @@
                                     <button type="button" class="btn btn-dark font-weight-bold rounded"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <img class="border border-dark" width="30px" type="button"
-                                            src="company/images/{{ $LoggedCompanyInfo['prof_pic'] }}">
+                                            src="/company/images/{{ $LoggedCompanyInfo['prof_pic'] }}">
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-right bg bg-dark offset-10"
                                         aria-labelledby="dropdownMenuButton">
@@ -213,7 +213,7 @@
     <!-- Background image -->
     <div class="p-4 py-2">
         <div class="p-5 text-center bg-image" style="
-            background: linear-gradient(0deg,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('img/header.jpg') no-repeat center center fixed !important;
+            background: linear-gradient(0deg,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('/img/header.jpg') no-repeat center center fixed !important;
               -webkit-background-size: cover;
          -moz-background-size: cover;
               border-radius:10px;
@@ -287,7 +287,7 @@
                             </div>
                             <div class="content-detail">
                                 <div class="card-thumbnail">
-                                    <img src="company/images/{{ $info['prof_pic'] }}" class="img-fluid" alt="">
+                                    <img src="/company/images/{{ $info['prof_pic'] }}" class="img-fluid" alt="">
                                 </div>
                                 <div class="job-details">
                                     <span class="text-md text-lg text-sm font-weight-bold">
@@ -326,7 +326,7 @@
                         id="{{ $info->id }}">
                         <div class="card-box">
                             <div class="card-thumbnail">
-                                <img src="company/images/{{ $info['prof_pic'] }}" class="img-fluid" alt="">
+                                <img src="/company/images/{{ $info['prof_pic'] }}" class="img-fluid" alt="">
                             </div>
                             <h3 class="mt-2 text-danger">{{ $info->cname }}</h3>
 

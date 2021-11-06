@@ -93,7 +93,7 @@
                                     <button type="button" class="btn btn-dark font-weight-bold" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">
                                         <img class="border border-dark" width="30px" type="button"
-                                            src="users/images/{{ $LoggedUserInfo['prof_pic'] }}">
+                                            src="/users/images/{{ $LoggedUserInfo['prof_pic'] }}">
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-right bg bg-dark"
                                         aria-labelledby="dropdownMenuButton">
@@ -133,7 +133,7 @@
                                     <button type="button" class="btn btn-dark font-weight-bold rounded"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <img class="border border-dark" width="30px" type="button"
-                                            src="company/images/{{ $LoggedCompanyInfo['prof_pic'] }}">
+                                            src="/company/images/{{ $LoggedCompanyInfo['prof_pic'] }}">
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-right bg bg-dark offset-10"
                                         aria-labelledby="dropdownMenuButton">
@@ -336,7 +336,7 @@
                                     </svg>
                                 </a>
                                 <hr>
-                                <span><b>Or Mail Us @gmail</b><br> [<a>gasparkenken55@gmail.com</a>] </span>
+                                <span><b>Or Mail Us @gmail</b><br> [<a>wihire.job.portal@gmail.com</a>] </span>
                             </section>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 p-3 py-3 text-right">
