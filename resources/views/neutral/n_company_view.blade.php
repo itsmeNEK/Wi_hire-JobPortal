@@ -368,6 +368,7 @@ method="post">
 
 
 
+                        @if (session('adminLogged'))
                         <div class="row-mt-2">
                             <div class="col-md-6 text-left">
                                 <h3 class="text-left text-secondary">Attach document</h3>
@@ -399,6 +400,7 @@ method="post">
                                 </table>
                             </div>
                         </div>
+                        @endif
                         <hr>
                         <h3 class="text-left text-secondary">Jobs Posted</h3>
                         <br>
@@ -446,9 +448,9 @@ method="post">
                                 </div>
                                 @if (Session('LoggedUser'))
                                     <div class="text-right">
-                                        <a type="submit"
+                                        <a type="submit" href="/Jobs/Apply/{{ $info->id }}"
                                             class="btn btn-danger text-white font-weight-bold">
-                                            <i class="bi bi-arrow-bar-up"></i> Message
+                                            <i class="bi bi-arrow-bar-up"></i> Apply
                                         </a>
                                     </div>
                                 @endif

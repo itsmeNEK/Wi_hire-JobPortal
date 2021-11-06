@@ -130,6 +130,9 @@ class mail extends Controller
         $mail1 = new AdminKeepMail;
         if ($request->attachfiles != "") {
             $path = 'mail/';
+            $request->validate([
+                'attachfiles' => 'required|mimes:doc,pdf,docx|max:10000'
+            ]);
             $newname = Helper::renameFile($path, $request->file('attachfiles')->getClientOriginalName());
             $upload = $request->attachfiles->move(public_path($path), $newname);
             $mail->attach = $newname;

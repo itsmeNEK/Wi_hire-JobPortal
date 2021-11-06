@@ -314,10 +314,14 @@
                                 </div>
                             </div>
                             <div class="text-right">
+                                @if ((session('LoggedUser')) || (session('LoggedCompany')) || (session('adminLogged')))
                                 <a type="submit" href="/Companies_view/{{ Crypt::encrypt($info->id) }}"
                                     class="btn btn-danger text-white font-weight-bold">
                                     <i class="bi bi-arrow-bar-up"></i> View
                                 </a>
+                                @else
+
+                                @endif
                             </div>
                         </div>
                     </div>

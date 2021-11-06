@@ -438,6 +438,10 @@
                                                 <td><i class="bi bi-file-earmark"></i><a
                                                         href="/u_view_file/{{ Crypt::encrypt($info->id) }}">{{ $info->file_path }}</a>
                                                 </td>
+                                                <td>
+                                                    <a href="https://view.officeapps.live.com/op/view.aspx?src={{url()->current()}}/{{$info->file_path}}"
+                                                    target="_blank" >view</a>
+                                                </td>
                                                 <td class="text-right">
                                                     <button type="button" data-id="{{ $info->id }}"
                                                         class="btn btn-white btn-view" data-toggle="modal"
