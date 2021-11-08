@@ -183,8 +183,8 @@
                                                 </td>
                                                 <td class="text-end">
                                                     <button type="button" id="{{ $info->id }}"
-                                                        class="btn btn-white btn-view" data-toggle="modal"
-                                                        data-target="#{{ $info->id }}"><i class="bi bi-trash"
+                                                        class="btn btn-white btn-view" data-bs-toggle="modal"
+                                                        data-bs-target="#{{ $info->id }}"><i class="bi bi-trash"
                                                             style="color: red"></i></button>
                                                 </td>
                                             </tr>
@@ -208,7 +208,7 @@
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-danger"
-                                                                    data-dismiss="modal">No</button>
+                                                                data-bs-dismiss="modal">No</button>
                                                                 <button type="submit"
                                                                     class="btn btn-success">Yes</button>
                                                             </div>

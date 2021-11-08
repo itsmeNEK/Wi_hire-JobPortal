@@ -8,10 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
-    </script>
+
     <script src="js/bootstrap.bundle.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -375,7 +372,7 @@
                                                     </div>
                                                     <div class="col-6 text-end">
                                                         <a class="btn btn-danger text-white fw-bold"
-                                                            type="button" data-target="#myModal" data-toggle="modal"><i
+                                                            type="button" data-bs-target="#myModal" data-bs-toggle="modal"><i
                                                                 class="bi bi-trash"
                                                                 style="color: rgb(255, 255, 255)"></i> Delete</a>
                                                     </div>
@@ -392,7 +389,7 @@
                                                                 <p>Are you sure to delete this Record? </p>
                                                             </div>
                                                             <div class="modal-footer" method="post">
-                                                                <a data-dismiss="modal" class="btn bg-danger"
+                                                                <a data-bs-dismiss="modal" class="btn bg-danger"
                                                                     type="button">No</a>
                                                                 <a type="submit" class="btn bg-success"
                                                                     href="delete/{{ $info->id }}">Yes</a>

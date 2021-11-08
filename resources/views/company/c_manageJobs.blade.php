@@ -119,7 +119,7 @@
                                                                                 type="button"
                                                                                 class="gbot btn btn-success bi-pencil"></button></a>
                                                                         <button data-id="{{ $info->id }}"
-                                                                            data-toggle="modal" data-target="#myModal"
+                                                                            data-bs-toggle="modal" data-bs-target="#myModal"
                                                                             type="button"
                                                                             class="gbot btn bi-trash-fill btn-danger"></button>
 
@@ -167,7 +167,7 @@
                                         <div id="personDetails" class="modal-body">
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
                                             <button type="submit" class="btn btn-success">Yes</button>
                                         </div>
                                     </div>

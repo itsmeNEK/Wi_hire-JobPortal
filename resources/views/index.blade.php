@@ -6,13 +6,11 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- CSS only -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
-    </script>
+
     <link rel="stylesheet" href="css/cdash.css">
     <link rel="stylesheet" href="css/jobs.css">
     <link rel="icon" href="/img/wihireicon copy.png" type="image/x-icon">
@@ -70,65 +68,61 @@
                                     href="{{ route('u_login') }}"><b>LOGIN</b></a>
                             </li>
                         @elseif(!empty($LoggedUserInfo['id']))
-                            <div class="dropdown ">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-dark fw-bold" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        <img class="border border-dark" width="30px" type="button"
-                                            src="/users/images/{{ $LoggedUserInfo['prof_pic'] }}">
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-right bg bg-dark"
-                                        aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item text-white text-secondary fw-bold"
-                                            href="{{ route('u_dash') }}"><i class="bi bi-speedometer2"></i> <span
-                                                aria-current="page">
-                                                Profile</span></a>
-                                        <a class="dropdown-item text-white fw-bold"
-                                            href="{{ route('u_mail') }}">
-                                            <div class="row">
-                                                <div class="col-8 text-start">
-                                                    <i class="bi bi-mailbox"></i> <span aria-current="page">
-                                                        Mailbox
-                                                    </span>
-                                                </div>
-                                                @if ($active != null)
-                                                    <div class="col-2 text-center">
-                                                        <span class="badge bg-none">{{ $active }}</span>
-                                                    </div>
-                                                @endif
+                            <div class="dropdown dropstart">
+                                <button type="button" class="btn btn-dark fw-bold" data-bs-target="dropdown-menu"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img class="border border-dark" width="30px" type="button"
+                                        src="/users/images/{{ $LoggedUserInfo['prof_pic'] }}">
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right bg bg-dark"
+                                    aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item text-white text-secondary fw-bold"
+                                        href="{{ route('u_dash') }}"><i class="bi bi-speedometer2"></i> <span
+                                            aria-current="page">
+                                            Profile</span></a>
+                                    <a class="dropdown-item text-white fw-bold" href="{{ route('u_mail') }}">
+                                        <div class="row">
+                                            <div class="col-8 text-start">
+                                                <i class="bi bi-mailbox"></i> <span aria-current="page">
+                                                    Mailbox
+                                                </span>
                                             </div>
-                                        </a>
-                                        <a class="dropdown-item text-white text-secondary fw-bold"
-                                            href="{{ route('u_sett') }}"><i class="bi bi-sliders"></i> <span
-                                                aria-current="page">
-                                                Settings</span></a>
-                                        <a class="dropdown-item text-white text-secondary fw-bold"
-                                            href="{{ route('u_logout') }}"><i class="bi bi-box-arrow-left"
-                                                style=""></i> <span aria-current="page">
-                                                Logout</span></a>
-                                    </div>
+                                            @if ($active != null)
+                                                <div class="col-2 text-center">
+                                                    <span class="badge bg-none">{{ $active }}</span>
+                                                </div>
+                                            @endif
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item text-white text-secondary fw-bold"
+                                        href="{{ route('u_sett') }}"><i class="bi bi-sliders"></i> <span
+                                            aria-current="page">
+                                            Settings</span></a>
+                                    <a class="dropdown-item text-white text-secondary fw-bold"
+                                        href="{{ route('u_logout') }}"><i class="bi bi-box-arrow-left" style=""></i>
+                                        <span aria-current="page">
+                                            Logout</span></a>
                                 </div>
                             </div>
                         @elseif(!empty($LoggedCompanyInfo['id']))
-                            <div class="dropdown">
+                            <div class="dropdown dropstart">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-dark fw-bold rounded"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button type="button" class="btn btn-dark fw-bold rounded" data-bs-target="dropdown-menu" data-bs-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
                                         <img class="border border-dark" width="30px" type="button"
                                             src="/company/images/{{ $LoggedCompanyInfo['prof_pic'] }}">
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-right bg bg-dark offset-10"
                                         aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item text-white fw-bold"
-                                            href="{{ route('c_dash') }}"><i class="bi bi-speedometer2"></i> <span
-                                                aria-current="page">
+                                        <a class="dropdown-item text-white fw-bold" href="{{ route('c_dash') }}"><i
+                                                class="bi bi-speedometer2"></i> <span aria-current="page">
                                                 Dashboard</span></a>
                                         <a class="dropdown-item text-white fw-bold"
                                             href="{{ route('c_createjob') }}"><i
                                                 class="bi bi-file-earmark-person"></i> <span aria-current="page">
                                                 Create Job</span></a>
-                                        <a class="dropdown-item text-white fw-bold"
-                                            href="{{ route('c_manage') }}"><i class="bi bi-person-lines-fill"></i>
+                                        <a class="dropdown-item text-white fw-bold" href="{{ route('c_manage') }}"><i
+                                                class="bi bi-person-lines-fill"></i>
                                             <span aria-current="page">
                                                 Manage Jobs</span></a>
                                         <a class="dropdown-item text-white fw-bold"
@@ -154,26 +148,24 @@
                                             href="{{ route('c_settings') }}"><i class="bi bi-sliders"></i> <span
                                                 aria-current="page">
                                                 Settings</span></a>
-                                        <a class="dropdown-item text-white fw-bold"
-                                            href="{{ route('c_logout') }}"><i class="bi bi-box-arrow-left"
-                                                style=""></i> <span aria-current="page">
+                                        <a class="dropdown-item text-white fw-bold" href="{{ route('c_logout') }}"><i
+                                                class="bi bi-box-arrow-left" style=""></i> <span aria-current="page">
                                                 Logout</span></a>
                                     </div>
                                 </div>
                             </div>
                         @elseif(!empty($adminLogged['id']))
-                            <div class="dropdown">
+                            <div class="dropdown dropstart">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-dark fw-bold rounded"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button type="button" class="btn btn-dark fw-bold rounded" data-bs-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
                                         <img class="border border-dark" width="30px" type="button"
                                             src="/img/wihireicon copy.png">
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-right bg bg-dark offset-10"
                                         aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item text-white fw-bold"
-                                            href="{{ route('a_dash') }}"><i class="bi bi-speedometer2"></i> <span
-                                                aria-current="page">
+                                        <a class="dropdown-item text-white fw-bold" href="{{ route('a_dash') }}"><i
+                                                class="bi bi-speedometer2"></i> <span aria-current="page">
                                                 Dashboard</span></a>
                                         <a class="dropdown-item text-white fw-bold"
                                             href="{{ route('a_mail_inbox') }}">
@@ -194,9 +186,8 @@
                                             href="{{ route('a_settings') }}"><i class="bi bi-sliders"></i> <span
                                                 aria-current="page">
                                                 Settings</span></a>
-                                        <a class="dropdown-item text-white fw-bold"
-                                            href="{{ route('a_logout') }}"><i class="bi bi-box-arrow-left"
-                                                style=""></i> <span aria-current="page">
+                                        <a class="dropdown-item text-white fw-bold" href="{{ route('a_logout') }}"><i
+                                                class="bi bi-box-arrow-left" style=""></i> <span aria-current="page">
                                                 Logout</span></a>
                                     </div>
                                 </div>
@@ -235,11 +226,11 @@
                                 href="{{ route('talent') }}" role="button"><b>Scout Candidates Now!</b></a>
                         @elseif (!empty($LoggedUserInfo['id']))
 
-                            <a class="btn btn-danger btn-lg index-btn mr-2 fw-bold"
-                                href="{{ route('jobs') }}" role="button"><b>Find Job Now!</b></a>
+                            <a class="btn btn-danger btn-lg index-btn mr-2 fw-bold" href="{{ route('jobs') }}"
+                                role="button"><b>Find Job Now!</b></a>
                         @else
-                            <a class="btn btn-danger btn-lg index-btn mr-2 fw-bold"
-                                href="{{ route('jobs') }}" role="button"><b>Find Job Now!</b></a>
+                            <a class="btn btn-danger btn-lg index-btn mr-2 fw-bold" href="{{ route('jobs') }}"
+                                role="button"><b>Find Job Now!</b></a>
                             <a class="btn btn-outline-light btn-lg ml-2 index-btn fw-bold"
                                 href="{{ route('c_login') }}" role="button"><b>Scout Candidates Now!</b></a>
                         @endif
@@ -270,7 +261,8 @@
                         <a href="{{ route('jobs') }}" class="text-decoration-none text-black">
                             <div class="card-box ">
                                 <div class="card-thumbnail">
-                                    <img src="/company/images/{{ $info['prof_pic'] }}" class="img-fluid" alt="">
+                                    <img src="/company/images/{{ $info['prof_pic'] }}" class="img-fluid"
+                                        alt="">
                                 </div>
                                 <span class="text-decoration-none text-black fw-bold">
                                     {{ $info->cname }} </span>
@@ -383,8 +375,8 @@
                     <div class="col-lg-4 col-md-4 col-sm-4 p-3 py-3 text-end">
                         <h3 class="mb-3">Page Mail</h3>
                         <!-- Button trigger modal -->
-                        <a type="button" class="btn btn-outline-light btn-floating mb-sm-1" data-toggle="modal"
-                            href="#" data-target="#myModal">
+                        <a type="button" class="btn btn-outline-light btn-floating mb-sm-1" data-bs-toggle="modal"
+                            href="#" data-bs-target="#myModal">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
                                 <path
@@ -424,9 +416,8 @@
                             <div class="row">
                                 <div class="col-12 text-start">
                                     Mail Us
-                                    <button type="button" class="close" data-dismiss="modal"
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close">
-                                        <span aria-hidden="true"><strong>&times;</strong></span>
                                     </button>
                                 </div>
                             </div>
@@ -495,11 +486,12 @@
     <script scrc="https://tryit.w3schools.com/code_datas.php"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 

@@ -277,7 +277,7 @@
                 <li class="nav-item has-submenu">
                     <a type="button"
                         class="fw-bold  nav-link text-light align-middle px-2 @yield('candidates')"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="bi bi-person-fill"></i> <span aria-current="page">
                             Candidates <i class="bi-sm bi-caret-down-fill"></i></span>
                     </a>
@@ -296,7 +296,7 @@
                 </li>
                 <li class="nav-item has-submenu">
                     <a type="button" class="fw-bold nav-link text-light align-middle px-2 @yield('company')"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="row">
                             <div class="col-10 text-start">
                                 <span class="bi bi-card-list" aria-current="page"> Companies
@@ -338,7 +338,7 @@
                 </li>
                 <li class="nav-item has-submenu">
                     <a type="button" class="fw-bold nav-link text-light align-middle px-2 @yield('jobs')"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="bi bi-person-badge"></i> <span aria-current="page">
                             Jobs <i class="bi-sm bi-caret-down-fill"></i></span>
                     </a>
@@ -430,7 +430,7 @@
                 <li class="nav-item has-submenu">
                     <a type="button"
                         class="fw-bold  nav-link text-light align-middle px-2 @yield('candidates')"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="bi bi-person-fill"></i> <span aria-current="page">
                             Candidates <i class="bi-sm bi-caret-down-fill"></i></span>
                     </a>
@@ -449,7 +449,7 @@
                 </li>
                 <li class="nav-item has-submenu">
                     <a type="button" class="fw-bold nav-link text-light align-middle px-2 @yield('company')"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="row">
                             <div class="col-8 text-start">
                                 <span class="bi bi-card-list" aria-current="page"> Companies
@@ -488,7 +488,7 @@
                 </li>
                 <li class="nav-item has-submenu">
                     <a type="button" class="fw-bold nav-link text-light align-middle px-2 @yield('jobs')"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="bi bi-person-badge"></i> <span aria-current="page">
                             Jobs <i class="bi-sm bi-caret-down-fill"></i></span>
                     </a>

@@ -118,8 +118,8 @@
                                     </td>
                                     <td>
                                         <a type="button" data-id="{{ $info->id }}"
-                                            class="gbot btn-view" data-toggle="modal"
-                                            data-target="#myModal"><i class="bi bi-trash-fill text-danger"></i>
+                                            class="gbot btn-view" data-bs-toggle="modal"
+                                            data-bs-target="#myModal"><i class="bi bi-trash-fill text-danger"></i>
                                         </a>
                                     </td>
                                 </tr>
@@ -154,7 +154,7 @@
                 <div id="personDetails" class="modal-body">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
                     <button type="submit" class="btn btn-success">Yes</button>
                 </div>
             </div>

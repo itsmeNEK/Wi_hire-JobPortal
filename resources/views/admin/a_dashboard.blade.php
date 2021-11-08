@@ -201,8 +201,8 @@
                                                                 type="button"
                                                                 class="gbot btn text-white btn-warning bi-eye-fill"></button></a>
                                                         <button type="button" data-id="{{ $info->id }}"
-                                                            class="gbot btn btn-success btn-view" data-toggle="modal"
-                                                            data-target="#myModal"><i
+                                                            class="gbot btn btn-success btn-view" data-bs-toggle="modal"
+                                                            data-bs-target="#myModal"><i
                                                                 class="bi bi-person-check-fill"></i></button>
                                                     </div>
                                                 </td>
@@ -248,7 +248,7 @@
                                 <div id="personDetails" class="modal-body">
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
                                     <button type="submit" class="btn btn-success">Yes</button>
                                 </div>
                             </div>

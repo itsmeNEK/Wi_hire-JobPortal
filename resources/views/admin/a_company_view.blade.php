@@ -103,7 +103,7 @@
                     <div class="text-center">
                         <div class="col-sm-12 text-end">
                             <a>
-                                <button data-toggle="modal" data-target="#myModal"
+                                <button data-bs-toggle="modal" data-bs-target="#myModal"
                                     class="btnUp btn-danger rounded">Message</button>
                             </a>
                         </div>

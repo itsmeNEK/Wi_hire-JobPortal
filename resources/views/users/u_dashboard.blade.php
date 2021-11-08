@@ -8,10 +8,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
-    </script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -439,8 +435,8 @@
                                                 </td>
                                                 <td class="text-end">
                                                     <button type="button" data-id="{{ $info->id }}"
-                                                        class="btn btn-white btn-view" data-toggle="modal"
-                                                        data-target="#myModal"><i class="bi bi-trash"
+                                                        class="btn btn-white btn-view" data-bs-toggle="modal"
+                                                        data-bs-target="#myModal"><i class="bi bi-trash"
                                                             style="color: red"></i></button>
                                                 </td>
                                             </tr>
@@ -464,7 +460,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger"
-                                                data-dismiss="modal">No</button>
+                                                data-bs-dismiss="modal">No</button>
                                             <button type="submit" class="btn btn-success">Yes</button>
                                         </div>
                                     </div>
@@ -478,30 +474,6 @@
         </div>
     </div>
     </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("#myModal").modal({
-                keyboard: true,
-                backdrop: "static",
-                show: false,
-
-            }).on("show.bs.modal", function(event) {
-                var button = $(event.relatedTarget);
-                var personId = button.data("id");
-                var id = "id"
-                //displays values to modal
-                $(this).find("#personDetails").html($("<input name=" + id + " hidden value=" + personId +
-                    "></input> <b>Are you sure you want to delete this file?</b>"))
-            }).on("hide.bs.modal", function(event) {
-                $(this).find("#personDetails").html("");
-            });
-        });
-    </script>
     <script src="/js/sidebar.js"></script>
     <script src="/js/login.js"></script>
     <script src="/js/viewimage.js"></script>
@@ -515,6 +487,25 @@
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+        $("#myModal").modal({
+            keyboard: true,
+            backdrop: "static",
+            show: false,
+
+        }).on("show.bs.modal", function(event) {
+            var button = $(event.relatedTarget);
+            var personId = button.data("id");
+            var id = "id"
+            //displays values to modal
+            $(this).find("#personDetails").html($("<input name=" + id + " hidden value=" + personId +
+                "></input> <b>Are you sure you want to delete this file?</b>"))
+        }).on("hide.bs.modal", function(event) {
+            $(this).find("#personDetails").html("");
+        });
+    });
+</script>
 </body>
 
 </html>

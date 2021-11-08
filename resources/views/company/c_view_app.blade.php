@@ -144,7 +144,7 @@
                                 </div>
                                 <div class="col-sm-3 text-end">
                                     <a>
-                                        <button data-toggle="modal" data-target="#myModal"
+                                        <button data-bs-toggle="modal" data-bs-target="#myModal"
                                             class="btnUp btn-danger rounded">Message</button>
                                     </a>
                                 </div>

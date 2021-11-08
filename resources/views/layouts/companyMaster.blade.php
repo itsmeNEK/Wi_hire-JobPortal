@@ -225,7 +225,7 @@
                 </li>
                 <li class="nav-item has-submenu">
                     <a type="button" class="fw-bold nav-link text-light align-middle px-2 @yield('applicant')"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="row">
                             <div class="col-8 text-start">
                                 <span class="bi bi-card-list" aria-current="page"> Applicants
@@ -341,7 +341,7 @@
                 <li class="nav-item has-submenu">
                     <a type="button"
                         class="fw-bold nav-link text-light align-middle px-2 @yield('applicant')"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="row">
                             <div class="col-8 text-start">
                                 <span class="bi bi-card-list" aria-current="page"> Applicants
