@@ -38,18 +38,15 @@
                 @csrf
                 <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        @if (empty($LoggedCompanyInfo['id']))
                             <li class="nav-item">
                                 <a class="nav-link font-weight-bold" href="{{ route('jobs') }}">Jobs</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link font-weight-bold" href="{{ route('companies') }}">Companies</a>
                             </li>
-                        @else
                             <li class="nav-item">
                                 <a class="nav-link font-weight-bold" href="{{ route('talent') }}">Talent Search</a>
                             </li>
-                        @endif
                         <li class="nav-item">
                             <a class="nav-link font-weight-bold" href="{{ route('howto2') }}">How to Use</a>
                         </li>

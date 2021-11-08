@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Mail\verificationEmail;
+use App\mail\verificationEmail;
 use App\Models\Admin;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\company;
 use App\Models\VerifyCompany;
+use App\Models\loginhistory;
 use Carbon\Carbon;
 use App\Models\VerifyUser;
 use Illuminate\Support\Facades\Hash;
@@ -105,7 +106,6 @@ class AuthController extends Controller
             // update password
             $user = User::find($request->id);
             $user->password = Hash::make($request->npassword);
-            $user->email_verified_at = $date;
             $user->updated_at = $date;
             $save = $user->save();
 
@@ -135,7 +135,6 @@ class AuthController extends Controller
             // update password
             $user = company::find($request->id);
             $user->password = Hash::make($request->npassword);
-            $user->email_verified_at = $date;
             $user->updated_at = $date;
             $save = $user->save();
 
@@ -284,6 +283,11 @@ class AuthController extends Controller
                     return back()->with('fail','You have been blocked by the Administrator.For more Info visit our how to use page or mail us');
                 }else {
                     $request->session()->put('LoggedUser', $userInfo->id);
+                    $device = request()->userAgent();
+                    $login = new loginhistory;
+                    $login->u_id = $userInfo->id;
+                    $login->device = $device;
+                    $login->save();
                     return redirect('user_dashboard');
                 }
             } else {

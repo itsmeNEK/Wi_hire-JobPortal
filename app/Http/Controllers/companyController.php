@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Helpers\Helper;
 use App\Models\VerifyCompany;
 use App\Models\Mailing;
+use App\Models\loginhistory;
 use App\Mail\c_verificationEmail;
 use App\Models\Admin;
 use App\Models\jobs;
@@ -134,6 +135,11 @@ class companyController extends Controller
                     return back()->with('fail', 'You have been blocked by the Administrator.For more Info visit our how to use page or mail us');
                 } else {
                     $request->session()->put('Loggedcompany', $userInfo->id);
+                    $device = request()->userAgent();
+                    $login = new loginhistory;
+                    $login->c_id = $userInfo->id;
+                    $login->device = $device;
+                    $login->save();
                     return redirect()->route('c_dash');
                 }
             } else {
