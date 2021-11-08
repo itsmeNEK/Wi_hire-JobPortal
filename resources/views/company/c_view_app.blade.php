@@ -233,6 +233,7 @@
                         @endforeach
                     </div>
                     <hr>
+                    @if((session('Loggedcompany')) || (session('adminLogged')))
                     <div class="row mt-2">
                         <div class="col-md-6 text-start">
                             <h6>Attach document</h6>
@@ -261,6 +262,8 @@
                             </table>
                         </div>
                     </div>
+                    @endif
+
                 </div>
             </div>
         </div>

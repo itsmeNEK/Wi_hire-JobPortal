@@ -143,16 +143,6 @@
                     </ul>
                 </div>
             </div>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold" href="{{ route('talent') }}">Talent Search</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold" href="{{ route('jobs') }}">Jobs</a>
-                    </li>
-                </ul>
-            </div>
         </div>
         <div class="btn-group dropstart">
             <a type="button" class="bell-full border-0 btn-lg bg-none" data-bs-toggle="dropdown" aria-expanded="false"

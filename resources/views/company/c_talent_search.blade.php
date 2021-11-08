@@ -6,7 +6,8 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- CSS only -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
@@ -34,38 +35,43 @@
                 @csrf
                 <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link fw-bold" href="{{ route('jobs') }}">Jobs</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link fw-bold" href="{{ route('companies') }}">Companies</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link fw-bold" href="{{ route('talent') }}">Talent Search</a>
-                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold" href="{{ route('jobs') }}">Jobs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold" href="{{ route('companies') }}">Companies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold" href="{{ route('talent') }}">Talent Search</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link fw-bold" href="{{ route('howto2') }}">How to Use</a>
                         </li>
+                        @if (empty($LoggedUserInfo['id']) && empty($LoggedCompanyInfo['id']) && empty($adminLogged['id']))
+                            <li>
+                                <a class="btn btn-outline-light rounded" type="button"
+                                    href="{{ route('u_login') }}"><b>LOGIN</b></a>
+                            </li>
+                        @endif
                         @if (!empty($LoggedCompanyInfo['id']))
                             <div class="dropdown">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-dark fw-bold rounded"
-                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button type="button" class="btn btn-dark fw-bold rounded" data-bs-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
                                         <img class="border border-dark" width="30px" type="button"
                                             src="/company/images/{{ $LoggedCompanyInfo['prof_pic'] }}">
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-right bg bg-dark offset-10"
                                         aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item text-white fw-bold"
-                                            href="{{ route('c_dash') }}"><i class="bi bi-speedometer2"></i> <span
-                                                aria-current="page">
+                                        <a class="dropdown-item text-white fw-bold" href="{{ route('c_dash') }}"><i
+                                                class="bi bi-speedometer2"></i> <span aria-current="page">
                                                 Dashboard</span></a>
                                         <a class="dropdown-item text-white fw-bold"
                                             href="{{ route('c_createjob') }}"><i
                                                 class="bi bi-file-earmark-person"></i> <span aria-current="page">
                                                 Create Job</span></a>
-                                        <a class="dropdown-item text-white fw-bold"
-                                            href="{{ route('c_manage') }}"><i class="bi bi-person-lines-fill"></i>
+                                        <a class="dropdown-item text-white fw-bold" href="{{ route('c_manage') }}"><i
+                                                class="bi bi-person-lines-fill"></i>
                                             <span aria-current="page">
                                                 Manage Jobs</span></a>
                                         <a class="dropdown-item text-white fw-bold" href="#"><i
@@ -90,26 +96,24 @@
                                             href="{{ route('c_settings') }}"><i class="bi bi-sliders"></i> <span
                                                 aria-current="page">
                                                 Settings</span></a>
-                                        <a class="dropdown-item text-white fw-bold"
-                                            href="{{ route('c_logout') }}"><i class="bi bi-box-arrow-left"
-                                                style=""></i> <span aria-current="page">
+                                        <a class="dropdown-item text-white fw-bold" href="{{ route('c_logout') }}"><i
+                                                class="bi bi-box-arrow-left" style=""></i> <span aria-current="page">
                                                 Logout</span></a>
                                     </div>
                                 </div>
                             </div>
                         @elseif(!empty($adminLogged['id']))
-                            <div class="dropdown">
+                            <div class="dropdown dropstart">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-dark fw-bold rounded"
-                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button type="button" class="btn btn-dark fw-bold rounded" data-bs-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
                                         <img class="border border-dark" width="30px" type="button"
                                             src="/img/wihireicon copy.png">
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-right bg bg-dark offset-10"
                                         aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item text-white fw-bold"
-                                            href="{{ route('a_dash') }}"><i class="bi bi-speedometer2"></i> <span
-                                                aria-current="page">
+                                        <a class="dropdown-item text-white fw-bold" href="{{ route('a_dash') }}"><i
+                                                class="bi bi-speedometer2"></i> <span aria-current="page">
                                                 Dashboard</span></a>
                                         <a class="dropdown-item text-white fw-bold"
                                             href="{{ route('a_mail_inbox') }}">
@@ -130,9 +134,8 @@
                                             href="{{ route('a_settings') }}"><i class="bi bi-sliders"></i> <span
                                                 aria-current="page">
                                                 Settings</span></a>
-                                        <a class="dropdown-item text-white fw-bold"
-                                            href="{{ route('a_logout') }}"><i class="bi bi-box-arrow-left"
-                                                style=""></i>
+                                        <a class="dropdown-item text-white fw-bold" href="{{ route('a_logout') }}"><i
+                                                class="bi bi-box-arrow-left" style=""></i>
                                             <span aria-current="page">
                                                 Logout</span></a>
                                     </div>
@@ -241,7 +244,13 @@
                                 </div>
                             </div>
                             <div class="but text-end">
-                                <a type="submit" href="View_Candidate/{{ Crypt::encrypt($info->id) }}"
+                                <a type="submit"
+
+                    @if((session('Loggedcompany')))
+                    href="View_Candidate/{{ Crypt::encrypt($info->id) }}"
+                    @elseif (session('adminLogged'))
+                    href="Admin_view_Candidate/{{ Crypt::encrypt($info->id) }}"
+                    @endif
                                     class="btn btn-danger text-white fw-bold">
                                     <i class="bi bi-arrow-bar-up"></i> View Profile
                                 </a>
@@ -316,7 +325,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
