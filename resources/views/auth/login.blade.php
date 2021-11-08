@@ -33,17 +33,17 @@
             <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
                 <ul class="navbar-nav ms-auto mb-2 mb-sm-0">
                     <li class="nav-item">
-                        <a class="nav-link font-weight-bold" href="#">About Us</a>
+                        <a class="nav-link fw-bold" href="#">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link font-weight-bold" href="#">How to Use</a>
+                        <a class="nav-link fw-bold" href="#">How to Use</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link font-weight-bold" href="{{ route('u_login') }}">Login <b>(Job
+                        <a class="nav-link fw-bold" href="{{ route('u_login') }}">Login <b>(Job
                                 Seeker)</b></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link font-weight-bold" href="#">Login<b> (Company)</b></a>
+                        <a class="nav-link fw-bold" href="#">Login<b> (Company)</b></a>
                     </li>
 
                 </ul>
@@ -61,7 +61,7 @@
                         {{ Session::get('fail') }}
                     </div>
                 @endif
-                <h3 class="font-weight-bold">Job Seeker Login</h3>
+                <h3 class="fw-bold">Job Seeker Login</h3>
                 <br>Don't have an Account?
                 <a style="color:rgb(238, 54, 54);text-decoration: none;" href="{{ route('u_signup') }}">CREATE
                     NOW!</a>
@@ -82,7 +82,7 @@
                 <a style="color:rgb(0, 0, 0); text-decoration: none;" href="#">Forgot Password?</a>
                 <br>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-danger font-weight-bold">Login</button>
+                    <button type="submit" class="btn btn-danger fw-bold">Login</button>
                 </div>
             </form>
         </div>

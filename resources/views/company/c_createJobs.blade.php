@@ -25,7 +25,7 @@
                             @csrf
                             <div class="rounded bg-transaprent">
                                 <div class="row">
-                                    <div class="col-12 text-left">
+                                    <div class="col-12 text-start">
                                         <a class=" text-danger" href="{{ route('c_dash') }}">
                                             Dashboard
                                         </a>/
@@ -54,9 +54,9 @@
                                     </div>
                                 @else
                                     <div class="row">
-                                        <div class="d-flex text-left">
+                                        <div class="d-flex text-start">
                                             <div class="p-3 py-5">
-                                                <div class="text-left">
+                                                <div class="text-start">
                                                     <h4 class="">Create jobs</h4>
                                                 </div>
                                                 <hr>
@@ -84,13 +84,13 @@
                                                     class="text-danger">@error('city'){{ $message }}
                                                     @enderror</span>
                                                 <div class="row mt-2">
-                                                    <div class="col-md-12"><label class="labels font-weight-bold">job
+                                                    <div class="col-md-12"><label class="labels fw-bold">job
                                                             Title</label><input name="jobtit" type="text"
                                                             class="form-control" placeholder="job Title"><span
                                                             class="text-danger">@error('jobtit'){{ $message }}
                                                             @enderror</span>
                                                     </div>
-                                                    <div class="col-md-12"><label class="labels font-weight-bold">Job
+                                                    <div class="col-md-12"><label class="labels fw-bold">Job
                                                             Description</label>
                                                         <textarea class="form-control" id="message" name="jobdes"
                                                             rows="12" placeholder="Job Description"></textarea>
@@ -100,14 +100,14 @@
                                                 </div>
                                                 <div class="row mt-2">
                                                     <div class="col-md-6"><label
-                                                            class="labels font-weight-bold">Qualification
+                                                            class="labels fw-bold">Qualification
                                                             Required</label><input name="qualification" type="text"
                                                             class="form-control" placeholder="qualification"><span
                                                             class="text-danger">@error('qualification'){{ $message }}
                                                             @enderror</span>
                                                     </div>
                                                     <div class="col-md-6"><label
-                                                            class="labels font-weight-bold">Experience
+                                                            class="labels fw-bold">Experience
                                                             Required</label><input name="exreq" type="text"
                                                             class="form-control" placeholder="Experience Required"><span
                                                             class="text-danger">@error('exreq'){{ $message }}
@@ -116,7 +116,7 @@
                                                 </div>
                                                 <div class="row mt-3">
                                                     <div class="col-md-12"><label
-                                                            class="labels font-weight-bold">Specialization</label>
+                                                            class="labels fw-bold">Specialization</label>
                                                         <input type="text" name="special" class="form-control"
                                                             placeholder="Specialization"><span
                                                             class="text-danger">@error('special'){{ $message }}
@@ -125,21 +125,21 @@
                                                 </div>
                                                 <div class="row mt-3">
                                                     <div class="col-md-6"><label
-                                                            class="labels font-weight-bold">Minimum Salary</label>
+                                                            class="labels fw-bold">Minimum Salary</label>
                                                         <input type="text" name="mimsal" class="form-control"
                                                             placeholder="Minimum Salary"><span
                                                             class="text-danger">@error('mimsal'){{ $message }}
                                                             @enderror</span>
                                                     </div>
                                                     <div class="col-md-6"><label
-                                                            class="labels font-weight-bold">Maximumm Salary</label>
+                                                            class="labels fw-bold">Maximumm Salary</label>
                                                         <input type="text" name="maxsal" class="form-control"
                                                             placeholder="Maximumm Salary"><span
                                                             class="text-danger">@error('maxsal'){{ $message }}
                                                             @enderror</span>
                                                     </div>
                                                     <div class="col-md-6"><label
-                                                            class="labels font-weight-bold">Type Of
+                                                            class="labels fw-bold">Type Of
                                                             Role</label><input id="browser" list="browsers"
                                                             class="form-control" name="typerole"
                                                             placeholder="Type Of Role" value="">
@@ -152,7 +152,7 @@
                                                         </datalist>
                                                     </div>
                                                     <div class="col-md-6"><label
-                                                            class="labels font-weight-bold">Position level</label>
+                                                            class="labels fw-bold">Position level</label>
                                                         <input type="group-text" name="postlev" class="form-control"
                                                             placeholder="Position level"><span
                                                             class="text-danger">@error('postlev'){{ $message }}
@@ -161,16 +161,16 @@
                                                 </div>
                                                 <div class="mt-5 text-center">
                                                     <div class="row">
-                                                        <div class="col-6 text-left">
-                                                            <button class="btn btn-danger profile-button font-weight-bold"
+                                                        <div class="col-6 text-start">
+                                                            <button class="btn btn-danger profile-button fw-bold"
                                                                 type="submit"><i class="bi bi-signpost"></i>
                                                                 Post
                                                             </button>
                                                         </div>
-                                                        <div class="col-6 text-right">
+                                                        <div class="col-6 text-end">
 
                                                             <a href="{{ route('c_manage') }}"
-                                                                class="btn btn-secondary text-white font-weight-bold">
+                                                                class="btn btn-secondary text-white fw-bold">
                                                                 <i class="bi bi-x-lg"></i>
                                                                 Cancel
                                                             </a>

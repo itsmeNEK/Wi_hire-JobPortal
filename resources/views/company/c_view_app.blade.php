@@ -39,14 +39,14 @@
                 <div class="modal-header">
                     <h4 class="modal-title text-dark" id="myModalLabel">
                         <div class="row">
-                            <div class="col-12 text-left">
+                            <div class="col-12 text-start">
                                 Message Job Seeker
                             </div>
                         </div>
                     </h4>
                 </div>
                 <div id="personDetails" class="modal-body text-dark">
-                    <header class="header text-left font-weight-bold">
+                    <header class="header text-start fw-bold">
                         Please Fill All Inputs
                     </header>
                     <hr>
@@ -70,7 +70,7 @@
                 </div>
                 <div class="modal-footer">
                     <div class="row">
-                        <div class="col-6 text-right">
+                        <div class="col-6 text-end">
                             <button type="submit" class="btn btn-danger">Send</button>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
     <div class="col py-3">
         <div class="container rounded bg-white ">
             <div class="row py-3">
-                <div class="col-4 text-left font-weight-bold">
+                <div class="col-4 text-start fw-bold">
                     <a>
                         <button onclick="goBack()" type="button" class="btnUp btn btn-danger ">
                             <i class="bi bi-skip-backward-fill"></i>
@@ -91,8 +91,8 @@
                         </button>
                     </a>
                 </div>
-                <div class="col-8 text-center font-weight-bold">
-                    <h2 class="text-left">Job Seeker Profile</h2>
+                <div class="col-8 text-center fw-bold">
+                    <h2 class="text-start">Job Seeker Profile</h2>
                 </div>
             </div>
 
@@ -107,7 +107,7 @@
                     {{ csrf_field() }}
                     <div class="row mt-2">
                         <div class="col-sm-2">
-                            <div class="picture-container text-left">
+                            <div class="picture-container text-start">
                                 <div class="picture">
                                     <img id="avatar" src="/users/images/{{ $userinfo['prof_pic'] }}"
                                         class="picture-src" id="avatarPicturePreview" title="">
@@ -123,9 +123,9 @@
                             <!-- Modal Content (The Image) -->
                             <img class="imagemodal-content" id="img01">
                         </div>
-                        <div class="col-sm-10 text-left">
+                        <div class="col-sm-10 text-start">
                             <div class="row mt-2">
-                                <div class="col-sm-9 text-left">
+                                <div class="col-sm-9 text-start">
                                     <strong><span>{{ $userinfo['fname'] }}
                                             {{ $userinfo['mname'] }}
                                             {{ $userinfo['lname'] }}</span></strong><br>
@@ -142,7 +142,7 @@
                                     <span>{{ $userinfo['mob_num'] }}</span> [<a
                                         href="">{{ $userinfo['email'] }}</a>]
                                 </div>
-                                <div class="col-sm-3 text-right">
+                                <div class="col-sm-3 text-end">
                                     <a>
                                         <button data-toggle="modal" data-target="#myModal"
                                             class="btnUp btn-danger rounded">Message</button>
@@ -153,25 +153,25 @@
                     </div>
                     <hr>
                     <div class="row mt-2">
-                        <div class="col-md-12 text-left">
+                        <div class="col-md-12 text-start">
                             <h6>Educational BackGround</h6>
                             <br>
                         </div>
                         @foreach ($user_educbackInfo as $info)
-                            <div class="col-md-2 text-left">
+                            <div class="col-md-2 text-start">
                                 <span class="text text-secondary">
                                     {{ $info->grade_date }}
                                 </span>
                             </div>
-                            <div class="col-md-5 text-right">
-                                <div class="col-md-10 text-left">
+                            <div class="col-md-5 text-end">
+                                <div class="col-md-10 text-start">
                                     <strong><span>{{ $info->university }}</span></strong><br>
                                     <span>{{ $info->unic_loc }} <br>
                                         {{ $info->field }}</span><br>
                                 </div>
                             </div>
-                            <div class="col-md-5 text-right">
-                                <div class="col-md-10 text-left">
+                            <div class="col-md-5 text-end">
+                                <div class="col-md-10 text-start">
                                     <strong><span>{{ $info->major }}</span></strong><br>
                                     <span>{{ $info->major }} <br>
                                         {{ $info->qualification }}</span><br>
@@ -182,27 +182,27 @@
                     </div>
                     <hr>
                     <div class="row mt-2">
-                        <div class="col-md-12 text-left">
+                        <div class="col-md-12 text-start">
                             <h6>Work Experience</h6> <br>
                         </div>
 
                         {{ csrf_field() }}
                         @foreach ($user_workexInfo as $info)
                             <input type="hidden" value="{{ $info->id }}">
-                            <div class="col-md-2 text-left">
+                            <div class="col-md-2 text-start">
                                 <span class="text text-sm-left text-secondary">
                                     {{ $info->durationfrom }} - {{ $info->durationto }}
                                 </span>
                             </div>
-                            <div class="col-md-5 text-left">
-                                <div class="col-md-10 text-left">
+                            <div class="col-md-5 text-start">
+                                <div class="col-md-10 text-start">
                                     <strong><span>{{ $info->postit }}</span></strong><br>
                                     <span>{{ $info->role }} <br>
                                         {{ $info->specialization }}</span><br>
                                 </div>
                             </div>
-                            <div class="col-md-5 text-left">
-                                <div class="col-md-10 text-left">
+                            <div class="col-md-5 text-start">
+                                <div class="col-md-10 text-start">
                                     <strong><span>{{ $info->comname }}</span></strong><br>
                                     <span>{{ $info->positionlevel }} <br>
                                         {{ $info->industry }}</span><br>
@@ -214,18 +214,18 @@
                     </div>
                     <hr>
                     <div class="row mt-2">
-                        <div class="col-md-12 text-left">
+                        <div class="col-md-12 text-start">
                             <h6>Skills Information</h6> <br>
                         </div>
                         @foreach ($user_SkilssInfo as $info)
                             <input type="hidden" value="{{ $info->id }}">
-                            <div class="col-md-3 text-left">
+                            <div class="col-md-3 text-start">
                                 <span class="text text-sm-left text-secondary">
                                     {{ $info->proficiency }}
                                 </span>
                             </div>
-                            <div class="col-md-7 text-left">
-                                <div class="col-md-10 text-left">
+                            <div class="col-md-7 text-start">
+                                <div class="col-md-10 text-start">
                                     <strong><span>{{ $info->skills }}</span></strong><br>
                                     <br>
                                 </div>
@@ -234,7 +234,7 @@
                     </div>
                     <hr>
                     <div class="row mt-2">
-                        <div class="col-md-6 text-left">
+                        <div class="col-md-6 text-start">
                             <h6>Attach document</h6>
                         </div>
                         <div class="col-sm-12">
@@ -242,7 +242,7 @@
                                 <thead>
                                     <tr>
                                         <th><a>Name</a></th>
-                                        <th class="text-right"><a>View</a></th>
+                                        <th class="text-end"><a>View</a></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -250,7 +250,7 @@
                                         <tr>
                                             <td><i class="bi bi-file-earmark"></i><a>{{ $info->file_path }}</a>
                                             </td>
-                                            <td class="text-right">
+                                            <td class="text-end">
                                                 <a type="button" target="_blank" href="/u_view_file/{{ Crypt::encrypt($info->id) }}"
                                                     class="btn btn-white btn-view"><i class="bi bi-eye-fill"
                                                         style="color:  #000000"></i></a>

@@ -28,7 +28,7 @@
                         @csrf
                         <div class="row" style="margin-top: -40px">
                             <div class="col-sm-2">
-                                <div class="picture-container text-left">
+                                <div class="picture-container text-start">
                                     <div class="picture">
                                         <img id="avatar" src="/img/wihireicon copy.png" class="picture-src" title="">
                                     </div>
@@ -43,9 +43,9 @@
                                 <!-- Modal Content (The Image) -->
                                 <img class="imagemodal-content" id="img01">
                             </div>
-                            <div class="col-sm-10 text-left">
+                            <div class="col-sm-10 text-start">
                                 <div class="row mt-4">
-                                    <div class="col-sm-10 text-left">
+                                    <div class="col-sm-10 text-start">
                                         <h2><strong>Admin {{ $LoggedUserInfo['adminName'] }}</strong></h2>
                                     </div>
                                 </div>
@@ -56,12 +56,12 @@
                             <div class="col-md-4 col-sm-4 col-lg-4">
                                 <div class="container rounded bg-danger text-white">
                                     <div class="row mt-2">
-                                        <div class="col-md-6 col-sm-6 col-lg-6 text-left"
+                                        <div class="col-md-6 col-sm-6 col-lg-6 text-start"
                                             style="margin-top:5px;margin-bottom:5px;">
                                             <strong>Companies</strong>
                                             <h1>{{ $comcount }}</h1>
                                         </div>
-                                        <div class="col-md-6 col-sm-6 col-lg-6 text-right dropdown"
+                                        <div class="col-md-6 col-sm-6 col-lg-6 text-end dropdown"
                                             style="margin-top:5px;margin-bottom:5px;">
                                             <br>
                                             <button style="font-size: 30px" class="btn btn-danger" type="button"
@@ -87,12 +87,12 @@
                             <div class="col-md-4 col-sm-4 col-lg-4">
                                 <div class="container rounded bg-success text-white">
                                     <div class="row mt-2">
-                                        <div class="col-md-6 col-sm-6 col-lg-6 text-left"
+                                        <div class="col-md-6 col-sm-6 col-lg-6 text-start"
                                             style="margin-top:5px;margin-bottom:5px;">
                                             <strong>Candidates</strong>
                                             <h1>{{ $usercpount }}</h1>
                                         </div>
-                                        <div class="col-md-6 col-sm-6 col-lg-6 text-right dropdown"
+                                        <div class="col-md-6 col-sm-6 col-lg-6 text-end dropdown"
                                             style="margin-top:5px;margin-bottom:5px;"><br>
                                             <button style="font-size: 30px" class="btn btn-success"
                                                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -115,12 +115,12 @@
                             <div class="col-md-4 col-sm-4 col-lg-4">
                                 <div class="container rounded bg-secondary text-white">
                                     <div class="row mt-2">
-                                        <div class="col-md-6 col-sm-6 col-lg-6 text-left"
+                                        <div class="col-md-6 col-sm-6 col-lg-6 text-start"
                                             style="margin-top:5px;margin-bottom:5px;">
                                             <strong>Jobs</strong>
                                             <h1>{{ $jobcount }}</h1>
                                         </div>
-                                        <div class="col-md-6 col-sm-6 col-lg-6 text-right dropdown"
+                                        <div class="col-md-6 col-sm-6 col-lg-6 text-end dropdown"
                                             style="margin-top:5px;margin-bottom:5px;"><br>
                                             <button style="font-size: 30px" class="btn btn-secondary" type="button"
                                                 id="dropdownMenuButton1" data-bs-toggle="dropdown"
@@ -149,10 +149,10 @@
                 @csrf
                 <div class="rounded bg-transaprent">
                     <div class="row">
-                        <div class="d-flex text-left">
+                        <div class="d-flex text-start">
                             <div class="p-3 py-5">
                                 <div class="row">
-                                    <div class="col-md-8 col-sm-8 col-lg-8 text-left">
+                                    <div class="col-md-8 col-sm-8 col-lg-8 text-start">
                                         <h4 class="">New Companies</h4>
                                     </div>
                                 </div>

@@ -26,7 +26,7 @@
                                     <div class="p-3 py-5">
                             <div class="rounded bg-transaprent">
                                         <div class="row" style="margin-top:-40px;">
-                                            <div class="col-12 text-left font-weight-bold">
+                                            <div class="col-12 text-start fw-bold">
                                                 <a class=" text-danger" href="{{ route('u_dash') }}">
                                                     Profile
                                                 </a>/
@@ -35,9 +35,9 @@
                                                 </a>
                                             </div>
                                         </div>
-                                        <div class="d-flex text-left">
+                                        <div class="d-flex text-start">
                                             <div class="p-3 py-5">
-                                                <div class="text-left">
+                                                <div class="text-start">
                                                     <h4 class="">Work Experience</h4>
                                                 </div>
                                                 <hr>
@@ -54,14 +54,14 @@
                                                     value="{{ $LoggedUserInfo['id'] }}">
                                                 <div class="row mt-2">
                                                     <div class="col-md-12"><label
-                                                            class="labels font-weight-bold">Position Title</label><input
+                                                            class="labels fw-bold">Position Title</label><input
                                                             name="Positiontit" type="text" class="form-control"
                                                             placeholder="Position Title"><span
                                                             class="text-danger">@error('Positiontit'){{ $message }}
                                                             @enderror</span>
                                                     </div>
                                                     <div class="col-md-12"><label
-                                                            class="labels font-weight-bold">Company Name</label><input
+                                                            class="labels fw-bold">Company Name</label><input
                                                             name="Company" type="text" class="form-control"
                                                             placeholder="Company Name"><span
                                                             class="text-danger">@error('Company'){{ $message }}
@@ -71,14 +71,14 @@
                                                 <div class="row mt2">
                                                     <h4>Joined Duration</h4>
                                                     <div class="col-md-6"><label
-                                                            class="labels font-weight-bold">From</label><input
+                                                            class="labels fw-bold">From</label><input
                                                             name="From" type="month" class="form-control"
                                                             placeholder="grad_date"><span
                                                             class="text-danger">@error('From'){{ $message }}
                                                             @enderror</span>
                                                     </div>
                                                     <div class="col-md-6"><label
-                                                            class="labels font-weight-bold">To</label><input name="To"
+                                                            class="labels fw-bold">To</label><input name="To"
                                                             type="month" class="form-control"
                                                             placeholder="grad_date"><span
                                                             class="text-danger">@error('To'){{ $message }}
@@ -87,7 +87,7 @@
                                                 </div>
                                                 <div class="row mt-3">
                                                     <div class="col-md-12"><label
-                                                            class="labels font-weight-bold ">Specialization</label><input
+                                                            class="labels fw-bold ">Specialization</label><input
                                                             name="Specialization" type="text" class="form-control"
                                                             placeholder="Specialization"><span
                                                             class="text-danger">@error('Specialization'){{ $message }}
@@ -96,21 +96,21 @@
                                                 </div>
                                                 <div class="row mt-3">
                                                     <div class="col-md-12"><label
-                                                            class="labels font-weight-bold">Role</label><input
+                                                            class="labels fw-bold">Role</label><input
                                                             type="text" name="Role" class="form-control"
                                                             placeholder="Role"><span
                                                             class="text-danger">@error('Role'){{ $message }}
                                                             @enderror</span>
                                                     </div>
                                                     <div class="col-md-6"><label
-                                                            class="labels font-weight-bold">Country</label><input
+                                                            class="labels fw-bold">Country</label><input
                                                             type="text" name="Country" class="form-control"
                                                             placeholder="Country"><span
                                                             class="text-danger">@error('Country'){{ $message }}
                                                             @enderror</span>
                                                     </div>
                                                     <div class="col-md-6"><label
-                                                            class="labels font-weight-bold">Monthly Salary</label><input
+                                                            class="labels fw-bold">Monthly Salary</label><input
                                                             name="Monthly" type="text" class="form-control"
                                                             placeholder="Monthly Salary"><span
                                                             class="text-danger">@error('Monthly'){{ $message }}
@@ -119,21 +119,21 @@
                                                 </div>
                                                 <div class="row mt-3">
                                                     <div class="col-md-12"><label
-                                                            class="labels font-weight-bold">Industry</label><input
+                                                            class="labels fw-bold">Industry</label><input
                                                             type="text" name="Industry" class="form-control"
                                                             placeholder="Industry"><span
                                                             class="text-danger">@error('Industry'){{ $message }}
                                                             @enderror</span>
                                                     </div>
                                                     <div class="col-md-12"><label
-                                                            class="labels font-weight-bold">Position Level</label><input
+                                                            class="labels fw-bold">Position Level</label><input
                                                             type="text" name="Position" class="form-control"
                                                             placeholder="Position Level"><span
                                                             class="text-danger">@error('Position'){{ $message }}
                                                             @enderror</span>
                                                     </div>
                                                     <div class="col-md-12"><label
-                                                            class="labels font-weight-bold">Additional
+                                                            class="labels fw-bold">Additional
                                                             Information</label><input type="group-text"
                                                             name="additional" class="form-control"
                                                             placeholder="Additional Information"><span
@@ -143,16 +143,16 @@
                                                 </div>
                                                 <div class="mt-5">
                                                     <div class="row">
-                                                        <div class="col-6 text-left">
+                                                        <div class="col-6 text-start">
                                                             <button
-                                                                class="btn btn-danger profile-button font-weight-bold"
+                                                                class="btn btn-danger profile-button fw-bold"
                                                                 type="submit">Add
                                                             </button>
                                                         </div>
-                                                        <div class="col-6 text-right">
+                                                        <div class="col-6 text-end">
 
                                                             <a href="{{ route('u_dash') }}"
-                                                                class="btn btn-secondary text-white font-weight-bold">
+                                                                class="btn btn-secondary text-white fw-bold">
                                                                 <i class="bi bi-x-lg"></i>
                                                                 Cancel
                                                             </a>

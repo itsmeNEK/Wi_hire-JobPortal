@@ -28,7 +28,7 @@
 
                             @csrf
                             <div class="row">
-                                <div class="col-12 text-left">
+                                <div class="col-12 text-start">
                                     <a class=" text-danger" href="{{ route('c_dash') }}">
                                         Dashbaord
                                     </a>/
@@ -49,7 +49,7 @@
                                     </div>
                                 </div>
                                 <br>
-                                <h3 class=" text-left text-secondary">Personal Information</h3>
+                                <h3 class=" text-start text-secondary">Personal Information</h3>
                                 <br>
                             </div>
                             <!-- user id -->
@@ -65,12 +65,12 @@
                                 </div>
                             @endif
                             <div class="row mt-12">
-                                <div class="col-sm-6"><label class="labels font-weight-bold">Company
+                                <div class="col-sm-6"><label class="labels fw-bold">Company
                                         Name</label><input name="cname" type="text"
-                                        class="font-weight-bold text-center form-control"
+                                        class="fw-bold text-center form-control"
                                         value="{{ $LoggedUserInfo['cname'] }}">
                                 </div>
-                                <div class="col-sm-12"><label class="labels font-weight-bold">Company
+                                <div class="col-sm-12"><label class="labels fw-bold">Company
                                         Description</label>
                                     <textarea class="form-control" id="message" name="cdescription" rows="12"
                                         placeholder="Company Description">{{ $LoggedUserInfo['cdescription'] }}</textarea>
@@ -79,43 +79,43 @@
                                 </div>
                             </div>
                             <div class="row mt-3">
-                                <div class="col-md-6"><label class="labels font-weight-bold">Contact
+                                <div class="col-md-6"><label class="labels fw-bold">Contact
                                         Person</label><input name="cpname" type="text" class="form-control"
                                         placeholder="Enter Mobile number" value="{{ $LoggedUserInfo['cpname'] }}">
                                 </div>
-                                <div class="col-md-6"><label class="labels font-weight-bold ">Email
+                                <div class="col-md-6"><label class="labels fw-bold ">Email
                                     </label><input name="email" disabled type="text" class="form-control"
                                         placeholder="Enter Email" value="{{ $LoggedUserInfo['email'] }}">
                                 </div>
                             </div>
                             <hr>
-                            <h3 class="text-left text-secondary">Address Information</h3>
+                            <h3 class="text-start text-secondary">Address Information</h3>
                             <br>
                             <div class="row mt-3">
                                 <div class="col-md-6"><label
-                                        class="labels font-weight-bold">Province</label><input type="text"
+                                        class="labels fw-bold">Province</label><input type="text"
                                         name="province" class="form-control" placeholder="Province"
                                         value="{{ $LoggedUserInfo['province'] }}">
                                 </div>
                                 <div class="col-md-6"><label
-                                        class="labels font-weight-bold">City/Municipality</label><input name="city"
+                                        class="labels fw-bold">City/Municipality</label><input name="city"
                                         type="text" class="form-control" value="{{ $LoggedUserInfo['city'] }}"
                                         placeholder="City/Municipality">
                                 </div>
                                 <div class="col-md-6"><label
-                                        class="labels font-weight-bold">Barangay</label><input type="text"
+                                        class="labels fw-bold">Barangay</label><input type="text"
                                         name="barangay" class="form-control" placeholder="Barangay"
                                         value="{{ $LoggedUserInfo['barangay'] }}">
                                 </div>
-                                <div class="col-md-6"><label class="labels font-weight-bold">Street</label><input
+                                <div class="col-md-6"><label class="labels fw-bold">Street</label><input
                                         type="text" name="street" class="form-control"
                                         value="{{ $LoggedUserInfo['street'] }}" placeholder="Street">
                                 </div>
-                                <div class="col-md-6"><label class="labels font-weight-bold">House#/Bldg#
+                                <div class="col-md-6"><label class="labels fw-bold">House#/Bldg#
                                     </label><input name="HBnum" type="text" class="form-control"
                                         placeholder="House/Bldg Number" value="{{ $LoggedUserInfo['HBnum'] }}">
                                 </div>
-                                <div class="col-md-6"><label class="labels font-weight-bold">Post
+                                <div class="col-md-6"><label class="labels fw-bold">Post
                                         Code
                                     </label><input name="postcode" type="text" class="form-control"
                                         placeholder="Post Code" value="{{ $LoggedUserInfo['postcode'] }}">
@@ -124,13 +124,13 @@
                             <hr>
 
                             <div class="row mt-5">
-                                <div class="col-6 text-left">
-                                    <button class="btn btn-danger profile-button font-weight-bold" type="submit">
+                                <div class="col-6 text-start">
+                                    <button class="btn btn-danger profile-button fw-bold" type="submit">
                                         <i class="bi bi-check-lg">Save</i></button>
                                 </div>
-                                <div class="col-6 text-right">
+                                <div class="col-6 text-end">
                                     <a href="{{ route('c_dash') }}"
-                                        class="btn btn-secondary text-white font-weight-bold">
+                                        class="btn btn-secondary text-white fw-bold">
                                         <i class="bi bi-x-lg"></i>
                                         Cancel
                                     </a>
@@ -143,15 +143,15 @@
 
 
                     <div class="row-mt-2">
-                        <div class="col-md-6 text-left">
-                            <h3 class="text-left text-secondary">Attach document</h3>
+                        <div class="col-md-6 text-start">
+                            <h3 class="text-start text-secondary">Attach document</h3>
                             <p class="text-danger" style="font-size: 14px"> Note: You Cannot Create
                                 or post jobs
                                 if you are not verified by the admin
                                 Please Upload Picture or Document/s that can Justify or Prove that
                                 you have a business establishment. Thankyou</p>
                         </div>
-                        <div class="col-md-6 text-right">
+                        <div class="col-md-6 text-end">
                             <form action="{{ route('c_file_upload') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="userid" value="{{ $LoggedUserInfo['id'] }}">
@@ -172,7 +172,7 @@
                                 <thead>
                                     <tr>
                                         <th><a>Name</a></th>
-                                        <th class="text-right"><a>Delete</a></th>
+                                        <th class="text-end"><a>Delete</a></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -181,7 +181,7 @@
                                             <tr>
                                                 <td><i class="bi bi-file-earmark"></i><a>{{ $info->file_path }}</a>
                                                 </td>
-                                                <td class="text-right">
+                                                <td class="text-end">
                                                     <button type="button" id="{{ $info->id }}"
                                                         class="btn btn-white btn-view" data-toggle="modal"
                                                         data-target="#{{ $info->id }}"><i class="bi bi-trash"

@@ -5,8 +5,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- CSS only -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <!-- JavaScript Bundle with Popper -->
@@ -59,7 +58,7 @@
                         <div class="list-group">
                             @if ($active != null)
                                 <div class="list-group-item list-group-item-action bg-light border-0">
-                                    <span class="text-secondary font-weight-bold">Mailbox</span>
+                                    <span class="text-secondary fw-bold">Mailbox</span>
                                     @forelse ( $inbox as $info)
                                         <a aria-current="true" href="view_mail/{{ Crypt::encrypt($info->id) }}"
                                             class="nav-link text-dark bg-light">
@@ -73,7 +72,7 @@
                                                 <div class="d-flex w-100 justify-content-between">
                                                     {{ $info->subject }}
                                                 </div>
-                                                <div style="font-size: 12px" class="col-sm-12 text-right">
+                                                <div style="font-size: 12px" class="col-sm-12 text-end">
                                                     <small
                                                         class="text-secondary">{{ Carbon\Carbon::parse($info->created_at)->diffForHumans() }}</small>
                                                 </div>
@@ -91,13 +90,13 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link font-weight-bold" href="{{ route('jobs') }}">Job</a>
+                        <a class="nav-link fw-bold" href="{{ route('jobs') }}">Job</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link font-weight-bold" href="{{ route('companies') }}">Companies</a>
+                        <a class="nav-link fw-bold" href="{{ route('companies') }}">Companies</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link font-weight-bold" href="{{ route('howto2') }}">How to Use</a>
+                        <a class="nav-link fw-bold" href="{{ route('howto2') }}">How to Use</a>
                     </li>
                 </ul>
             </div>
@@ -117,7 +116,7 @@
                 <div class="list-group">
                     @if ($active != null)
                         <div class="list-group-item list-group-item-action bg-light border-0">
-                            <span class="text-secondary font-weight-bold">Mailbox</span>
+                            <span class="text-secondary fw-bold">Mailbox</span>
                             @forelse ( $inbox as $info)
                                 <a aria-current="true" href="view_mail/{{ Crypt::encrypt($info->id) }}"
                                     class="nav-link text-dark bg-light">
@@ -131,7 +130,7 @@
                                         <div class="d-flex w-100 justify-content-between">
                                             {{ $info->subject }}
                                         </div>
-                                        <div style="font-size: 12px" class="col-sm-12 text-right">
+                                        <div style="font-size: 12px" class="col-sm-12 text-end">
                                             <small
                                                 class="text-secondary">{{ Carbon\Carbon::parse($info->created_at)->diffForHumans() }}</small>
                                         </div>
@@ -161,16 +160,16 @@
             <ul style="padding-left:10px;" class="" id=" menu">
                 <li class="nav-item">
                     <a href="{{ route('u_dash') }}"
-                        class="font-weight-bold nav-link text-light align-middle px-2">
+                        class="fw-bold nav-link text-light align-middle px-2">
                         <i class="bi bi-speedometer2"></i> <span aria-current="page">
                             Profile</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('u_mail_inbox') }}"
-                        class="font-weight-bold nav-link text-light align-middle px-2 bg-danger">
+                        class="fw-bold nav-link text-light align-middle px-2 bg-danger">
                         <div class="row">
-                            <div class="col-8 text-left">
+                            <div class="col-8 text-start">
                                 <i class="bi bi-mailbox"></i> <span aria-current="page">
                                     Mailbox
                                 </span>
@@ -184,14 +183,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('u_sett') }}" class="font-weight-bold nav-link text-light align-middle px-2">
+                    <a href="{{ route('u_sett') }}" class="fw-bold nav-link text-light align-middle px-2">
 
                         <i class="bi bi-sliders"></i> <span aria-current="page">
                             Settings</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('u_logout') }}" class="font-weight-bold nav-link text-light align-middle px-2">
+                    <a href="{{ route('u_logout') }}" class="fw-bold nav-link text-light align-middle px-2">
 
                         <i class="bi bi-box-arrow-left" style=""></i> <span aria-current="page">
                             Logout</span>
@@ -216,16 +215,16 @@
             <ul style="padding-left:10px;" class="" id=" menu">
                 <li class="nav-item">
                     <a href="{{ route('u_dash') }}"
-                        class="font-weight-bold nav-link text-light align-middle px-2">
+                        class="fw-bold nav-link text-light align-middle px-2">
                         <i class="bi bi-speedometer2"></i> <span aria-current="page">
                             Profile</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('u_mail_inbox') }}"
-                        class="font-weight-bold nav-link text-light align-middle px-2 bg-danger">
+                        class="fw-bold nav-link text-light align-middle px-2 bg-danger">
                         <div class="row">
-                            <div class="col-8 text-left">
+                            <div class="col-8 text-start">
                                 <i class="bi bi-mailbox"></i> <span aria-current="page">
                                     Mailbox
                                 </span>
@@ -239,14 +238,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('u_sett') }}" class="font-weight-bold  nav-link text-light align-middle px-2">
+                    <a href="{{ route('u_sett') }}" class="fw-bold  nav-link text-light align-middle px-2">
 
                         <i class="bi bi-sliders"></i> <span aria-current="page">
                             Settings</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('u_logout') }}" class="font-weight-bold nav-link text-light align-middle px-2">
+                    <a href="{{ route('u_logout') }}" class="fw-bold nav-link text-light align-middle px-2">
 
                         <i class="bi bi-box-arrow-left" style=""></i> <span aria-current="page">
                             Logout</span>
@@ -263,15 +262,15 @@
             <br>
             <br>
             <div class="row">
-                <div class="col-6 text-left">
+                <div class="col-6 text-start">
                     <div class="btn-group rounded" role="group" aria-label="Second group">
                         <a href="{{ route('u_mail_inbox') }}"><button type="button"
-                                class="gbot btn-danger text-light font-weight-bold rounded-left">
+                                class="gbot btn-danger text-light fw-bold rounded-left">
                                 <i class="bot3 bi bi-inboxes"></i>
                                 INBOX
                             </button></a>
                         <a href="{{ route('u_mail') }}">
-                            <button type="button" class="gbot btn-danger text-light font-weight-bold rounded-right">
+                            <button type="button" class="gbot btn-danger text-light fw-bold rounded-right">
                                 <i class="bot3 bi bi-card-checklist"></i>
                                 SENT
                             </button>
@@ -289,7 +288,7 @@
 
                             <div class="row">
                                 @if ($senderInfo->fname)
-                                <div class="col-6 text-left text-danger">
+                                <div class="col-6 text-start text-danger">
                                     From:
                                     <img class="avatar rounded-circle border border-light " width="40px"
                                         src="/users/images/{{ $senderInfo['prof_pic'] }}"><strong
@@ -297,7 +296,7 @@
                                             {{ $senderInfo['lname'] }}</b></strong>
                                 </div><br>
                             @elseif($senderInfo->cname)
-                                <div class="col-6 text-left text-danger">
+                                <div class="col-6 text-start text-danger">
                                     From:
                                     <img class="avatar rounded-circle border border-light " width="40px"
                                         src="/company/images/{{ $senderInfo['prof_pic'] }}"><strong
@@ -305,7 +304,7 @@
                                         <b class="text-dark"> {{ $senderInfo['cname'] }}</b></strong>
                                 </div><br>
                             @else
-                                <div class="col-6 text-left text-danger">
+                                <div class="col-6 text-start text-danger">
                                     From:
                                     <img class="avatar rounded-circle border border-light " width="40px"
                                         src="/img/wihireicon.png"><strong
@@ -314,7 +313,7 @@
                                 </div><br>
                             @endif
                             @if ($receiverinfo->fname)
-                                <div class="col-6 text-left text-danger">
+                                <div class="col-6 text-start text-danger">
                                     To:
                                     <img class="avatar rounded-circle border border-light " width="40px"
                                         src="/users/images/{{ $receiverinfo['prof_pic'] }}"><strong
@@ -323,7 +322,7 @@
                                             {{ $receiverinfo['lname'] }}</b></strong>
                                 </div><br>
                             @elseif($receiverinfo->cname)
-                                <div class="col-6 text-left text-danger">
+                                <div class="col-6 text-start text-danger">
                                     To:
                                     <img class="avatar rounded-circle border border-light " width="40px"
                                         src="/company/images/{{ $receiverinfo['prof_pic'] }}"><strong
@@ -331,7 +330,7 @@
                                         <b class="text-dark"> {{ $receiverinfo['cname'] }}</b></strong>
                                 </div><br>
                             @else
-                            <div class="col-6 text-left text-danger">
+                            <div class="col-6 text-start text-danger">
                                 To:
                                 <img class="avatar rounded-circle border border-light " width="40px"
                                     src="/img/wihireicon.png"><strong
@@ -367,21 +366,21 @@
 
                     </div>
                     @if ($LoggedUserInfo->email == $mailInfo->to)
-                        <div class="col-5 text-left">
+                        <div class="col-5 text-start">
                             <a class="text-decoration-none text-white" href="reply/ {{ Crypt::encrypt($mailInfo->id); }}"><button
-                                    type="button" class="gbot btn-danger text-light font-weight-bold rounded">
+                                    type="button" class="gbot btn-danger text-light fw-bold rounded">
                                     <i class="bot3 bi bi-reply-fill"></i>
                                     Reply
                                 </button></a>
                         </div>
                     @endif
-                    <div class="col-5 text-right">
+                    <div class="col-5 text-end">
                         @if ($receiverinfo['email'] == $LoggedUserInfo->email)
                             <a class="text-decoration-none text-white" href="{{ url()->previous() }}"><button
-                                    type="button" class="gbot btn-danger text-light font-weight-bold rounded">
+                                    type="button" class="gbot btn-danger text-light fw-bold rounded">
                                 @else
                                     <a class="text-decoration-none text-white" href="{{ url()->previous() }}"><button
-                                            type="button" class="gbot btn-danger text-light font-weight-bold rounded">
+                                            type="button" class="gbot btn-danger text-light fw-bold rounded">
                         @endif
                         <i class="bot3 bi bi-backspace-fill"></i>
                         Back
@@ -399,30 +398,18 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <!-- JavaScript Bundle with Popper -->
-
     <script src="js/bootstrap.bundle.min.js"></script>
-    <!-- Add icon library -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
 </html>

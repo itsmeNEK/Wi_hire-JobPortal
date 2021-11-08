@@ -34,14 +34,14 @@
             <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
                 <ul class="navbar-nav ms-auto mb-2 mb-sm-0">
                     <li class="nav-item">
-                        <a class="nav-link font-weight-bold" href="{{ route('howto2') }}">How to Use</a>
+                        <a class="nav-link fw-bold" href="{{ route('howto2') }}">How to Use</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link font-weight-bold" href="{{ route('u_login') }}">Login <b>(Job
+                        <a class="nav-link fw-bold" href="{{ route('u_login') }}">Login <b>(Job
                                 Seeker)</b></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link font-weight-bold" href="#">Login<b> (Company)</b></a>
+                        <a class="nav-link fw-bold" href="#">Login<b> (Company)</b></a>
                     </li>
                 </ul>
             </div>
@@ -58,7 +58,7 @@
                         {{ Session::get('fail') }}
                     </div>
                 @endif
-                <h3 class="font-weight-bold">Forgot Password</h3>
+                <h3 class="fw-bold">Forgot Password</h3>
                     Please enter your <b>Email address</b> to reset password.
                 <hr>
                 <div class="form-wrapper">
@@ -72,7 +72,7 @@
                 </div>
                 <br>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-danger font-weight-bold">Enter</button>
+                    <button type="submit" class="btn btn-danger fw-bold">Enter</button>
                 </div>
             </form>
         </div>

@@ -6,8 +6,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- CSS only -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
@@ -49,7 +48,7 @@
                         <div class="list-group">
                             @if ($active != null)
                                 <div class="list-group-item list-group-item-action bg-light border-0">
-                                    <span class="text-secondary font-weight-bold">Mailbox</span>
+                                    <span class="text-secondary fw-bold">Mailbox</span>
                                     @forelse ( $inbox as $info)
                                         <a aria-current="true" href="c_view_mail/{{ Crypt::encrypt($info->id) }}"
                                             class="nav-link text-dark bg-light">
@@ -65,7 +64,7 @@
                                                 <div class="d-flex w-100 justify-content-between">
                                                     {{ $info->subject }}
                                                 </div>
-                                                <div style="font-size: 12px" class="col-sm-12 text-right">
+                                                <div style="font-size: 12px" class="col-sm-12 text-end">
                                                     <small
                                                         class="text-secondary">{{ Carbon\Carbon::parse($info->created_at)->diffForHumans() }}</small>
                                                 </div>
@@ -80,7 +79,7 @@
                         <div class="list-group bg-light">
                             @if ($appcountnew != null)
                                 <div class="list-group-item list-group-item-action bg-light border-0">
-                                    <span class="text-secondary font-weight-bold">Mailbox</span>
+                                    <span class="text-secondary fw-bold">Mailbox</span>
                                     @forelse ( $appcountnew_info as $info)
                                         <a aria-current="true" href="{{ route('c_appManage') }}"
                                             class="nav-link text-dark bg-light">
@@ -89,7 +88,7 @@
                                                 <div class="d-flex w-100 justify-content-between">
                                                     {{ $info->username }}
                                                 </div>
-                                                <div style="font-size: 12px" class="col-sm-12 text-right">
+                                                <div style="font-size: 12px" class="col-sm-12 text-end">
                                                     <small
                                                         class="text-secondary">{{ Carbon\Carbon::parse($info->created_at)->diffForHumans() }}</small>
                                                 </div>
@@ -107,10 +106,10 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link font-weight-bold" href="{{ route('talent') }}">Talent Search</a>
+                        <a class="nav-link fw-bold" href="{{ route('talent') }}">Talent Search</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link font-weight-bold" href="{{ route('howto2') }}">How to Use</a>
+                        <a class="nav-link fw-bold" href="{{ route('howto2') }}">How to Use</a>
                     </li>
                 </ul>
             </div>
@@ -131,7 +130,7 @@
                     <div class="list-group">
                         @if ($active != null)
                             <div class="list-group-item list-group-item-action bg-light border-0">
-                                <span class="text-secondary font-weight-bold">Mailbox</span>
+                                <span class="text-secondary fw-bold">Mailbox</span>
                                 @forelse ( $inbox as $info)
                                     <a aria-current="true" href="c_view_mail/{{ Crypt::encrypt($info->id) }}"
                                         class="nav-link text-dark bg-light">
@@ -147,7 +146,7 @@
                                             <div class="d-flex w-100 justify-content-between">
                                                 {{ $info->subject }}
                                             </div>
-                                            <div style="font-size: 12px" class="col-sm-12 text-right">
+                                            <div style="font-size: 12px" class="col-sm-12 text-end">
                                                 <small
                                                     class="text-secondary">{{ Carbon\Carbon::parse($info->created_at)->diffForHumans() }}</small>
                                             </div>
@@ -162,7 +161,7 @@
                     <div class="list-group bg-light">
                         @if ($appcountnew != null)
                             <div class="list-group-item list-group-item-action bg-light border-0">
-                                <span class="text-secondary font-weight-bold">Mailbox</span>
+                                <span class="text-secondary fw-bold">Mailbox</span>
                                 @forelse ( $appcountnew_info as $info)
                                     <a aria-current="true" href="{{ route('c_appManage') }}"
                                         class="nav-link text-dark bg-light">
@@ -171,7 +170,7 @@
                                             <div class="d-flex w-100 justify-content-between">
                                                 {{ $info->username }}
                                             </div>
-                                            <div style="font-size: 12px" class="col-sm-12 text-right">
+                                            <div style="font-size: 12px" class="col-sm-12 text-end">
                                                 <small
                                                     class="text-secondary">{{ Carbon\Carbon::parse($info->created_at)->diffForHumans() }}</small>
                                             </div>
@@ -184,8 +183,8 @@
                         @endif
                     </div>
                 @else
-                    <div class="col-sm-12 col-md-12 col-lg-12 text-center font-weight-bold">
-                        <span class="text-secondary font-weight-bold">No New Notifications</span>
+                    <div class="col-sm-12 col-md-12 col-lg-12 text-center fw-bold">
+                        <span class="text-secondary fw-bold">No New Notifications</span>
                     </div>
                 @endif
             </ul>
@@ -205,30 +204,30 @@
             <ul style="padding-left:10px;" class="" id=" menu">
                 <li class="nav-item">
                     <a href="{{ route('c_dash') }}"
-                        class="font-weight-bold nav-link text-light align-middle px-2 @yield('dash')">
+                        class="fw-bold nav-link text-light align-middle px-2 @yield('dash')">
                         <i class="bi bi-speedometer2"></i> <span aria-current="page">
                             Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('c_createjob') }}"
-                        class="font-weight-bold nav-link text-light align-middle px-2 @yield('createjob')">
+                        class="fw-bold nav-link text-light align-middle px-2 @yield('createjob')">
                         <i class="bi bi-file-earmark-person"></i> <span aria-current="page">
                             Create Job</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('c_manage') }}"
-                        class="font-weight-bold nav-link text-light align-middle px-2 @yield('managejob')">
+                        class="fw-bold nav-link text-light align-middle px-2 @yield('managejob')">
                         <i class="bi bi-person-lines-fill"></i> <span aria-current="page">
                             Manage Jobs</span>
                     </a>
                 </li>
                 <li class="nav-item has-submenu">
-                    <a type="button" class="font-weight-bold nav-link text-light align-middle px-2 @yield('applicant')"
+                    <a type="button" class="fw-bold nav-link text-light align-middle px-2 @yield('applicant')"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="row">
-                            <div class="col-8 text-left">
+                            <div class="col-8 text-start">
                                 <span class="bi bi-card-list" aria-current="page"> Applicants
                                     <i class="bi bi-caret-down-fill"></i>
                                 </span>
@@ -242,10 +241,10 @@
                     </a>
                     <ul class="submenu collapse">
                         <li>
-                            <a class="nav-link text-white font-weight-bold @yield('new-app')"
+                            <a class="nav-link text-white fw-bold @yield('new-app')"
                                 href="{{ route('c_appManage') }}">
                                 <div class="row">
-                                    <div class="col-10 text-left">
+                                    <div class="col-10 text-start">
                                         <span class="bi bi-person-plus-fill" aria-current="page"> New</span>
                                     </div>
                                     @if ($appcountnew != null)
@@ -257,12 +256,12 @@
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link text-white font-weight-bold @yield('viewed-app')"
+                            <a class="nav-link text-white fw-bold @yield('viewed-app')"
                                 href="{{ route('c_appManageViewed') }}"><i class="bi bi-eye-fill"></i> Viewed
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link text-white font-weight-bold @yield('rej-app')"
+                            <a class="nav-link text-white fw-bold @yield('rej-app')"
                                 href="{{ route('c_appManageRej') }}"><i class="bi bi-person-x-fill"></i> Rejected
                             </a>
                         </li>
@@ -270,9 +269,9 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('c_mail_inbox') }}"
-                        class="font-weight-bold nav-link text-light align-middle px-2 @yield('mail')">
+                        class="fw-bold nav-link text-light align-middle px-2 @yield('mail')">
                         <div class="row">
-                            <div class="col-8 text-left">
+                            <div class="col-8 text-start">
                                 <i class="bi bi-mailbox"></i> <span aria-current="page">
                                     Mailbox
                                 </span>
@@ -288,7 +287,7 @@
 
                 <li class="nav-item">
                     <a href="{{ route('c_settings') }}"
-                        class="font-weight-bold nav-link text-light align-middle px-2 @yield('settings')">
+                        class="fw-bold nav-link text-light align-middle px-2 @yield('settings')">
 
                         <i class="bi bi-sliders"></i> <span aria-current="page">
                             Settings</span>
@@ -296,7 +295,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('c_logout') }}"
-                        class="font-weight-bold nav-link text-light align-middle px-2">
+                        class="fw-bold nav-link text-light align-middle px-2">
 
                         <i class="bi bi-box-arrow-left" style=""></i> <span aria-current="page">
                             Logout</span>
@@ -320,31 +319,31 @@
             <ul style="padding-left:10px;" class="" id=" menu">
                 <li class="nav-item">
                     <a href="{{ route('c_dash') }}"
-                        class="font-weight-bold nav-link text-light align-middle px-2 @yield('dash')">
+                        class="fw-bold nav-link text-light align-middle px-2 @yield('dash')">
                         <i class="bi bi-speedometer2"></i> <span aria-current="page">
                             Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('c_createjob') }}"
-                        class="font-weight-bold nav-link text-light align-middle px-2 @yield('createjob')">
+                        class="fw-bold nav-link text-light align-middle px-2 @yield('createjob')">
                         <i class="bi bi-file-earmark-person"></i> <span aria-current="page">
                             Create Job</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('c_manage') }}"
-                        class="font-weight-bold nav-link text-light align-middle px-2 @yield('managejob')">
+                        class="fw-bold nav-link text-light align-middle px-2 @yield('managejob')">
                         <i class="bi bi-person-lines-fill"></i> <span aria-current="page">
                             Manage Jobs</span>
                     </a>
                 </li>
                 <li class="nav-item has-submenu">
                     <a type="button"
-                        class="font-weight-bold nav-link text-light align-middle px-2 @yield('applicant')"
+                        class="fw-bold nav-link text-light align-middle px-2 @yield('applicant')"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="row">
-                            <div class="col-8 text-left">
+                            <div class="col-8 text-start">
                                 <span class="bi bi-card-list" aria-current="page"> Applicants
                                     <i class="bi bi-caret-down-fill"></i>
                                 </span>
@@ -358,17 +357,17 @@
                     </a>
                     <ul class="submenu collapse">
                         <li>
-                            <a class="nav-link text-white font-weight-bold @yield('new-app')"
+                            <a class="nav-link text-white fw-bold @yield('new-app')"
                                 href="{{ route('c_appManage') }}"><i class="bi bi-person-plus-fill"></i> New
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link text-white font-weight-bold @yield('viewed-app')"
+                            <a class="nav-link text-white fw-bold @yield('viewed-app')"
                                 href="{{ route('c_appManageViewed') }}"><i class="bi bi-eye-fill"></i>Viewed
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link text-white font-weight-bold @yield('rej-app')"
+                            <a class="nav-link text-white fw-bold @yield('rej-app')"
                                 href="{{ route('c_appManageRej') }}"><i class="bi bi-person-x-fill"></i>
                                 Rejected
                             </a>
@@ -377,9 +376,9 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('c_mail_inbox') }}"
-                        class="font-weight-bold nav-link text-light align-middle px-2 @yield('mail')">
+                        class="fw-bold nav-link text-light align-middle px-2 @yield('mail')">
                         <div class="row">
-                            <div class="col-8 text-left">
+                            <div class="col-8 text-start">
                                 <i class="bi bi-mailbox"></i> <span aria-current="page">
                                     Mailbox
                                 </span>
@@ -395,7 +394,7 @@
 
                 <li class="nav-item">
                     <a href="{{ route('c_settings') }}"
-                        class="font-weight-bold nav-link text-light align-middle px-2 @yield('settings')">
+                        class="fw-bold nav-link text-light align-middle px-2 @yield('settings')">
 
                         <i class="bi bi-sliders"></i> <span aria-current="page">
                             Settings</span>
@@ -403,7 +402,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('c_logout') }}"
-                        class="font-weight-bold nav-link text-light align-middle px-2">
+                        class="fw-bold nav-link text-light align-middle px-2">
 
                         <i class="bi bi-box-arrow-left" style=""></i> <span aria-current="page">
                             Logout</span>
@@ -420,32 +419,22 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
         integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
     </script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script scrc="https://tryit.w3schools.com/code_datas.php"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
     @section('customJS')
 

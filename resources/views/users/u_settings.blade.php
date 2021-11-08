@@ -49,7 +49,7 @@
 
                                         @csrf
                                         <div class="form-group">
-                                            <label for="inputPasswordOld " class="font-weight-bold">Current
+                                            <label for="inputPasswordOld " class="fw-bold">Current
                                                 Password</label>
                                             <input type="password" name="currentpass" class="form-control"
                                                 id="inputPasswordOld" required="">
@@ -58,7 +58,7 @@
                                                 @enderror</span>
                                         </div>
                                         <div class="form-group">
-                                            <label for="inputPasswordNew" class="font-weight-bold">New Password</label>
+                                            <label for="inputPasswordNew" class="fw-bold">New Password</label>
                                             <input onkeyup="checkPasswordMatch();" type="password" name="newpass" class="form-control"
                                                 id="inputPasswordNew" required="">
                                             <span style="color: #fa695f;"
@@ -70,7 +70,7 @@
 
                                         </div>
                                         <div class="form-group">
-                                            <label for="inputPasswordNewVerify" class="font-weight-bold">Confirm
+                                            <label for="inputPasswordNewVerify" class="fw-bold">Confirm
                                                 Password</label>
                                             <input onkeyup="checkPasswordMatch();" type="password" name="cpass" class="form-control"
                                                 id="inputPasswordNewVerify" required="">

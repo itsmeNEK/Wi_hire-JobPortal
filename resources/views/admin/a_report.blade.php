@@ -21,7 +21,7 @@
 <div id="exTab2">
     <div class="card card-outline-secondary">
         <div class="card-header">
-            <h3 class=" h3 mb-0 rounded bg-danger font-weight-bold text-lg-center text-light">Website Issues Reports
+            <h3 class=" h3 mb-0 rounded bg-danger fw-bold text-lg-center text-light">Website Issues Reports
             </h3>
             <table>
                 <thead>

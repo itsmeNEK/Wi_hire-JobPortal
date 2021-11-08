@@ -18,43 +18,43 @@
         <h1>How to Use Wihire job-Portal</h1>
         <ul id="menu text-dark">
             <li class="nav-item">
-                <a type="button" class="font-weight-bold text-dark align-middle px-2 ">
+                <a type="button" class="fw-bold text-dark align-middle px-2 ">
                     <i class="bi bi-question text-danger"></i> <span aria-current="page">
                         Mailling</span>
                 </a>
                 <ul class="submenu">
                     <li>
-                        <a class="nav-link text-secondary font-weight-bold" href="#1">
+                        <a class="nav-link text-secondary fw-bold" href="#1">
                             <i class="bi bi-question text-danger"></i>
                             Creating Mail
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link text-secondary font-weight-bold" href="#2">
+                        <a class="nav-link text-secondary fw-bold" href="#2">
                             <i class="bi bi-question text-danger"></i>
                             Inbox Mail
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link text-secondary font-weight-bold" href="#3">
+                        <a class="nav-link text-secondary fw-bold" href="#3">
                             <i class="bi bi-question text-danger"></i>
                             Sent Mail
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link text-secondary font-weight-bold" href="#4">
+                        <a class="nav-link text-secondary fw-bold" href="#4">
                             <i class="bi bi-question text-danger"></i>
                             Viewing Mail
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link text-secondary font-weight-bold" href="#5">
+                        <a class="nav-link text-secondary fw-bold" href="#5">
                             <i class="bi bi-question text-danger"></i>
                             Replying Mail
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link text-secondary font-weight-bold" href="#6">
+                        <a class="nav-link text-secondary fw-bold" href="#6">
                             <i class="bi bi-question text-danger"></i>
                             Deleting Mail
                         </a>

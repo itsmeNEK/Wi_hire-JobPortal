@@ -35,25 +35,25 @@
         @endif
         <br>
         <div class="row" style="margin-top: -25px">
-            <div class="col-6 text-left">
+            <div class="col-6 text-start">
                 <div class="btn-group rounded" role="group" aria-label="Second group">
                     <a href="{{ route('c_mail_inbox') }}"><button type="button"
-                            class="gbot btn-danger text-light font-weight-bold rounded-left">
+                            class="gbot btn-danger text-light fw-bold rounded-left">
                             <i class="bot3 bi bi-inboxes"></i>
                             INBOX
                         </button></a>
                     <a href="{{ route('c_mail') }}">
-                        <button type="button" class="gbot btn-danger text-light font-weight-bold rounded-right">
+                        <button type="button" class="gbot btn-danger text-light fw-bold rounded-right">
                             <i class="bot3 bi bi-card-checklist"></i>
                             SENT
                         </button>
                     </a>
                 </div>
             </div>
-            <div class="col-6 text-right">
-                <div class="text-right">
+            <div class="col-6 text-end">
+                <div class="text-end">
                     <a href="{{ route('c_mail_create') }}"><button type="button"
-                            class="gbot btn-danger text-light font-weight-bold rounded">
+                            class="gbot btn-danger text-light fw-bold rounded">
                             <i class="bot3 bi bi-pencil-square"></i>
                             Create
                         </button></a>
@@ -65,7 +65,7 @@
     <div id="exTab2">
         <div class="card card-outline-secondary">
             <div class="card-header">
-                <h3 class=" h3 mb-0 rounded bg-danger font-weight-bold text-lg-center text-light">SENT
+                <h3 class=" h3 mb-0 rounded bg-danger fw-bold text-lg-center text-light">SENT
                 </h3>
                 <table>
                     <thead>

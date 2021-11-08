@@ -29,7 +29,7 @@
             <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
                 <ul class="navbar-nav ms-auto mb-2 mb-sm-0">
                     <li class="nav-item">
-                        <a class="nav-link font-weight-bold" href="{{ route('howto2') }}">How to Use</a>
+                        <a class="nav-link fw-bold" href="{{ route('howto2') }}">How to Use</a>
                     </li>
                 </ul>
             </div>
@@ -47,7 +47,7 @@
                     </div>
                 @endif
                 <input type="hidden" name="email"value="{{ $user_info['email'] }}">
-                <h3 class="font-weight-bold">Company / Employer Verification</h3>
+                <h3 class="fw-bold">Company / Employer Verification</h3>
                 hi! <b>{{ $user_info['fname'] }}</b> An verification code has been sent to <i><b>{{ $user_info['email'] }}</b></i>
                 check you email in the email address you inputed and enter the verification code below
                 <hr>
@@ -62,7 +62,7 @@
 
                 <br>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-danger font-weight-bold">Verify</button>
+                    <button type="submit" class="btn btn-danger fw-bold">Verify</button>
                 </div>
             </form>
         </div>

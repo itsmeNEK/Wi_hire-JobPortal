@@ -49,9 +49,9 @@
                 </div>
                 <br>
                 <div class="row">
-                    <div class="col-11 text-right">
+                    <div class="col-11 text-end">
                         <a class="text-decoration-none text-white" href="{{ url()->previous() }}"><button
-                                type="button" class="gbot btn-danger text-light font-weight-bold rounded">
+                                type="button" class="gbot btn-danger text-light fw-bold rounded">
                                 <i class="bot3 bi bi-arrow-left"></i>
                                 Back
                             </button></a>

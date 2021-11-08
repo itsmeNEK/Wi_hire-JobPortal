@@ -25,7 +25,7 @@
                             <div class="rounded bg-transaprent">
                                 <div class="row">
                                     <div class="row">
-                                        <div class="col-12 text-left font-weight-bold">
+                                        <div class="col-12 text-start fw-bold">
                                             <a class=" text-danger" href="{{ route('u_dash') }}">
                                                 Profile
                                             </a>/
@@ -36,7 +36,7 @@
                                     </div>
                                     <div class="text-center">
                                         <div class="p-3 py-5">
-                                            <div class="text-left">
+                                            <div class="text-start">
                                                 <h4 class="">Skills Information</h4>
                                             </div>
                                             <hr>
@@ -52,14 +52,14 @@
 
                                             <div class="row mt-2">
                                                 <div class="col-md-6"><label
-                                                        class="labels font-weight-bold">Skills</label><input
+                                                        class="labels fw-bold">Skills</label><input
                                                         name="Skills" type="text" class="form-control"
                                                         placeholder="Skills"><span
                                                         class="text-danger">@error('Skills'){{ $message }}
                                                         @enderror</span>
                                                 </div>
                                                 <div class="col-md-6"><label
-                                                        class="labels font-weight-bold">Proficiency
+                                                        class="labels fw-bold">Proficiency
                                                     </label><input name="proficiency" id="browser" list="browsers"
                                                         class="form-control" placeholder="Proficiency">
                                                     <datalist id="browsers">
@@ -74,15 +74,15 @@
                                             </div>
                                             <div class="mt-5 text-center">
                                                 <div class="row">
-                                                    <div class="col-6 text-left">
-                                                        <button class="btn btn-danger profile-button font-weight-bold"
+                                                    <div class="col-6 text-start">
+                                                        <button class="btn btn-danger profile-button fw-bold"
                                                             type="submit">Add
                                                         </button>
                                                     </div>
-                                                    <div class="col-6 text-right">
+                                                    <div class="col-6 text-end">
 
                                                         <a href="{{ route('u_dash') }}"
-                                                            class="btn btn-secondary text-white font-weight-bold">
+                                                            class="btn btn-secondary text-white fw-bold">
                                                             <i class="bi bi-x-lg"></i>
                                                             Cancel
                                                         </a>

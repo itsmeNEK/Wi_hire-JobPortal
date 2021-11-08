@@ -23,21 +23,21 @@
         <br>
         <br>
         <div class="row" style="margin-top: -25px">
-            <div class="col-6 text-left">
+            <div class="col-6 text-start">
                 <div class="btn-group rounded" role="group" aria-label="Second group">
                     <a href="{{ route('c_appManage') }}"><button type="button"
-                            class="gbot btn-danger text-light font-weight-bold rounded-left">
+                            class="gbot btn-danger text-light fw-bold rounded-left">
                             <i class="bot3 bi bi-inboxes"></i>
                             New
                         </button></a>
                     <a href="{{ route('c_appManageViewed') }}">
-                        <button type="button" class="gbot btn-danger text-light font-weight-bold">
+                        <button type="button" class="gbot btn-danger text-light fw-bold">
                             <i class="bot3 bi bi-card-checklist"></i>
                             Viewed
                         </button>
                     </a>
                     <a href="{{ route('c_appManageRej') }}">
-                        <button type="button" class="gbot btn-danger text-light font-weight-bold rounded-right">
+                        <button type="button" class="gbot btn-danger text-light fw-bold rounded-right">
                             <i class="bot3 bi bi-person-x-fill"></i>
                             Rejected
                         </button>
@@ -73,7 +73,7 @@
                             @else
                                 <div class="row">
                                     <div class="row">
-                                        <div class="col-12 text-left">
+                                        <div class="col-12 text-start">
                                             <a class=" text-danger" href="{{ route('c_dash') }}">
                                                 Dashboard
                                             </a>/
@@ -82,10 +82,10 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="d-flex text-left">
+                                    <div class="d-flex text-start">
                                         <div class="p-3 py-5">
                                             <div class="row">
-                                                <div class="col-md-8 col-sm-8 col-lg-8 text-left">
+                                                <div class="col-md-8 col-sm-8 col-lg-8 text-start">
                                                     <h4 class="">New Applicants</h4>
                                                 </div>
                                             </div>

@@ -19,61 +19,61 @@
                <h1>How to Use Wihire job-Portal</h1>
             <ul id="menu text-dark">
                 <li class="nav-item has-submenu">
-                    <a type="button" class="font-weight-bold nav-link text-dark align-middle px-2 ">
+                    <a type="button" class="fw-bold nav-link text-dark align-middle px-2 ">
                         <i class="bi bi-question text-danger"></i><span aria-current="page">
                             Company/Employer</span>
                     </a>
                     <ul class="submenu">
                         <li>
-                            <a class="nav-link text-secondary font-weight-bold" href="#1">
+                            <a class="nav-link text-secondary fw-bold" href="#1">
                                 <i class="bi bi-question text-danger"></i>
                                 Dashboard
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link text-secondary font-weight-bold" href="#2">
+                            <a class="nav-link text-secondary fw-bold" href="#2">
                                 <i class="bi bi-question text-danger"></i>
                                 Company Information
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link text-secondary font-weight-bold" href="#3">
+                            <a class="nav-link text-secondary fw-bold" href="#3">
                                 <i class="bi bi-question text-danger"></i>
                                 Uploading Documents
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link text-secondary font-weight-bold" href="#4">
+                            <a class="nav-link text-secondary fw-bold" href="#4">
                                 <i class="bi bi-question text-danger"></i>
                                 Creating Job Search
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link text-secondary font-weight-bold" href="#5">
+                            <a class="nav-link text-secondary fw-bold" href="#5">
                                 <i class="bi bi-question text-danger"></i>
                                 Managing Job Post
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link text-secondary font-weight-bold" href="#6">
+                            <a class="nav-link text-secondary fw-bold" href="#6">
                                 <i class="bi bi-question text-danger"></i>
                                 Managing Applicants
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link text-secondary font-weight-bold" href="#7">
+                            <a class="nav-link text-secondary fw-bold" href="#7">
                                 <i class="bi bi-question text-danger"></i>
                                 View Applicants
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link text-secondary font-weight-bold" href="#8">
+                            <a class="nav-link text-secondary fw-bold" href="#8">
                                 <i class="bi bi-question text-danger"></i>
                                 Talent Search
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link text-secondary font-weight-bold" href="#9">
+                            <a class="nav-link text-secondary fw-bold" href="#9">
                                 <i class="bi bi-question text-danger"></i>
                                 Viewing Candidates
                             </a>

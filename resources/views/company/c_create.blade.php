@@ -38,15 +38,15 @@
         @endif
             <br>
             <div class="row" style="margin-top: -25px">
-                <div class="col-6 text-left">
+                <div class="col-6 text-start">
                     <div class="btn-group rounded" role="group" aria-label="Second group">
                         <a href="{{ route('c_mail_inbox') }}"><button type="button"
-                                class="gbot btn-danger text-light font-weight-bold rounded-left">
+                                class="gbot btn-danger text-light fw-bold rounded-left">
                                 <i class="bot3 bi bi-inboxes"></i>
                                 INBOX
                             </button></a>
                         <a href="{{ route('c_mail') }}">
-                            <button type="button" class="gbot btn-danger text-light font-weight-bold rounded-right">
+                            <button type="button" class="gbot btn-danger text-light fw-bold rounded-right">
                                 <i class="bot3 bi bi-card-checklist"></i>
                                 SENT
                             </button>
@@ -58,7 +58,7 @@
         <div>
             <div class="card card-outline-secondary">
                 <div class="card-header">
-                    <h3 class=" h3 mb-0 bg-danger rounded font-weight-bold text-lg-center text-light">
+                    <h3 class=" h3 mb-0 bg-danger rounded fw-bold text-lg-center text-light">
                         New Message</h3>
                     <br>
                     @if (Session::get('fail'))
@@ -95,17 +95,17 @@
                                     </div>@error('body'){{ $message }}
                                     @enderror</span>
                                     <label for="attachfiles"><b>Attach file: </b><a
-                                            class="text-danger font-weight-bold">Note: You are
+                                            class="text-danger fw-bold">Note: You are
                                             allowed to attach only one(1) file. (.docx .pdf
                                             .doc)</a></label>
                                     <input id="file" accept=".doc,.pdf,.docx" class="form-control" type="file"
                                         name="attachfiles"><br>
                                     <div class="form-group">
-                                        <button type="submit" class="gbot btn-success text-light font-weight-bold rounded">
+                                        <button type="submit" class="gbot btn-success text-light fw-bold rounded">
                                             <i class="bot3 bi bi-check-lg"></i>
                                             Send
                                         </button>
-                                        <button type="button" class="gbot btn-danger text-light font-weight-bold rounded">
+                                        <button type="button" class="gbot btn-danger text-light fw-bold rounded">
                                             <a class="text-white text-decoration-none"
                                                 href="{{ route('u_mail_inbox') }}"><i class="bot3 bi bi-x-lg"></i>
                                                 Discard</a>

@@ -5,8 +5,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- CSS only -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <!-- JavaScript Bundle with Popper -->
@@ -45,29 +44,29 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     @if (!empty($LoggedUserInfo['id']))
                         <li class="nav-item">
-                            <a class="nav-link font-weight-bold" href="{{ route('jobs') }}">Jobs</a>
+                            <a class="nav-link fw-bold" href="{{ route('jobs') }}">Jobs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link font-weight-bold" href="{{ route('companies') }}">Companies</a>
+                            <a class="nav-link fw-bold" href="{{ route('companies') }}">Companies</a>
                         </li>
                     @elseif (!empty($LoggedCompanyInfo['id']))
                         <li class="nav-item">
-                            <a class="nav-link font-weight-bold" href="{{ route('talent') }}">Talent Search</a>
+                            <a class="nav-link fw-bold" href="{{ route('talent') }}">Talent Search</a>
                         </li>
                     @else
                         <li class="nav-item">
-                            <a class="nav-link font-weight-bold" href="{{ route('jobs') }}">Jobs</a>
+                            <a class="nav-link fw-bold" href="{{ route('jobs') }}">Jobs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link font-weight-bold" href="{{ route('companies') }}">Companies</a>
+                            <a class="nav-link fw-bold" href="{{ route('companies') }}">Companies</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link font-weight-bold" href="{{ route('talent') }}">Talent
+                            <a class="nav-link fw-bold" href="{{ route('talent') }}">Talent
                                 Search</a>
                         </li>
                     @endif
                     <li class="nav-item">
-                        <a class="nav-link font-weight-bold" href="{{ route('howto2') }}">How to Use</a>
+                        <a class="nav-link fw-bold" href="{{ route('howto2') }}">How to Use</a>
                     </li>
                     @if (empty($LoggedUserInfo['id']) && empty($LoggedCompanyInfo['id']) && empty($adminLogged['id']))
                         <li>
@@ -77,21 +76,21 @@
                     @elseif(!empty($LoggedUserInfo['id']))
                         <div class="dropdown ">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-dark font-weight-bold" data-toggle="dropdown"
+                                <button type="button" class="btn btn-dark fw-bold" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
                                     <img class="border border-dark" width="30px" type="button"
                                         src="/users/images/{{ $LoggedUserInfo['prof_pic'] }}">
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right bg bg-dark"
                                     aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item text-white text-secondary font-weight-bold"
+                                    <a class="dropdown-item text-white text-secondary fw-bold"
                                         href="{{ route('u_dash') }}"><i class="bi bi-speedometer2"></i> <span
                                             aria-current="page">
                                             Profile</span></a>
-                                    <a class="dropdown-item text-white font-weight-bold"
+                                    <a class="dropdown-item text-white fw-bold"
                                         href="{{ route('u_mail') }}">
                                         <div class="row">
-                                            <div class="col-8 text-left">
+                                            <div class="col-8 text-start">
                                                 <i class="bi bi-mailbox"></i> <span aria-current="page">
                                                     Mailbox
                                                 </span>
@@ -103,11 +102,11 @@
                                             @endif
                                         </div>
                                     </a>
-                                    <a class="dropdown-item text-white text-secondary font-weight-bold"
+                                    <a class="dropdown-item text-white text-secondary fw-bold"
                                         href="{{ route('u_sett') }}"><i class="bi bi-sliders"></i> <span
                                             aria-current="page">
                                             Settings</span></a>
-                                    <a class="dropdown-item text-white text-secondary font-weight-bold"
+                                    <a class="dropdown-item text-white text-secondary fw-bold"
                                         href="{{ route('u_logout') }}"><i class="bi bi-box-arrow-left" style=""></i>
                                         <span aria-current="page">
                                             Logout</span></a>
@@ -117,33 +116,33 @@
                     @elseif(!empty($LoggedCompanyInfo['id']))
                         <div class="dropdown">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-dark font-weight-bold rounded"
+                                <button type="button" class="btn btn-dark fw-bold rounded"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <img class="border border-dark" width="30px" type="button"
                                         src="/company/images/{{ $LoggedCompanyInfo['prof_pic'] }}">
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right bg bg-dark offset-10"
                                     aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item text-white font-weight-bold"
+                                    <a class="dropdown-item text-white fw-bold"
                                         href="{{ route('c_dash') }}"><i class="bi bi-speedometer2"></i> <span
                                             aria-current="page">
                                             Dashboard</span></a>
-                                    <a class="dropdown-item text-white font-weight-bold"
+                                    <a class="dropdown-item text-white fw-bold"
                                         href="{{ route('c_createjob') }}"><i class="bi bi-file-earmark-person"></i>
                                         <span aria-current="page">
                                             Create Job</span></a>
-                                    <a class="dropdown-item text-white font-weight-bold"
+                                    <a class="dropdown-item text-white fw-bold"
                                         href="{{ route('c_manage') }}"><i class="bi bi-person-lines-fill"></i>
                                         <span aria-current="page">
                                             Manage Jobs</span></a>
-                                    <a class="dropdown-item text-white font-weight-bold"
+                                    <a class="dropdown-item text-white fw-bold"
                                         href="{{ route('c_appManage') }}"><i class="bi bi-card-list"></i> <span
                                             aria-current="page">
                                             Applicants</span></a>
-                                    <a class="dropdown-item text-white font-weight-bold"
+                                    <a class="dropdown-item text-white fw-bold"
                                         href="{{ route('c_mail_inbox') }}">
                                         <div class="row">
-                                            <div class="col-8 text-left">
+                                            <div class="col-8 text-start">
                                                 <i class="bi bi-mailbox"></i> <span aria-current="page">
                                                     Mailbox
                                                 </span>
@@ -155,11 +154,11 @@
                                             @endif
                                         </div>
                                     </a>
-                                    <a class="dropdown-item text-white font-weight-bold"
+                                    <a class="dropdown-item text-white fw-bold"
                                         href="{{ route('c_settings') }}"><i class="bi bi-sliders"></i> <span
                                             aria-current="page">
                                             Settings</span></a>
-                                    <a class="dropdown-item text-white font-weight-bold"
+                                    <a class="dropdown-item text-white fw-bold"
                                         href="{{ route('c_logout') }}"><i class="bi bi-box-arrow-left" style=""></i>
                                         <span aria-current="page">
                                             Logout</span></a>
@@ -169,21 +168,21 @@
                     @elseif(!empty($adminLogged['id']))
                         <div class="dropdown">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-dark font-weight-bold rounded"
+                                <button type="button" class="btn btn-dark fw-bold rounded"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <img class="border border-dark" width="30px" type="button"
                                         src="/img/wihireicon copy.png">
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right bg bg-dark offset-10"
                                     aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item text-white font-weight-bold"
+                                    <a class="dropdown-item text-white fw-bold"
                                         href="{{ route('a_dash') }}"><i class="bi bi-speedometer2"></i> <span
                                             aria-current="page">
                                             Dashboard</span></a>
-                                    <a class="dropdown-item text-white font-weight-bold"
+                                    <a class="dropdown-item text-white fw-bold"
                                         href="{{ route('a_mail_inbox') }}">
                                         <div class="row">
-                                            <div class="col-8 text-left">
+                                            <div class="col-8 text-start">
                                                 <i class="bi bi-mailbox"></i> <span aria-current="page">
                                                     Mailbox
                                                 </span>
@@ -195,11 +194,11 @@
                                             @endif
                                         </div>
                                     </a>
-                                    <a class="dropdown-item text-white font-weight-bold"
+                                    <a class="dropdown-item text-white fw-bold"
                                         href="{{ route('a_settings') }}"><i class="bi bi-sliders"></i> <span
                                             aria-current="page">
                                             Settings</span></a>
-                                    <a class="dropdown-item text-white font-weight-bold"
+                                    <a class="dropdown-item text-white fw-bold"
                                         href="{{ route('a_logout') }}"><i class="bi bi-box-arrow-left" style=""></i>
                                         <span aria-current="page">
                                             Logout</span></a>
@@ -221,28 +220,28 @@
             <ul id=" menu">
                 <li class="nav-item">
                     <a href="{{ route('howto2') }}"
-                        class="font-weight-bold nav-link text-light align-middle px-2 @yield('ls')">
+                        class="fw-bold nav-link text-light align-middle px-2 @yield('ls')">
                         <i class="bi bi-question text-danger"></i></i><span aria-current="page">
                             Login / Signup</span>
                     </a>
                 </li>
                 <li class="nav-item ">
                     <a href="{{ route('howto') }}" type="button"
-                        class="font-weight-bold nav-link text-light align-middle px-2 @yield('js')">
+                        class="fw-bold nav-link text-light align-middle px-2 @yield('js')">
                         <i class="bi bi-question text-danger"></i> <span aria-current="page">
                             Job Seeker</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('howto1') }}" type="button"
-                        class="font-weight-bold nav-link text-light align-middle px-2 @yield('c')">
+                        class="fw-bold nav-link text-light align-middle px-2 @yield('c')">
                         <i class="bi bi-question text-danger"></i><span aria-current="page">
                             Company/Employer</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('howto3') }}"
-                        class="font-weight-bold nav-link text-light align-middle px-2 @yield('sm')">
+                        class="fw-bold nav-link text-light align-middle px-2 @yield('sm')">
                         <i class="bi bi-question text-danger"></i> <span aria-current="page">
                             Mailling
                         </span>
@@ -250,7 +249,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('howto5') }}"
-                        class="font-weight-bold nav-link text-light align-middle px-2 @yield('o')">
+                        class="fw-bold nav-link text-light align-middle px-2 @yield('o')">
                         <i class="bi bi-question text-danger"></i> <span aria-current="page">
                             Other / s</span>
                     </a>
@@ -265,28 +264,28 @@
         <ul id=" menu">
             <li class="nav-item">
                 <a href="{{ route('howto2') }}"
-                    class="font-weight-bold nav-link text-dark align-middle px-2 @yield('ls')">
+                    class="fw-bold nav-link text-dark align-middle px-2 @yield('ls')">
                     <i class="bi bi-question text-danger"></i></i><span aria-current="page">
                         Login / Signup</span>
                 </a>
             </li>
             <li class="nav-item ">
                 <a href="{{ route('howto') }}" type="button"
-                    class="font-weight-bold nav-link text-dark align-middle px-2 @yield('js')">
+                    class="fw-bold nav-link text-dark align-middle px-2 @yield('js')">
                     <i class="bi bi-question text-danger"></i> <span aria-current="page">
                         Job Seeker</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('howto1') }}" type="button"
-                    class="font-weight-bold nav-link text-dark align-middle px-2 @yield('c')">
+                    class="fw-bold nav-link text-dark align-middle px-2 @yield('c')">
                     <i class="bi bi-question text-danger"></i><span aria-current="page">
                         Company/Employer</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('howto3') }}"
-                    class="font-weight-bold nav-link text-dark align-middle px-2 @yield('sm')">
+                    class="fw-bold nav-link text-dark align-middle px-2 @yield('sm')">
                     <i class="bi bi-question text-danger"></i> <span aria-current="page">
                         Mailling
                     </span>
@@ -294,7 +293,7 @@
             </li>
             <li class="nav-item">
                 <a href="{{ route('howto5') }}"
-                    class="font-weight-bold nav-link text-dark align-middle px-2 @yield('o')">
+                    class="fw-bold nav-link text-dark align-middle px-2 @yield('o')">
                     <i class="bi bi-question text-danger"></i> <span aria-current="page">
                         Other / s</span>
                 </a>
@@ -305,7 +304,7 @@
     @section('body')
 
     @show
-    <footer class="text-left text-white bg-dark">
+    <footer class="text-start text-white bg-dark">
         <!-- Grid container -->
         <div class="container p-2">
             <!-- Section: Social media -->
@@ -338,14 +337,14 @@
                             <b>Or Mail Us @gmail </b>[ <a>wihire.job.portal@gmail.com</a> ]
                             <hr>
                             <span>
-                                <a type="button" class="btn btn-outline-light font-weight-bold"
+                                <a type="button" class="btn btn-outline-light fw-bold"
                                     href="{{ route('AboutUs') }}">
                                     <i class="bi bi-info"> About Us</i>
                                 </a>
                             </span>
                         </section>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 p-3 py-3 text-right">
+                    <div class="col-lg-4 col-md-4 col-sm-4 p-3 py-3 text-end">
                         <h3 class="mb-3">Page Mail</h3>
                         <!-- Button trigger modal -->
                         <a type="button" class="btn btn-outline-light btn-floating mb-sm-1" data-toggle="modal"
@@ -385,7 +384,7 @@
                     <div class="modal-header">
                         <h4 class="modal-title text-dark" id="myModalLabel">
                             <div class="row">
-                                <div class="col-12 text-left">
+                                <div class="col-12 text-start">
                                     Mail Us
                                     <button type="button" class="close" data-dismiss="modal"
                                         aria-label="Close">
@@ -396,12 +395,12 @@
                         </h4>
                     </div>
                     <div id="personDetails" class="modal-body text-dark">
-                        <header class="header text-left font-weight-bold">
+                        <header class="header text-start fw-bold">
                             Please Fill All Inputs
                         </header>
                         <hr>
                         <div class="row">
-                            <div class="col-6 text-left">
+                            <div class="col-6 text-start">
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="floatingInput" name="name"
                                         placeholder="Name" value="{{ old('name') }}">
@@ -413,7 +412,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-6 text-right">
+                            <div class="col-6 text-end">
                                 <div class="form-floating mb-3">
                                     <input type="email" class="form-control" id="floatingInput" name="email"
                                         placeholder="name@example.com">
@@ -445,7 +444,7 @@
                     </div>
                     <div class="modal-footer">
                         <div class="row">
-                            <div class="col-6 text-right">
+                            <div class="col-6 text-end">
                                 <button type="submit" class="btn btn-danger">Send</button>
                             </div>
                         </div>
@@ -457,20 +456,16 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script scrc="https://tryit.w3schools.com/code_datas.php"></script>
     <script src="/js/sidebar.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     @section('customJS')
 
     @show

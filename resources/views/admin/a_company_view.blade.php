@@ -34,14 +34,14 @@
             <div class="modal-header">
                 <h4 class="modal-title text-dark" id="myModalLabel">
                     <div class="row">
-                        <div class="col-12 text-left">
+                        <div class="col-12 text-start">
                             Message Company
                         </div>
                     </div>
                 </h4>
             </div>
             <div id="personDetails" class="modal-body text-dark">
-                <header class="header text-left font-weight-bold">
+                <header class="header text-start fw-bold">
                     Please Fill All Inputs
                 </header>
                 <hr>
@@ -65,7 +65,7 @@
             </div>
             <div class="modal-footer">
                 <div class="row">
-                    <div class="col-6 text-right">
+                    <div class="col-6 text-end">
                         <button type="submit" class="btn btn-danger">Send</button>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                         </div>
                     @endif
                     <div class="row">
-                        <div class="col-12 text-left">
+                        <div class="col-12 text-start">
                             <a class=" text-danger" href="{{ route('a_dash') }}">
                                 Dashboard
                             </a>/
@@ -101,7 +101,7 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <div class="col-sm-12 text-right">
+                        <div class="col-sm-12 text-end">
                             <a>
                                 <button data-toggle="modal" data-target="#myModal"
                                     class="btnUp btn-danger rounded">Message</button>
@@ -114,19 +114,19 @@
                             </div>
                         </div>
                         <br>
-                        <h3 class=" text-left text-secondary">Personal Information</h3>
+                        <h3 class=" text-start text-secondary">Personal Information</h3>
 
                         <br>
                     </div>
                     <!-- user id -->
                     <input type="hidden" value="{{ $company['id'] }}" name="id">
                     <div class="row sm-6">
-                        <div class="col-sm-12"><label class="labels font-weight-bold">Company
+                        <div class="col-sm-12"><label class="labels fw-bold">Company
                                 Name</label><input disabled name="cname" type="text"
-                                class="font-weight-bold text-center form-control"
+                                class="fw-bold text-center form-control"
                                 value="{{ $company['cname'] }}">
                         </div>
-                        <div class="col-sm-12"><label class="labels font-weight-bold">Company
+                        <div class="col-sm-12"><label class="labels fw-bold">Company
                             Description</label>
                         <textarea disabled class="form-control" id="message" name="cdescription" rows="12"
                             placeholder="Company Description">{{ $company['cdescription'] }}</textarea>
@@ -135,42 +135,42 @@
                     </div>
                     </div>
                     <div class="row mt-3">
-                        <div class="col-md-6"><label class="labels font-weight-bold">Contact
+                        <div class="col-md-6"><label class="labels fw-bold">Contact
                                 Person</label><input disabled name="cpname" type="text" class="form-control"
                                 placeholder="Enter Mobile number" value="{{ $company['cpname'] }}">
                         </div>
-                        <div class="col-md-6"><label class="labels font-weight-bold ">Email
+                        <div class="col-md-6"><label class="labels fw-bold ">Email
                             </label><input name="email" disabled type="text" class="form-control"
                                 placeholder="Enter Email" value="{{ $company['email'] }}">
                         </div>
                     </div>
                     <hr>
-                    <h3 class="text-left text-secondary">Address Information</h3>
+                    <h3 class="text-start text-secondary">Address Information</h3>
                     <br>
                     <div class="row mt-3">
-                        <div class="col-md-6"><label class="labels font-weight-bold">Province</label><input
+                        <div class="col-md-6"><label class="labels fw-bold">Province</label><input
                                 type="text" name="province" disabled class="form-control" placeholder="Province"
                                 value="{{ $company['province'] }}">
                         </div>
                         <div class="col-md-6"><label
-                                class="labels font-weight-bold">City/Municipality</label><input name="city"
+                                class="labels fw-bold">City/Municipality</label><input name="city"
                                 type="text" disabled class="form-control" value="{{ $company['city'] }}"
                                 placeholder="City/Municipality">
                         </div>
                         <div class="col-md-6">
-                            <label class="labels font-weight-bold">Barangay</label><input type="text"
+                            <label class="labels fw-bold">Barangay</label><input type="text"
                                 name="barangay" disabled class="form-control" placeholder="Barangay"
                                 value="{{ $company['barangay'] }}">
                         </div>
-                        <div class="col-md-6"><label class="labels font-weight-bold">Street</label><input
+                        <div class="col-md-6"><label class="labels fw-bold">Street</label><input
                                 type="text" name="street" disabled class="form-control"
                                 value="{{ $company['street'] }}" placeholder="Street">
                         </div>
-                        <div class="col-md-6"><label class="labels font-weight-bold">House#/Bldg#
+                        <div class="col-md-6"><label class="labels fw-bold">House#/Bldg#
                             </label><input disabled name="HBnum" type="text" class="form-control"
                                 placeholder="House/Bldg Number" value="{{ $company['HBnum'] }}">
                         </div>
-                        <div class="col-md-6"><label class="labels font-weight-bold">Post
+                        <div class="col-md-6"><label class="labels fw-bold">Post
                                 Code
                             </label><input disabled name="postcode" type="text" class="form-control"
                                 placeholder="Post Code" value="{{ $company['postcode'] }}">
@@ -179,14 +179,14 @@
                     <hr>
                 </div>
             <div class="row-mt-2">
-                <div class="col-md-12 text-left">
-                    <h3 class="text-left text-secondary">Attach document</h3>
+                <div class="col-md-12 text-start">
+                    <h3 class="text-start text-secondary">Attach document</h3>
                     <div class="col-sm-12">
                         <table style="" class="table table-responsive-stack" id="tableOne">
                             <thead>
                                 <tr>
                                     <th><a>Name</a></th>
-                                    <th class="text-right"><a>View</a></th>
+                                    <th class="text-end"><a>View</a></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -196,7 +196,7 @@
                                             <td><i
                                                     class="bi bi-file-earmark"></i><a>{{ $info->file_path }}</a>
                                             </td>
-                                            <td class="text-right">
+                                            <td class="text-end">
                                                 <a type="button" target="_blank" href="/View_Company/{{ Crypt::encrypt($company['id']) }}/Viewfile/{{ Crypt::encrypt($info->id) }}"
                                                     class="btn btn-white btn-view">
                                                     <i class="bi bi-eye"

@@ -25,7 +25,7 @@
                         <div class="p-3 py-5">
                             <div class="rounded bg-transaprent">
                                 <div class="row" style="margin-top:-40px;">
-                                    <div class="col-12 text-left font-weight-bold">
+                                    <div class="col-12 text-start fw-bold">
                                         <a class=" text-danger" href="{{ route('u_dash') }}">
                                             Profile
                                         </a>/
@@ -54,7 +54,7 @@
                                             </div>
                                         </div>
                                         <br>
-                                        <h4 class=" text-left text-secondary">Personal Information</h4>
+                                        <h4 class=" text-start text-secondary">Personal Information</h4>
                                         <br>
                                     </div>
                                     <!-- user id -->
@@ -74,33 +74,33 @@
                                     @endif
                                     <div class="row mt-3">
                                         <div class="col-sm-4"><label
-                                                class="labels font-weight-bold">FirstName</label><input name="fname"
+                                                class="labels fw-bold">FirstName</label><input name="fname"
                                                 type="text" class="form-control"
                                                 value="{{ $LoggedUserInfo['fname'] }}">
                                         </div>
                                         <div class="col-sm-4"><label
-                                                class="labels font-weight-bold">MiddleName</label><input name="mname"
+                                                class="labels fw-bold">MiddleName</label><input name="mname"
                                                 type="text" class="form-control"
                                                 value="{{ $LoggedUserInfo['mname'] }}">
                                         </div>
                                         <div class="col-md-4"><label
-                                                class="labels font-weight-bold">Surname</label><input name="lname"
+                                                class="labels fw-bold">Surname</label><input name="lname"
                                                 type="text" class="form-control"
                                                 value="{{ $LoggedUserInfo['lname'] }}">
                                         </div>
                                     </div>
                                     <div class="row mt-3">
-                                        <div class="col-md-4"><label class="labels font-weight-bold">Mobile
+                                        <div class="col-md-4"><label class="labels fw-bold">Mobile
                                                 Number</label><input name="mobileNumber" type="text"
                                                 class="form-control" placeholder="Enter Mobile number"
                                                 value="{{ $LoggedUserInfo['mob_num'] }}">
                                         </div>
-                                        <div class="col-md-4"><label class="labels font-weight-bold">Date
+                                        <div class="col-md-4"><label class="labels fw-bold">Date
                                                 Of Birth</label><input name="dob" type="date" class="form-control"
                                                 placeholder="Date Of Birth" value="{{ $LoggedUserInfo['dob'] }}">
                                         </div>
                                         <div class="col-md-4"><label
-                                                class="labels font-weight-bold">Gender</label><input id="browser"
+                                                class="labels fw-bold">Gender</label><input id="browser"
                                                 list="browsers" class="form-control" name="gender"
                                                 placeholder="Gender" value="{{ $LoggedUserInfo['gender'] }}">
                                             <datalist id="browsers">
@@ -108,7 +108,7 @@
                                                 <option value="Female">
                                             </datalist>
                                         </div>
-                                        <div class="col-md-6"><label class="labels font-weight-bold">Civil
+                                        <div class="col-md-6"><label class="labels fw-bold">Civil
                                                 Status</label><input id="browser" list="browsers1"
                                                 class="form-control" name="civilstat" placeholder="Civil Status"
                                                 value="{{ $LoggedUserInfo['civilstat'] }}">
@@ -119,59 +119,59 @@
                                                 <option value="Divorced">
                                             </datalist>
                                         </div>
-                                        <div class="col-sm-6"><label class="labels font-weight-bold">Birth
+                                        <div class="col-sm-6"><label class="labels fw-bold">Birth
                                                 Place</label><input name="bithplace" type="text" class="form-control"
                                                 value="{{ $LoggedUserInfo['bithplace'] }}">
                                         </div>
-                                        <div class="col-md-12"><label class="labels font-weight-bold ">Email
+                                        <div class="col-md-12"><label class="labels fw-bold ">Email
                                             </label><input name="email" disabled type="text" class="form-control"
                                                 placeholder="Enter Email" value="{{ $LoggedUserInfo['email'] }}">
                                         </div>
                                     </div>
                                     <hr>
-                                    <h4 class="text-left text-secondary">Address Information</h4>
+                                    <h4 class="text-start text-secondary">Address Information</h4>
                                     <br>
                                     <div class="row mt-3">
                                         <div class="col-md-6"><label
-                                                class="labels font-weight-bold">Province</label><input type="text"
+                                                class="labels fw-bold">Province</label><input type="text"
                                                 name="province" class="form-control" placeholder="Province"
                                                 value="{{ $LoggedUserInfo['province'] }}">
                                         </div>
                                         <div class="col-md-6"><label
-                                                class="labels font-weight-bold">City/Municipality</label><input
+                                                class="labels fw-bold">City/Municipality</label><input
                                                 name="city" type="text" class="form-control"
                                                 value="{{ $LoggedUserInfo['city'] }}"
                                                 placeholder="City/Municipality">
                                         </div>
                                         <div class="col-md-6"><label
-                                                class="labels font-weight-bold">Barangay</label><input type="text"
+                                                class="labels fw-bold">Barangay</label><input type="text"
                                                 name="barangay" class="form-control" placeholder="Barangay"
                                                 value="{{ $LoggedUserInfo['barangay'] }}">
                                         </div>
                                         <div class="col-md-6"><label
-                                                class="labels font-weight-bold">Street</label><input type="text"
+                                                class="labels fw-bold">Street</label><input type="text"
                                                 name="street" class="form-control"
                                                 value="{{ $LoggedUserInfo['street'] }}" placeholder="Street">
                                         </div>
-                                        <div class="col-md-6"><label class="labels font-weight-bold">House#/Bldg#
+                                        <div class="col-md-6"><label class="labels fw-bold">House#/Bldg#
                                             </label><input name="HBnum" type="text" class="form-control"
                                                 placeholder="House/Bldg Number"
                                                 value="{{ $LoggedUserInfo['HBnum'] }}">
                                         </div>
-                                        <div class="col-md-6"><label class="labels font-weight-bold">Post
+                                        <div class="col-md-6"><label class="labels fw-bold">Post
                                                 Code
                                             </label><input name="postcode" type="text" class="form-control"
                                                 placeholder="Post Code" value="{{ $LoggedUserInfo['postcode'] }}">
                                         </div>
                                     </div>
                                     <div class="row mt-5">
-                                        <div class="col-6 text-left">
-                                            <button class="btn btn-danger profile-button font-weight-bold"
+                                        <div class="col-6 text-start">
+                                            <button class="btn btn-danger profile-button fw-bold"
                                                 type="submit"> <i class="bi bi-check-lg">Save</i></button>
                                         </div>
-                                        <div class="col-6 text-right">
+                                        <div class="col-6 text-end">
                                             <a href="{{ route('u_dash') }}"
-                                                class="btn btn-secondary text-white font-weight-bold">
+                                                class="btn btn-secondary text-white fw-bold">
                                                 <i class="bi bi-x-lg"></i>
                                                 Cancel
                                             </a>

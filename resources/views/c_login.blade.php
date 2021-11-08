@@ -44,7 +44,7 @@
             <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
                 <ul class="navbar-nav ms-auto mb-2 mb-sm-0">
                     <li class="nav-item">
-                        <a class="nav-link font-weight-bold" href="{{ route('howto2') }}">How to Use</a>
+                        <a class="nav-link fw-bold" href="{{ route('howto2') }}">How to Use</a>
                     </li>
                     <li>
                         <a class="btn btn-outline-light rounded" type="button" href="{{ route('u_login') }}"><b>jOB
@@ -71,15 +71,15 @@
                         {{ Session::get('success') }}
                     </div>
                 @endif
-                <h3 class="font-weight-bold">Company/Employer Login</h3>
+                <h3 class="fw-bold">Company/Employer Login</h3>
                 <br>
                 <div class="row">
-                    <div class="col-sm-6 text-left">
+                    <div class="col-sm-6 text-start">
                         Don't have an Account?
                         <a style="color:rgb(238, 54, 54);" href="{{ route('c_signup') }}">CREATE
                             NOW!</a>
                     </div>
-                    <div class="col-sm-6 text-right">
+                    <div class="col-sm-6 text-end">
                         JOB SEEKER?
                         <a style="color:rgb(238, 54, 54);" href="{{ route('u_login') }}">LOGIN AS JOB SEEKER
                             HERE!</a>
@@ -106,7 +106,7 @@
                     <a type="button" class="text-black" href="{{ route('c_forgot') }}">Forgot Password?</a>
                     <br>
                     <div class="text-center">
-                        <button type="submit" class="btn btn-danger font-weight-bold">Login</button>
+                        <button type="submit" class="btn btn-danger fw-bold">Login</button>
                     </div>
                 </form>
             </div>

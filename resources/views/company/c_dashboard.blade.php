@@ -35,7 +35,7 @@
                             @csrf
                             <div class="row" style="margin-top: -40px">
                                 <div class="col-sm-2" >
-                                    <div class="picture-container text-left">
+                                    <div class="picture-container text-start">
                                         <div class="picture">
                                             <img id="avatar" src="company/images/{{ $LoggedUserInfo['prof_pic'] }}"
                                                 class="picture-src" title="">
@@ -51,9 +51,9 @@
                                     <!-- Modal Content (The Image) -->
                                     <img class="imagemodal-content" id="img01">
                                 </div>
-                                <div class="col-sm-10 text-left">
+                                <div class="col-sm-10 text-start">
                                     <div class="row mt-4">
-                                        <div class="col-sm-10 text-left">
+                                        <div class="col-sm-10 text-start">
                                             <h2><strong>{{ $LoggedUserInfo['cname'] }}</strong></h2>
 
                                                 <span>{{ $LoggedUserInfo['barangay'] }}
@@ -65,7 +65,7 @@
                                                 [<a href="">{{ $LoggedUserInfo['email'] }}</a>]
                                             </span>
                                         </div>
-                                        <div class="col-sm-2 text-right">
+                                        <div class="col-sm-2 text-end">
                                             <a href="{{ route('c_update') }}"><i class="bi bi-pencil"
                                                     style="color: red"></i></a>
                                         </div>
@@ -77,12 +77,12 @@
                                 <div class="col-md-6 col-sm-6 col-lg-6">
                                     <div class="container rounded bg-danger text-white">
                                         <div class="row mt-2">
-                                            <div class="col-md-6 col-sm-6 col-lg-6 text-left"
+                                            <div class="col-md-6 col-sm-6 col-lg-6 text-start"
                                                 style="margin-top:5px;margin-bottom:5px;">
                                                 <strong>Jobs</strong>
                                                 <h1>{{ $jobcount }}</h1>
                                             </div>
-                                            <div class="col-md-6 col-sm-6 col-lg-6 text-right dropdown"
+                                            <div class="col-md-6 col-sm-6 col-lg-6 text-end dropdown"
                                                 style="margin-top:5px;margin-bottom:5px;"><br>
                                                 <button style="font-size: 30px" class="btn btn-danger" type="button" id="dropdownMenuButton1"
                                                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -103,12 +103,12 @@
                                 <div class="col-md-6 col-sm-6 col-lg-6">
                                     <div class="container rounded bg-success text-white">
                                         <div class="row mt-2">
-                                            <div class="col-md-6 col-sm-6 col-lg-6 text-left"
+                                            <div class="col-md-6 col-sm-6 col-lg-6 text-start"
                                                 style="margin-top:5px;margin-bottom:5px;">
                                                 <strong>Applicants</strong>
                                                 <h1>{{ $appcount }}</h1>
                                             </div>
-                                            <div class="col-md-6 col-sm-6 col-lg-6 text-right dropdown"
+                                            <div class="col-md-6 col-sm-6 col-lg-6 text-end dropdown"
                                                 style="margin-top:5px;margin-bottom:5px;"><br>
                                                 <button style="font-size: 30px" class="btn btn-success" type="button" id="dropdownMenuButton1"
                                                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -155,10 +155,10 @@
                                     </div>
                                 @else
                                     <div class="row">
-                                        <div class="d-flex text-left">
+                                        <div class="d-flex text-start">
                                             <div class="p-3 py-5">
                                                 <div class="row">
-                                                    <div class="col-md-8 col-sm-8 col-lg-8 text-left">
+                                                    <div class="col-md-8 col-sm-8 col-lg-8 text-start">
                                                         <h4 class="">New Applicants</h4>
                                                     </div>
                                                 </div>
@@ -294,13 +294,13 @@
                                         </div>
                                     </div>
                                 @else
-                                        <div class="d-flex text-left">
+                                        <div class="d-flex text-start">
                                             <div class="p-3 py-5">
                                                 <div class="row">
-                                                    <div class="col-md-8 col-sm-8 col-lg-8 text-left">
+                                                    <div class="col-md-8 col-sm-8 col-lg-8 text-start">
                                                         <h4 class="">Manage jobs</h4>
                                                     </div>
-                                                    <div class="col-md-4 col-sm-4 col-lg-4 text-right">
+                                                    <div class="col-md-4 col-sm-4 col-lg-4 text-end">
                                                         <a href="{{ route('c_createjob') }}"><i
                                                                 class="bi bi-plus-lg bi-plus-md bi-plus-sm"
                                                                 style="color: red"></i></a>

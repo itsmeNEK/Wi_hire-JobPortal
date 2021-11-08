@@ -44,7 +44,7 @@
                                 @else
                                     <div class="row">
                                         <div class="row">
-                                            <div class="col-sm-12 col-md-12 col-lg-12 text-left font-weight-bold">
+                                            <div class="col-sm-12 col-md-12 col-lg-12 text-start fw-bold">
                                                 <a class=" text-danger" href="{{ route('c_dash') }}">
                                                     Dashboard
                                                 </a>/
@@ -61,13 +61,13 @@
                                                     aria-label="Close"></button>
                                             </div>
                                         @endif
-                                        <div class="d-flex text-left">
+                                        <div class="d-flex text-start">
                                             <div class="p-3 py-5">
                                                 <div class="row">
-                                                    <div class="col-md-8 col-sm-8 col-lg-8 text-left">
+                                                    <div class="col-md-8 col-sm-8 col-lg-8 text-start">
                                                         <h4 class="">Manage jobs</h4>
                                                     </div>
-                                                    <div class="col-md-4 col-sm-4 col-lg-4 text-right">
+                                                    <div class="col-md-4 col-sm-4 col-lg-4 text-end">
                                                         <a href="{{ route('c_createjob') }}"><i
                                                                 class="bi bi-plus-lg bi-plus-md bi-plus-sm"
                                                                 style="color: red"></i></a>

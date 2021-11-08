@@ -22,16 +22,16 @@
         <br>
         <br>
         <div class="row" style="margin-top: -20px">
-            <div class="col-6 text-left">
-                <div class="col-6 text-left">
+            <div class="col-6 text-start">
+                <div class="col-6 text-start">
                     <div class="btn-group rounded" role="group" aria-label="Second group">
                         <a href="{{ route('c_mail_inbox') }}"><button type="button"
-                                class="gbot btn-danger text-light font-weight-bold rounded">
+                                class="gbot btn-danger text-light fw-bold rounded">
                                 <i class="bot3 bi bi-inboxes"></i>
                                 INBOX
                             </button></a>
                         <a href="{{ route('c_mail') }}">
-                            <button type="button" class="gbot btn-danger text-light font-weight-bold rounded">
+                            <button type="button" class="gbot btn-danger text-light fw-bold rounded">
                                 <i class="bot3 bi bi-card-checklist"></i>
                                 SENT
                             </button>
@@ -51,7 +51,7 @@
 
                             <div class="row">
                                 @if ($senderInfo->fname)
-                                    <div class="col-6 text-left text-danger">
+                                    <div class="col-6 text-start text-danger">
                                         From:
                                         <img class="avatar rounded-circle border border-light " width="40px"
                                             src="/users/images/{{ $senderInfo['prof_pic'] }}"><strong
@@ -60,7 +60,7 @@
                                                 {{ $senderInfo['lname'] }}</b></strong>
                                     </div><br>
                                 @elseif($senderInfo->cname)
-                                    <div class="col-6 text-left text-danger">
+                                    <div class="col-6 text-start text-danger">
                                         From:
                                         <img class="avatar rounded-circle border border-light " width="40px"
                                             src="/company/images/{{ $senderInfo['prof_pic'] }}"><strong
@@ -68,7 +68,7 @@
                                             <b class="text-dark"> {{ $senderInfo['cname'] }}</b></strong>
                                     </div><br>
                                 @else
-                                    <div class="col-6 text-left text-danger">
+                                    <div class="col-6 text-start text-danger">
                                         From:
                                         <img class="avatar rounded-circle border border-light " width="40px"
                                             src="/img/wihireicon.png"><strong
@@ -77,7 +77,7 @@
                                     </div><br>
                                 @endif
                                 @if ($receiverinfo->fname)
-                                    <div class="col-6 text-left text-danger">
+                                    <div class="col-6 text-start text-danger">
                                         To:
                                         <img class="avatar rounded-circle border border-light " width="40px"
                                             src="/users/images/{{ $receiverinfo['prof_pic'] }}"><strong
@@ -86,7 +86,7 @@
                                                 {{ $receiverinfo['lname'] }}</b></strong>
                                     </div><br>
                                 @elseif($receiverinfo->cname)
-                                    <div class="col-6 text-left text-danger">
+                                    <div class="col-6 text-start text-danger">
                                         To:
                                         <img class="avatar rounded-circle border border-light " width="40px"
                                             src="/company/images/{{ $receiverinfo['prof_pic'] }}"><strong
@@ -94,7 +94,7 @@
                                             <b class="text-dark"> {{ $receiverinfo['cname'] }}</b></strong>
                                     </div><br>
                                 @else
-                                    <div class="col-6 text-left text-danger">
+                                    <div class="col-6 text-start text-danger">
                                         To:
                                         <img class="avatar rounded-circle border border-light " width="40px"
                                             src="/img/wihireicon.png"><strong
@@ -130,22 +130,22 @@
 
                     </div>
                     @if ($LoggedUserInfo->email == $mailInfo->to)
-                        <div class="col-5 text-left">
+                        <div class="col-5 text-start">
                             <a class="text-decoration-none text-white"
                                 href="reply/{{ Crypt::encrypt($mailInfo->id) }}"><button type="button"
-                                    class="gbot btn-danger text-light font-weight-bold rounded">
+                                    class="gbot btn-danger text-light fw-bold rounded">
                                     <i class="bot3 bi bi-reply-fill"></i>
                                     Reply
                                 </button></a>
                         </div>
                     @endif
-                    <div class="col-5 text-right">
+                    <div class="col-5 text-end">
                         @if ($receiverinfo['email'] == $LoggedUserInfo->email)
                             <a class="text-decoration-none text-white" href="{{ url()->previous() }}"><button
-                                    type="button" class="gbot btn-danger text-light font-weight-bold rounded">
+                                    type="button" class="gbot btn-danger text-light fw-bold rounded">
                                 @else
                                     <a class="text-decoration-none text-white" href="{{ url()->previous() }}"><button
-                                            type="button" class="gbot btn-danger text-light font-weight-bold rounded">
+                                            type="button" class="gbot btn-danger text-light fw-bold rounded">
                         @endif
                         <i class="bot3 bi bi-backspace-fill"></i>
                         Back

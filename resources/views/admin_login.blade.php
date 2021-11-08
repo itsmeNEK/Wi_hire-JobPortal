@@ -46,7 +46,7 @@
                         {{ Session::get('success') }}
                     </div>
                 @endif
-                <h3 class="font-weight-bold">Admin</h3>
+                <h3 class="fw-bold">Admin</h3>
                 <hr>
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="floatingInput" name="uname"
@@ -66,7 +66,7 @@
                     </div>
                     <br>
                     <div class="text-center">
-                        <button type="submit" class="btn btn-danger font-weight-bold">Login</button>
+                        <button type="submit" class="btn btn-danger fw-bold">Login</button>
                     </div>
                 </form>
             </div>
