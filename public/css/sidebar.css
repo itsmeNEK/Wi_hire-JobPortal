@@ -29,6 +29,10 @@ body {
     transition: 0.5s;
 }
 
+#notifcon a {
+    background: red;
+}
+
 .sidebar a:hover {
     color: #f1f1f1;
     background: #dc3545;
@@ -121,7 +125,7 @@ body {
         font-size: 12px;
     }
     #notif {
-        width: 200px;
+        max-width: 200px;
         font-size: 12px;
     }
     .list-group .list-group-item {

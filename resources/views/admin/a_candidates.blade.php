@@ -34,12 +34,12 @@
             <div class="col-6 text-start">
                 <div class="btn-group rounded" role="group" aria-label="Second group">
                     <a href="{{ route('a_candidate') }}"><button type="button"
-                            class="gbot btn-danger text-white fw-bold rounded-left">
+                            class="gbot btn-danger text-white fw-bold rounded-start">
                             <i class="bot3 bi bi-person-check-fill"></i>
                             Active
                         </button></a>
                     <a href="{{ route('a_candidate_block') }}">
-                        <button type="button" class="gbot btn-danger text-white fw-bold rounded-right">
+                        <button type="button" class="gbot btn-danger text-white fw-bold rounded-end">
                             <i class="bot3 bi bi-person-x-fill"></i>
                             Blocked
                         </button>

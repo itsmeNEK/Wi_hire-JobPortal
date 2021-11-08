@@ -36,12 +36,12 @@
             <div class="col-6 text-start">
                 <div class="btn-group rounded" role="group" aria-label="Second group">
                     <a href="{{ route('a_mail_inbox') }}"><button type="button"
-                            class="gbot btn-danger text-light fw-bold rounded-left">
+                            class="gbot btn-danger text-light fw-bold rounded-start">
                             <i class="bot3 bi bi-inboxes"></i>
                             INBOX
                         </button></a>
                     <a href="{{ route('a_mail') }}">
-                        <button type="button" class="gbot btn-danger text-light fw-bold rounded-right">
+                        <button type="button" class="gbot btn-danger text-light fw-bold rounded-end">
                             <i class="bot3 bi bi-card-checklist"></i>
                             SENT
                         </button>

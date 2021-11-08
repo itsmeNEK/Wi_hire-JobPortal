@@ -26,7 +26,7 @@
             <div class="col-6 text-start">
                 <div class="btn-group rounded" role="group" aria-label="Second group">
                     <a href="{{ route('c_appManage') }}"><button type="button"
-                            class="gbot btn-danger text-light fw-bold rounded-left">
+                            class="gbot btn-danger text-light fw-bold rounded-start">
                             <i class="bot3 bi bi-inboxes"></i>
                             New
                         </button></a>
@@ -37,7 +37,7 @@
                         </button>
                     </a>
                     <a href="{{ route('c_appManageRej') }}">
-                        <button type="button" class="gbot btn-danger text-light fw-bold rounded-right">
+                        <button type="button" class="gbot btn-danger text-light fw-bold rounded-end">
                             <i class="bot3 bi bi-person-x-fill"></i>
                             Rejected
                         </button>

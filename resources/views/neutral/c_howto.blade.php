@@ -86,7 +86,7 @@
     <div class="howCon">
         <div class="details">
             <h1 id="1"><b>Dashboard</b></h1>
-            <p style="font-size: large;margin: 10px 10px 10px;">
+            <p>
                 The Company dashboard is the Initial View of the total number of Jobs you posted nad the total of applicants
                 that applied for the jobs you posted. You Can easily see the jobs you posted by clicking the icon on the right side of
                 the card. And then a dropdown will appear letting you choose to manage or create job post.
@@ -96,7 +96,7 @@
         <br>
         <div class="details">
             <h1 id="2"><b>Company Information</b></h1>
-            <p style="font-size: large;margin: 10px 10px 10px;">
+            <p>
                 In editing your company information, simply click the pencin icon  <i class="bi bi-pencil text-danger"></i>
                 in the right side of your dashborad. after that you will the redireted to the company information page
                 where you can edit you information as shown below.
@@ -106,7 +106,7 @@
         <br>
         <div class="details">
             <h1 id="3"><b>Uploading Documents</b></h1>
-            <p style="font-size: large;margin: 10px 10px 10px;">
+            <p>
                 Before you can post jobs and accepet candidates, you will be first asked to submit
                 ducuments supporting your company or establishment or a small business. This will be required
                 to credify your application if hiring. After Registering, the administrator will check and review
@@ -118,7 +118,7 @@
         <br>
         <div class="details">
             <h1 id="4"><b>Creating Job Search</b></h1>
-            <p style="font-size: large;margin: 10px 10px 10px;">
+            <p>
                 After the Administrator approved your credibility to create job post. You may now access
                 the create jobs, manage jobs, and the applicants page the will be seen the side navigation bar at your left
                 side of the page. In creating job post, simply fill up the form below to set the qualification and
@@ -131,7 +131,7 @@
         <br>
         <div class="details">
             <h1 id="5"><b>Managing Job Post</b></h1>
-            <p style="font-size: large;margin: 10px 10px 10px;">
+            <p>
                 You can edit or delete jobs you posted. If you found or accepted an applicant, simply click the delete icon <i class="bi bi-trash"></i>
                 to remove your job post and will not receive more applicants in the specific job post. If you want to edit the
                 job post, you can click the pencil icon <i class="bi bi-pencil"></i> or the green buttong the the right side
@@ -143,7 +143,7 @@
         <br>
         <div class="details">
             <h1 id="6"><b>Managing Applicants</b></h1>
-            <p style="font-size: large;margin: 10px 10px 10px;">
+            <p>
                 In the Applicants page, you can view and reject applicants. When you reject the applicant will be
                 transfered to the rejected page so that you will distinguish the new and the rejected applicants.
                 You may also view the applicants detail by clicking the view button at the right side of the table.
@@ -154,7 +154,7 @@
         <br>
         <div class="details">
             <h1 id="7"><b>View Applicants</b></h1>
-            <p style="font-size: large;margin: 10px 10px 10px;">
+            <p>
                 In the viewing of the applicant. You can see their initial resume or personal infomation and other information
                  that they have of their account such as educational background and etc. You may also access their uploaded documents such as
                  resume application letter and etc. You can also message the applicant simply by clicking the message button
@@ -165,7 +165,7 @@
         <br>
         <div class="details">
             <h1 id="8"><b>Talent Search</b></h1>
-            <p style="font-size: large;margin: 10px 10px 10px;">
+            <p>
                 In the talent Search. Companies can search for possible candidate even without posting jobs. The
                 talent search page is for searching or scounting job seekers that may qualify on the
                 employee that you look for. At the top of the page a search bar is provided with capable of
@@ -178,7 +178,7 @@
         <br>
         <div class="details">
             <h1 id="9"><b>Viewing Candidates</b></h1>
-            <p style="font-size: large;margin: 10px 10px 10px;">
+            <p>
                 Just like in the Applicant, employer can also view candidate that they want to see their credentials. Simply
                 click at the card of the candidate and their initial information will be shown. If you are interested in seeing their
                 full profile and information, click the view button at the buttom of the card that has shown and will redirect you

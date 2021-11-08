@@ -134,7 +134,6 @@
                                 @forelse ( $inbox as $info)
                                     <a aria-current="true" href="c_view_mail/{{ Crypt::encrypt($info->id) }}"
                                         class="nav-link text-dark bg-light">
-
                                         <div class="p-1 py-1">
                                             <b>
                                                 @if ($info->fname != null)
@@ -421,9 +420,6 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script scrc="https://tryit.w3schools.com/code_datas.php"></script>
