@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\mail\verificationEmail;
+use App\Mail\verificationEmail;
 use App\Models\Admin;
 use Illuminate\Http\Request;
 use App\Models\User;
