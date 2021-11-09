@@ -376,9 +376,8 @@
                             <div class="row">
                                 <div class="col-12 text-start">
                                     Mail Us
-                                    <button type="button" class="close" data-bs-dismiss="modal"
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close">
-                                        <span aria-hidden="true"><strong>&times;</strong></span>
                                     </button>
                                 </div>
                             </div>
