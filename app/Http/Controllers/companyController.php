@@ -483,7 +483,7 @@ class companyController extends Controller
 
         ];
 
-        return view('company.c_managejobs', $data);
+        return view('company.c_manageJobs', $data);
     }
     // company manage app new
     function c_appManage()

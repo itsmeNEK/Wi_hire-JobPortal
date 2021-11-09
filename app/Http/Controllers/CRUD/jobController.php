@@ -60,6 +60,7 @@ class jobController extends Controller
             $jobs->cname=$request->cname;
             $jobs->city=$request->city;
         }
+
         $jobs->jobtit=$request->jobtit;
         $jobs->jobdes=$request->jobdes;
         $jobs->qualification=$request->qualification;
