@@ -1028,10 +1028,10 @@ class companyController extends Controller
                 ->leftjoin('user_prof_work_exes', 'user_prof_work_exes.user_id', '=', 'users.id')
                 ->leftjoin('user_prof_skills', 'user_prof_skills.user_id', '=', 'users.id')
                 ->select('users.id','users.city','users.fname','users.lname','users.mname','users.prof_pic','users.gender','users.city','users.civilstat','user_prof_skills.skills','user_prof_e_b_s.field','user_prof_e_b_s.major','user_prof_work_exes.specialization')
+                ->where('users.city', 'LIKE', '%' . $request->town . '%')
                 ->where('user_prof_skills.skills', 'LIKE', '%' . $request->skm . '%')
                 ->orWhere('user_prof_e_b_s.major', 'LIKE', '%' . $request->skm . '%')
                 ->orWhere('user_prof_e_b_s.field', 'LIKE', '%' . $request->skm . '%')
-                ->where('users.city', 'LIKE', '%' . $request->town . '%')
                 ->inRandomOrder()
                 ->paginate(20);
 

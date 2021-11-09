@@ -220,7 +220,7 @@
                             type="text" class="input form-control text-white" id="floatingInput"
                             name="jobname" placeholder="Search by Job Name">
                             <label class="label" for="floatingInput"><i class="bi text-white bi-search"></i>
-                                Job Name</label>
+                                Job Title</label>
                         </div>
                         <div class="form-floating mb-3">
                             <input @if ($searchinfo == null)
