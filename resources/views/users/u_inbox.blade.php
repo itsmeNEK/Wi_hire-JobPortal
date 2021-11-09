@@ -69,14 +69,14 @@
                     <thead>
                         <tr>
                             <th style="width: 1%"></th>
-                            <th style="width: 30%" scope="col">to</th>
+                            <th style="width: 30%" scope="col">From</th>
                             <th style="width: 30%" scope="col">Subject</th>
                             <th style="width: 12%" scope="col">Time</th>
                             <th style="width: 12%" style="">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($inbox as $info)
+                        @forelse ($mail_info as $info)
                             @if ($info->mail_active == '1')
                                 <tr>
                                     <th style="width: 1%">
@@ -85,10 +85,14 @@
                                     <td data-label="To">
                                         <a class="text-black text-decoration-none"
                                             href="view_mail/{{ Crypt::encrypt($info->id) }}">
-                                            <b> @if ($info->cname != null)
+                                            <b> @if ($info->fname != null)
+                                                {{ $info->fname }}
+                                            @elseif ($info->cname != null)
                                                 {{ $info->cname }}
+                                            @elseif($info->from == "admin@admin.admin")
+                                                    ADMIN
                                             @else
-                                                ADMIN
+                                                {{ $info->from }}
                                             @endif</b>
                                         </a>
                                     </td>
@@ -119,11 +123,15 @@
                                     <td data-label="To">
                                         <a class="text-black text-decoration-none"
                                             href="view_mail/{{ Crypt::encrypt($info->id) }}">
-                                            @if ($info->cname != null)
-                                            {{ $info->cname }}
-                                        @else
-                                            ADMIN
-                                        @endif
+                                            @if ($info->fname != null)
+                                                {{ $info->fname }}
+                                            @elseif ($info->cname != null)
+                                                {{ $info->cname }}
+                                            @elseif($info->from == "admin@admin.admin")
+                                                    ADMIN
+                                            @else
+                                                {{ $info->from }}
+                                            @endif
                                         </a>
                                     </td>
                                     <td data-label="Subject">

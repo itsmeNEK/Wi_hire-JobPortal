@@ -70,7 +70,7 @@
                     <thead>
                         <tr>
                             <th style="width: 1%"></th>
-                            <th style="width: 30%" scope="col">to</th>
+                            <th style="width: 30%" scope="col">From</th>
                             <th style="width: 30%" scope="col">Subject</th>
                             <th style="width: 12%" scope="col">Time</th>
                             <th style="width: 12%" style="">Delete</th>
@@ -92,6 +92,8 @@
                                                     {{ $info->fname }}
                                                 @elseif ($info->cname != null)
                                                     {{ $info->cname }}
+                                                @elseif($info->from == "admin@admin.admin")
+                                                    ADMIN
                                                 @else
                                                     {{ $info->from }}
                                                 @endif
@@ -129,6 +131,8 @@
                                                 {{ $info->fname }}
                                             @elseif ($info->cname != null)
                                                 {{ $info->cname }}
+                                            @elseif($info->from == "admin@admin.admin")
+                                                ADMIN
                                             @else
                                                 {{ $info->from }}
                                             @endif

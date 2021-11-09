@@ -710,11 +710,12 @@ class companyController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
         $sent = DB::table('mailings')
-            ->leftjoin('users', 'mailings.from', '=', 'users.email')
-            ->select('mailings.id', 'users.fname', 'mailings.subject', 'mailings.created_at', 'mailings.mail_active', 'mailings.from')
-            ->where('mailings.from', $user->email)
-            ->orderBy('created_at', 'desc')
-            ->paginate(20);
+        ->leftjoin('users', 'mailings.to', '=', 'users.email')
+        ->leftjoin('companies', 'mailings.to', '=', 'companies.email')
+        ->where('from', $user->email)
+        ->select('mailings.id', 'users.fname', 'companies.cname', 'mailings.subject', 'mailings.created_at', 'mailings.mail_active', 'mailings.from', 'mailings.to')
+        ->orderBy('created_at', 'desc')
+        ->paginate(20);
         $mailinfo = Mailing::where('to', '=', $user->email)
             ->where('mail_active', '=', '1')
             ->count();
@@ -751,11 +752,11 @@ class companyController extends Controller
             ->where('mail_active', '=', '1')
             ->orderBy('created_at', 'desc')
             ->get();
-
-        $inbox = DB::table('mailings')
+            $inbox = DB::table('mailings')
             ->leftjoin('users', 'mailings.from', '=', 'users.email')
-            ->select('mailings.id', 'users.fname', 'mailings.subject', 'mailings.created_at', 'mailings.mail_active', 'mailings.from')
-            ->where('mailings.to', $user->email)
+            ->leftjoin('companies', 'mailings.from', '=', 'companies.email')
+            ->select('mailings.id', 'users.fname', 'companies.cname', 'mailings.subject', 'mailings.created_at', 'mailings.mail_active', 'mailings.from', 'mailings.to')
+            ->where('to', $user->email)
             ->orderBy('created_at', 'desc')
             ->paginate(20);
         $mailinfo = Mailing::where('to', '=', $user->email)

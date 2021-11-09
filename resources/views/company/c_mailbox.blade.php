@@ -82,10 +82,14 @@
                                     <td data-label="To">
                                         <a class="text-black text-decoration-none"
                                             href="c_view_mail/{{ Crypt::encrypt($info->id) }}">
-                                            <b> @if ($info->fname != null)
+                                            <b>@if ($info->fname != null)
                                                 {{ $info->fname }}
+                                            @elseif ($info->cname != null)
+                                                {{ $info->cname }}
+                                            @elseif($info->from == "admin@admin.admin")
+                                                    ADMIN
                                             @else
-                                                ADMIN
+                                                {{ $info->from }}
                                             @endif</b>
                                         </a>
                                     </td>

@@ -810,11 +810,6 @@ class adminController extends Controller
     {
         $user = admin::where('id', '=', session('adminLogged'))->first();
         $email = $user->email;
-
-        $sent_info = DB::table('mailings')
-            ->where('from', $email)
-            ->orderBy('created_at', 'desc')
-            ->paginate(20);
         $mailinfo = Mailing::where('to', '=', $user->email)
             ->where('mail_active', '=', '1')
             ->count();

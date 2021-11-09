@@ -72,7 +72,7 @@
                     <thead>
                         <tr>
                             <th style="width: 1%"></th>
-                            <th style="width: 30%" scope="col">to</th>
+                            <th style="width: 30%" scope="col">From</th>
                             <th style="width: 30%" scope="col">Subject</th>
                             <th style="width: 12%" scope="col">Time</th>
                             <th style="width: 12%" style="">Delete</th>
@@ -89,11 +89,16 @@
                                     <td data-label="To">
                                         <a class="text-black text-decoration-none"
                                             href="c_view_mail/{{ Crypt::encrypt($info->id) }}">
-                                            <b>@if ($info->fname != null)
+                                            <b> @if ($info->fname != null)
                                                 {{ $info->fname }}
+                                            @elseif ($info->cname != null)
+                                                {{ $info->cname }}
+                                            @elseif($info->from == "admin@admin.admin")
+                                                    ADMIN
                                             @else
-                                                ADMIN
-                                            @endif</b>
+                                                {{ $info->from }}
+                                            @endif
+                                        </b>
                                         </a>
                                     </td>
                                     <td data-label="Subject">
@@ -124,10 +129,14 @@
                                         <a class="text-black text-decoration-none"
                                             href="c_view_mail/{{ Crypt::encrypt($info->id) }}">
                                             @if ($info->fname != null)
-                                                {{ $info->fname }}
-                                            @else
+                                            {{ $info->fname }}
+                                        @elseif ($info->cname != null)
+                                            {{ $info->cname }}
+                                        @elseif($info->from == "admin@admin.admin")
                                                 ADMIN
-                                            @endif
+                                        @else
+                                            {{ $info->from }}
+                                        @endif
                                         </a>
                                     </td>
                                     <td data-label="Subject">

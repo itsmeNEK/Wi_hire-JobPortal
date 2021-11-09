@@ -86,8 +86,10 @@
                                                 {{ $info->fname }}
                                             @elseif ($info->cname != null)
                                                 {{ $info->cname }}
+                                            @elseif($info->from == "admin@admin.admin")
+                                                    ADMIN
                                             @else
-                                                {{ $info->to }}
+                                                {{ $info->from }}
                                             @endif
                                         </b>
                                     </a>

@@ -298,11 +298,12 @@ class userController extends Controller
         $email = $user->email;
 
         $sent = DB::table('mailings')
-            ->leftjoin('companies', 'mailings.from', '=', 'companies.email')
-            ->select('mailings.id', 'companies.cname', 'mailings.subject', 'mailings.created_at', 'mailings.mail_active', 'mailings.from')
-            ->where('mailings.from', $user->email)
-            ->orderBy('created_at', 'desc')
-            ->paginate(20);
+        ->leftjoin('users', 'mailings.to', '=', 'users.email')
+        ->leftjoin('companies', 'mailings.to', '=', 'companies.email')
+        ->where('from', $user->email)
+        ->select('mailings.id', 'users.fname', 'companies.cname', 'mailings.subject', 'mailings.created_at', 'mailings.mail_active', 'mailings.from', 'mailings.to')
+        ->orderBy('created_at', 'desc')
+        ->paginate(20);
         $mailinfo = Mailing::where('to', '=', $user->email)
             ->where('mail_active', '=', '1')
             ->count();
@@ -313,7 +314,6 @@ class userController extends Controller
             ->where('mail_active', '=', '1')
             ->orderBy('created_at', 'desc')
             ->get();
-
         $data = [
             'sent_info' => $sent,
             'active' => $mailinfo,
@@ -330,9 +330,10 @@ class userController extends Controller
         $email = $user->email;
 
         $inbox = DB::table('mailings')
+            ->leftjoin('users', 'mailings.from', '=', 'users.email')
             ->leftjoin('companies', 'mailings.from', '=', 'companies.email')
-            ->select('mailings.id', 'companies.cname', 'mailings.subject', 'mailings.created_at', 'mailings.mail_active', 'mailings.from')
-            ->where('mailings.to', $user->email)
+            ->select('mailings.id', 'users.fname', 'companies.cname', 'mailings.subject', 'mailings.created_at', 'mailings.mail_active', 'mailings.from', 'mailings.to')
+            ->where('to', $user->email)
             ->orderBy('created_at', 'desc')
             ->paginate(20);
         $mailinfo = Mailing::where('to', '=', $user->email)
