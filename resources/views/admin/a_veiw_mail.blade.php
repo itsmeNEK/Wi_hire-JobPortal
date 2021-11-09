@@ -51,11 +51,21 @@
 
                             <div class="row">
                                 @if ($senderInfo == null)
-                                    <div class="col-6 text-start text-danger">
-                                        From:
-                                        <b class="text-dark">
-                                            {{ $mailInfo->from }}</b></strong>
-                                    </div><br>
+                                    @if ($mailInfo->from == 'admin@admin.admin')
+                                        <div class="col-6 text-start text-danger">
+                                            from:
+                                            <img class="avatar rounded-circle border border-light " width="40px"
+                                                src="/img/wihireicon.png"><strong
+                                                class="align-middle px-0 ms-1 d-sm-inline">
+                                                <b class="text-dark"> Admin</b></strong>
+                                        </div><br>
+                                    @else
+                                        <div class="col-6 text-start text-danger">
+                                            from:
+                                            <b class="text-dark">
+                                                {{ $mailInfo->from }}</b></strong>
+                                        </div><br>
+                                    @endif
                                 @else
                                     @if ($senderInfo->fname)
                                         <div class="col-6 text-start text-danger">
@@ -84,31 +94,41 @@
                                         </div><br>
                                     @endif
                                 @endif
-                                @if ($receiverinfo->fname)
-                                    <div class="col-6 text-start text-danger">
-                                        To:
-                                        <img class="avatar rounded-circle border border-light " width="40px"
-                                            src="/users/images/{{ $receiverinfo['prof_pic'] }}"><strong
-                                            class="align-middle px-0 ms-1 d-sm-inline"><b class="text-dark">
-                                                {{ $receiverinfo['fname'] }}
-                                                {{ $receiverinfo['lname'] }}</b></strong>
-                                    </div><br>
-                                @elseif($receiverinfo->cname)
-                                    <div class="col-6 text-start text-danger">
-                                        To:
-                                        <img class="avatar rounded-circle border border-light " width="40px"
-                                            src="/company/images/{{ $receiverinfo['prof_pic'] }}"><strong
-                                            class="align-middle px-0 ms-1 d-sm-inline">
-                                              <b class="text-dark"> {{ $receiverinfo['cname'] }}</b></strong>
-                                    </div><br>
+                                @if ($receiverinfo == null)
+                                    @if ($mailInfo->to == 'admin@admin.admin')
+                                        <div class="col-6 text-start text-danger">
+                                            To:
+                                            <img class="avatar rounded-circle border border-light " width="40px"
+                                                src="/img/wihireicon.png"><strong
+                                                class="align-middle px-0 ms-1 d-sm-inline">
+                                                <b class="text-dark"> Admin</b></strong>
+                                        </div><br>
+                                    @else
+                                        <div class="col-6 text-start text-danger">
+                                            to:
+                                            <b class="text-dark">
+                                                {{ $mailInfo->to }}</b></strong>
+                                        </div><br>
+                                    @endif
                                 @else
-                                    <div class="col-6 text-start text-danger">
-                                        To:
-                                        <img class="avatar rounded-circle border border-light " width="40px"
-                                            src="/img/wihireicon.png"><strong
-                                            class="align-middle px-0 ms-1 d-sm-inline">
-                                            <b class="text-dark"> Admin</b></strong>
-                                    </div><br>
+                                    @if ($receiverinfo->fname)
+                                        <div class="col-6 text-start text-danger">
+                                            To:
+                                            <img class="avatar rounded-circle border border-light " width="40px"
+                                                src="/users/images/{{ $receiverinfo['prof_pic'] }}"><strong
+                                                class="align-middle px-0 ms-1 d-sm-inline"><b class="text-dark">
+                                                    {{ $receiverinfo['fname'] }}
+                                                    {{ $receiverinfo['lname'] }}</b></strong>
+                                        </div><br>
+                                    @elseif($receiverinfo->cname)
+                                        <div class="col-6 text-start text-danger">
+                                            To:
+                                            <img class="avatar rounded-circle border border-light " width="40px"
+                                                src="/company/images/{{ $receiverinfo['prof_pic'] }}"><strong
+                                                class="align-middle px-0 ms-1 d-sm-inline">
+                                                <b class="text-dark"> {{ $receiverinfo['cname'] }}</b></strong>
+                                        </div><br>
+                                    @endif
                                 @endif
                             </div>
                             <br>
@@ -128,7 +148,7 @@
                         </div>
                         @if ($mailInfo->attach != null)
                             <i class="bi bi-file-earmark"></i><a class="text-decoration-none text-black"
-                                href="">{{ $mailInfo->attach }}</a>
+                                href="/Mail_file_view/{{ Crypt::encrypt($mailInfo->id) }}">{{ $mailInfo->attach }}</a>
                         @endif
                     </div>
                 </div>
@@ -148,16 +168,11 @@
                         </div>
                     @endif
                     <div class="col-5 text-end">
-                        @if ($receiverinfo['email'] == $LoggedUserInfo->email)
-                            <a class="text-decoration-none text-white" href="{{ url()->previous() }}"><button
-                                    type="button" class="gbot btn-danger text-light fw-bold rounded">
-                                @else
-                                    <a class="text-decoration-none text-white" href="{{ url()->previous() }}"><button
-                                            type="button" class="gbot btn-danger text-light fw-bold rounded">
-                        @endif
-                        <i class="bot3 bi bi-backspace-fill"></i>
-                        Back
-                        </button></a>
+                        <a class="text-decoration-none text-white" href="{{ url()->previous() }}"><button
+                                type="button" class="gbot btn-danger text-light fw-bold rounded">
+                                <i class="bot3 bi bi-backspace-fill"></i>
+                                Back
+                            </button></a>
                     </div>
                 </div>
                 <br>

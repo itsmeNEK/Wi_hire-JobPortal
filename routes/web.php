@@ -157,6 +157,9 @@ route::post('/send_mail_admin', [mail::class, 'store'])->name('a_send_mail_com')
 //route Talent search
 Route::get('/Talent_search', [companyController::class, 'talent'])->name('talent');
 
+//route Talent search
+Route::get('/Mail_file_view/{id}', [FileUploadController::class, 'mail_file_view'])->name('mail_file_view');
+
 
 //--------------------------------------------route midware checkauth admin-----------------------------------------------
 

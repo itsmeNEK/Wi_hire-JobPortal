@@ -339,31 +339,48 @@ class mail extends Controller
         }
 
         if ($sender) {
-            $send = $sender;
+            $send = null;
             if ($receiver) {
                 $receive = $receiver;
             } elseif ($receiver1) {
                 $receive = $receiver1;
-            } else {
+            } elseif ($receiver2) {
                 $receive = $receiver2;
+            }else{
+                $receive = null;
             }
         } elseif ($sender1) {
-            $send = $sender1;
+            $send = null;
             if ($receiver) {
                 $receive = $receiver;
             } elseif ($receiver1) {
                 $receive = $receiver1;
-            } else {
+            } elseif ($receiver2) {
                 $receive = $receiver2;
+            }else{
+                $receive = null;
             }
-        } else {
-            $send = $sender2;
+        } elseif ($sender2) {
+            $send = null;
             if ($receiver) {
                 $receive = $receiver;
             } elseif ($receiver1) {
                 $receive = $receiver1;
-            } else {
+            } elseif ($receiver2) {
                 $receive = $receiver2;
+            }else{
+                $receive = null;
+            }
+        }else{
+            $send = null;
+            if ($receiver) {
+                $receive = $receiver;
+            } elseif ($receiver1) {
+                $receive = $receiver1;
+            } elseif ($receiver2) {
+                $receive = $receiver2;
+            }else{
+                $receive = null;
             }
         }
 

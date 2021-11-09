@@ -22,6 +22,20 @@
     <div id="main">
         <div class="container rounded bg-white " style="margin-bottom:10px">
             <br>
+            @if (Session::get('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ Session::get('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                aria-label="Close"></button>
+            </div>
+            @endif
+            @if (Session::get('fail'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ Session::get('fail') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                aria-label="Close"></button>
+            </div>
+            @endif
             <br>
             <div class="row" style="margin-top: -25px">
                 <div class="col-6 text-start">
@@ -97,7 +111,7 @@
                                             <div class="col-lg-6 col-md-5 cp-sm-4 text-end">
                                                 <button type="button" class="gbot btn-danger text-light fw-bold rounded">
                                                     <a class="text-white text-decoration-none"
-                                                        href="{{ route('a_inbox') }}"><i
+                                                        href="{{ route('a_mail_inbox') }}"><i
                                                             class="bot3 bi bi-x-lg"></i>
                                                         Discard</a>
                                                 </button>

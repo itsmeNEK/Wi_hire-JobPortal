@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Helpers\Helper;
 use App\Models\companyfiles;
 use App\Models\user_file_upload;
+use App\Models\Mailing;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Crypt;
 
@@ -57,6 +58,38 @@ class FileUploadController extends Controller
         $filename = $user_file->file_path;
         if ($filename) {
             $file = base_path() . '/public/user_files/' . $filename;
+            if ($pos = strrpos($filename, '.')) {
+                $ext = substr($filename, $pos);
+            } else {
+                $name = $filename;
+            }
+            if ($ext == '.pdf') {
+                $content_types = 'application/pdf';
+            } elseif ($ext == '.doc') {
+                $content_types = 'application/msword';
+            } elseif ($ext == '.docx') {
+                $content_types = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
+            } elseif ($ext == '.xls') {
+                $content_types = 'application/vnd.ms-excel';
+            } elseif ($ext == '.xlsx') {
+                $content_types = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+            } elseif ($ext == '.txt') {
+                $content_types = 'application/octet-stream';
+            }
+            return response(file_get_contents($file), 200)->header('Content-Type', $content_types);
+        } else {
+            exit('Invalid Request');
+        }
+    }
+
+    public function mail_file_view($id)
+    {
+        $id = crypt::decrypt($id);
+        $user_file = Mailing::where('id', '=', $id)->first();
+        // return view('users.u_view_file',compact('user_file'));
+        $filename = $user_file->attach;
+        if ($filename) {
+            $file = base_path() . '/public/mail/' . $filename;
             if ($pos = strrpos($filename, '.')) {
                 $ext = substr($filename, $pos);
             } else {

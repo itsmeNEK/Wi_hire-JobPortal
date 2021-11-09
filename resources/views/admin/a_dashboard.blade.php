@@ -129,7 +129,8 @@
                                             </button>
                                             <ul class="dropdown-menu dropdown-menu-dark"
                                                 aria-labelledby="navbarDarkDropdownMenuLink">
-                                                <li><a class="dropdown-item" href="">View Jobs</a></li>
+                                                <li><a class="dropdown-item" href="{{ route('a_jobs') }}">Active Jobs</a></li>
+                                                <li><a class="dropdown-item" href="{{ route('a_jobs_nactive') }}">Inactive Jobs</a></li>
                                             </ul>
                                         </div>
                                     </div>

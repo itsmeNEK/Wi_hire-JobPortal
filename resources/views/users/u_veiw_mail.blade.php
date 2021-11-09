@@ -5,7 +5,8 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- CSS only -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
@@ -24,8 +25,8 @@
 
 <body style="background-color: rgb(223, 221, 221)">
     <!-- Navbar -->
-     <!-- Navbar -->
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-toggler border-0 btn-sm" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -45,10 +46,10 @@
                         aria-expanded="false" data-bs-target="#notif" aria-controls="notif">
                         <i class="bi bi-bell-fill text-light"></i>
                         @if ($active != null)
-                    <span class="position-absolute top-10 start-90 translate-middle p-2">
-                        <i class="iActive bi text-danger bi-circle-fill"></i>
-                    </span>
-                @endif
+                            <span class="position-absolute top-10 start-90 translate-middle p-2">
+                                <i class="iActive bi text-danger bi-circle-fill"></i>
+                            </span>
+                        @endif
                     </a>
                     <ul class="dropdown-menu bg-light" id="notif">
                         <b class="ml-1">Notifications</b>
@@ -61,11 +62,13 @@
                                             class="nav-link text-dark bg-light">
 
                                             <div class="p-1 py-1">
-                                                <b>@if ($info->cname != null)
-                                                    {{ $info->cname }}
-                                                @else
-                                                    Admin
-                                                @endif</b> <br>
+                                                <b>
+                                                    @if ($info->cname != null)
+                                                        {{ $info->cname }}
+                                                    @else
+                                                        Admin
+                                                    @endif
+                                                </b> <br>
                                                 <div class="d-flex w-100 justify-content-between">
                                                     {{ $info->subject }}
                                                 </div>
@@ -119,11 +122,13 @@
                                     class="nav-link text-dark bg-light">
 
                                     <div class="p-1 py-1">
-                                        <b>@if ($info->cname != null)
-                                            {{ $info->cname }}
-                                        @else
-                                            Admin
-                                        @endif</b> <br>
+                                        <b>
+                                            @if ($info->cname != null)
+                                                {{ $info->cname }}
+                                            @else
+                                                Admin
+                                            @endif
+                                        </b> <br>
                                         <div class="d-flex w-100 justify-content-between">
                                             {{ $info->subject }}
                                         </div>
@@ -156,8 +161,7 @@
             <hr class="bg-light">
             <ul style="padding-left:10px;" class="" id=" menu">
                 <li class="nav-item">
-                    <a href="{{ route('u_dash') }}"
-                        class="fw-bold nav-link text-light align-middle px-2">
+                    <a href="{{ route('u_dash') }}" class="fw-bold nav-link text-light align-middle px-2">
                         <i class="bi bi-speedometer2"></i> <span aria-current="page">
                             Profile</span>
                     </a>
@@ -172,10 +176,10 @@
                                 </span>
                             </div>
                             @if ($active != null)
-                            <div class="col-2 text-center">
-                                <span class="badge bg-none">{{ $active }}</span>
-                            </div>
-                        @endif
+                                <div class="col-2 text-center">
+                                    <span class="badge bg-none">{{ $active }}</span>
+                                </div>
+                            @endif
                         </div>
                     </a>
                 </li>
@@ -211,8 +215,7 @@
             <hr class="bg-light">
             <ul style="padding-left:10px;" class="" id=" menu">
                 <li class="nav-item">
-                    <a href="{{ route('u_dash') }}"
-                        class="fw-bold nav-link text-light align-middle px-2">
+                    <a href="{{ route('u_dash') }}" class="fw-bold nav-link text-light align-middle px-2">
                         <i class="bi bi-speedometer2"></i> <span aria-current="page">
                             Profile</span>
                     </a>
@@ -284,57 +287,86 @@
                         <div class="sender-details">
 
                             <div class="row">
-                                @if ($senderInfo->fname)
-                                <div class="col-6 text-start text-danger">
-                                    From:
-                                    <img class="avatar rounded-circle border border-light " width="40px"
-                                        src="/users/images/{{ $senderInfo['prof_pic'] }}"><strong
-                                        class="align-middle px-0 ms-1 d-sm-inline"><b class="text-dark"> {{ $senderInfo['fname'] }}
-                                            {{ $senderInfo['lname'] }}</b></strong>
-                                </div><br>
-                            @elseif($senderInfo->cname)
-                                <div class="col-6 text-start text-danger">
-                                    From:
-                                    <img class="avatar rounded-circle border border-light " width="40px"
-                                        src="/company/images/{{ $senderInfo['prof_pic'] }}"><strong
-                                        class="align-middle px-0 ms-1 d-sm-inline">
-                                        <b class="text-dark"> {{ $senderInfo['cname'] }}</b></strong>
-                                </div><br>
-                            @else
-                                <div class="col-6 text-start text-danger">
-                                    From:
-                                    <img class="avatar rounded-circle border border-light " width="40px"
-                                        src="/img/wihireicon.png"><strong
-                                        class="align-middle px-0 ms-1 d-sm-inline">
-                                        <b class="text-dark"> Admin</b></strong>
-                                </div><br>
-                            @endif
-                            @if ($receiverinfo->fname)
-                                <div class="col-6 text-start text-danger">
-                                    To:
-                                    <img class="avatar rounded-circle border border-light " width="40px"
-                                        src="/users/images/{{ $receiverinfo['prof_pic'] }}"><strong
-                                        class="align-middle px-0 ms-1 d-sm-inline"><b class="text-dark">
-                                            {{ $receiverinfo['fname'] }}
-                                            {{ $receiverinfo['lname'] }}</b></strong>
-                                </div><br>
-                            @elseif($receiverinfo->cname)
-                                <div class="col-6 text-start text-danger">
-                                    To:
-                                    <img class="avatar rounded-circle border border-light " width="40px"
-                                        src="/company/images/{{ $receiverinfo['prof_pic'] }}"><strong
-                                        class="align-middle px-0 ms-1 d-sm-inline">
-                                        <b class="text-dark"> {{ $receiverinfo['cname'] }}</b></strong>
-                                </div><br>
-                            @else
-                            <div class="col-6 text-start text-danger">
-                                To:
-                                <img class="avatar rounded-circle border border-light " width="40px"
-                                    src="/img/wihireicon.png"><strong
-                                    class="align-middle px-0 ms-1 d-sm-inline">
-                                    <b class="text-dark"> Admin</b></strong>
-                            </div><br>
-                            @endif
+                                @if ($senderInfo == null)
+                                    @if ($mailInfo->from == 'admin@admin.admin')
+                                        <div class="col-6 text-start text-danger">
+                                            from:
+                                            <img class="avatar rounded-circle border border-light " width="40px"
+                                                src="/img/wihireicon.png"><strong
+                                                class="align-middle px-0 ms-1 d-sm-inline">
+                                                <b class="text-dark"> Admin</b></strong>
+                                        </div><br>
+                                    @else
+                                        <div class="col-6 text-start text-danger">
+                                            from:
+                                            <b class="text-dark">
+                                                {{ $mailInfo->from }}</b></strong>
+                                        </div><br>
+                                    @endif
+                                @else
+                                    @if ($senderInfo->fname)
+                                        <div class="col-6 text-start text-danger">
+                                            From:
+                                            <img class="avatar rounded-circle border border-light " width="40px"
+                                                src="/users/images/{{ $senderInfo['prof_pic'] }}"><strong
+                                                class="align-middle px-0 ms-1 d-sm-inline"><b class="text-dark">
+                                                    {{ $senderInfo['fname'] }}
+                                                    {{ $senderInfo['lname'] }}</b></strong>
+                                        </div><br>
+                                    @elseif($senderInfo->cname)
+                                        <div class="col-6 text-start text-danger">
+                                            From:
+                                            <img class="avatar rounded-circle border border-light " width="40px"
+                                                src="/company/images/{{ $senderInfo['prof_pic'] }}"><strong
+                                                class="align-middle px-0 ms-1 d-sm-inline">
+                                                <b class="text-dark"> {{ $senderInfo['cname'] }}</b></strong>
+                                        </div><br>
+                                    @else
+                                        <div class="col-6 text-start text-danger">
+                                            From:
+                                            <img class="avatar rounded-circle border border-light " width="40px"
+                                                src="/img/wihireicon.png"><strong
+                                                class="align-middle px-0 ms-1 d-sm-inline">
+                                                <b class="text-dark"> Admin</b></strong>
+                                        </div><br>
+                                    @endif
+                                @endif
+                                @if ($receiverinfo == null)
+                                    @if ($mailInfo->to == 'admin@admin.admin')
+                                        <div class="col-6 text-start text-danger">
+                                            To:
+                                            <img class="avatar rounded-circle border border-light " width="40px"
+                                                src="/img/wihireicon.png"><strong
+                                                class="align-middle px-0 ms-1 d-sm-inline">
+                                                <b class="text-dark"> Admin</b></strong>
+                                        </div><br>
+                                    @else
+                                        <div class="col-6 text-start text-danger">
+                                            to:
+                                            <b class="text-dark">
+                                                {{ $mailInfo->to }}</b></strong>
+                                        </div><br>
+                                    @endif
+                                @else
+                                    @if ($receiverinfo->fname)
+                                        <div class="col-6 text-start text-danger">
+                                            To:
+                                            <img class="avatar rounded-circle border border-light " width="40px"
+                                                src="/users/images/{{ $receiverinfo['prof_pic'] }}"><strong
+                                                class="align-middle px-0 ms-1 d-sm-inline"><b class="text-dark">
+                                                    {{ $receiverinfo['fname'] }}
+                                                    {{ $receiverinfo['lname'] }}</b></strong>
+                                        </div><br>
+                                    @elseif($receiverinfo->cname)
+                                        <div class="col-6 text-start text-danger">
+                                            To:
+                                            <img class="avatar rounded-circle border border-light " width="40px"
+                                                src="/company/images/{{ $receiverinfo['prof_pic'] }}"><strong
+                                                class="align-middle px-0 ms-1 d-sm-inline">
+                                                <b class="text-dark"> {{ $receiverinfo['cname'] }}</b></strong>
+                                        </div><br>
+                                    @endif
+                                @endif
                             </div>
                             <hr>
                             <div class="row">
@@ -353,7 +385,7 @@
                         </div>
                         @if ($mailInfo->attach != null)
                             <i class="bi bi-file-earmark"></i><a class="text-decoration-none text-black"
-                                href="">{{ $mailInfo->attach }}</a>
+                                href="/Mail_file_view/{{ Crypt::encrypt($mailInfo->id) }}">{{ $mailInfo->attach }}</a>
                         @endif
                     </div>
                 </div>
@@ -364,8 +396,9 @@
                     </div>
                     @if ($LoggedUserInfo->email == $mailInfo->to)
                         <div class="col-5 text-start">
-                            <a class="text-decoration-none text-white" href="reply/ {{ Crypt::encrypt($mailInfo->id); }}"><button
-                                    type="button" class="gbot btn-danger text-light fw-bold rounded">
+                            <a class="text-decoration-none text-white"
+                                href="reply/ {{ Crypt::encrypt($mailInfo->id) }}"><button type="button"
+                                    class="gbot btn-danger text-light fw-bold rounded">
                                     <i class="bot3 bi bi-reply-fill"></i>
                                     Reply
                                 </button></a>
@@ -376,8 +409,9 @@
                             <a class="text-decoration-none text-white" href="{{ url()->previous() }}"><button
                                     type="button" class="gbot btn-danger text-light fw-bold rounded">
                                 @else
-                                    <a class="text-decoration-none text-white" href="{{ url()->previous() }}"><button
-                                            type="button" class="gbot btn-danger text-light fw-bold rounded">
+                                    <a class="text-decoration-none text-white"
+                                        href="{{ url()->previous() }}"><button type="button"
+                                            class="gbot btn-danger text-light fw-bold rounded">
                         @endif
                         <i class="bot3 bi bi-backspace-fill"></i>
                         Back
@@ -406,7 +440,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
