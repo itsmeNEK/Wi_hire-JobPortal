@@ -43,7 +43,7 @@
                     <a href="{{ route('u_mail') }}">
                         <button type="button" class="gbot btn-danger text-light fw-bold rounded-end">
                             <i class="bot3 bi bi-card-checklist"></i>
-                            SENTs
+                            SENT
                         </button>
                     </a>
                 </div>
