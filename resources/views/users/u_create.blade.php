@@ -92,15 +92,22 @@
                                 <input id="file" accept=".doc,.pdf,.docx" class="form-control" type="file"
                                     name="attachfiles"><br>
                                 <div class="form-group">
-                                    <button type="submit" class="gbot btn-success text-light fw-bold rounded">
-                                        <i class="bot3 bi bi-check-lg"></i>
-                                        Send
-                                    </button>
-                                    <button type="button" class="gbot btn-danger text-light fw-bold rounded">
-                                        <a class="text-white text-decoration-none"
-                                            href="{{ route('u_mail_inbox') }}"><i class="bot3 bi bi-x-lg"></i>
-                                            Discard</a>
-                                    </button>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-5 cp-sm-4">
+                                            <button type="submit" class="gbot btn-success text-light fw-bold rounded">
+                                                <i class="bot3 bi bi-check-lg"></i>
+                                                Send
+                                            </button>
+                                        </div>
+                                        <div class="col-lg-6 col-md-5 cp-sm-4 text-end">
+                                            <button type="button" class="gbot btn-danger text-light fw-bold rounded">
+                                                <a class="text-white text-decoration-none"
+                                                    href="{{ route('a_mail_inbox') }}"><i
+                                                        class="bot3 bi bi-x-lg"></i>
+                                                    Discard</a>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

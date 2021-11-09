@@ -8,9 +8,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-
     <link rel="stylesheet" href="css/talent.css">
     <link rel="stylesheet" href="css/jobs.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,12 +33,6 @@
                 <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link fw-bold" href="{{ route('jobs') }}">Jobs</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-bold" href="{{ route('companies') }}">Companies</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link fw-bold" href="{{ route('talent') }}">Talent Search</a>
                         </li>
                         <li class="nav-item">
@@ -54,7 +45,7 @@
                             </li>
                         @endif
                         @if (!empty($LoggedCompanyInfo['id']))
-                            <div class="dropdown">
+                            <div class="dropdown dropstart">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-dark fw-bold rounded" data-bs-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">
@@ -244,84 +235,79 @@
                                 </div>
                             </div>
                             <div class="but text-end">
-                                <a type="submit"
-
-                    @if((session('Loggedcompany')))
-                    href="View_Candidate/{{ Crypt::encrypt($info->id) }}"
-                    @elseif (session('adminLogged'))
-                    href="Admin_view_Candidate/{{ Crypt::encrypt($info->id) }}"
-                    @endif
-                                    class="btn btn-danger text-white fw-bold">
-                                    <i class="bi bi-arrow-bar-up"></i> View Profile
+                                @if (!empty(session('Loggedcompany') || session('adminLogged')))
+                                    <a type="submit" @if (session('Loggedcompany'))
+                                        href="View_Candidate/{{ Crypt::encrypt($info->id) }}"
+                                    @elseif (session('adminLogged'))
+                                        href="Admin_view_Candidate/{{ Crypt::encrypt($info->id) }}"
+                                @endif
+                                class="btn btn-danger text-white fw-bold">
+                                <i class="bi bi-arrow-bar-up"></i> View Profile
                                 </a>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="text-decoration-none text-black" onclick="showcontent(this.id)" id="{{ $info->id }}">
-                        <div class="card-box-t">
-                            <div class="card-thumbnail-t">
-                                <img src="/users/images/{{ $info->prof_pic }}" class="img-fluid" alt="">
-                            </div>
-                            <span class="text-decoration-none text-black fw-bold">
-                                {{ $info->fname }} {{ substr($info->mname, 0, 1) }} {{ $info->lname }}</span>
-                            <h3 class="mt-2 text-danger"></h3>
-
-                            <span class="text-md text-lg text-sm">
-                                &#9679; {{ $info->field }}
-                            </span>
-                            <br>
-
-                            <span class="text-md text-lg text-sm">
-                                &#9679; {{ $info->major }}
-                            </span>
-                            <br>
-                            <span class="text-md text-lg text-sm">
-                                &#9679; {{ $info->skills }}
-                            </span>
-                            <br>
-                            <span class="text-md text-lg text-sm">
-                                &#9679; {{ $info->specialization }}
-                            </span>
-                            <br>
-                            <span class="text-md text-lg text-sm">
-                                &#9679; {{ $info->gender }}
-                            </span>
-                            <br>
-                            <span class="text-md text-lg text-sm">
-                                &#9679; {{ $info->city }}
-                            </span>
-                            <br>
-                            <span class="text-md text-lg text-sm">
-                                &#9679; {{ $info->civilstat }}
-                            </span>
-                            <br>
-                        </div>
-                    </a>
-                @empty
-                    <div class="row-mt-2" style="margin-top:10px;">
-                        <div class="row-mt-2">
-                            <div class="col-sm-12">
-                                <div class="alert alert-dark text-lg-center " role="alert">
-                                    <h1>No Candidate Found</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforelse
-
+                @endif
             </div>
+        </div>
+        </div>
+        <a class="text-decoration-none text-black" onclick="showcontent(this.id)" id="{{ $info->id }}">
+            <div class="card-box-t">
+                <div class="card-thumbnail-t">
+                    <img src="/users/images/{{ $info->prof_pic }}" class="img-fluid" alt="">
+                </div>
+                <span class="text-decoration-none text-black fw-bold">
+                    {{ $info->fname }} {{ substr($info->mname, 0, 1) }} {{ $info->lname }}</span>
+                <h3 class="mt-2 text-danger"></h3>
+
+                <span class="text-md text-lg text-sm">
+                    &#9679; {{ $info->field }}
+                </span>
+                <br>
+
+                <span class="text-md text-lg text-sm">
+                    &#9679; {{ $info->major }}
+                </span>
+                <br>
+                <span class="text-md text-lg text-sm">
+                    &#9679; {{ $info->skills }}
+                </span>
+                <br>
+                <span class="text-md text-lg text-sm">
+                    &#9679; {{ $info->specialization }}
+                </span>
+                <br>
+                <span class="text-md text-lg text-sm">
+                    &#9679; {{ $info->gender }}
+                </span>
+                <br>
+                <span class="text-md text-lg text-sm">
+                    &#9679; {{ $info->city }}
+                </span>
+                <br>
+                <span class="text-md text-lg text-sm">
+                    &#9679; {{ $info->civilstat }}
+                </span>
+                <br>
+            </div>
+        </a>
+    @empty
+        <div class="row-mt-2" style="margin-top:10px;">
+            <div class="row-mt-2">
+                <div class="col-sm-12">
+                    <div class="alert alert-dark text-lg-center " role="alert">
+                        <h1>No Candidate Found</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endforelse
+
+        </div>
         </div>
 
     </section>
     <br>
     <script src="/js/jobs.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script scrc="https://tryit.w3schools.com/code_datas.php"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>

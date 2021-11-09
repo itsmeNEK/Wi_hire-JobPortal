@@ -713,7 +713,6 @@ class companyController extends Controller
             ->leftjoin('users', 'mailings.from', '=', 'users.email')
             ->select('mailings.id', 'users.fname', 'mailings.subject', 'mailings.created_at', 'mailings.mail_active', 'mailings.from')
             ->where('mailings.from', $user->email)
-            ->where('mail_active', '=', '1')
             ->orderBy('created_at', 'desc')
             ->paginate(20);
         $mailinfo = Mailing::where('to', '=', $user->email)
@@ -889,6 +888,58 @@ class companyController extends Controller
         }
         $companyinfo = company::where('id', '=', session('Loggedcompany'))->first();
         $userinfo = User::where('id', '=', $appinfo->u_id)->first();
+        $EB = DB::table('user_prof_e_b_s')
+            ->where('user_id', $userinfo->id)
+            ->get();
+        $WE = DB::table('user_prof_work_exes')
+            ->where('user_id', $userinfo->id)
+            ->get();
+        $skills = DB::table('user_prof_skills')
+            ->where('user_id', $userinfo->id)
+            ->get();
+        $files = DB::table('user_file_uploads')
+            ->where('user_id', $userinfo->id)
+            ->get();
+        $mailinfo = Mailing::where('to', '=', $userinfo->email)
+            ->where('mail_active', '=', '1')
+            ->count();
+        $appcountnew = DB::table('applicants')
+            ->where('c_id', session('Loggedcompany'))
+            ->where('stat', '=', '0')
+            ->count();
+        $appcountnew_info = DB::table('applicants')
+            ->where('c_id', session('Loggedcompany'))
+            ->where('stat', '=', '0')
+            ->orderBy('created_at', 'desc')
+            ->get();
+        $inbox = DB::table('mailings')
+            ->leftjoin('users', 'mailings.from', '=', 'users.email')
+            ->select('mailings.id', 'users.fname', 'mailings.subject', 'mailings.created_at', 'mailings.mail_active', 'mailings.from')
+            ->where('mailings.to', $companyinfo->email)
+            ->where('mail_active', '=', '1')
+            ->orderBy('created_at', 'desc')
+            ->get();
+        $data = [
+            'user_SkilssInfo' => $skills,
+            'user_educbackInfo' => $EB,
+            'user_workexInfo' => $WE,
+            'user_files' => $files,
+            'LoggedUserInfo' => $companyinfo,
+            'userinfo' => $userinfo,
+            'active' => $mailinfo,
+            'appcountnew' => $appcountnew,
+            'appcountnew_info' => $appcountnew_info,
+            'inbox' => $inbox,
+        ];
+        return view('company.c_view_app', $data);
+    }
+    // company view applicants
+    public function c_view_can($id)
+    {
+        $id = crypt::decrypt($id);
+
+        $companyinfo = company::where('id', '=', session('Loggedcompany'))->first();
+        $userinfo = User::where('id', '=', $id)->first();
         $EB = DB::table('user_prof_e_b_s')
             ->where('user_id', $userinfo->id)
             ->get();

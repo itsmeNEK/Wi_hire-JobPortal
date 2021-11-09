@@ -66,11 +66,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <div class="row">
-                        <div class="col-6 text-end">
-                            <button type="submit" class="btn btn-danger">Send</button>
-                        </div>
-                    </div>
+                    <button type="submit" class="btn btn-danger">Send</button>
                 </div>
             </div>
         </div>
@@ -248,7 +244,8 @@
                                             <td><i class="bi bi-file-earmark"></i><a>{{ $info->file_path }}</a>
                                             </td>
                                             <td class="text-end">
-                                                <a type="button" target="_blank" href="/u_view_file/{{ Crypt::encrypt($info->id) }}"
+                                                <a type="button" target="_blank"
+                                                    href="/u_view_file/{{ Crypt::encrypt($info->id) }}"
                                                     class="btn btn-white btn-view"><i class="bi bi-eye-fill"
                                                         style="color:  #000000"></i></a>
                                             </td>
@@ -271,7 +268,7 @@
     <script src="/js/viewimage.js"></script>
     <script>
         function goBack() {
-          window.history.back();
+            window.history.back();
         }
-        </script>
+    </script>
 @endsection

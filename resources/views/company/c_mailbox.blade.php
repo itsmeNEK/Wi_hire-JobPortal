@@ -77,22 +77,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {{-- inbox have content --}}
-                        @if ($active == null)
-                            <tr>
-                                <td data-label="To">
-                                    <b>No Mail Yet</b>
-                                </td>
-                                <td data-label="Subject">
-                                    <b>No Mail Yet</b>
-                                </td>
-                                <td data-label="Time">
-                                    <b>No Mail Yet</b>
-                                </td>
-                            </tr>
-                        @else
-                            {{-- if sent have content --}}
-                            @foreach ($sent_info as $info)
+                            @forelse ($sent_info as $info)
                                 <tr>
                                     <td data-label="To">
                                         <a class="text-black text-decoration-none"
@@ -123,9 +108,19 @@
                                         </a>
                                     </td>
                                 </tr>
-                            @endforeach
-                        @endif
-
+                                @empty
+                                <tr>
+                                    <td data-label="To">
+                                        <b>No Mail Yet</b>
+                                    </td>
+                                    <td data-label="Subject">
+                                        <b>No Mail Yet</b>
+                                    </td>
+                                    <td data-label="Time">
+                                        <b>No Mail Yet</b>
+                                    </td>
+                                </tr>
+                            @endforelse
                     </tbody>
                 </table>
 
