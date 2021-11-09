@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>Wi-Hire</title>
+    <link rel="icon" href="/img/wihireicon copy.png" type="image/x-icon">
     <!-- custom -->
     <link rel="stylesheet" type="text/css" href="/css/dashboard.css">
     <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
