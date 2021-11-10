@@ -27,7 +27,7 @@ class secureheader
     {
         $this->removeUnwantedHeaders($this->unwantedHeaderList);
         $response = $next($request);
-        $response->headers->set('Referrer-Policy', 'no-referrer-when-downgrade');
+        // $response->headers->set('Referrer-Policy', 'no-referrer-when-downgrade');
         $response->headers->set('X-Content-Type-Options', 'nosniff');
         $response->headers->set('X-XSS-Protection', '1; mode=block');
         $response->headers->set('X-Frame-Options', 'DENY');
