@@ -39,7 +39,7 @@
                                 Seeker)</b></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-bold" href="#">Login<b> (Company)</b></a>
+                        <a class="nav-link fw-bold" href="#">Login<b> (Employer)</b></a>
                     </li>
                 </ul>
             </div>

@@ -38,7 +38,7 @@
                                 <a class="nav-link fw-bold" href="{{ route('jobs') }}">Jobs</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link fw-bold" href="{{ route('companies') }}">Companies</a>
+                                <a class="nav-link fw-bold" href="{{ route('companies') }}">Companies / Employer</a>
                             </li>
                         @elseif (!empty($LoggedCompanyInfo['id']))
                             <li class="nav-item">
@@ -49,7 +49,7 @@
                                 <a class="nav-link fw-bold" href="{{ route('jobs') }}">Jobs</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link fw-bold" href="{{ route('companies') }}">Companies</a>
+                                <a class="nav-link fw-bold" href="{{ route('companies') }}">Companies / Employer</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link fw-bold" href="{{ route('talent') }}">Talent
@@ -304,7 +304,7 @@
     <section>
         <div class="d-flex flex-column align-items-center text-center">
             <div class="text-center">
-                <h1 class="">Companies Building A Great <br> Future With Us.</h1>
+                <h1 class="">Companies / Businesses Building A Great <br> Future With Us.</h1>
             </div>
             <div class="commar rounded bg-white c-container">
                 @forelse ($companyinfo as $info)

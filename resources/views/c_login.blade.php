@@ -69,7 +69,7 @@
                         {{ Session::get('success') }}
                     </div>
                 @endif
-                <h3 class="fw-bold">Company/Employer Login</h3>
+                <h3 class="fw-bold">Employer Login</h3>
                 <br>
                 <div class="row">
                     <div class="col-sm-6 text-start">

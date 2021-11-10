@@ -86,7 +86,7 @@
                         <a class="nav-link fw-bold" href="{{ route('jobs') }}">Job</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-bold" href="{{ route('companies') }}">Companies</a>
+                        <a class="nav-link fw-bold" href="{{ route('companies') }}">Companies / Employer</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link fw-bold" href="{{ route('howto2') }}">How to Use</a>

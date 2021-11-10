@@ -33,7 +33,7 @@
                         <li>
                             <a class="nav-link text-secondary fw-bold" href="#2">
                                 <i class="bi bi-question text-danger"></i>
-                                Company Information
+                                Company / Employer Information
                             </a>
                         </li>
                         <li>
@@ -95,7 +95,7 @@
         </div>
         <br>
         <div class="details">
-            <h1 id="2"><b>Company Information</b></h1>
+            <h1 id="2"><b>Company / Employer Information</b></h1>
             <p>
                 In editing your company information, simply click the pencin icon  <i class="bi bi-pencil text-danger"></i>
                 in the right side of your dashborad. after that you will the redireted to the company information page

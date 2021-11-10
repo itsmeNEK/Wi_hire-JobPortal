@@ -37,7 +37,7 @@
                                 <div class="col-sm-2" >
                                     <div class="picture-container text-start">
                                         <div class="picture">
-                                            <img id="avatar" src="company/images/{{ $LoggedUserInfo['prof_pic'] }}"
+                                            <img id="avatar" src="/company/images/{{ $LoggedUserInfo['prof_pic'] }}"
                                                 class="picture-src" title="">
                                         </div>
                                     </div>
@@ -347,7 +347,7 @@
                                                                     <div class="btn-group" role="group"
                                                                         aria-label="Basic example">
                                                                         <a
-                                                                            href="company_managejobs/edit/{{ Crypt::encrypt($info->id) }}"><button
+                                                                            href="/company_managejobs/edit/{{ Crypt::encrypt($info->id) }}"><button
                                                                                 type="button"
                                                                                 class="gbot btn btn-success bi-pencil"></button></a>
 

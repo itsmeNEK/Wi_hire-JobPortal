@@ -32,9 +32,29 @@
                 @csrf
                 <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link fw-bold" href="{{ route('talent') }}">Talent Search</a>
-                        </li>
+                        @if (!empty($LoggedUserInfo['id']))
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold" href="{{ route('jobs') }}">Jobs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold" href="{{ route('companies') }}">Companies / Employer</a>
+                            </li>
+                        @elseif (!empty($LoggedCompanyInfo['id']))
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold" href="{{ route('talent') }}">Talent Search</a>
+                            </li>
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold" href="{{ route('jobs') }}">Jobs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold" href="{{ route('companies') }}">Companies / Employer</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold" href="{{ route('talent') }}">Talent
+                                    Search</a>
+                            </li>
+                        @endif
                         <li class="nav-item">
                             <a class="nav-link fw-bold" href="{{ route('howto2') }}">How to Use</a>
                         </li>

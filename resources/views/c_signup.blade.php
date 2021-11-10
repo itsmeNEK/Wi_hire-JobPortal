@@ -74,7 +74,7 @@
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="floatingInput" name="cname"
                     placeholder="FirstName" value="{{ old('cname') }}">
-                    <label for="floatingInput"><i class="bi text-danger bi-person-lines-fill"></i> Company Name</label>
+                    <label for="floatingInput"><i class="bi text-danger bi-person-lines-fill"></i> Company / Business Name</label>
                     <span style="color: #fa695f;" class="text">@error('cname'){{ $message }}
                         @enderror</span>
                 </div>
