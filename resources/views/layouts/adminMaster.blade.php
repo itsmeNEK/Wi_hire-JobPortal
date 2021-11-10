@@ -6,7 +6,8 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- CSS only -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -86,8 +87,7 @@
                                     <div class="list-group-item list-group-item-action bg-light border-0">
                                         <span class="text-secondary fw-bold">Companies</span>
                                         @forelse ( $comcountnew_info as $info)
-                                            <a aria-current="true"
-                                                href="View_Company/{{ Crypt::encrypt($info->id) }}"
+                                            <a aria-current="true" href="View_Company/{{ Crypt::encrypt($info->id) }}"
                                                 class="nav-link text-dark bg-light">
                                                 <div class="p-1 py-1">
                                                     <b>{{ $info->cname }}</b> <br>
@@ -166,7 +166,7 @@
                                                 @elseif ($info->cname != null)
                                                     {{ $info->cname }}
                                                 @else
-                                                {{ $info->from }}
+                                                    {{ $info->from }}
                                                 @endif
                                             </b> <br>
                                             <div class="d-flex w-100 justify-content-between">
@@ -259,8 +259,7 @@
                     </a>
                 </li>
                 <li class="nav-item has-submenu">
-                    <a type="button"
-                        class="fw-bold  nav-link text-light align-middle px-2 @yield('candidates')"
+                    <a type="button" class="fw-bold  nav-link text-light align-middle px-2 @yield('candidates')"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="bi bi-person-fill"></i> <span aria-current="page">
                             Candidates <i class="bi-sm bi-caret-down-fill"></i></span>
@@ -299,10 +298,10 @@
                             <a class="nav-link text-white fw-bold @yield('new-com')"
                                 href="{{ route('a_companies') }}"><i class="bi bi-person-plus-fill"></i> New
                                 @if ($comcountnew != null)
-                                <div class="col-1 text-center">
-                                    <span class="badge bg-none">1</span>
-                                </div>
-                            @endif
+                                    <div class="col-1 text-center">
+                                        <span class="badge bg-none">1</span>
+                                    </div>
+                                @endif
                             </a>
 
                         </li>
@@ -382,8 +381,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('a_logout') }}"
-                        class="fw-bold nav-link text-light align-middle px-2">
+                    <a href="{{ route('a_logout') }}" class="fw-bold nav-link text-light align-middle px-2">
 
                         <i class="bi bi-box-arrow-left" style=""></i> <span aria-current="page">
                             Logout</span>
@@ -412,8 +410,7 @@
                     </a>
                 </li>
                 <li class="nav-item has-submenu">
-                    <a type="button"
-                        class="fw-bold  nav-link text-light align-middle px-2 @yield('candidates')"
+                    <a type="button" class="fw-bold  nav-link text-light align-middle px-2 @yield('candidates')"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="bi bi-person-fill"></i> <span aria-current="page">
                             Candidates <i class="bi-sm bi-caret-down-fill"></i></span>
@@ -452,7 +449,7 @@
                             <a class="nav-link text-white fw-bold @yield('new-com')"
                                 href="{{ route('a_companies') }}"><i class="bi bi-person-plus-fill"></i> New
                                 @if ($comcountnew != null)
-                            @endif
+                                @endif
                             </a>
 
                         </li>
@@ -532,8 +529,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('a_logout') }}"
-                        class="fw-bold nav-link text-light align-middle px-2">
+                    <a href="{{ route('a_logout') }}" class="fw-bold nav-link text-light align-middle px-2">
 
                         <i class="bi bi-box-arrow-left" style=""></i> <span aria-current="page">
                             Logout</span>
@@ -546,9 +542,14 @@
     @section('body')
 
     @show
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
     @section('customJS')
 
     @show

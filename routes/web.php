@@ -28,9 +28,12 @@ use App\Http\Controllers\applicantsController;
 |
 */
 
+Route::group(['middleware' => ['secureheader']], function () {
+
 Route::get('/', function () {
     return redirect()->route('home');
 });
+
 //home
 Route::get('/home', [customroute::class, 'home'])->name('home');
 
@@ -446,4 +449,5 @@ Route::group(['middleware' => ['AuthCheck']], function () {
 
     //email reply
     route::get('/view_mail/reply/{id}', [mail::class, 'reply'])->name('reply_mail');
+});
 });
