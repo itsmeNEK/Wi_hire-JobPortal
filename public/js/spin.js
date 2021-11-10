@@ -1,4 +1,5 @@
 document.onreadystatechange = function() {
+    document.createElement('script');
     var state = document.readyState
     if (state == 'interactive') {
         document.getElementById('contents').style.visibility = "hidden";
