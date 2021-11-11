@@ -87,10 +87,10 @@ class customroute extends Controller
             $user = User::where('id', '=', session('LoggedUser'))->first();
         }
         if (session('Loggedcompany')) {
-            $user = User::where('id', '=', session('Loggedcompany'))->first();
+            $user = company::where('id', '=', session('Loggedcompany'))->first();
         }
         if (session('adminLogged')) {
-            $user = User::where('id', '=', session('adminLogged'))->first();
+            $user = Admin::where('id', '=', session('adminLogged'))->first();
         }
         if ((session('LoggedUser')) || (session('Loggedcompany')) || (session('adminLogged'))) {
 
@@ -124,10 +124,10 @@ class customroute extends Controller
             $user = User::where('id', '=', session('LoggedUser'))->first();
         }
         if (session('Loggedcompany')) {
-            $user = User::where('id', '=', session('Loggedcompany'))->first();
+            $user = company::where('id', '=', session('Loggedcompany'))->first();
         }
         if (session('adminLogged')) {
-            $user = User::where('id', '=', session('adminLogged'))->first();
+            $user = Admin::where('id', '=', session('adminLogged'))->first();
         }
         if ((session('LoggedUser')) || (session('Loggedcompany')) || (session('adminLogged'))) {
 
@@ -161,10 +161,10 @@ class customroute extends Controller
             $user = User::where('id', '=', session('LoggedUser'))->first();
         }
         if (session('Loggedcompany')) {
-            $user = User::where('id', '=', session('Loggedcompany'))->first();
+            $user = company::where('id', '=', session('Loggedcompany'))->first();
         }
         if (session('adminLogged')) {
-            $user = User::where('id', '=', session('adminLogged'))->first();
+            $user = Admin::where('id', '=', session('adminLogged'))->first();
         }
         if ((session('LoggedUser')) || (session('Loggedcompany')) || (session('adminLogged'))) {
 
@@ -198,10 +198,10 @@ class customroute extends Controller
             $user = User::where('id', '=', session('LoggedUser'))->first();
         }
         if (session('Loggedcompany')) {
-            $user = User::where('id', '=', session('Loggedcompany'))->first();
+            $user = company::where('id', '=', session('Loggedcompany'))->first();
         }
         if (session('adminLogged')) {
-            $user = User::where('id', '=', session('adminLogged'))->first();
+            $user = Admin::where('id', '=', session('adminLogged'))->first();
         }
         if ((session('LoggedUser')) || (session('Loggedcompany')) || (session('adminLogged'))) {
 
@@ -234,10 +234,10 @@ class customroute extends Controller
             $user = User::where('id', '=', session('LoggedUser'))->first();
         }
         if (session('Loggedcompany')) {
-            $user = User::where('id', '=', session('Loggedcompany'))->first();
+            $user = company::where('id', '=', session('Loggedcompany'))->first();
         }
         if (session('adminLogged')) {
-            $user = User::where('id', '=', session('adminLogged'))->first();
+            $user = Admin::where('id', '=', session('adminLogged'))->first();
         }
         if ((session('LoggedUser')) || (session('Loggedcompany')) || (session('adminLogged'))) {
 
@@ -270,10 +270,10 @@ class customroute extends Controller
             $user = User::where('id', '=', session('LoggedUser'))->first();
         }
         if (session('Loggedcompany')) {
-            $user = User::where('id', '=', session('Loggedcompany'))->first();
+            $user = company::where('id', '=', session('Loggedcompany'))->first();
         }
         if (session('adminLogged')) {
-            $user = User::where('id', '=', session('adminLogged'))->first();
+            $user = Admin::where('id', '=', session('adminLogged'))->first();
         }
         if ((session('LoggedUser')) || (session('Loggedcompany')) || (session('adminLogged'))) {
 
@@ -306,10 +306,10 @@ class customroute extends Controller
             $user = User::where('id', '=', session('LoggedUser'))->first();
         }
         if (session('Loggedcompany')) {
-            $user = User::where('id', '=', session('Loggedcompany'))->first();
+            $user = company::where('id', '=', session('Loggedcompany'))->first();
         }
         if (session('adminLogged')) {
-            $user = User::where('id', '=', session('adminLogged'))->first();
+            $user = Admin::where('id', '=', session('adminLogged'))->first();
         }
         if ((session('LoggedUser')) || (session('Loggedcompany')) || (session('adminLogged'))) {
 
@@ -338,10 +338,10 @@ class customroute extends Controller
             $user = User::where('id', '=', session('LoggedUser'))->first();
         }
         if (session('Loggedcompany')) {
-            $user = User::where('id', '=', session('Loggedcompany'))->first();
+            $user = company::where('id', '=', session('Loggedcompany'))->first();
         }
         if (session('adminLogged')) {
-            $user = User::where('id', '=', session('adminLogged'))->first();
+            $user = Admin::where('id', '=', session('adminLogged'))->first();
         }
         if ((session('LoggedUser')) || (session('Loggedcompany')) || (session('adminLogged'))) {
 
