@@ -1,6 +1,6 @@
 @extends('layouts.userMaster')
 
-@section('title', 'Educational Background')
+@section('title', 'User Profile')
 
 
 @section('customCSS')

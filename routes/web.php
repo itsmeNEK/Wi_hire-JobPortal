@@ -28,7 +28,7 @@ use App\Http\Controllers\applicantsController;
 |
 */
 
-Route::group(['middleware' => ['secureheader']], function () {
+// Route::group(['middleware' => ['secureheader']], function () {
 
     Route::get('/', function () {
         return redirect()->route('home');
@@ -450,4 +450,4 @@ Route::group(['middleware' => ['secureheader']], function () {
         //email reply
         route::get('/view_mail/reply/{id}', [mail::class, 'reply'])->name('reply_mail');
     });
-});
+// });
