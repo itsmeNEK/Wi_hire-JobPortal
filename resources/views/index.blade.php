@@ -212,9 +212,9 @@
             <div class="mask p-3 py-4">
                 <div class="d-flex justify-content-center align-items-center h-100">
                     <div class="text-white">
-                        <h4><b>“Time spent on hiring is time well spent.“</b><br> &#8212; Robert Half</h4>
+                        <h4 class="text-white"><b>“Time spent on hiring is time well spent.“</b><br> &#8212; Robert Half</h4>
                         <br>
-                        <h4 class="mb-3 justify-content-md-center"><b>“The harder you work, the luckier you get”</b>
+                        <h4 class="mb-3 text-white justify-content-md-center"><b>“The harder you work, the luckier you get”</b>
                             <br>&#8212;
                             Plato
                         </h4>
