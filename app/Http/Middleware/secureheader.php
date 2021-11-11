@@ -27,11 +27,11 @@ class secureheader
     {
         $this->removeUnwantedHeaders($this->unwantedHeaderList);
         $response = $next($request);
-        $response->headers->set('Referrer-Policy', 'no-referrer-when-downgrade');
-        $response->headers->set('X-Content-Type-Options', 'nosniff');
-        $response->headers->set('X-XSS-Protection', '1; mode=block');
-        $response->headers->set('X-Frame-Options', 'DENY');
-        $response->headers->set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
+        // $response->headers->set('Referrer-Policy', 'no-referrer-when-downgrade');
+        // $response->headers->set('X-Content-Type-Options', 'nosniff');
+        // $response->headers->set('X-XSS-Protection', '1; mode=block');
+        // $response->headers->set('X-Frame-Options', 'DENY');
+        // $response->headers->set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
         // $response->headers->set('Content-Security-Policy', "script-src 'strict-dynamic';script-src 'unsafe-inline';script-src 'nonce-r@nd0m';frame-ancestors 'none';script-src 'sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=' 'sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' 'sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p';");
         return $response;
     }
