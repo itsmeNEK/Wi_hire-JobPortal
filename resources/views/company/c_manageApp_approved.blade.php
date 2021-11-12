@@ -1,6 +1,6 @@
 @extends('layouts.companyMaster')
 
-@section('title', 'Rejected Applicants')
+@section('title', 'Applicants')
 
 
 @section('customCSS')
@@ -15,7 +15,7 @@
     @section('body')
         @parent
         @section('applicant', 'bg-danger')
-        @section('rej-app', 'bg-danger')
+        @section('viewed-app', 'bg-danger')
 
     <div id="main">
         <br>
@@ -84,7 +84,7 @@
                                                     Dashboard
                                                 </a>/
                                                 <a>
-                                                    Rejected Applicants
+                                                    Approved Applicants
                                                 </a>
                                             </div>
                                         </div>
@@ -92,7 +92,7 @@
                                             <div class="p-3 py-5">
                                                 <div class="row">
                                                     <div class="col-md-8 col-sm-8 col-lg-8 text-start">
-                                                        <h4 class="">Rejected Applicants</h4>
+                                                        <h4 class="">Approved Applicants</h4>
                                                     </div>
                                                 </div>
                                                 <hr>
@@ -161,7 +161,9 @@
                                                                     <td>
                                                                         <div class="btn-group" role="group"
                                                                             aria-label="Basic example">
-                                                                            <a href="View_applicant/{{ Crypt::encrypt($info->id) }}"><button type="button"
+                                                                            <a
+                                                                                href="View_applicant/{{ Crypt::encrypt($info->id) }}"><button
+                                                                                    type="button"
                                                                                     class="gbot btn btn-success bi-eye-fill"></button></a>
                                                                         </div>
                                                                     </td>
@@ -187,10 +189,8 @@
             </div>
         </div>
     </div>
-
-    @endsection
-    @section('customJS')
-        <script src="/js/sidebar.js"></script>
-        <script src="/js/login.js"></script>
-        <script src="/js/appmanage.js"></script>
-    @endsection
+@endsection
+@section('customJS')
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/login.js"></script>
+@endsection

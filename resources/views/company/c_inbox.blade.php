@@ -210,26 +210,7 @@
 
 @section('customJS')
 @parent
-<script>
-    $(document).ready(function() {
-        $("#myModal").modal({
-            keyboard: true,
-            backdrop: "static",
-            show: false,
-
-        }).on("show.bs.modal", function(event) {
-            var button = $(event.relatedTarget);
-            var personId = button.data("id");
-            var id = "id";
-            //displays values to modal
-            $(this).find("#personDetails").html($("<input name=" + id + " hidden value=" + personId +
-                "></input> <b>Are you sure you want to delete this mail?</b>"))
-        }).on("hide.bs.modal", function(event) {
-            $(this).find("#personDetails").html("");
-        });
-    });
-</script>
-<script src="js/bootstrap.bundle.min.js"></script>
+<script src="/js/c_inbox.js"></script>
 <script src="/js/sidebar.js"></script>
 <script src="/js/login.js"></script>
 <script src="/js/mail.js"></script>

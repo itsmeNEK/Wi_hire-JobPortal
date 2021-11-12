@@ -108,8 +108,19 @@ class applicantsController extends Controller
     public function c_app_reject(Request $request)
     {
         $job = applicants::where('id', '=', $request->id)->first();
-        $job->stat = "2";
+        $job->stat = "3";
         $job->save();
         return back();
+    }
+    public function c_app_acc(Request $request)
+    {
+        $app = applicants::where('id', '=', $request->id)->first();
+        $app->stat = "3";
+        $app->save();
+
+        $jobs = jobs::where('id','=',$app->jobID)->first();
+        $jobs->stat = '0';
+        $jobs->save();
+        return redirect()->route('c_appManageViewed')->with('success','Applicant Approved');
     }
 }

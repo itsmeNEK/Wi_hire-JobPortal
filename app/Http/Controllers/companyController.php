@@ -485,6 +485,49 @@ class companyController extends Controller
 
         return view('company.c_manageJobs', $data);
     }
+    // company manage job inactive
+    function c_manage_injobs()
+    {
+
+        $job = DB::table('jobs')
+            ->where('c_id', session('Loggedcompany'))
+            ->where('stat', '=', '0')
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+        $user = company::where('id', '=', session('Loggedcompany'))->first();
+
+        $appcountnew = DB::table('applicants')
+            ->where('c_id', session('Loggedcompany'))
+            ->where('stat', '=', '0')
+            ->count();
+        $appcountnew_info = DB::table('applicants')
+            ->where('c_id', session('Loggedcompany'))
+            ->where('stat', '=', '0')
+            ->orderBy('created_at', 'desc')
+            ->get();
+        $inbox = DB::table('mailings')
+            ->leftjoin('users', 'mailings.from', '=', 'users.email')
+            ->select('mailings.id', 'users.fname', 'mailings.subject', 'mailings.created_at', 'mailings.mail_active', 'mailings.from')
+            ->where('mailings.to', $user->email)
+            ->where('mail_active', '=', '1')
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        $mailinfo = Mailing::where('to', '=', $user->email)
+            ->where('mail_active', '=', '1')
+            ->count();
+        $data = [
+            'active' => $mailinfo,
+            'LoggedUserInfo' => $user,
+            'jobinfo' => $job,
+            'appcountnew' => $appcountnew,
+            'appcountnew_info' => $appcountnew_info,
+            'inbox' => $inbox,
+
+        ];
+
+        return view('company.c_manageJobs_in', $data);
+    }
     // company manage app new
     function c_appManage()
     {
@@ -567,6 +610,49 @@ class companyController extends Controller
         ];
 
         return view('company.c_manageAppReject', $data);
+    }
+    // company manage app rej
+    function c_appManageapp()
+    {
+
+        $app = DB::table('applicants')
+            ->where('c_id', session('Loggedcompany'))
+            ->where('stat', '=', '3')
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+        $user = company::where('id', '=', session('Loggedcompany'))->first();
+        $mailinfo = Mailing::where('to', '=', $user->email)
+            ->where('mail_active', '=', '1')
+            ->count();
+        $appcountnew = DB::table('applicants')
+            ->where('c_id', session('Loggedcompany'))
+            ->where('stat', '=', '0')
+            ->count();
+        $appcountnew_info = DB::table('applicants')
+            ->where('c_id', session('Loggedcompany'))
+            ->where('stat', '=', '0')
+            ->orderBy('created_at', 'desc')
+            ->get();
+        $inbox = DB::table('mailings')
+            ->leftjoin('users', 'mailings.from', '=', 'users.email')
+            ->select('mailings.id', 'users.fname', 'mailings.subject', 'mailings.created_at', 'mailings.mail_active', 'mailings.from')
+            ->where('mailings.to', $user->email)
+            ->where('mail_active', '=', '1')
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        $data = [
+            'active' => $mailinfo,
+            'LoggedUserInfo' => $user,
+            'jobinfo' => $app,
+            'appcountnew' => $appcountnew,
+            'appcountnew_info' => $appcountnew_info,
+            'inbox' => $inbox,
+
+
+        ];
+
+        return view('company.c_manageApp_approved', $data);
     }
     // company manage app viewed
     function c_appManageViewed()

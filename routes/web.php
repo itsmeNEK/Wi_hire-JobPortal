@@ -28,7 +28,7 @@ use App\Http\Controllers\applicantsController;
 |
 */
 
-// Route::group(['middleware' => ['secureheader']], function () {
+Route::group(['middleware' => ['secureheader']], function () {
 
     Route::get('/', function () {
         return redirect()->route('home');
@@ -308,6 +308,9 @@ use App\Http\Controllers\applicantsController;
         //manage job
         route::get('/company_managejobs', [companyController::class, 'c_manage'])->name('c_manage');
 
+        //manage job
+        route::get('/company_managejobs_inActive', [companyController::class, 'c_manage_injobs'])->name('c_manage_injobs');
+
         //manage app new
         route::get('/company_Applicants_new', [companyController::class, 'c_appManage'])->name('c_appManage');
 
@@ -316,6 +319,9 @@ use App\Http\Controllers\applicantsController;
 
         //manage app reject
         route::get('/company_Applicants_rejects', [companyController::class, 'c_appManageRej'])->name('c_appManageRej');
+
+        //manage app Approve
+        route::get('/company_Applicants_approve', [companyController::class, 'c_appManageapp'])->name('c_appManageapp');
 
         //email view
         route::get('/company_managejobs/edit/{id}', [companyController::class, 'c_editjob'])->name('c_editjob');
@@ -331,6 +337,9 @@ use App\Http\Controllers\applicantsController;
 
         //delete job company
         route::post('/company_delete_job', [companyController::class, 'delete'])->name('c_jobdelete');
+
+        //delete reject applicant
+        route::post('/company_approve_app', [applicantsController::class, 'c_app_acc'])->name('c_app_acc');
 
         //delete reject applicant
         route::post('/company_reject_app', [applicantsController::class, 'c_app_reject'])->name('c_app_reject');
@@ -450,4 +459,4 @@ use App\Http\Controllers\applicantsController;
         //email reply
         route::get('/view_mail/reply/{id}', [mail::class, 'reply'])->name('reply_mail');
     });
-// });
+});

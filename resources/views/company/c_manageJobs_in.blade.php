@@ -70,7 +70,7 @@
                                                     Dashboard
                                                 </a>/
                                                 <a>
-                                                    Manage jobs
+                                                    Inactive jobs
                                                 </a>
                                             </div>
                                         </div>
@@ -86,7 +86,7 @@
                                             <div class="p-3 py-5">
                                                 <div class="row">
                                                     <div class="col-md-8 col-sm-8 col-lg-8 text-start">
-                                                        <h4 class="">Manage jobs</h4>
+                                                        <h4 class="">Inactive jobs</h4>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4 col-lg-4 text-end">
                                                         <a href="{{ route('c_createjob') }}"><i
@@ -104,8 +104,8 @@
                                                             <th scope="col">Type of Role</th>
                                                             <th scope="col">Position Level</th>
                                                             <th scope="col">Control<br>
-                                                                <a class="text-success">Edit</a>/
-                                                                <a class="text-danger">Remove</a>
+                                                                <a class="text-warning">Edit</a>/
+                                                                <a class="text-success">Active</a>
                                                             </th>
                                                         </tr>
                                                     </thead>
@@ -138,11 +138,11 @@
                                                                         <a
                                                                             href="company_managejobs/edit/{{ Crypt::encrypt($info->id) }}"><button
                                                                                 type="button"
-                                                                                class="gbot btn btn-success bi-pencil"></button></a>
+                                                                                class="gbot btn btn-warning text-white bi-pencil"></button></a>
                                                                         <button data-id="{{ $info->id }}"
                                                                             data-bs-toggle="modal" data-bs-target="#myModal"
                                                                             type="button"
-                                                                            class="gbot btn bi-trash-fill btn-danger"></button>
+                                                                            class="gbot btn bi-check-lg btn-success"></button>
 
                                                                     </div>
                                                                 </td>

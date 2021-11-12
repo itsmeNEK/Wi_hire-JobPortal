@@ -68,14 +68,18 @@ class mail extends Controller
     //delete mail
     public function delete(Request $request)
     {
+$token = $request->session()->token();
 
-        $delete = DB::table('mailings')
+    $token = csrf_token();
+        if ($token) {   $delete = DB::table('mailings')
             ->where('id', $request->id)
             ->delete();
         if ($delete) {
             return back()->with('success', 'Mail have been deleted.');
         } else {
             return back()->with('fail', 'Something went wrong, try again later.');
+        }
+
         }
     }
 

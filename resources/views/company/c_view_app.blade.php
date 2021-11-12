@@ -82,7 +82,7 @@
     <div class="col py-3">
         <div class="container rounded bg-white ">
             <div class="row py-3">
-                <div class="col-4 text-start fw-bold">
+                <div class="col-3 text-start fw-bold">
                     <a>
                         <button onclick="goBack()" type="button" class="btnUp btn btn-danger ">
                             <i class="bi bi-skip-backward-fill"></i>
@@ -90,8 +90,17 @@
                         </button>
                     </a>
                 </div>
-                <div class="col-8 text-center fw-bold">
-                    <h2 class="text-start">Job Seeker Profile</h2>
+                <div class="col-6 text-center fw-bold">
+                    <h2 class="text-center">Job Seeker Profile</h2>
+                </div>
+                <div class="col-3 text-end fw-bold">
+                    <a>
+                        <button data-bs-toggle="modal" data-id="{{ $userinfo->id }}" data-bs-target="#approve"
+                            type="button" class="btnUp btn btn-success ">
+                            <i class="bi bi-person-check-fill"></i>
+                            Approve
+                        </button>
+                    </a>
                 </div>
             </div>
 
@@ -263,7 +272,26 @@
                             </div>
                         </div>
                     @endif
-
+                    <!-- Modal -->
+                    <form action="{{ route('c_app_acc') }}" method="post">
+                        @csrf
+                        <div class="modal fade" id="approve" tabindex="1" role="dialog"
+                            aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="myModalLabel">Warning!</h4>
+                                    </div>
+                                    <div id="personDetails" class="modal-body">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                                        <button type="submit" class="btn btn-success">Yes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -280,4 +308,5 @@
             window.history.back();
         }
     </script>
+    <script src="/js/c_approve.js"></script>
 @endsection

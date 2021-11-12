@@ -37,9 +37,15 @@
                             </button>
                         </a>
                         <a href="{{ route('c_appManageRej') }}">
-                            <button type="button" class="gbot btn-danger text-light fw-bold rounded-end">
+                            <button type="button" class="gbot btn-danger text-light fw-bold">
                                 <i class="bot3 bi bi-person-x-fill"></i>
                                 Rejected
+                            </button>
+                        </a>
+                        <a href="{{ route('c_appManageapp') }}">
+                            <button type="button" class="gbot btn-danger text-light fw-bold rounded-end">
+                                <i class="bot3 bi bi-person-check-fill"></i>
+                                Approved
                             </button>
                         </a>
                     </div>
@@ -212,7 +218,6 @@
     </div>
 @endsection
 @section('customJS')
-    <script src="/js/sidebar.js"></script>
     <script src="/js/login.js"></script>
     <script src="/js/appmanage.js"></script>
 @endsection

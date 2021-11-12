@@ -172,8 +172,7 @@
                                                             <th scope="col">Position Level</th>
                                                             <th scope="col">Applicants Name</th>
                                                             <th scope="col">Control<br>
-                                                                <a class="text-success">View</a>/
-                                                                <a class="text-danger">Reject</a>
+                                                                <a class="text-success">View</a>
                                                             </th>
                                                         </tr>
                                                     </thead>
@@ -207,12 +206,6 @@
                                                                         <a href="View_applicant/{{ Crypt::encrypt($info->id) }}"><button
                                                                                 type="button"
                                                                                 class="gbot btn btn-success bi-eye-fill"></button></a>
-                                                                        <button type="button"
-                                                                            data-id="{{ $info->id }}"
-                                                                            class="gbot btn btn-danger btn-view"
-                                                                            data-bs-toggle="modal"
-                                                                            data-bs-target="#myModal"><i
-                                                                                class="bi bi-person-x-fill"></i></button>
                                                                     </div>
                                                                 </td>
                                                             </tr>
@@ -244,26 +237,6 @@
                                         </span>
                                     </div>
                                 @endif
-                            </div>
-                        </form>
-                        <!-- Modal -->
-                        <form action="{{ route('c_app_reject') }}" method="post">
-                            @csrf
-                            <div class="modal fade" id="myModal" tabindex="1" role="dialog"
-                                aria-labelledby="myModalLabel">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title" id="myModalLabel">Warning!</h4>
-                                        </div>
-                                        <div id="personDetails" class="modal-body">
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
-                                            <button type="submit" class="btn btn-success">Yes</button>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </form>
                     </div>
@@ -400,6 +373,4 @@
     <script src="/js/sidebar.js"></script>
     <script src="/js/login.js"></script>
     <script src="/js/viewimage.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="/js/appmanage.js"></script>
 @endsection
