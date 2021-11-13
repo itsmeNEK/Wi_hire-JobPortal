@@ -2,4 +2,6 @@
 
 @section('title', __('Server Error'))
 @section('code', '500')
-@section('message', __('Server Error'))
+@section('message')
+    The Page has na unexpected error. Please return to <a style="color: red" href="/home"> Home </a> and Report Website Issues to be fixed by the Developers
+@endsection
