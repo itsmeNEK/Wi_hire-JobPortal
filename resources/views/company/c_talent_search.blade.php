@@ -208,16 +208,14 @@
     {{-- jobs section --}}
     <br>
     <section>
-
         <div class="con text-center">
             <div>
-
                 @forelse ( $user as $info )
                     <div class="content" id="content_{{ $info->id }}">
                         <div class="rounded bg-white c-container">
                             <div class="text-end">
-                                <a id="{{ $info->id }}" onclick="hidecontent(this.id)" style="font-size: 20px"
-                                    class="text-danger fw-bold"> <i class="bi bi-x-square-fill"></i></a>
+                                <a data-id="{{ $info->id }}" style="font-size: 20px"
+                                    class="text-danger fw-bold closebtn"> <i class="bi bi-x-square-fill"></i></a>
                             </div>
                             <div class="content-detail">
                                 <div class="card-thumbnail">
@@ -268,7 +266,7 @@
             </div>
         </div>
         </div>
-        <a class="text-decoration-none text-black" onclick="showcontent(this.id)" id="{{ $info->id }}">
+        <a class="text-decoration-none text-black openbtn" data-id="{{ $info->id }}">
             <div class="card-box-t">
                 <div class="card-thumbnail-t">
                     <img src="/users/images/{{ $info->prof_pic }}" class="img-fluid" alt="">
@@ -325,15 +323,17 @@
 
     </section>
     <br>
-    <script src="/js/jobs.js"></script>
+    <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+        var s = document.createElement('script')
+        s.src = "/js/jobs.js";
+        document.head.appendChild(s);
+    </script>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
         integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
+    <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa" src="https://unpkg.com/@popperjs/core@2"></script>
 </body>
 
 </html>

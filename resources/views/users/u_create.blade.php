@@ -52,9 +52,9 @@
         </div><br>
     </div>
     <div>
-        <div class="card card-outline-secondary">
+        <div class="card card-outline-secondary mt-3 m-4">
             <div class="card-header">
-                <h3 class=" h3 mb-0 bg-danger rounded fw-bold text-lg-center text-light">
+                <h3 class="h3 rounded fw-bold text-start text-black">
                     New Message</h3>
                 <br>
                 <hr>

@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -60,12 +61,12 @@
                 </div>
                 <div class="form-wrapper">
                     <label for="">New Password</label>
-                    <input onkeyup="checkPasswordMatch();" id="password" type="password" class="form-control" placeholder="New Password" name="npassword">
+                    <input onkeyup="checkPasswordMatch();" id="inputPasswordNew" type="password" class="form-control" placeholder="New Password" name="npassword">
                     <span class="text-danger">@error('password'){{ $message }} @enderror</span>
                 </div>
                 <div class="form-wrapper">
                     <label for="">Confirm Password</label>
-                    <input onkeyup="checkPasswordMatch();" id="cpassword" type="password" class="form-control" placeholder="Confirm Password"
+                    <input onkeyup="checkPasswordMatch();" id="inputPasswordNewVerify" type="password" class="form-control" placeholder="Confirm Password"
                         name="cpassword">
                     <span class="text-danger">@error('cpassword'){{ $message }} @enderror</span>
                     <span id='message'></span>
@@ -90,29 +91,22 @@
         </div>
         <!-- Copyright -->
     </footer>
-    <script>
-        // Function to check Whether both passwords are equal
-        function checkPasswordMatch() {
-            var password = $("#password").val();
-            var confirmPassword = $("#cpassword").val();
-
-            if (password != confirmPassword)
-                $("#divCheckPasswordMatch").html("Passwords do not match!");
-            else if (password =='')
-            $("#divCheckPasswordMatch").html("Enter Password!");
-            else if (confirmPassword =='')
-            $("#divCheckPasswordMatch").html("Enter Password!");
-            else
-                $("#divCheckPasswordMatch").html("Passwords match.");
-        }
-
-        $(document).ready(function() {
-            $("#password, #cpassword").keyup(checkPasswordMatch);
-        });
+    <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+        var s = document.createElement('script')
+        s.src = "/js/u_changepw.js";
+        document.head.appendChild(s);
     </script>
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+        var s = document.createElement('script')
+        s.src = "/js/viewpass.js";
+        document.head.appendChild(s);
+    </script>
+     <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+     integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+ </script>
+ <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa" src="https://unpkg.com/@popperjs/core@2"></script>
 </body>
 
 </html>

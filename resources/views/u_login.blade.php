@@ -1,5 +1,5 @@
+<!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -90,7 +90,7 @@
                         @enderror</span>
                 </div>
                 <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" name="password"
+                    <input type="password" class="form-control" id="inputPasswordNew" name="password"
                         placeholder="Password"/>
                     <span for="floatingPassword" class=" field-icon bi text-danger bi-eye-slash-fill"
                         id="togglePassword"></span>
@@ -119,21 +119,13 @@
             <!-- Copyright -->
         </footer>
 
-        <script>
-            const togglePassword = document.querySelector('#togglePassword');
-            const password = document.querySelector('#floatingPassword');
-            togglePassword.addEventListener('click', function(e) {
-                // toggle the type attribute
-                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-                password.setAttribute('type', type);
-                // toggle the eye / eye slash icon
-                this.classList.toggle('bi-eye');
-            });
+        <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+            var s = document.createElement('script')
+            s.src = "/js/viewpass.js";
+            document.head.appendChild(s);
         </script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
-
         <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>
 

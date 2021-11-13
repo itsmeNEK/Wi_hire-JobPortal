@@ -70,9 +70,10 @@
 @endsection
 
 @section('customJS')
-    @parent
-    <script src="/js/sidebar.js"></script>
-    <script src="/js/login.js"></script>
-    <script src="/js/mail.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+@parent
+<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+    var s = document.createElement('script')
+    s.src = "/js/mail.js";
+    document.head.appendChild(s);
+</script>
 @endsection

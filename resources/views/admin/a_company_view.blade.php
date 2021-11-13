@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="/css/dashboard.css">
 <link rel="stylesheet" type="text/css" href="/css/profile.css">
 <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+<link rel="stylesheet" type="text/css" href="/css/viewimage.css">
 <link rel="stylesheet" type="text/css" href="/css/u_editProf.css">
 @endsection
 
@@ -36,6 +37,9 @@
                     <div class="row">
                         <div class="col-12 text-start">
                             Message Company
+                            <button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn-close">
+
+                            </button>
                         </div>
                     </div>
                 </h4>
@@ -64,11 +68,9 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <div class="row">
                     <div class="col-6 text-end">
                         <button type="submit" class="btn btn-danger">Send</button>
                     </div>
-                </div>
             </div>
         </div>
     </div>
@@ -109,12 +111,18 @@
                         </div>
                         <div class="picture-container">
                             <div class="picture">
-                                <img src="/company/images/{{ $company['prof_pic'] }}" alt="your image"
+                                <img id="avatar"  src="/company/images/{{ $company['prof_pic'] }}" alt="your image"
                                     class="picture-src" id="avatarPicturePreview" title="">
                             </div>
                         </div>
                         <br>
-                        <h3 class=" text-start text-secondary">Personal Information</h3>
+                        <!-- The image Modal -->
+                        <div id="imagemodal" class="imagemodal">
+                            <a class="closeimage btn btn-danger" style="display: flex; width:40px;padding-bottom:5px"><b>&times;</b></a>
+
+                            <img class="imagemodal-content" id="img01">
+                        </div>
+                        <h3 class="text-start text-secondary">Personal Information</h3>
 
                         <br>
                     </div>
@@ -216,32 +224,13 @@
 <br>
 </div>
 
-<script>
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function(e) {
-                $('#avatarPicturePreview')
-                    .attr('src', e.target.result);
-            };
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-</script>
-
 @endsection
 
 @section('customJS')
 @parent
-<script>
-    function goBack() {
-        window.history.back();
-    }
-</script>
-<script src="/js/sidebar.js"></script>
-<script src="/js/login.js"></script>
-<script src="/js/mail.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
+<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+    var s = document.createElement('script')
+       s.src = "/js/viewimage.js";
+       document.head.appendChild(s);
+   </script>
 @endsection

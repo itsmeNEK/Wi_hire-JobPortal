@@ -59,7 +59,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="inputPasswordNew" class="fw-bold">New Password</label>
-                                            <input onkeyup="checkPasswordMatch();" type="password" name="newpass" class="form-control"
+                                            <input type="password" name="newpass" class="form-control"
                                                 id="inputPasswordNew" required="">
                                             <span style="color: #fa695f;"
                                                 class="text">@error('newpass'){{ $message }}
@@ -72,7 +72,7 @@
                                         <div class="form-group">
                                             <label for="inputPasswordNewVerify" class="fw-bold">Confirm
                                                 Password</label>
-                                            <input onkeyup="checkPasswordMatch();" type="password" name="cpass" class="form-control"
+                                            <input  type="password" name="cpass" class="form-control"
                                                 id="inputPasswordNewVerify" required="">
                                             <span id="check-match" style="color: #fa695f;"
                                                 class="text">@error('cpass'){{ $message }}
@@ -103,27 +103,9 @@
     @endsection
 
     @section('customJS')
-    <script>
-        // Function to check Whether both passwords are equal
-        function checkPasswordMatch() {
-            var password = $("#inputPasswordNew").val();
-            var confirmPassword = $("#inputPasswordNewVerify").val();
-
-            if (password != confirmPassword)
-                $("#divCheckPasswordMatch").html("Passwords do not match!");
-            else if (password =='')
-            $("#divCheckPasswordMatch").html("Enter Password!");
-            else if (confirmPassword =='')
-            $("#divCheckPasswordMatch").html("Enter Password!");
-            else
-                $("#divCheckPasswordMatch").html("Passwords match.");
-        }
-
-        $(document).ready(function() {
-            $("#inputPasswordNew, #inputPasswordNewVerify").keyup(checkPasswordMatch);
-        });
+    <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+        var s = document.createElement('script')
+        s.src = "/js/u_changepw.js";
+        document.head.appendChild(s);
     </script>
-    <script src="/js/sidebar.js"></script>
-    <script src="/js/login.js"></script>
-    <script src="/js/u_cpass.js"></script>
     @endsection

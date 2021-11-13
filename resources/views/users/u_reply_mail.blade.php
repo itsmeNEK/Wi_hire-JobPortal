@@ -114,12 +114,4 @@
             <br>
         </div>
     </div>
-
-    @endsection
-
-    @section('customJS')
-    <script src="/js/sidebar.js"></script>
-    <script src="/js/login.js"></script>
-    <script src="/js/mail.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
     @endsection

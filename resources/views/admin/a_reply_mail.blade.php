@@ -98,7 +98,7 @@
                                             <i class="bot3 bi bi-check-lg"></i>
                                             Send
                                         </button>
-                                        <button onclick="goBack()" type="button" class="gbot btn-danger text-light fw-bold rounded">
+                                        <button id="goback" type="button" class="gbot btn-danger text-light fw-bold rounded">
                                             <a class="text-white text-decoration-none"><i class="bot3 bi bi-x-lg"></i>
                                                 Discard</a>
                                         </button>
@@ -116,13 +116,9 @@
     @endsection
 
     @section('customJS')
-        @parent
-        <script>
-            function goBack() {
-              window.history.back();
-            }
-            </script>
-        <script src="/js/sidebar.js"></script>
-        <script src="/js/login.js"></script>
-        <script src="/js/mail.js"></script>
+    <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+        var s = document.createElement('script')
+        s.src = "/js/goback.js";
+        document.head.appendChild(s);
+    </script>
     @endsection

@@ -47,8 +47,8 @@
                                                 <img src="/users/images/{{ $LoggedUserInfo['prof_pic'] }}"
                                                     alt="your image" class="picture-src" id="avatarPicturePreview"
                                                     title="">
-                                                <input accept="image/*" onchange="readURL(this);" class="picture-src"
-                                                    type="file" id="avatar-picture" name="avatar">
+                                                <input accept="image/*" class="picture-src" type="file"
+                                                    id="avatar-picture" name="avatar">
                                                 <span class="text-danger">@error('avatar'){{ $message }}
                                                     @enderror</span>
                                             </div>
@@ -74,18 +74,15 @@
                                     @endif
                                     <div class="row mt-3">
                                         <div class="col-sm-4"><label
-                                                class="labels fw-bold">FirstName</label><input name="fname"
-                                                type="text" class="form-control"
-                                                value="{{ $LoggedUserInfo['fname'] }}">
+                                                class="labels fw-bold">FirstName</label><input name="fname" type="text"
+                                                class="form-control" value="{{ $LoggedUserInfo['fname'] }}">
                                         </div>
                                         <div class="col-sm-4"><label
-                                                class="labels fw-bold">MiddleName</label><input name="mname"
-                                                type="text" class="form-control"
-                                                value="{{ $LoggedUserInfo['mname'] }}">
+                                                class="labels fw-bold">MiddleName</label><input name="mname" type="text"
+                                                class="form-control" value="{{ $LoggedUserInfo['mname'] }}">
                                         </div>
-                                        <div class="col-md-4"><label
-                                                class="labels fw-bold">Surname</label><input name="lname"
-                                                type="text" class="form-control"
+                                        <div class="col-md-4"><label class="labels fw-bold">Surname</label><input
+                                                name="lname" type="text" class="form-control"
                                                 value="{{ $LoggedUserInfo['lname'] }}">
                                         </div>
                                     </div>
@@ -99,9 +96,8 @@
                                                 Of Birth</label><input name="dob" type="date" class="form-control"
                                                 placeholder="Date Of Birth" value="{{ $LoggedUserInfo['dob'] }}">
                                         </div>
-                                        <div class="col-md-4"><label
-                                                class="labels fw-bold">Gender</label><input id="browser"
-                                                list="browsers" class="form-control" name="gender"
+                                        <div class="col-md-4"><label class="labels fw-bold">Gender</label><input
+                                                id="browser" list="browsers" class="form-control" name="gender"
                                                 placeholder="Gender" value="{{ $LoggedUserInfo['gender'] }}">
                                             <datalist id="browsers">
                                                 <option value="Male">
@@ -132,25 +128,22 @@
                                     <h4 class="text-start text-secondary">Address Information</h4>
                                     <br>
                                     <div class="row mt-3">
-                                        <div class="col-md-6"><label
-                                                class="labels fw-bold">Province</label><input type="text"
-                                                name="province" class="form-control" placeholder="Province"
-                                                value="{{ $LoggedUserInfo['province'] }}">
+                                        <div class="col-md-6"><label class="labels fw-bold">Province</label><input
+                                                type="text" name="province" class="form-control"
+                                                placeholder="Province" value="{{ $LoggedUserInfo['province'] }}">
                                         </div>
                                         <div class="col-md-6"><label
-                                                class="labels fw-bold">City/Municipality</label><input
-                                                name="city" type="text" class="form-control"
+                                                class="labels fw-bold">City/Municipality</label><input name="city"
+                                                type="text" class="form-control"
                                                 value="{{ $LoggedUserInfo['city'] }}"
                                                 placeholder="City/Municipality">
                                         </div>
-                                        <div class="col-md-6"><label
-                                                class="labels fw-bold">Barangay</label><input type="text"
-                                                name="barangay" class="form-control" placeholder="Barangay"
-                                                value="{{ $LoggedUserInfo['barangay'] }}">
+                                        <div class="col-md-6"><label class="labels fw-bold">Barangay</label><input
+                                                type="text" name="barangay" class="form-control"
+                                                placeholder="Barangay" value="{{ $LoggedUserInfo['barangay'] }}">
                                         </div>
-                                        <div class="col-md-6"><label
-                                                class="labels fw-bold">Street</label><input type="text"
-                                                name="street" class="form-control"
+                                        <div class="col-md-6"><label class="labels fw-bold">Street</label><input
+                                                type="text" name="street" class="form-control"
                                                 value="{{ $LoggedUserInfo['street'] }}" placeholder="Street">
                                         </div>
                                         <div class="col-md-6"><label class="labels fw-bold">House#/Bldg#
@@ -166,8 +159,8 @@
                                     </div>
                                     <div class="row mt-5">
                                         <div class="col-6 text-start">
-                                            <button class="btn btn-danger profile-button fw-bold"
-                                                type="submit"> <i class="bi bi-check-lg">Save</i></button>
+                                            <button class="btn btn-danger profile-button fw-bold" type="submit"> <i
+                                                    class="bi bi-check-lg">Save</i></button>
                                         </div>
                                         <div class="col-6 text-end">
                                             <a href="{{ route('u_dash') }}"
@@ -191,20 +184,11 @@
 @endsection
 
 @section('customJS')
-<script>
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function(e) {
-                $('#avatarPicturePreview')
-                    .attr('src', e.target.result);
-            };
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
+@parent
+<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+    var s = document.createElement('script')
+    s.src = "/js/u_avatarpreview.js";
+    document.head.appendChild(s);
 </script>
-<script src="/js/sidebar.js"></script>
-<script src="/js/login.js"></script>
 @endsection
+

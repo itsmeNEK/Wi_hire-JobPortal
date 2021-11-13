@@ -192,12 +192,3 @@
     </div>
     </div>
 @endsection
-
-@section('customJS')
-    @parent
-    <script src="/js/sidebar.js"></script>
-    <script src="/js/login.js"></script>
-@endsection
-</body>
-
-</html>

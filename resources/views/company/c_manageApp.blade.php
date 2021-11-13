@@ -208,7 +208,9 @@
 </div>
 @endsection
 @section('customJS')
-<script src="/js/sidebar.js"></script>
-<script src="/js/login.js"></script>
-<script src="/js/appmanage.js"></script>
+<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+    var s = document.createElement('script')
+    s.src = "/js/appmanage.js";
+    document.head.appendChild(s);
+</script>
 @endsection

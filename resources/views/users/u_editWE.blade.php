@@ -174,27 +174,3 @@
         </div>
     </div>
     @endsection
-
-    @section('customJS')
-    <script>
-        $(document).ready(function() {
-            // Prepare the preview for profile picture
-            $("#avatar-picture").change(function() {
-                readURL(this);
-            });
-        });
-
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function(e) {
-                    $('#avatarPicturePreview').attr('src', e.target.result).fadeIn('slow');
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-    </script>
-    <script src="/js/sidebar.js"></script>
-    <script src="/js/login.js"></script>
-@endsection

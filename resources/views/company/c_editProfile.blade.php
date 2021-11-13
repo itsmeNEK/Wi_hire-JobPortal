@@ -42,7 +42,7 @@
                                     <div class="picture">
                                         <img src="/company/images/{{ $LoggedUserInfo['prof_pic'] }}" alt="your image"
                                             class="picture-src" id="avatarPicturePreview" title="">
-                                        <input accept="image/*" onchange="readURL(this);" class="picture-src"
+                                        <input accept="image/*" class="picture-src"
                                             type="file" id="avatar-picture" name="avatar">
                                         <span class="text-danger">@error('avatar'){{ $message }}
                                             @enderror</span>
@@ -228,28 +228,13 @@
     </div>
     <br>
 </div>
-
-<script>
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function(e) {
-                $('#avatarPicturePreview')
-                    .attr('src', e.target.result);
-            };
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-</script>
-
 @endsection
 
 @section('customJS')
 @parent
-<script src="/js/sidebar.js"></script>
-<script src="/js/login.js"></script>
-<script src="/js/mail.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
+<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+    var s = document.createElement('script')
+    s.src = "/js/u_avatarpreview.js";
+    document.head.appendChild(s);
+</script>
 @endsection

@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -93,7 +94,7 @@
                         @enderror</span>
                 </div>
                 <div class="form-floating">
-                    <input onkeyup="checkPasswordMatch();" type="password" class="form-control" id="password" name="password"
+                    <input type="password" class="form-control" id="inputPasswordNew" name="password"
                         placeholder="Password" />
                     <span for="floatingPassword" class=" field-icon bi text-danger bi-eye-slash-fill"
                         id="togglePassword"></span>
@@ -103,7 +104,7 @@
                 </div>
                 <br>
                 <div class="form-floating">
-                    <input onkeyup="checkPasswordMatch();" type="password" class="form-control" id="cpassword" name="cpassword"
+                    <input  type="password" class="form-control" id="inputPasswordNewVerify" name="cpassword"
                         placeholder="Password" />
                     <label for="floatingPassword"><i class="bi text-danger bi-key-fill"></i>Confirm Password </label>
                     <span style="color: #fa695f;"
@@ -121,38 +122,15 @@
     </div>
     <!-- reg form-->
 
-    <script>
-        // Function to check Whether both passwords are equal
-        function checkPasswordMatch() {
-            var password = $("#password").val();
-            var confirmPassword = $("#cpassword").val();
-
-            if (password != confirmPassword)
-                $("#divCheckPasswordMatch").html("Passwords do not match!");
-            else if (password =='')
-            $("#divCheckPasswordMatch").html("Enter Password!");
-            else if (confirmPassword =='')
-            $("#divCheckPasswordMatch").html("Enter Password!");
-            else
-                $("#divCheckPasswordMatch").html("Passwords match.");
-        }
-
-        $(document).ready(function() {
-            $("#password, #cpassword").keyup(checkPasswordMatch);
-        });
+    <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+        var s = document.createElement('script')
+        s.src = "/js/u_changepw.js";
+        document.head.appendChild(s);
     </script>
-
-    <script>
-        const togglePassword = document.querySelector('#togglePassword');
-        const password = document.querySelector('#password');
-        togglePassword.addEventListener('click', function(e) {
-            // toggle the type attribute
-            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-            password.setAttribute('type', type);
-            // toggle the eye / eye slash icon
-            this.classList.toggle('bi-eye');
-        }
-        );
+    <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+        var s = document.createElement('script')
+        s.src = "/js/viewpass.js";
+        document.head.appendChild(s);
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>

@@ -63,7 +63,7 @@
     <div id="exTab2">
         <div class="card card-outline-secondary">
             <div class="card-header">
-                <h3 class=" h3 mb-0 rounded bg-danger fw-bold text-lg-center text-light">SENT
+                <h3 class="h3 rounded fw-bold text-start text-black pb-3">SENT
                 </h3>
                 <table>
                     <thead>
@@ -169,26 +169,9 @@
 
 @section('customJS')
 @parent
-<script>
-    $(document).ready(function() {
-        $("#myModal").modal({
-            keyboard: true,
-            backdrop: "static",
-            show: false,
-
-        }).on("show.bs.modal", function(event) {
-            var button = $(event.relatedTarget);
-            var personId = button.data("id");
-            var id = "id";
-            //displays values to modal
-            $(this).find("#personDetails").html($("<input name=" + id + " hidden value=" + personId +
-                "></input> <b>Are you sure you want to delete this mail?</b>"))
-        }).on("hide.bs.modal", function(event) {
-            $(this).find("#personDetails").html("");
-        });
-    });
+<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+    var s = document.createElement('script')
+    s.src = "/js/mail.js";
+    document.head.appendChild(s);
 </script>
-<script src="/js/sidebar.js"></script>
-<script src="/js/login.js"></script>
-<script src="/js/mail.js"></script>
 @endsection

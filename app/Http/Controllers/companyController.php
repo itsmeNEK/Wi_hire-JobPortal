@@ -190,6 +190,20 @@ class companyController extends Controller
             return back()->with('fail', 'Something went wrong, try again later.');
         }
     }
+
+    //delete job
+    public function c_jobacc(Request $request)
+    {
+
+        $user = jobs::find($request->id);
+        $user->stat = '1';
+        $user->save();
+        if ($user) {
+            return redirect(route('c_manage'))->with('success', 'Job successfully Activate.');
+        } else {
+            return back()->with('fail', 'Something went wrong, try again later.');
+        }
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -63,7 +63,7 @@
     <div id="exTab2">
         <div class="card card-outline-secondary">
             <div class="card-header">
-                <h3 class=" h3 mb-0 rounded bg-danger fw-bold text-lg-center text-light">SENT
+                <h3 class="h3 rounded fw-bold text-start text-black pb-3">SENT
                 </h3>
                 <table>
                     <thead>
@@ -163,11 +163,6 @@
 <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
     var s = document.createElement('script')
     s.src = "/js/mail.js";
-    document.head.appendChild(s);
-</script>
-<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
-    var s = document.createElement('script')
-    s.src = "/js/delmail.js";
     document.head.appendChild(s);
 </script>
 @endsection

@@ -513,7 +513,7 @@ class adminController extends Controller
     public function a_jobs_unmute(Request $request)
     {
         $company = jobs::find($request->id);
-        $company->stat = '0';
+        $company->stat = '1';
         $company->save();
 
         return back()->with('success', 'Job Successfully Unmuted');

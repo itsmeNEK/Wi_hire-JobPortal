@@ -99,32 +99,13 @@
         </div>
     </div>
 </div>
-<script>
-    // Function to check Whether both passwords are equal
-    function checkPasswordMatch() {
-        var password = $("#inputPasswordNew").val();
-        var confirmPassword = $("#inputPasswordNewVerify").val();
-
-        if (password != confirmPassword)
-            $("#divCheckPasswordMatch").html("Passwords do not match!");
-        else if (password == '')
-            $("#divCheckPasswordMatch").html("Enter Password!");
-        else if (confirmPassword == '')
-            $("#divCheckPasswordMatch").html("Enter Password!");
-        else
-            $("#divCheckPasswordMatch").html("Passwords match.");
-    }
-
-    $(document).ready(function() {
-        $("#inputPasswordNew, #inputPasswordNewVerify").keyup(checkPasswordMatch);
-    });
-</script>
-
 @endsection
 
 @section('customJS')
 @parent
-<script src="/js/sidebar.js"></script>
-<script src="/js/login.js"></script>
-<script src="/js/u_cpass.js"></script>
+<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+    var s = document.createElement('script')
+    s.src = "/js/u_changepw.js";
+    document.head.appendChild(s);
+</script>
 @endsection

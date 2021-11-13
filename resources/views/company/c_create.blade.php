@@ -56,8 +56,8 @@
     <div>
         <div class="card card-outline-secondary">
             <div class="card-header">
-                <h3 class=" h3 mb-0 bg-danger rounded fw-bold text-lg-center text-light">
-                    New Message</h3>
+                <h3 class="h3 rounded fw-bold text-start text-black pb-3">NEW MESSAGE
+                </h3>
                 <br>
                 @if (Session::get('fail'))
                     <div style="background-color: #fa695f; /* Red */color: white;font-weight:bold;text-align:center;">
@@ -127,11 +127,4 @@
         <br>
     </div>
 </div>
-
-@section('customJS')
-    @parent
-    <script src="/js/sidebar.js"></script>
-    <script src="/js/login.js"></script>
-    <script src="/js/mail.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
 @endsection

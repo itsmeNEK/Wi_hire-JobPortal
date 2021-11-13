@@ -66,7 +66,7 @@
     <div id="exTab2">
         <div class="card card-outline-secondary">
             <div class="card-header">
-                <h3 class=" h3 mb-0 rounded bg-danger fw-bold text-lg-center text-light">INBOX
+                <h3 class="h3 rounded fw-bold text-start text-black pb-3">INBOX
                 </h3>
                 <table>
                     <thead>
@@ -210,8 +210,9 @@
 
 @section('customJS')
 @parent
-<script src="/js/c_inbox.js"></script>
-<script src="/js/sidebar.js"></script>
-<script src="/js/login.js"></script>
-<script src="/js/mail.js"></script>
+<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+    var s = document.createElement('script')
+    s.src = "/js/mail.js";
+    document.head.appendChild(s);
+</script>
 @endsection

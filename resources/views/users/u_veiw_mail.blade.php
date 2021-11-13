@@ -9,9 +9,6 @@
     <link rel="stylesheet" type="text/css" href="/css/viewmail.css">
     <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
     <link rel="stylesheet" type="text/css" href="/css/mail.css">
-    <script src="/js/sidebar.js"></script>
-    <script src="/js/login.js"></script>
-    <script src="/js/mail.js"></script>
 @endsection
 
 @section('body')
@@ -181,9 +178,6 @@
         </div>
         <br>
     </div>
-
     <br>
-
-
 </div>
 @endsection

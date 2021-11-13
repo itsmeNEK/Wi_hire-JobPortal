@@ -338,6 +338,9 @@ Route::group(['middleware' => ['secureheader']], function () {
         //delete job company
         route::post('/company_delete_job', [companyController::class, 'delete'])->name('c_jobdelete');
 
+        //delete job company
+        route::post('/company_acc_job', [companyController::class, 'c_jobacc'])->name('c_jobacc');
+
         //delete reject applicant
         route::post('/company_approve_app', [applicantsController::class, 'c_app_acc'])->name('c_app_acc');
 

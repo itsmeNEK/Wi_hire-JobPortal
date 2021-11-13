@@ -190,7 +190,3 @@
         </div>
     </div>
 @endsection
-@section('customJS')
-    <script src="/js/sidebar.js"></script>
-    <script src="/js/login.js"></script>
-@endsection
