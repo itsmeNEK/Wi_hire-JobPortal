@@ -234,12 +234,6 @@
 </div>
 @endsection
 @section('customJS')
-<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
-    var s = document.createElement('script')
-    s.src = "/js/login.js";
-    document.head.appendChild(s);
-</script>
-<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa" src="/js/viewimage.js"></script>
-<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa" src = "/js/u_dash.js">
-</script>
+<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa" src="{{ URL::asset('/js/viewimage.js') }}"></script>
+<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa" src = "{{ URL::asset('/js/u_dash.js') }}"></script>
 @endsection
