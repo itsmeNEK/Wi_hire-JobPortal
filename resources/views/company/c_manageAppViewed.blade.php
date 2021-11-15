@@ -219,7 +219,7 @@
 
     <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
         var s = document.createElement('script')
-        s.src = "/js/appmanage.js";
+        s.src = "/js/c_manageJobs2.js";
         document.head.appendChild(s);
     </script>
 @endsection
