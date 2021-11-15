@@ -216,10 +216,9 @@
             </div>
         </div>
     </div>
-
-    <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
-        var s = document.createElement('script')
-        s.src = "/js/c_manageJobs2.js";
-        document.head.appendChild(s);
-    </script>
+@endsection
+@section('customJS')
+<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+    s.src = "/js/appManage.js";
+</script>
 @endsection
