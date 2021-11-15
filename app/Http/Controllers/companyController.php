@@ -983,7 +983,7 @@ class companyController extends Controller
         $id = crypt::decrypt($id);
         $appinfo = applicants::where('id', '=', $id)
             ->first();
-        if ($appinfo->stat != "2") {
+        if ($appinfo->stat != "0") {
             $appinfo->stat = '1';
             $save = $appinfo->save();
         }

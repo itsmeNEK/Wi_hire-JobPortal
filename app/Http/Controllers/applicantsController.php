@@ -108,7 +108,7 @@ class applicantsController extends Controller
     public function c_app_reject(Request $request)
     {
         $job = applicants::where('id', '=', $request->id)->first();
-        $job->stat = "3";
+        $job->stat = "2";
         $job->save();
         return back();
     }
