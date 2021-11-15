@@ -221,5 +221,6 @@
 <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
     var s = document.createElement('script')
     s.src = "/js/appManage.js";
+    document.head.appendChild(s);
 </script>
 @endsection
