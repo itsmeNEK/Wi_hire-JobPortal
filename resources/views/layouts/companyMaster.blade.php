@@ -24,7 +24,7 @@
                 data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                 <span class="d-flex align-items-center text-light text-decoration-none" aria-expanded="false">
                     <img class="avatar rounded-circle border border-light " width="40px"
-                    src="/users/images/{{ $LoggedUserInfo['prof_pic'] }}">
+                    src="/company/images/{{ $LoggedUserInfo['prof_pic'] }}">
                 </span>
             </a>
             <a class="navbar-brand" href="{{ route('home') }}">
