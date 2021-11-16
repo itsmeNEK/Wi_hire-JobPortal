@@ -54,6 +54,32 @@
         padding-right: 15%;
     }
     
+    .company-section .card-box-a {
+        padding: 20px;
+        margin-bottom: 30px;
+        float: none;
+        border-radius: 10px;
+        display: inline-table;
+        width: 200px;
+        margin: 5px 5px 5px 5px;
+        text-align: left;
+    }
+    
+    .company-section {
+        background: rgba(0, 0, 0, 0.042);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover !important;
+    }
+    
+    .company-section .card-box-a .container i {
+        font-size: 22px;
+        background: rgba(0, 0, 0, 0.165);
+        padding: 15px 15px 15px 15px;
+        border-radius: 50%;
+    }
+    
     .content .content-detail {
         display: flex;
         text-align: left;
@@ -122,5 +148,30 @@
         .search .label {
             padding-top: 15px;
             height: 50px;
+        }
+    }
+    
+    @media screen and (max-width: 992px) {
+        .company-section .card-box-a {
+            width: 100%;
+        }
+    }
+    
+    @media screen and (max-width: 400px) {
+        .company-section .card-box-a {
+            padding: 5px;
+            margin-bottom: 30px;
+            float: none;
+            border-radius: 10px;
+            display: inline-table;
+            width: 100%;
+            margin: 0 0 0 0;
+            text-align: left;
+        }
+        .company-section .card-box-a .container i {
+            font-size: 22px;
+            background: rgba(0, 0, 0, 0.165);
+            padding: 5px 5px 5px 5px;
+            border-radius: 50%;
         }
     }

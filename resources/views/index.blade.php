@@ -329,6 +329,60 @@
     <br>
     <br>
     <br>
+    <div>
+        <div class="company-section text-center pt-4 p-5 py-5 fw-bold">
+        <div class="text-center">
+            <h1 class="">What We Do?</h1>
+        </div>
+        <br>
+            <div class="card-box-a">
+                <div class="container">
+                    <i class="bi bi-building"></i>
+                </div>
+                <h3 class="mt-2 text-danger fw-bold">Fit for small businesses</h3>
+                <span class="text-md text-lg text-sm ">
+                    We aim for small businesses to grow with us by hiring local workers that fit there needs.
+                </span>
+            </div>
+            <div class="card-box-a">
+                <div class="container">
+                    <i class="bi bi-chat-left-dots-fill"></i>
+                </div>
+                <h3 class="mt-2 text-danger fw-bold">Customer-Centricity </h3>
+                <span class="text-md text-lg text-sm ">
+                    We talk to customers to decide what to build and drive the most value.
+                </span>
+            </div>
+            <div class="card-box-a">
+                <div class="container">
+                    <i class="bi bi-eye-fill"></i>
+                </div>
+                <h3 class="mt-2 text-danger fw-bold"> Transparency </h3>
+                <span class="text-md text-lg text-sm">
+                    Transparency by default, so everyone can make the best decisions.
+                </span>
+            </div>
+            <div class="card-box-a">
+                <div class="container">
+                    <i class="bi bi-lightning-charge-fill"></i>
+                </div>
+                <h3 class="mt-2 text-danger fw-bold"> Velocity </h3>
+                <span class="text-md text-lg text-sm">
+                    We move fast, we're scrappy, and we take calculated risks to keep up with the transforming
+                    industry.
+                </span>
+            </div>
+            <div class="card-box-a">
+                <div class="container">
+                    <i class="bi bi-bezier"></i>
+                </div>
+                <h3 class="mt-2 text-danger fw-bold"> Diversity </h3>
+                <span class="text-md text-lg text-sm">
+                    Diverse perspectives lead to better outcomes. We value it in both our culture and Service.
+                </span>
+            </div>
+        </div>
+    </div>
     <footer class="text-start text-white bg-dark">
         <!-- Grid container -->
         <div class="container p-2">

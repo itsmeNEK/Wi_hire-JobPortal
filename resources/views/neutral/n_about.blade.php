@@ -212,6 +212,15 @@
             <div class="company-section text-center pt-4 p-5 py-5 fw-bold">
                 <div class="card-box-a">
                     <div class="container">
+                        <i class="bi bi-building"></i>
+                    </div>
+                    <h3 class="mt-2 text-danger fw-bold">Fit for small businesses</h3>
+                    <span class="text-md text-lg text-sm ">
+                        We aim for small businesses to grow with us by hiring local workers that fit there needs.
+                    </span>
+                </div>
+                <div class="card-box-a">
+                    <div class="container">
                         <i class="bi bi-chat-left-dots-fill"></i>
                     </div>
                     <h3 class="mt-2 text-danger fw-bold"> Customer-Centricity </h3>
