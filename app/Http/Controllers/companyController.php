@@ -1164,6 +1164,7 @@ class companyController extends Controller
             ->inRandomOrder()
             ->paginate(20);
         }
+        $user = $user->unique('id');
         $data = [
             'searchinfo' => $search,
             'user' => $user,
