@@ -366,8 +366,11 @@ use App\Http\Controllers\applicantsController;
 
     Route::group(['middleware' => ['AuthCheck']], function () {
 
-        //route sign up
-        Route::get('/Jobs/Apply/{id}', [applicantsController::class, 'store'])->name('u_apply');
+        //route apply job
+        Route::get('/Jobs/Apply/{id}', [applicantsController::class,'store'])->name('u_apply');
+
+        //route user manage app
+        Route::get('/user_applications', [userController::class, 'u_applicantion'])->name('u_applicantion');
 
         //route sign up
         Route::get('/user_signup', [userController::class, 'u_signup'])->name('u_signup');

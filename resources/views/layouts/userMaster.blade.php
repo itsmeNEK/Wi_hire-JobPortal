@@ -177,6 +177,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('u_applicantion') }}"
+                        class="fw-bold  @yield('app') nav-link text-light align-middle px-2">
+                        <i class="bi bi-person-lines-fill"></i><span aria-current="page">
+                            Applications</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('u_sett') }}"
                         class="fw-bold  @yield('settings') nav-link text-light align-middle px-2">
 
@@ -248,6 +255,13 @@
                                 </div>
                             @endif
                         </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('u_applicantion') }}"
+                        class="fw-bold  @yield('app') nav-link text-light align-middle px-2">
+                        <i class="bi bi-person-lines-fill"></i><span aria-current="page">
+                            Applications</span>
                     </a>
                 </li>
                 <li class="nav-item">
