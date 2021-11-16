@@ -201,13 +201,13 @@
     <!-- Background image -->
     <div class="p-4 py-1">
         <div class="p-5 text-center bg-image" style="
-           background: linear-gradient(0deg,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('/img/header.jpg') no-repeat center center fixed !important;
-              height: 350px;
-              border-radius:10px;
+            background: linear-gradient(0deg,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('/img/header.jpg') no-repeat center center fixed !important;
               -webkit-background-size: cover;
          -moz-background-size: cover;
             -o-background-size: cover;
+              border-radius:10px;
             background-size: cover !important;
+            height:350px
             ">
             <div class="mask p-3 py-4">
                 <div class="d-flex justify-content-center align-items-center h-100">
