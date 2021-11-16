@@ -4,7 +4,6 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 body {
     font-family: 'Muli', sans-serif;
-    word-break: break-all;
 }
 
 .offcanvas {
@@ -15,6 +14,7 @@ body {
 
 #notif {
     width: 450px;
+    word-break: break-all;
 }
 
 .sidebar {
@@ -81,6 +81,7 @@ body {
 
 .bell-nonfull {
     display: none;
+    padding-bottom: 10px;
 }
 
 @media screen and (max-width: 450px) {
@@ -116,7 +117,7 @@ body {
         height: 30px;
     }
     .offcanvas {
-        max-width: 170px;
+        max-width: 200px;
     }
     .offcanvas .offcanvas-body ul li {
         font-size: 12px;

@@ -189,7 +189,6 @@
                                 @forelse ( $comcountnew_info as $info)
                                     <a aria-current="true" href="/View_Company/{{ Crypt::encrypt($info->id) }}"
                                         class="nav-link text-dark bg-light">
-
                                         <div class="p-1 py-1">
                                             <b>{{ $info->cname }}</b> <br>
                                             <div class="d-flex w-100 justify-content-between">
@@ -385,8 +384,8 @@
                             Logout</span>
                     </a>
                 </li>
+                <hr class="bg-light">
             </ul>
-            <hr class="bg-light">
         </div>
     </div>
     <div id="mySidebar" class="sidebar bg-dark">

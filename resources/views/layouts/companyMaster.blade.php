@@ -31,11 +31,6 @@
                 <img src="/img/wihireicon copy.png" alt="..." height="30">
                 <b>WiHire</b></a>
             <div class="d-flex flex-row bd-highlight">
-                <a class="navbar-toggler p-2 border-0" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <i class="bi text-white bi-three-dots-vertical"></i>
-                </a>
                 <div class="btn-group dropstart">
                     <a type="button" class="bell-nonfull border-0 btn-lg bg-none" data-bs-toggle="dropdown"
                         aria-expanded="false" data-bs-target="#notif" aria-controls="notif">
@@ -303,8 +298,22 @@
                             Logout</span>
                     </a>
                 </li>
+
+                <hr class="bg-light">
+
+                <li class="nav-item">
+                    <a href="{{ route('talent') }}" class="fw-bold nav-link text-light align-middle px-2">
+                        <span aria-current="page">
+                            Talent Search</span>
+                    </a>
+                </li><li class="nav-item">
+                    <a href="{{ route('howto2') }}" class="fw-bold nav-link text-light align-middle px-2">
+                        <span aria-current="page">
+                            How to Use</span>
+                    </a>
+                </li>
             </ul>
-            <hr class="bg-light">
+
         </div>
     </div>
     <div id="mySidebar" class="sidebar bg-dark">
@@ -372,6 +381,7 @@
                                 Rejected
                             </a>
                         </li>
+
                     </ul>
                 </li>
                 <li class="nav-item">
