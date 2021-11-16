@@ -1,177 +1,171 @@
-    /* The sidebar menu */
-    
-    @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-    @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
-    body {
-        font-family: 'Muli', sans-serif;
+/* The sidebar menu */
+
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+body {
+    font-family: "Muli", sans-serif;
+}
+
+.bg-image {
+    height: 150px;
+}
+
+.search {
+    display: flex;
+    float: none;
+    justify-content: center;
+}
+
+.search div {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.search .input {
+    background-color: rgba(0, 0, 0, 0.282);
+    font-weight: bold;
+    border: none;
+    height: 50px;
+}
+
+.search .label {
+    font-weight: bold;
+    color: white;
+    margin-top: -5px;
+}
+
+.dropdown-menu a:hover {
+    color: #f1f1f1;
+    background: #dc3545;
+}
+
+.search button {
+    margin-left: 5px;
+    height: 50px;
+}
+
+.content {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.company-section .card-box-a {
+    padding: 20px;
+    margin-bottom: 30px;
+    float: none;
+    border-radius: 10px;
+    display: inline-table;
+    width: 200px;
+    margin: 5px 5px 5px 5px;
+    text-align: left;
+}
+
+.company-section {
+    background: rgba(0, 0, 0, 0.042);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover !important;
+}
+
+.company-section .card-box-a .container i {
+    font-size: 22px;
+    background: rgba(0, 0, 0, 0.165);
+    padding: 15px 15px 15px 15px;
+    border-radius: 50%;
+}
+
+.content .content-detail {
+    display: flex;
+    text-align: left;
+}
+
+.content .content-detail .job-details {
+    align-items: left;
+    margin-left: 5px;
+}
+
+@media screen and (max-width: 991px) {
+    .content {
+        padding-left: 5%;
+        padding-right: 5%;
     }
-    
-    .bg-image {
-        height: 150px;
+    .company-section .card-box-a {
+        width: 100%;
     }
-    
+}
+
+@media screen and (max-width: 620px) {
     .search {
-        display: flex;
-        float: none;
+        font-size: 20px;
+    }
+    .search .input {
+        color: white;
+        font-size: 20px;
+    }
+    .search button {
+        font-size: 20px;
+    }
+    .content {
+        font-size: 20px;
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .bg-image {
+        height: 300px;
+    }
+    .search {
+        display: block;
         justify-content: center;
     }
-    
-    .search div {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-    
-    .search .input {
-        background-color: rgba(0, 0, 0, 0.282);
-        font-weight: bold;
-        border: none;
-        height: 50px;
-    }
-    
-    .search .label {
-        font-weight: bold;
-        color: white;
-        margin-top: -5px;
-    }
-    
-    .dropdown-menu a:hover {
-        color: #f1f1f1;
-        background: #dc3545;
-    }
-    
     .search button {
-        margin-left: 5px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .bg-image {
+        height: 200px;
+    }
+    .search {
+        margin-top: -12%;
+        display: block;
+        justify-content: center;
+        font-size: 16px;
+    }
+    .search button {
+        font-size: 16px;
+        height: 40px;
+    }
+    .search .input {
         height: 50px;
     }
-    
-    .content {
-        width: 100%;
-        padding: 50px 0;
-        text-align: center;
-        margin-top: 20px;
-        display: none;
-        padding-left: 15%;
-        padding-right: 15%;
+    .search .label {
+        padding-top: 15px;
+        height: 50px;
     }
-    
     .company-section .card-box-a {
-        padding: 20px;
+        padding: 5px;
         margin-bottom: 30px;
         float: none;
         border-radius: 10px;
         display: inline-table;
-        width: 200px;
-        margin: 5px 5px 5px 5px;
+        width: 100%;
+        margin: 0 0 0 0;
         text-align: left;
     }
-    
-    .company-section {
-        background: rgba(0, 0, 0, 0.042);
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover !important;
-    }
-    
     .company-section .card-box-a .container i {
         font-size: 22px;
         background: rgba(0, 0, 0, 0.165);
-        padding: 15px 15px 15px 15px;
+        padding: 5px 5px 5px 5px;
         border-radius: 50%;
     }
-    
-    .content .content-detail {
-        display: flex;
-        text-align: left;
-    }
-    
-    .content .content-detail .job-details {
-        align-items: left;
-        margin-left: 5px;
-    }
-    
-    @media screen and (max-width: 991px) {
-        .content {
-            padding-left: 5%;
-            padding-right: 5%;
-        }
-    }
-    
-    @media screen and (max-width: 620px) {
-        .search {
-            font-size: 20px;
-        }
-        .search .input {
-            color: white;
-            font-size: 20px;
-        }
-        .search button {
-            font-size: 20px;
-        }
-        .content {
-            font-size: 20px;
-            padding-left: 0%;
-            padding-right: 0%;
-        }
-    }
-    
-    @media screen and (max-width: 570px) {
-        .bg-image {
-            height: 300px;
-        }
-        .search {
-            display: block;
-            justify-content: center;
-        }
-        .search button {
-            height: 40px;
-        }
-    }
-    
-    @media screen and (max-width: 400px) {
-        .bg-image {
-            height: 200px;
-        }
-        .search {
-            margin-top: -12%;
-            display: block;
-            justify-content: center;
-            font-size: 16px;
-        }
-        .search button {
-            font-size: 16px;
-            height: 40px;
-        }
-        .search .input {
-            height: 50px;
-        }
-        .search .label {
-            padding-top: 15px;
-            height: 50px;
-        }
-    }
-    
-    @media screen and (max-width: 992px) {
-        .company-section .card-box-a {
-            width: 100%;
-        }
-    }
-    
-    @media screen and (max-width: 400px) {
-        .company-section .card-box-a {
-            padding: 5px;
-            margin-bottom: 30px;
-            float: none;
-            border-radius: 10px;
-            display: inline-table;
-            width: 100%;
-            margin: 0 0 0 0;
-            text-align: left;
-        }
-        .company-section .card-box-a .container i {
-            font-size: 22px;
-            background: rgba(0, 0, 0, 0.165);
-            padding: 5px 5px 5px 5px;
-            border-radius: 50%;
-        }
-    }
+}
