@@ -346,15 +346,6 @@
             </div>
             <div class="card-box-a">
                 <div class="container">
-                    <i class="bi bi-chat-left-dots-fill"></i>
-                </div>
-                <h3 class="mt-2 text-danger fw-bold">Customer-Centricity </h3>
-                <span class="text-md text-lg text-sm ">
-                    We talk to customers to decide what to build and drive the most value.
-                </span>
-            </div>
-            <div class="card-box-a">
-                <div class="container">
                     <i class="bi bi-eye-fill"></i>
                 </div>
                 <h3 class="mt-2 text-danger fw-bold"> Transparency </h3>
