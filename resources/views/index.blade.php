@@ -339,7 +339,7 @@
                 <div class="container">
                     <i class="bi bi-building"></i>
                 </div>
-                <h3 class="mt-2 text-danger fw-bold">Fit for small businesses</h3>
+                <h3 class="mt-2 text-danger fw-bold">new new new</h3>
                 <span class="text-md text-lg text-sm ">
                     We aim for small businesses to grow with us by hiring local workers that fit there needs.
                 </span>
