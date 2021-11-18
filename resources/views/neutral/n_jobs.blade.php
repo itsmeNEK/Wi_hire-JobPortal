@@ -245,7 +245,6 @@
     {{-- jobs section --}}
     <br>
     <section>
-        <div id="load"></div>
         <div id="contents">
             <div class="con text-center">
                 <div class="text-center">
@@ -369,11 +368,6 @@
     <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
         var s = document.createElement('script')
         s.src = "/js/jobs.js";
-        document.head.appendChild(s);
-    </script>
-    <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
-        var s = document.createElement('script')
-        s.src = "/js/spin.js";
         document.head.appendChild(s);
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
