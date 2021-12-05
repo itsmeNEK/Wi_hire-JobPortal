@@ -21,7 +21,7 @@
 <div id="exTab2">
     <div class="card card-outline-secondary">
         <div class="card-header">
-            <h3 class="h3 rounded fw-bold text-start text-black pb-3">Website Issues Reports git pull 212
+            <h3 class="h3 rounded fw-bold text-start text-black pb-3">Website Issues Reports
             </h3>
             <table>
                 <thead>
