@@ -323,7 +323,7 @@ $token = $request->session()->token();
         $receiver1 = company::where('email', '=', $mailinfo->to)->first();
         $sender2 = Admin::where('email', '=', $mailinfo->from)->first();
         $receiver2 = Admin::where('email', '=', $mailinfo->to)->first();
-        $active = Mailing::where('to', '=', $user->email)->count();
+        $active = Mailing::where('to', '=', $user->email)->where('mail_active', '=', '1')->count();
 
         $inbox = Mailing::where('to', '=', $user->email)
             ->where('mail_active', '=', '1')
