@@ -82,7 +82,7 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link fw-bold" href="{{ route('jobs') }}">Job</a>
+                        <a class="nav-link fw-bold" href="{{ route('jobs') }}">Jobs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link fw-bold" href="{{ route('companies') }}">Companies / Employer</a>
