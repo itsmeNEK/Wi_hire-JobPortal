@@ -76,7 +76,7 @@
                                     <img class="border border-dark" width="30px" type="button"
                                         src="/users/images/{{ $LoggedUserInfo['prof_pic'] }}">
                                 </button>
-                                <div class="dropdown-menu dropdown-menu-right bg bg-dark"
+                                <div class="dropdown-menu dropdown-menu-right" id="dropprof"
                                     aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item text-white text-secondary fw-bold"
                                         href="{{ route('u_dash') }}"><i class="bi bi-speedometer2"></i> <span
@@ -114,7 +114,7 @@
                                         <img class="border border-dark" width="30px" type="button"
                                             src="/company/images/{{ $LoggedCompanyInfo['prof_pic'] }}">
                                     </button>
-                                    <div class="dropdown-menu dropdown-menu-right bg bg-dark offset-10"
+                                    <div class="dropdown-menu dropdown-menu-right offset-10"  id="dropprof"
                                         aria-labelledby="dropdownMenuButton">
                                         <a class="dropdown-item text-white fw-bold" href="{{ route('c_dash') }}"><i
                                                 class="bi bi-speedometer2"></i> <span aria-current="page">
@@ -164,7 +164,7 @@
                                         <img class="border border-dark" width="30px" type="button"
                                             src="/img/wihireicon copy.png">
                                     </button>
-                                    <div class="dropdown-menu dropdown-menu-right bg bg-dark offset-10"
+                                    <div class="dropdown-menu dropdown-menu-right offset-10"  id="dropprof"
                                         aria-labelledby="dropdownMenuButton">
                                         <a class="dropdown-item text-white fw-bold" href="{{ route('a_dash') }}"><i
                                                 class="bi bi-speedometer2"></i> <span aria-current="page">

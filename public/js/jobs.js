@@ -9,6 +9,7 @@ $(".openbtn").click(function() {
     var x = document.getElementById("content_" + id);
     if ((x.style.display = "none")) {
         x.style.display = "inline-block";
+
     }
 });
 

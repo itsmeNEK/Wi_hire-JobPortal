@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- CSS only -->
-    <link nonce="r@nd0m" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link nonce="r@nd0m" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link nonce="r@nd0m" rel="stylesheet" href="css/cdash.css">
-    <link nonce="r@nd0m" rel="stylesheet" href="css/jobs.css">
-    <link nonce="r@nd0m" rel="icon" href="/img/wihireicon copy.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/cdash.css">
+    <link rel="stylesheet" href="css/jobs.css">
+    <link rel="icon" href="/img/wihireicon copy.png" type="image/x-icon">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>Wi-Hire</title>
@@ -71,7 +71,7 @@
                                     <img class="border border-dark" width="30px" type="button"
                                         src="/users/images/{{ $LoggedUserInfo['prof_pic'] }}">
                                 </button>
-                                <div class="dropdown-menu dropdown-menu-right bg bg-dark"
+                                <div class="dropdown-menu dropdown-menu-right" id="dropprof"
                                     aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item text-white text-secondary fw-bold"
                                         href="{{ route('u_dash') }}"><i class="bi bi-speedometer2"></i> <span
@@ -109,7 +109,7 @@
                                         <img class="border border-dark" width="30px" type="button"
                                             src="/company/images/{{ $LoggedCompanyInfo['prof_pic'] }}">
                                     </button>
-                                    <div class="dropdown-menu dropdown-menu-right bg bg-dark offset-10"
+                                    <div class="dropdown-menu dropdown-menu-right offset-10"  id="dropprof"
                                         aria-labelledby="dropdownMenuButton">
                                         <a class="dropdown-item text-white fw-bold" href="{{ route('c_dash') }}"><i
                                                 class="bi bi-speedometer2"></i> <span aria-current="page">
@@ -159,7 +159,7 @@
                                         <img class="border border-dark" width="30px" type="button"
                                             src="/img/wihireicon copy.png">
                                     </button>
-                                    <div class="dropdown-menu dropdown-menu-right bg bg-dark offset-10"
+                                    <div class="dropdown-menu dropdown-menu-right offset-10"  id="dropprof"
                                         aria-labelledby="dropdownMenuButton">
                                         <a class="dropdown-item text-white fw-bold" href="{{ route('a_dash') }}"><i
                                                 class="bi bi-speedometer2"></i> <span aria-current="page">
