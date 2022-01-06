@@ -69,7 +69,7 @@
                                 <button type="button" class="btn btn-dark fw-bold" data-bs-target="dropdown-menu"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <img class="border border-dark" width="30px" type="button"
-                                        src="/users/images/{{ $LoggedUserInfo['prof_pic'] }}">
+                                        src="users/images/{{ $LoggedUserInfo['prof_pic'] }}">
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right" id="dropprof"
                                     aria-labelledby="dropdownMenuButton">
@@ -107,7 +107,7 @@
                                     <button type="button" class="btn btn-dark fw-bold rounded" data-bs-target="dropdown-menu" data-bs-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">
                                         <img class="border border-dark" width="30px" type="button"
-                                            src="/company/images/{{ $LoggedCompanyInfo['prof_pic'] }}">
+                                            src="company/images/{{ $LoggedCompanyInfo['prof_pic'] }}">
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-right offset-10"  id="dropprof"
                                         aria-labelledby="dropdownMenuButton">
@@ -157,7 +157,7 @@
                                     <button type="button" class="btn btn-dark fw-bold rounded" data-bs-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">
                                         <img class="border border-dark" width="30px" type="button"
-                                            src="/img/wihireicon copy.png">
+                                            src="img/wihireicon copy.png">
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-right offset-10"  id="dropprof"
                                         aria-labelledby="dropdownMenuButton">
