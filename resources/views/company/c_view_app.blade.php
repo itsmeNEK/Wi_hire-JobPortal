@@ -87,13 +87,41 @@
                     <h2 class="text-center">Job Seeker Profile</h2>
                 </div>
                 <div class="col-3 text-end fw-bold">
-                    <a>
-                        <button data-bs-toggle="modal" data-id="{{ $userinfo->id }}" data-bs-target="#approve"
-                            type="button" class="btnUp btn btn-success ">
-                            <i class="bi bi-person-check-fill"></i>
-                            Approve
-                        </button>
-                    </a>
+                    @if ($appinfo != null)
+                        @if ($appinfo->stat == '2')
+                            <a>
+                                <button data-bs-toggle="modal" data-id="{{ $userinfo->id }}" data-bs-target="#approve"
+                                    type="button" class="btnUp btn btn-success ">
+                                    <i class="bi bi-person-check-fill"></i>
+                                    Approve
+                                </button>
+                            </a>
+                        @elseif ($appinfo->stat == '3')
+                            <a>
+                                <button data-bs-toggle="modal" data-id="{{ $userinfo->id }}" data-bs-target="#rej"
+                                    type="button" class="btnUp btn btn-danger ">
+                                    <i class="bi bi-person-x-fill"></i>
+                                    Reject
+                                </button>
+                            </a>
+                        @else
+                            <a>
+                                <button data-bs-toggle="modal" data-id="{{ $userinfo->id }}" data-bs-target="#approve"
+                                    type="button" class="btnUp btn btn-success ">
+                                    <i class="bi bi-person-check-fill"></i>
+                                    Approve
+                                </button>
+                            </a>
+                            <a>
+                                <button data-bs-toggle="modal" data-id="{{ $userinfo->id }}" data-bs-target="#rej"
+                                    type="button" class="btnUp btn btn-danger ">
+                                    <i class="bi bi-person-x-fill"></i>
+                                    Reject
+                                </button>
+                            </a>
+                        @endif
+
+                    @endif
                 </div>
             </div>
 
@@ -291,19 +319,19 @@
     </div>
 </div>
 
-    <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
-        var s = document.createElement('script')
-        s.src = "/js/c_approve.js";
-        document.head.appendChild(s);
-    </script>
-    <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
-        var s = document.createElement('script')
-        s.src = "/js/viewimage.js";
-        document.head.appendChild(s);
-    </script>
-    <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
-        var s = document.createElement('script')
-        s.src = "/js/goback.js";
-        document.head.appendChild(s);
-    </script>
+<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+    var s = document.createElement('script')
+    s.src = "/js/c_approve.js";
+    document.head.appendChild(s);
+</script>
+<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+    var s = document.createElement('script')
+    s.src = "/js/viewimage.js";
+    document.head.appendChild(s);
+</script>
+<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+    var s = document.createElement('script')
+    s.src = "/js/goback.js";
+    document.head.appendChild(s);
+</script>
 @endsection

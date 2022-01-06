@@ -123,7 +123,7 @@
                                                                         @endif
                                                                 </div>
                                                             </td>
-                                                            <td>
+                                                            <td data-label="View">
                                                                 <div class="btn-group" role="group"
                                                                     aria-label="Basic example">
                                                                     <a

@@ -1031,6 +1031,7 @@ class companyController extends Controller
             'appcountnew' => $appcountnew,
             'appcountnew_info' => $appcountnew_info,
             'inbox' => $inbox,
+            'appinfo' => $appinfo,
         ];
         return view('company.c_view_app', $data);
     }
@@ -1083,6 +1084,7 @@ class companyController extends Controller
             'appcountnew' => $appcountnew,
             'appcountnew_info' => $appcountnew_info,
             'inbox' => $inbox,
+            'appinfo' => null,
         ];
         return view('company.c_view_app', $data);
     }
