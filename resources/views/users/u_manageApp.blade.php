@@ -70,7 +70,7 @@
                                                         <td data-label="Position Level">
                                                             No Application Yet
                                                         </td>
-                                                        <td data-label="Applicants Name">
+                                                        <td data-label="Company Name">
                                                             No Application Yet
                                                         </td>
                                                         <td data-label="Time">
@@ -100,18 +100,18 @@
                                                                     {{ $info->postlev }}
                                                                 </a>
                                                             </td>
-                                                            <td data-label="Applicants Name">
+                                                            <td data-label="Company Name">
                                                                 <a class="text-black text-decoration-none">
                                                                     {{ $info->cname }}
                                                                 </a>
                                                             </td>
-                                                            <td>
+                                                            <td data-label="Time">
                                                                 <div class="btn-group" role="group"
                                                                     aria-label="Basic example">
                                                                     <a>{{ Carbon\Carbon::parse($info->created_at)->diffForHumans() }} </></a>
                                                                 </div>
                                                             </td>
-                                                            <td>
+                                                            <td data-label="Status">
                                                                 <div class="btn-group" role="group"
                                                                     aria-label="Basic example">
                                                                         @if (($info->stat == "1") || ($info->stat == "0"))
