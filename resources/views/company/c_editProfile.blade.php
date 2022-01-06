@@ -42,8 +42,8 @@
                                     <div class="picture">
                                         <img src="/company/images/{{ $LoggedUserInfo['prof_pic'] }}" alt="your image"
                                             class="picture-src" id="avatarPicturePreview" title="">
-                                        <input accept="image/*" class="picture-src"
-                                            type="file" id="avatar-picture" name="avatar">
+                                        <input accept="image/*" class="picture-src" type="file" id="avatar-picture"
+                                            name="avatar">
                                         <span class="text-danger">@error('avatar'){{ $message }}
                                             @enderror</span>
                                     </div>
@@ -92,19 +92,17 @@
                             <h3 class="text-start text-secondary">Address Information</h3>
                             <br>
                             <div class="row mt-3">
-                                <div class="col-md-6"><label
-                                        class="labels fw-bold">Province</label><input type="text"
-                                        name="province" class="form-control" placeholder="Province"
+                                <div class="col-md-6"><label class="labels fw-bold">Province</label><input
+                                        type="text" name="province" class="form-control" placeholder="Province"
                                         value="{{ $LoggedUserInfo['province'] }}">
                                 </div>
                                 <div class="col-md-6"><label
-                                        class="labels fw-bold">City/Municipality</label><input name="city"
-                                        type="text" class="form-control" value="{{ $LoggedUserInfo['city'] }}"
+                                        class="labels fw-bold">City/Municipality</label><input name="city" type="text"
+                                        class="form-control" value="{{ $LoggedUserInfo['city'] }}"
                                         placeholder="City/Municipality">
                                 </div>
-                                <div class="col-md-6"><label
-                                        class="labels fw-bold">Barangay</label><input type="text"
-                                        name="barangay" class="form-control" placeholder="Barangay"
+                                <div class="col-md-6"><label class="labels fw-bold">Barangay</label><input
+                                        type="text" name="barangay" class="form-control" placeholder="Barangay"
                                         value="{{ $LoggedUserInfo['barangay'] }}">
                                 </div>
                                 <div class="col-md-6"><label class="labels fw-bold">Street</label><input
@@ -129,8 +127,7 @@
                                         <i class="bi bi-check-lg">Save</i></button>
                                 </div>
                                 <div class="col-6 text-end">
-                                    <a href="{{ route('c_dash') }}"
-                                        class="btn btn-secondary text-white fw-bold">
+                                    <a href="{{ route('c_dash') }}" class="btn btn-secondary text-white fw-bold">
                                         <i class="bi bi-x-lg"></i>
                                         Cancel
                                     </a>
@@ -182,44 +179,40 @@
                                                 <td><i class="bi bi-file-earmark"></i><a>{{ $info->file_path }}</a>
                                                 </td>
                                                 <td class="text-end">
-                                                    <button type="button" id="{{ $info->id }}"
+                                                    <button type="button" data-id="{{ $info->id }}"
                                                         class="btn btn-white btn-view" data-bs-toggle="modal"
-                                                        data-bs-target="#{{ $info->id }}"><i class="bi bi-trash"
+                                                        data-bs-target="#myModal"><i class="bi bi-trash"
                                                             style="color: red"></i></button>
                                                 </td>
                                             </tr>
-
-                                            <!-- Modal -->
-                                            <form action="{{ route('c_file_del') }}" method="post">
-                                                @csrf
-                                                <div class="modal fade" id="{{ $info->id }}" tabindex="-1"
-                                                    role="dialog" aria-labelledby="myModalLabel">
-                                                    <div class="modal-dialog" role="document">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h4 class="modal-title" id="myModalLabel">
-                                                                    Warning!</h4>
-                                                            </div>
-                                                            <div id="personDetails" class="modal-body">
-
-                                                                Are you sure you want to Delete This File?
-                                                                <input type="hidden" name="id"
-                                                                    value="{{ $info->id }}">
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-danger"
-                                                                data-bs-dismiss="modal">No</button>
-                                                                <button type="submit"
-                                                                    class="btn btn-success">Yes</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
                                         @endforeach
                                     @endif
                                 </tbody>
                             </table>
+
+
+                            <!-- Modal -->
+                            <form action="{{ route('c_file_del') }}" method="post">
+                                @csrf
+                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+                                    aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="myModalLabel">Warning!
+                                                </h4>
+                                            </div>
+                                            <div id="personDetails" class="modal-body">
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger"
+                                                    data-bs-dismiss="modal">No</button>
+                                                <button type="submit" class="btn btn-success">Yes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -235,6 +228,11 @@
 <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
     var s = document.createElement('script')
     s.src = "/js/u_avatarpreview.js";
+    document.head.appendChild(s);
+</script>
+<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+    var s = document.createElement('script')
+    s.src = "/js/c_editprofile.js";
     document.head.appendChild(s);
 </script>
 @endsection

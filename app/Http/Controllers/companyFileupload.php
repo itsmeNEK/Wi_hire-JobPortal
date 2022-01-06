@@ -106,7 +106,7 @@ class companyFileupload extends Controller
         ->where('id',$request->id)
         ->delete();
         if($delete){
-            return redirect(route('u_dash'));
+            return redirect(route('c_update'));
         }else{
             return back()->with('fail','Something went wrong, try again later.');
         }
