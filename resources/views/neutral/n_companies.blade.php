@@ -273,7 +273,8 @@
                                     class="text-danger fw-bold closebtn"> <i class="bi bi-x-square-fill"></i></a>
                             </div>
                             <div class="content-detail">
-                                <div class="card-thumbnail">
+                                <div class="card-thumbnail" style="max-height: 100px;
+                                max-width: 100px;">
                                     <img src="/company/images/{{ $info['prof_pic'] }}" class="img-fluid" alt="">
                                 </div>
                                 <div class="job-details">
