@@ -315,7 +315,7 @@
 
                     <a class="text-decoration-none text-black openbtn" data-id="{{ $info->id }}">
                         <div class="card-box">
-                            <div class="card-thumbnail-c">
+                            <div class="card-thumbnail">
                                 <img src="/company/images/{{ $info['prof_pic'] }}" class="img-fluid" alt="">
                             </div>
                             <h3 class="mt-2 text-danger">{{ $info->cname }}</h3>
