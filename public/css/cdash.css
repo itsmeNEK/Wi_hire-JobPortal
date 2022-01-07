@@ -79,7 +79,12 @@ body {
     background: white;
 }
 
-.card-box-c .card-thumbnail-c {
+.content-detail .card-thumbnail {
+    max-height: 100px;
+    max-width: 100px;
+}
+
+.card-box .card-thumbnail-c {
     max-height: 100px;
     max-width: 100px;
     overflow: hidden;
