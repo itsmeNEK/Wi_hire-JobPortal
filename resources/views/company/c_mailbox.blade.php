@@ -20,18 +20,16 @@
     <div class="container rounded bg-white ">
         <br>
         @if (Session::get('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ Session::get('success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert"
-                aria-label="Close"></button>
-        </div>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ Session::get('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
         @endif
         @if (Session::get('fail'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            {{ Session::get('fail') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert"
-                aria-label="Close"></button>
-        </div>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ Session::get('fail') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
         @endif
         <br>
         <div class="row" style="margin-top: -25px">
@@ -63,82 +61,94 @@
     </div>
     <br>
     <div id="exTab2">
-        <div class="card card-outline-secondary">
-            <div class="card-header">
-                <h3 class="h3 rounded fw-bold text-start text-black pb-3">SENT
-                </h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th style="width: 30%" scope="col">to</th>
-                            <th style="width: 30%" scope="col">Subject</th>
-                            <th style="width: 12%" scope="col">Time</th>
-                            <th style="width: 12%" style="">Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                            @forelse ($sent_info as $info)
-                                <tr>
-                                    <td data-label="To">
-                                        <a class="text-black text-decoration-none"
-                                            href="c_view_mail/{{ Crypt::encrypt($info->id) }}">
-                                            <b>@if ($info->fname != null)
-                                                {{ $info->fname }}
-                                            @elseif ($info->cname != null)
-                                                {{ $info->cname }}
-                                            @elseif($info->from == "admin@admin.admin")
-                                                    ADMIN
-                                            @else
-                                                {{ $info->from }}
-                                            @endif</b>
-                                        </a>
-                                    </td>
-                                    <td data-label="Subject">
-                                        <a class="text-black text-decoration-none"
-                                            href="c_view_mail/{{ Crypt::encrypt($info->id) }}">
-                                            <b>{{ $info->subject }}</b>
-                                        </a>
-                                    </td>
-                                    <td data-label="Time">
-                                        <a class="text-black text-decoration-none"
-                                            href="c_view_mail/{{ Crypt::encrypt($info->id) }}">
-                                            <b>{{ Carbon\Carbon::parse($info->created_at)->diffForHumans() }} </b>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a type="button" data-id="{{ $info->id }}"
-                                            class="gbot btn-view" data-bs-toggle="modal"
-                                            data-bs-target="#myModal"><i class="bi bi-trash-fill text-danger"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                @empty
-                                <tr>
-                                    <td data-label="To">
-                                        <b>No Mail Yet</b>
-                                    </td>
-                                    <td data-label="Subject">
-                                        <b>No Mail Yet</b>
-                                    </td>
-                                    <td data-label="Time">
-                                        <b>No Mail Yet</b>
-                                    </td>
-                                </tr>
-                            @endforelse
-                    </tbody>
-                </table>
+        <div class="d-flex justify-content-center">
+            <div class="container rounded bg-white ">
+                <div class="row" style="margin-top:45px;">
+                    <div class="com-md-4 col-md-offset-4">
+                        <div class="card-header">
+                            <h3 class="h3 rounded fw-bold text-start text-black pb-3">SENT
+                            </h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th style="width: 30%" scope="col">to</th>
+                                        <th style="width: 30%" scope="col">Subject</th>
+                                        <th style="width: 12%" scope="col">Time</th>
+                                        <th style="width: 12%" style="">Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @forelse ($sent_info as $info)
+                                        <tr>
+                                            <td data-label="To">
+                                                <a class="text-black text-decoration-none"
+                                                    href="c_view_mail/{{ Crypt::encrypt($info->id) }}">
+                                                    <b>
+                                                        @if ($info->fname != null)
+                                                            {{ $info->fname }}
+                                                        @elseif ($info->cname != null)
+                                                            {{ $info->cname }}
+                                                        @elseif($info->from == "admin@admin.admin")
+                                                            ADMIN
+                                                        @else
+                                                            {{ $info->from }}
+                                                        @endif
+                                                    </b>
+                                                </a>
+                                            </td>
+                                            <td data-label="Subject">
+                                                <a class="text-black text-decoration-none"
+                                                    href="c_view_mail/{{ Crypt::encrypt($info->id) }}">
+                                                    <b>{{ $info->subject }}</b>
+                                                </a>
+                                            </td>
+                                            <td data-label="Time">
+                                                <a class="text-black text-decoration-none"
+                                                    href="c_view_mail/{{ Crypt::encrypt($info->id) }}">
+                                                    <b>{{ Carbon\Carbon::parse($info->created_at)->diffForHumans() }}
+                                                    </b>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a type="button" data-id="{{ $info->id }}" class="gbot btn-view"
+                                                    data-bs-toggle="modal" data-bs-target="#myModal"><i
+                                                        class="bi bi-trash-fill text-danger"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td data-label="To">
+                                                <b>No Mail Yet</b>
+                                            </td>
+                                            <td data-label="Subject">
+                                                <b>No Mail Yet</b>
+                                            </td>
+                                            <td data-label="Time">
+                                                <b>No Mail Yet</b>
+                                            </td>
+                                        </tr>
+                                    @endforelse
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <br>
+                        <span>
+                            {{ $sent_info->links('vendor.pagination.custom_pagination') }}
+                        </span>
+                    </div>
+                    <br>
+                </div>
+
+                <br>
+
 
             </div>
-            <br>
-            <span>
-                {{ $sent_info->links('vendor.pagination.custom_pagination') }}
-            </span>
+
         </div>
-        <br>
+
     </div>
-
-    <br>
-
 
 </div>
 <!-- Modal -->

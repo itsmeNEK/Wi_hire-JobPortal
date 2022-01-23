@@ -206,12 +206,14 @@
                         <span aria-current="page">
                             Jobs</span>
                     </a>
-                </li><li class="nav-item">
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('companies') }}" class="fw-bold nav-link text-light align-middle px-2">
                         <span aria-current="page">
                             Companies / Employer</span>
                     </a>
-                </li><li class="nav-item">
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('howto2') }}" class="fw-bold nav-link text-light align-middle px-2">
                         <span aria-current="page">
                             How to Use</span>
@@ -231,6 +233,21 @@
                 <strong class="align-middle px-0 ms-1 d-sm-inline"><b> {{ $LoggedUserInfo['fname'] }}
                         {{ $LoggedUserInfo['lname'] }}</b></strong>
             </span>
+            <div class="text-center">
+                <span>
+                    @if ($LoggedUserInfo['stat'] === '1')
+                        <a href="{{ route('u_update') }}">
+                            <button class="btn-outline-danger btn-sm bg-dark">
+                                Unverified
+                            </button>
+                        </a>
+                    @elseif ($LoggedUserInfo['stat'] ==='2')
+                        <button class="btn-outline-success btn-sm" disabled>
+                            Verified
+                        </button>
+                    @endif
+                </span>
+            </div>
             <hr class="bg-light">
             <ul style="padding-left:10px;" class="" id=" menu">
                 <li class="nav-item">

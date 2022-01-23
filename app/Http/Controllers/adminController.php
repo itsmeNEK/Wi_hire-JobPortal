@@ -74,6 +74,15 @@ class adminController extends Controller
     //admin dashboard
     public function a_dash()
     {
+
+
+        $job = DB::table('jobs')
+            ->where('stat', '=', '2')
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+        $newjobscount = DB::table('jobs')
+            ->where('stat', '=', '2')
+            ->paginate(10);
         $usercpount = DB::table('users')
             ->count();
         $jobcount = DB::table('jobs')
@@ -113,6 +122,8 @@ class adminController extends Controller
             'LoggedUserInfo' => $user,
             'active' => $mailinfo,
             'jobcount' => $jobcount,
+            'job' => $job,
+            'newjobscount' => $newjobscount,
             'usercpount' => $usercpount,
             'comcount' => $comcount,
             'inbox' => $inbox,
@@ -271,6 +282,74 @@ class adminController extends Controller
 
         return view('admin.a_candidatesBlock', $data);
     }
+    // admin candidate table view
+    public function a_candidate_verified(Request $request)
+    {
+        $search = [
+            'fname' => $request->fname,
+            'lname' => $request->lname,
+
+        ];
+        if ($request->fname != "" && $request->lname != "") {
+            $candidates = User::where('stat', '=', '2')
+                ->where('fname',  'LIKE', '%' . $request->fname . '%')
+                ->where('lname',  'LIKE', '%' . $request->lname . '%')
+                ->orderBy('created_at', 'desc')
+                ->paginate(20);
+        } elseif ($request->fname != "") {
+            $candidates = User::where('stat', '=', '2')
+                ->where('fname',  'LIKE', '%' . $request->fname . '%')
+                ->orderBy('created_at', 'desc')
+                ->paginate(20);
+        } elseif ($request->lname != "") {
+            $candidates = User::where('stat', '=', '2')
+                ->where('lname',  'LIKE', '%' . $request->lname . '%')
+                ->orderBy('created_at', 'desc')
+                ->paginate(20);
+        } else {
+            $candidates = User::where('stat', '=', '2')
+                ->orderBy('created_at', 'desc')
+                ->paginate(20);
+        }
+
+        $user = Admin::where('id', '=', session('adminLogged'))->first();
+        $mailinfo = Mailing::where('to', '=', $user->email)
+            ->where('mail_active', '=', '1')
+            ->count();
+        $inbox = DB::table('mailings')
+            ->leftjoin('users', 'mailings.from', '=', 'users.email')
+            ->leftjoin('companies', 'mailings.from', '=', 'companies.email')
+            ->select('mailings.id', 'users.fname', 'companies.cname', 'mailings.subject', 'mailings.created_at', 'mailings.mail_active', 'mailings.from')
+            ->where('mailings.to', $user->email)
+            ->where('mail_active', '=', '1')
+            ->orderBy('created_at', 'desc')
+            ->get();
+        $comcountnew = DB::table('companies')
+            ->where('approved', '=', '1')
+            ->count();
+        $comcountnew_info = DB::table('companies')
+            ->where('approved', '=', '1')
+            ->orderBy('created_at', 'desc')
+            ->get();
+        $reportcount = reportbug::where('active', '=', '1')
+            ->count();
+        $reportcount_info = reportbug::where('active', '=', '1')
+            ->orderBy('created_at', 'desc')
+            ->get();
+        $data = [
+            'LoggedUserInfo' => $user,
+            'active' => $mailinfo,
+            'candidates' => $candidates,
+            'inbox' => $inbox,
+            'reportcount' => $reportcount,
+            'searchinfo' => $search,
+            'reportcount_info' => $reportcount_info,
+            'comcountnew' => $comcountnew,
+            'comcountnew_info' => $comcountnew_info,
+        ];
+
+        return view('admin.a_candidatesVerified', $data);
+    }
     // admin candidate table blocked
     public function a_candidate_blocked(Request $request)
     {
@@ -280,10 +359,22 @@ class adminController extends Controller
         return back()->with('success', 'Candidate Successfully Blocked');
     }
     // admin candidate table blocked
+    public function a_candidate_Verify(Request $request)
+    {
+        $candidates = User::find($request->id);
+        $candidates->stat = 2;
+        $candidates->save();
+        return back()->with('success', 'Candidate Successfully Verified');
+    }
+    // admin candidate table blocked
     public function a_candidate_unblocked(Request $request)
     {
         $candidates = User::find($request->id);
-        $candidates->stat = 1;
+        if($candidates->userID !=null){
+            $candidates->stat = 2;
+        }else{
+            $candidates->stat = 1;
+        }
         $candidates->save();
         return back()->with('success', 'Candidate Successfully Unblocked');
     }
@@ -516,7 +607,7 @@ class adminController extends Controller
         $company->stat = '1';
         $company->save();
 
-        return back()->with('success', 'Job Successfully Unmuted');
+        return back()->with('success', 'Job Successfully Posted');
     }
     // admin jobs table
     public function a_jobs(Request $request)

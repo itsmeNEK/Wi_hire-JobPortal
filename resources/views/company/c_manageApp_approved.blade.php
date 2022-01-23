@@ -9,53 +9,54 @@
     <link rel="stylesheet" type="text/css" href="/css/managejob.css">
     <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
     <link rel="stylesheet" type="text/css" href="/css/u_editProf.css">
-    @endsection
+@endsection
 
 
-    @section('body')
-        @parent
-        @section('applicant', 'bg-danger')
-        @section('viewed-app', 'bg-danger')
+@section('body')
+    @parent
+@section('applicant', 'bg-danger')
+@section('viewed-app', 'bg-danger')
 
-    <div id="main">
+<div id="main">
+    <br>
+    <div class="container rounded bg-white ">
         <br>
-        <div class="container rounded bg-white ">
-            <br>
-            <br>
-            <div class="row" style="margin-top: -25px">
-                <div class="col-6 text-start">
-                    <div class="btn-group rounded" role="group" aria-label="Second group">
-                        <a href="{{ route('c_appManage') }}"><button type="button"
-                                class="gbot btn-danger text-light fw-bold rounded-start">
-                                <i class="bot3 bi bi-inboxes"></i>
-                                New
-                            </button></a>
-                        <a href="{{ route('c_appManageViewed') }}">
-                            <button type="button" class="gbot btn-danger text-light fw-bold">
-                                <i class="bot3 bi bi-card-checklist"></i>
-                                Viewed
-                            </button>
-                        </a>
-                        <a href="{{ route('c_appManageRej') }}">
-                            <button type="button" class="gbot btn-danger text-light fw-bold">
-                                <i class="bot3 bi bi-person-x-fill"></i>
-                                Rejected
-                            </button>
-                        </a>
-                        <a href="{{ route('c_appManageapp') }}">
-                            <button type="button" class="gbot btn-danger text-light fw-bold rounded-end">
-                                <i class="bot3 bi bi-person-check-fill"></i>
-                                Approved
-                            </button>
-                        </a>
-                    </div>
+        <br>
+        <div class="row" style="margin-top: -25px">
+            <div class="col-6 text-start">
+                <div class="btn-group rounded" role="group" aria-label="Second group">
+                    <a href="{{ route('c_appManage') }}"><button type="button"
+                            class="gbot btn-danger text-light fw-bold rounded-start">
+                            <i class="bot3 bi bi-inboxes"></i>
+                            New
+                        </button></a>
+                    <a href="{{ route('c_appManageViewed') }}">
+                        <button type="button" class="gbot btn-danger text-light fw-bold">
+                            <i class="bot3 bi bi-card-checklist"></i>
+                            Viewed
+                        </button>
+                    </a>
+                    <a href="{{ route('c_appManageRej') }}">
+                        <button type="button" class="gbot btn-danger text-light fw-bold">
+                            <i class="bot3 bi bi-person-x-fill"></i>
+                            Rejected
+                        </button>
+                    </a>
+                    <a href="{{ route('c_appManageapp') }}">
+                        <button type="button" class="gbot btn-danger text-light fw-bold rounded-end">
+                            <i class="bot3 bi bi-person-check-fill"></i>
+                            Approved
+                        </button>
+                    </a>
                 </div>
-            </div><br>
-        </div>
-        <div class="d-flex flex-column align-items-center text-center p-4">
-            <div class="row">
-                <div class="card card-outline-secondary">
-                    <div class="d-flex justify-content-center">
+            </div>
+        </div><br>
+    </div>
+    <div class="d-flex flex-column align-items-center text-center p-4">
+        <div class="d-flex justify-content-center">
+            <div class="container rounded bg-white ">
+                <div class="row" style="margin-top:45px;">
+                    <div class="com-md-4 col-md-offset-4">
                         <form action="{{ route('c_jobsave') }}" method="post">
                             @csrf
                             <div class="rounded bg-transaprent">
@@ -189,4 +190,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection

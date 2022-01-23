@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="card card-outline-secondary">
                     <div class="d-flex justify-content-center">
-                        <form action="{{ route('c_jobsave') }}" method="post">
+                        <form action="{{ route('c_jobsave') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="rounded bg-transaprent">
                                 <div class="row">
@@ -85,7 +85,7 @@
                                                     @enderror</span>
                                                 <div class="row mt-2">
                                                     <div class="col-md-12"><label class="labels fw-bold">job
-                                                            Title</label><input name="jobtit" type="text"
+                                                            Title</label><input name="jobtit" type="text" value="{{ old('jobtit') }}"
                                                             class="form-control" placeholder="job Title"><span
                                                             class="text-danger">@error('jobtit'){{ $message }}
                                                             @enderror</span>
@@ -93,7 +93,7 @@
                                                     <div class="col-md-12"><label class="labels fw-bold">Job
                                                             Description</label>
                                                         <textarea class="form-control" id="message" name="jobdes"
-                                                            rows="12" placeholder="Job Description"></textarea>
+                                                            rows="12" placeholder="Job Description">{{ old('jobdes') }}</textarea>
                                                         <span class="text-danger">@error('jobdes'){{ $message }}
                                                             @enderror</span>
                                                     </div>
@@ -101,14 +101,14 @@
                                                 <div class="row mt-2">
                                                     <div class="col-md-6"><label
                                                             class="labels fw-bold">Qualification
-                                                            Required</label><input name="qualification" type="text"
+                                                            Required</label><input name="qualification" type="text"value="{{ old('qualification') }}"
                                                             class="form-control" placeholder="qualification"><span
                                                             class="text-danger">@error('qualification'){{ $message }}
                                                             @enderror</span>
                                                     </div>
                                                     <div class="col-md-6"><label
                                                             class="labels fw-bold">Experience
-                                                            Required</label><input name="exreq" type="text"
+                                                            Required</label><input name="exreq" type="text"value="{{ old('exreq') }}"
                                                             class="form-control" placeholder="Experience Required"><span
                                                             class="text-danger">@error('exreq'){{ $message }}
                                                             @enderror</span>
@@ -117,7 +117,7 @@
                                                 <div class="row mt-3">
                                                     <div class="col-md-12"><label
                                                             class="labels fw-bold">Specialization</label>
-                                                        <input type="text" name="special" class="form-control"
+                                                        <input type="text" name="special" class="form-control"value="{{ old('special') }}"
                                                             placeholder="Specialization"><span
                                                             class="text-danger">@error('special'){{ $message }}
                                                             @enderror</span>
@@ -126,21 +126,21 @@
                                                 <div class="row mt-3">
                                                     <div class="col-md-6"><label
                                                             class="labels fw-bold">Minimum Salary</label>
-                                                        <input type="text" name="mimsal" class="form-control"
+                                                        <input type="text" name="mimsal" class="form-control"value="{{ old('mimsal') }}"
                                                             placeholder="Minimum Salary"><span
                                                             class="text-danger">@error('mimsal'){{ $message }}
                                                             @enderror</span>
                                                     </div>
                                                     <div class="col-md-6"><label
                                                             class="labels fw-bold">Maximumm Salary</label>
-                                                        <input type="text" name="maxsal" class="form-control"
+                                                        <input type="text" name="maxsal" class="form-control"value="{{ old('maxsal') }}"
                                                             placeholder="Maximumm Salary"><span
                                                             class="text-danger">@error('maxsal'){{ $message }}
                                                             @enderror</span>
                                                     </div>
                                                     <div class="col-md-6"><label
                                                             class="labels fw-bold">Type Of
-                                                            Role</label><input id="browser" list="browsers"
+                                                            Role</label><input id="browser" list="browsers" value="{{ old('typerole') }}"
                                                             class="form-control" name="typerole"
                                                             placeholder="Type Of Role" value="">
                                                         <datalist id="browsers">
@@ -153,12 +153,32 @@
                                                     </div>
                                                     <div class="col-md-6"><label
                                                             class="labels fw-bold">Position level</label>
-                                                        <input type="group-text" name="postlev" class="form-control"
+                                                        <input type="group-text" name="postlev" class="form-control" value="{{ old('postlev') }}"
                                                             placeholder="Position level"><span
                                                             class="text-danger">@error('postlev'){{ $message }}
                                                             @enderror</span>
                                                     </div>
                                                 </div>
+                                                @if ($LoggedUserInfo->ComType == "2")
+                                                <hr>
+                                                <div class="col-md-12 text-start">
+                                                    <h3 class="text-start text-secondary">Attach document</h3>
+                                                    <p class="text-danger" style="font-size: 14px"> Note: You Cannot Create
+                                                        or post jobs
+                                                        if you are not verified by the admin
+                                                        Please Upload Picture or Document/s that can Justify or Prove that
+                                                        you have a business establishment. Thankyou</p>
+                                                </div>
+                                                <div class="col-md-6 text-end">
+                                                        <div class="input-group input-group-sm mb-3">
+                                                            <input name="Job_file" type="file" class="fileIn "
+                                                                accept=".doc,.pdf,.docx, .jpg, .jpeg, .png">
+                                                            <span class="text-danger">@error('Job_file'){{ $message }}
+                                                                @enderror
+                                                            </span>
+                                                        </div>
+                                                </div>
+                                                @endif
                                                 <div class="mt-5 text-center">
                                                     <div class="row">
                                                         <div class="col-6 text-start">

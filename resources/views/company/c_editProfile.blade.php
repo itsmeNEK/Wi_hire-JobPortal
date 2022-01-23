@@ -142,11 +142,8 @@
                     <div class="row-mt-2">
                         <div class="col-md-6 text-start">
                             <h3 class="text-start text-secondary">Attach document</h3>
-                            <p class="text-danger" style="font-size: 14px"> Note: You Cannot Create
-                                or post jobs
-                                if you are not verified by the admin
-                                Please Upload Picture or Document/s that can Justify or Prove that
-                                you have a business establishment. Thankyou</p>
+                            <p class="text-danger" style="font-size: 14px"> Note: Since you are a company, you are required to attach a document
+                            supporting youre job post. Thankyou!</p>
                         </div>
                         <div class="col-md-6 text-end">
                             <form action="{{ route('c_file_upload') }}" method="post" enctype="multipart/form-data">

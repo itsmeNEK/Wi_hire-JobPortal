@@ -46,7 +46,7 @@
                         <a class="nav-link fw-bold" href="{{ route('howto2') }}">How to Use</a>
                     </li>
                     <li>
-                        <a class="btn btn-outline-light rounded" type="button" href="{{ route('u_login') }}"><b>jOB
+                        <a class="btn btn-outline-light rounded" type="button" href="{{ route('u_login') }}"><b>JOB
                                 SEEKER LOGIN</b></a>
                     </li>
 

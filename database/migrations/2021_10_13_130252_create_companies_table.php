@@ -29,6 +29,7 @@ class CreateCompaniesTable extends Migration
             $table->string('HBnum')->nullable();
             $table->string('password');
             $table->string('prof_pic')->nullable();
+            $table->string('ComType')->nullable();
             $table->string('attach')->nullable();
             $table->string('approved')->nullable()->default('1');
             $table->rememberToken();

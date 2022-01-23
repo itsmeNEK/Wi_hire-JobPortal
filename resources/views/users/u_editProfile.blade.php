@@ -171,15 +171,53 @@
                                         </div>
 
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </form>
+                <hr>
+                <div class="row mt-2">
+                    <div class="col-md-6 text-start">
+                        <h4 class="text-secondary text-start">Account Verification</h4> <span class="text-danger">NOTE! Please Upload a Valid ID to be Verified.</span><br>
+                    </div>
+                    @if ($LoggedUserInfo['userID'] == null)
+                        <div class="col-md-6">
+                            <form action="{{ route('u_id_upload') }}" method="post" enctype="multipart/form-data">
+                                @csrf
+                                <input type="hidden" name="userid" value="{{ $LoggedUserInfo['id'] }}">
+                                <div class="input-group input-group-sm mb-3">
+                                    <input name="user_files" type="file" class="fileIn "
+                                        accept=".jpg,.jpeg,.png">
+                                    <div class="input-group-prepend">
+                                        <button type="submit" class="btnUp btn-danger rounded">Upload</button>
+                                    </div>
+                                    <span class="text-danger">@error('user_files'){{ $message }}
+                                        @enderror
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    @elseif ($LoggedUserInfo['stat'] == '2')
+                        <div class="col-md-6 text-end text-success">
+                            Verified<i class="bi bi-check-lg"></i>
+                        </div>
+                    @else
+                        <div class="col-md-6 text-end">
+                            ID Uploaded, Wait for Verification.
+                            <form action="{{ route('u_id_remove') }}" method="get">
+                                <button id="reupload" class="btn btn-danger fw-bold">
+                                    ReUpload?
+                                </button>
+                            </form>
+                        </div>
+                    @endif
+                </div>
             </div>
         </div>
-        <br>
     </div>
+</div>
+</div>
+</div>
+<br>
+</div>
 </div>
 @endsection
 
@@ -191,4 +229,3 @@
     document.head.appendChild(s);
 </script>
 @endsection
-

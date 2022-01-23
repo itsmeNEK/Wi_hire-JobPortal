@@ -257,7 +257,7 @@
                     @foreach ($jobinfo as $info)
                         <a href="{{ route('jobs') }}" class="text-decoration-none text-black">
                             <div class="card-box ">
-                                <div class="card-thumbnail">
+                                <div class="card-thumbnail" >
                                     <img src="/company/images/{{ $info['prof_pic'] }}" class="img-fluid"
                                         alt="">
                                 </div>

@@ -23,13 +23,6 @@
 
 <form action="{{ route('a_app_mail') }}" method="post">
     @csrf
-    @if (Session::get('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ Session::get('success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
-
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -74,6 +67,14 @@
 </form>
 <div id="main">
     <div class="col py-3">
+
+        @if (Session::get('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ Session::get('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
         <div class="container rounded bg-white ">
             <div class="row py-3">
                 <div class="col-4 text-start fw-bold">
@@ -84,11 +85,38 @@
                         </button>
                     </a>
                 </div>
-                <div class="col-8 text-center fw-bold">
+                <div class="col-4 text-center fw-bold">
                     <h2 class="text-start">Candidate Profile</h2>
                 </div>
+                <div class="col-4 text-end fw-bold">
+                    @if ($userinfo['stat'] == '1')
+                        <button type="button" class="btnUp btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#verifymodal" data-id="{{ $userinfo['id'] }}">
+                            <i class="bot3 bi bi-person-check-fill"></i>
+                            Verify
+                        </button>
+                    @endif
+                </div>
             </div>
-
+            <!-- Modal -->
+            <form action="{{ route('a_candidate_Verify') }}" method="post">
+                @csrf
+                <div class="modal fade" id="verifymodal" tabindex="1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myModalLabel">Warning!</h4>
+                            </div>
+                            <div id="verifydetail" class="modal-body">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                                <button type="submit" class="btn btn-success">Yes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -138,7 +166,7 @@
                                 <div class="col-sm-3 text-end">
                                     <a>
                                         <button data-bs-toggle="modal" data-bs-target="#myModal"
-                                            class="btnUp btn-danger rounded">Message</button>
+                                            class="btnUp fw-bold btn btn-danger">Message</button>
                                     </a>
                                 </div>
                             </div>
@@ -255,24 +283,52 @@
                             </table>
                         </div>
                     </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6 text-start">
+                            <h6>Candidate Valid ID</h6>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="col-sm-2">
+                                <div class="picture-container text-start">
+                                    <div class="picture">
+                                        <img id="ID" src="/user_files/{{ $userinfo['userID'] }}"
+                                            class="picture-src" id="avatarPicturePreview" title="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div id="IDmodal" class="imagemodal">
+
+                    <!-- The Close Button -->
+                    <span class="closeID btn btn-danger"><b>&times;</b></span>
+
+                    <!-- Modal Content (The Image) -->
+                    <img class="imagemodal-content" id="img02">
+                </div>
+            </div><br>
         </div>
     </div>
 </div>
 </div>
 @endsection
 @section('customJS')
-    @parent
-    @parent
-    <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
-        var s = document.createElement('script')
-        s.src = "/js/viewimage.js";
-        document.head.appendChild(s);
-    </script>
-    <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
-        var s = document.createElement('script')
-        s.src = "/js/goback.js";
-        document.head.appendChild(s);
-    </script>
+@parent
+@parent
+<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+    var s = document.createElement('script')
+    s.src = "/js/viewimage.js";
+    document.head.appendChild(s);
+</script>
+<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+    var s = document.createElement('script')
+    s.src = "/js/goback.js";
+    document.head.appendChild(s);
+</script>
+<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+    var s = document.createElement('script')
+    s.src = "/js/a_verifiycan.js";
+    document.head.appendChild(s);
+</script>
 @endsection

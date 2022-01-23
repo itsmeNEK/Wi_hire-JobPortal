@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Mailing;
 use App\Helpers\Helper;
-use App\Models\AdminKeepMail;
 use App\Models\company;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
@@ -47,19 +46,12 @@ class mail extends Controller
 
         $company = company::where('id', '=', session('Loggedcompany'))->first();
         $mail = new Mailing;
-        $mail1 = new AdminKeepMail;
 
         $mail->from = $company->email;
         $mail->to = $request->to;
         $mail->subject = $request->subject;
         $mail->body = $request->body;
         $save = $mail->save();
-
-        $mail1->from = $company->email;
-        $mail1->to = $request->to;
-        $mail1->subject = $request->subject;
-        $mail1->body = $request->body;
-        $save1 = $mail1->save();
 
         return back()->with('success', 'Message Sent');
     }
@@ -71,9 +63,12 @@ class mail extends Controller
 $token = $request->session()->token();
 
     $token = csrf_token();
-        if ($token) {   $delete = DB::table('mailings')
-            ->where('id', $request->id)
-            ->delete();
+        if ($token) {
+
+            $delete = Mailing::find($request->id);
+            $delete->mail_active = "2";
+            $delete->save();
+
         if ($delete) {
             return back()->with('success', 'Mail have been deleted.');
         } else {
@@ -98,19 +93,12 @@ $token = $request->session()->token();
 
         $company = Admin::where('id', '=', session('adminLogged'))->first();
         $mail = new Mailing;
-        $mail1 = new AdminKeepMail;
 
         $mail->from = $company->email;
         $mail->to = $request->to;
         $mail->subject = $request->subject;
         $mail->body = $request->body;
         $save = $mail->save();
-
-        $mail1->from = $company->email;
-        $mail1->to = $request->to;
-        $mail1->subject = $request->subject;
-        $mail1->body = $request->body;
-        $save1 = $mail1->save();
 
         return back()->with('success', 'Message Sent');
     }
@@ -131,7 +119,6 @@ $token = $request->session()->token();
 
 
         $mail = new Mailing;
-        $mail1 = new AdminKeepMail;
         if ($request->attachfiles != "") {
             $path = 'mail/';
             $request->validate([
@@ -140,7 +127,6 @@ $token = $request->session()->token();
             $newname = Helper::renameFile($path, $request->file('attachfiles')->getClientOriginalName());
             $upload = $request->attachfiles->move(public_path($path), $newname);
             $mail->attach = $newname;
-            $mail1->attach = $newname;
         }
 
         $mail->from = $request->from;
@@ -149,13 +135,8 @@ $token = $request->session()->token();
         $mail->body = $request->body;
         $save = $mail->save();
 
-        $mail1->from = $request->from;
-        $mail1->to = $request->to;
-        $mail1->subject = $request->subject;
-        $mail1->body = $request->body;
-        $save1 = $mail1->save();
 
-        if ($save1 && $save) {
+        if ($save) {
             return back()->with('success', 'Mail Sent.');
         } else {
             return back()->with('fail', 'Mail did not send.Something went wrong.');

@@ -49,12 +49,10 @@
         </div><br>
     </div>
     <div class="d-flex flex-column align-items-center text-center p-4">
-        <div class="row">
-            <div class="card card-outline-secondary">
-                <div class="d-flex justify-content-center">
-                        @csrf
-                        <div class="rounded bg-transaprent">
-
+        <div class="d-flex justify-content-center">
+            <div class="container rounded bg-white ">
+                <div class="row" style="margin-top:45px;">
+                    <div class="com-md-4 col-md-offset-4">
                                 <div class="row">
                                     <div class="row">
                                         <div class="col-12 text-start">

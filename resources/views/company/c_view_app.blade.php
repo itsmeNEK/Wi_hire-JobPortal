@@ -8,6 +8,7 @@
     <!-- custom -->
     <link rel="stylesheet" type="text/css" href="/css/dashboard.css">
     <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="/css/managejob.css">
     <link rel="stylesheet" type="text/css" href="/css/viewimage.css">
 @endsection
 
@@ -292,31 +293,146 @@
                                 </table>
                             </div>
                         </div>
-                    @endif
-                    <!-- Modal -->
-                    <form action="{{ route('c_app_acc') }}" method="post">
-                        @csrf
-                        <div class="modal fade" id="approve" tabindex="1" role="dialog"
-                            aria-labelledby="myModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title" id="myModalLabel">Warning!</h4>
-                                    </div>
-                                    <div id="personDetails" class="modal-body">
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
-                                        <button type="submit" class="btn btn-success">Yes</button>
+                        <hr>
+                        <div class="row mt-2">
+                            <div class="col-md-6 text-start">
+                                <h6>Application History</h6>
+                            </div>
+                            <div class="row">
+                                <div class="com-md-4 col-md-offset-4">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="rounded bg-transaprent">
+                                            <div class="row">
+                                                <div class="d-flex text-start">
+                                                    <div class="p-3 py-5">
+                                                        <table>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col">Job Title</th>
+                                                                    <th scope="col">Type of Role</th>
+                                                                    <th scope="col">Position Level</th>
+                                                                    <th scope="col">Company Name</th>
+                                                                    <th scope="col">Time</th>
+                                                                    <th scope="col">Status</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                {{-- check if jobs null --}}
+                                                                @if (empty($apphistory))
+                                                                    <tr>
+                                                                        <td data-label="Job Title">
+                                                                            No Application Yet
+                                                                        </td>
+                                                                        <td data-label="Type of Role">
+                                                                            No Application Yet
+                                                                        </td>
+                                                                        <td data-label="Position Level">
+                                                                            No Application Yet
+                                                                        </td>
+                                                                        <td data-label="Company Name">
+                                                                            No Application Yet
+                                                                        </td>
+                                                                        <td data-label="Time">
+                                                                            No Application Yet
+                                                                        </td>
+                                                                    </tr>
+                                                                @else
+
+                                                                    @foreach ($apphistory as $info)
+
+                                                                        <tr>
+                                                                            <td data-label="Job Title">
+                                                                                <a
+                                                                                    class="text-black text-decoration-none">
+                                                                                    {{ $info->jobtit }}
+                                                                                </a>
+                                                                            </td>
+                                                                            <td data-label="Type of Role">
+                                                                                <a
+                                                                                    class="text-black text-decoration-none">
+                                                                                    {{ $info->typerole }}
+                                                                                </a>
+                                                                            </td>
+                                                                            <td data-label="Position Level">
+                                                                                <a
+                                                                                    class="text-black text-decoration-none">
+                                                                                    {{ $info->postlev }}
+                                                                                </a>
+                                                                            </td>
+                                                                            <td data-label="Company Name">
+                                                                                <a
+                                                                                    class="text-black text-decoration-none">
+                                                                                    {{ $info->cname }}
+                                                                                </a>
+                                                                            </td>
+                                                                            <td data-label="Time">
+                                                                                <div class="btn-group"
+                                                                                    role="group"
+                                                                                    aria-label="Basic example">
+                                                                                    <a>{{ Carbon\Carbon::parse($info->created_at)->diffForHumans() }}
+                                                                                        </></a>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td data-label="Status">
+                                                                                <div class="btn-group"
+                                                                                    role="group"
+                                                                                    aria-label="Basic example">
+                                                                                    @if ($info->stat == '1' || $info->stat == '0')
+                                                                                        <span
+                                                                                            class="text-warning">Pending</span>
+                                                                                    @elseif ($info->stat == "3")
+                                                                                        <span
+                                                                                            class="text-success">Approved</span>
+                                                                                    @elseif ($info->stat == "2")
+                                                                                        <span
+                                                                                            class="text-danger">Rejected
+                                                                                        </span>
+                                                                                    @endif
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    @endforeach
+
+                                                                @endif
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+                                                </div>
+                                                <span>
+                                                    {{ $apphistory->links('vendor.pagination.custom_pagination') }}
+                                                </span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </form>
                 </div>
+                @endif
+                <!-- Modal -->
+                <form action="{{ route('c_app_acc') }}" method="post">
+                    @csrf
+                    <div class="modal fade" id="approve" tabindex="1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="myModalLabel">Warning!</h4>
+                                </div>
+                                <div id="personDetails" class="modal-body">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                                    <button type="submit" class="btn btn-success">Yes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">

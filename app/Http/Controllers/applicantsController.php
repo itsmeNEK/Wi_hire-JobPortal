@@ -37,31 +37,35 @@ class applicantsController extends Controller
      */
     public function store($id)
     {
-
-        $job = jobs::where('id', '=', $id)->first();
         $user = User::where('id', '=', session('LoggedUser'))->first();
 
-        $dob = applicants::where('jobID', '=', $id)
-            ->where('u_id', '=', $user->id)
-            ->first();
+        if($user->stat==2){
+            $job = jobs::where('id', '=', $id)->first();
+            $dob = applicants::where('jobID', '=', $id)
+                ->where('u_id', '=', $user->id)
+                ->first();
 
-        if (!$dob) {
-            echo 'new';
-            $app = new applicants;
-            $app->jobID = $job->id;
-            $app->u_id = $user->id;
-            $app->typerole = $job->typerole;
-            $app->postlev = $job->postlev;
-            $app->username = $user->fname ." ". $user->lname;
-            $app->c_id = $job->c_id;
-            $app->jobtit = $job->jobtit;
-            $app = $app->save();
+            if (!$dob) {
+                echo 'new';
+                $app = new applicants;
+                $app->jobID = $job->id;
+                $app->u_id = $user->id;
+                $app->typerole = $job->typerole;
+                $app->postlev = $job->postlev;
+                $app->username = $user->fname ." ". $user->lname;
+                $app->c_id = $job->c_id;
+                $app->jobtit = $job->jobtit;
+                $app = $app->save();
 
-            if ($app) {
-                return back()->with('success', 'You succesfully applied');
+                if ($app) {
+                    return back()->with('success', 'You succesfully applied.');
+                }
+            }else{
+                return back()->with('fail', 'You have already applied this job.');
             }
-        }else{
-            return back()->with('fail', 'You have already applied this job');
+        }
+        else{
+            return back()->with('fail', 'You Must Verifiy your account first.');
         }
     }
 

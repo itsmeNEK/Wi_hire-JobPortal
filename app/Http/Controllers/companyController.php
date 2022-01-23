@@ -227,6 +227,7 @@ class companyController extends Controller
         $request->validate([
             'cname' => 'required',
             'CPname' => 'required',
+            'ComType' => 'required',
             'email' => 'required|email|unique:companies|unique:users',
             'password' => 'required|min:6',
             'cpassword' => 'required|min:6'
@@ -250,6 +251,7 @@ class companyController extends Controller
             $user->cname = $request->cname;
             $user->cpname = $request->CPname;
             $user->email = $request->email;
+            $user->ComType = $request->ComType;
             $user->prof_pic = $picture;
             $user->password = Hash::make($request->password);
             $save = $user->save();
@@ -463,6 +465,7 @@ class companyController extends Controller
         $job = DB::table('jobs')
             ->where('c_id', session('Loggedcompany'))
             ->where('stat', '=', '1')
+            ->orwhere('stat', '=', '2')
             ->orderBy('created_at', 'desc')
             ->paginate(10);
         $user = company::where('id', '=', session('Loggedcompany'))->first();
@@ -810,12 +813,12 @@ class companyController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
         $sent = DB::table('mailings')
-        ->leftjoin('users', 'mailings.to', '=', 'users.email')
-        ->leftjoin('companies', 'mailings.to', '=', 'companies.email')
-        ->where('from', $user->email)
-        ->select('mailings.id', 'users.fname', 'companies.cname', 'mailings.subject', 'mailings.created_at', 'mailings.mail_active', 'mailings.from', 'mailings.to')
-        ->orderBy('created_at', 'desc')
-        ->paginate(20);
+            ->leftjoin('users', 'mailings.to', '=', 'users.email')
+            ->leftjoin('companies', 'mailings.to', '=', 'companies.email')
+            ->where('from', $user->email)
+            ->select('mailings.id', 'users.fname', 'companies.cname', 'mailings.subject', 'mailings.created_at', 'mailings.mail_active', 'mailings.from', 'mailings.to')
+            ->orderBy('created_at', 'desc')
+            ->paginate(20);
         $mailinfo = Mailing::where('to', '=', $user->email)
             ->where('mail_active', '=', '1')
             ->count();
@@ -852,7 +855,7 @@ class companyController extends Controller
             ->where('mail_active', '=', '1')
             ->orderBy('created_at', 'desc')
             ->get();
-            $inbox = DB::table('mailings')
+        $inbox = DB::table('mailings')
             ->leftjoin('users', 'mailings.from', '=', 'users.email')
             ->leftjoin('companies', 'mailings.from', '=', 'companies.email')
             ->select('mailings.id', 'users.fname', 'companies.cname', 'mailings.subject', 'mailings.created_at', 'mailings.mail_active', 'mailings.from', 'mailings.to')
@@ -989,6 +992,11 @@ class companyController extends Controller
         }
         $companyinfo = company::where('id', '=', session('Loggedcompany'))->first();
         $userinfo = User::where('id', '=', $appinfo->u_id)->first();
+        $apphistory = DB::table('applicants')
+            ->leftjoin('companies', 'applicants.c_id', '=', 'companies.id')
+            ->select('applicants.jobtit', 'applicants.typerole', 'applicants.postlev', 'applicants.c_id', 'companies.cname', 'applicants.created_at', 'applicants.stat')
+            ->where('u_id', $userinfo->id)
+            ->orderBy('created_at', 'desc')->paginate(10);
         $EB = DB::table('user_prof_e_b_s')
             ->where('user_id', $userinfo->id)
             ->get();
@@ -1027,6 +1035,7 @@ class companyController extends Controller
             'user_files' => $files,
             'LoggedUserInfo' => $companyinfo,
             'userinfo' => $userinfo,
+            'apphistory' => $apphistory,
             'active' => $mailinfo,
             'appcountnew' => $appcountnew,
             'appcountnew_info' => $appcountnew_info,
@@ -1042,6 +1051,11 @@ class companyController extends Controller
 
         $companyinfo = company::where('id', '=', session('Loggedcompany'))->first();
         $userinfo = User::where('id', '=', $id)->first();
+        $apphistory = DB::table('applicants')
+            ->leftjoin('companies', 'applicants.c_id', '=', 'companies.id')
+            ->select('applicants.jobtit', 'applicants.typerole', 'applicants.postlev', 'applicants.c_id', 'companies.cname', 'applicants.created_at', 'applicants.stat')
+            ->where('u_id', $userinfo->id)
+            ->orderBy('created_at', 'desc')->paginate(10);
         $EB = DB::table('user_prof_e_b_s')
             ->where('user_id', $userinfo->id)
             ->get();
@@ -1080,6 +1094,7 @@ class companyController extends Controller
             'user_files' => $files,
             'LoggedUserInfo' => $companyinfo,
             'userinfo' => $userinfo,
+            'apphistory' => $apphistory,
             'active' => $mailinfo,
             'appcountnew' => $appcountnew,
             'appcountnew_info' => $appcountnew_info,
@@ -1099,27 +1114,27 @@ class companyController extends Controller
             $user111 = company::where('id', '=', session('Loggedcompany'))->first();
         } elseif (session('adminLogged')) {
             $user111 = Admin::where('id', '=', session('adminLogged'))->first();
-        }elseif (session('LoggedUser')) {
+        } elseif (session('LoggedUser')) {
             $user111 = User::where('id', '=', session('LoggedUser'))->first();
-        }else {
+        } else {
             $user111 = null;
         }
 
-        if ((session('Loggedcompany')) || (session('adminLogged')) || (session('LoggedUser'))){
+        if ((session('Loggedcompany')) || (session('adminLogged')) || (session('LoggedUser'))) {
             $inbox = DB::table('mailings')
-            ->leftjoin('users', 'mailings.from', '=', 'users.email')
-            ->select('mailings.id', 'users.fname', 'mailings.subject', 'mailings.created_at', 'mailings.mail_active', 'mailings.from')
-            ->where('mailings.to', $user111->email)
-            ->where('mail_active', '=', '1')
-            ->orderBy('created_at', 'desc')
-            ->count();
-        $comcountnew = DB::table('companies')
-            ->where('approved', '=', '1')
-            ->count();
-        $comcountnew_info = DB::table('companies')
-            ->where('approved', '=', '1')
-            ->get();
-        }else{
+                ->leftjoin('users', 'mailings.from', '=', 'users.email')
+                ->select('mailings.id', 'users.fname', 'mailings.subject', 'mailings.created_at', 'mailings.mail_active', 'mailings.from')
+                ->where('mailings.to', $user111->email)
+                ->where('mail_active', '=', '1')
+                ->orderBy('created_at', 'desc')
+                ->count();
+            $comcountnew = DB::table('companies')
+                ->where('approved', '=', '1')
+                ->count();
+            $comcountnew_info = DB::table('companies')
+                ->where('approved', '=', '1')
+                ->get();
+        } else {
             $inbox = null;
             $comcountnew = null;
             $comcountnew_info = null;
@@ -1129,42 +1144,41 @@ class companyController extends Controller
                 ->leftjoin('user_prof_e_b_s', 'user_prof_e_b_s.user_id', '=', 'users.id')
                 ->leftjoin('user_prof_work_exes', 'user_prof_work_exes.user_id', '=', 'users.id')
                 ->leftjoin('user_prof_skills', 'user_prof_skills.user_id', '=', 'users.id')
-                ->select('users.id','users.city','users.fname','users.lname','users.mname','users.prof_pic','users.gender','users.city','users.civilstat','user_prof_skills.skills','user_prof_e_b_s.field','user_prof_e_b_s.major','user_prof_work_exes.specialization')
+                ->select('users.id', 'users.city', 'users.fname', 'users.lname', 'users.mname', 'users.prof_pic', 'users.gender', 'users.city', 'users.civilstat', 'user_prof_skills.skills', 'user_prof_e_b_s.field', 'user_prof_e_b_s.major', 'user_prof_work_exes.specialization')
                 ->where('users.city', 'LIKE', '%' . $request->town . '%')
                 ->where('user_prof_skills.skills', 'LIKE', '%' . $request->skm . '%')
                 ->orWhere('user_prof_e_b_s.major', 'LIKE', '%' . $request->skm . '%')
                 ->orWhere('user_prof_e_b_s.field', 'LIKE', '%' . $request->skm . '%')
                 ->inRandomOrder()
                 ->paginate(20);
-
         } elseif ($request->skm != "") {
             $user = DB::table('users')
-            ->leftjoin('user_prof_e_b_s', 'user_prof_e_b_s.user_id', '=', 'users.id')
-            ->leftjoin('user_prof_work_exes', 'user_prof_work_exes.user_id', '=', 'users.id')
-            ->leftjoin('user_prof_skills', 'user_prof_skills.user_id', '=', 'users.id')
-            ->select('users.id','users.city','users.fname','users.lname','users.mname','users.prof_pic','users.gender','users.city','users.civilstat','user_prof_skills.skills','user_prof_e_b_s.field','user_prof_e_b_s.major','user_prof_work_exes.specialization')
-            ->where('user_prof_skills.skills', 'LIKE', '%' . $request->skm . '%')
-            ->orWhere('user_prof_e_b_s.major', 'LIKE', '%' . $request->skm . '%')
-            ->orWhere('user_prof_e_b_s.field', 'LIKE', '%' . $request->skm . '%')
-            ->inRandomOrder()
-            ->paginate(20);
+                ->leftjoin('user_prof_e_b_s', 'user_prof_e_b_s.user_id', '=', 'users.id')
+                ->leftjoin('user_prof_work_exes', 'user_prof_work_exes.user_id', '=', 'users.id')
+                ->leftjoin('user_prof_skills', 'user_prof_skills.user_id', '=', 'users.id')
+                ->select('users.id', 'users.city', 'users.fname', 'users.lname', 'users.mname', 'users.prof_pic', 'users.gender', 'users.city', 'users.civilstat', 'user_prof_skills.skills', 'user_prof_e_b_s.field', 'user_prof_e_b_s.major', 'user_prof_work_exes.specialization')
+                ->where('user_prof_skills.skills', 'LIKE', '%' . $request->skm . '%')
+                ->orWhere('user_prof_e_b_s.major', 'LIKE', '%' . $request->skm . '%')
+                ->orWhere('user_prof_e_b_s.field', 'LIKE', '%' . $request->skm . '%')
+                ->inRandomOrder()
+                ->paginate(20);
         } elseif ($request->town != "") {
             $user = DB::table('users')
-            ->leftjoin('user_prof_e_b_s', 'user_prof_e_b_s.user_id', '=', 'users.id')
-            ->leftjoin('user_prof_work_exes', 'user_prof_work_exes.user_id', '=', 'users.id')
-            ->leftjoin('user_prof_skills', 'user_prof_skills.user_id', '=', 'users.id')
-            ->select('users.id','users.city','users.fname','users.lname','users.mname','users.prof_pic','users.gender','users.city','users.civilstat','user_prof_skills.skills','user_prof_e_b_s.field','user_prof_e_b_s.major','user_prof_work_exes.specialization')
-            ->where('users.city', 'LIKE', '%' . $request->town . '%')
-            ->inRandomOrder()
-            ->paginate(20);
+                ->leftjoin('user_prof_e_b_s', 'user_prof_e_b_s.user_id', '=', 'users.id')
+                ->leftjoin('user_prof_work_exes', 'user_prof_work_exes.user_id', '=', 'users.id')
+                ->leftjoin('user_prof_skills', 'user_prof_skills.user_id', '=', 'users.id')
+                ->select('users.id', 'users.city', 'users.fname', 'users.lname', 'users.mname', 'users.prof_pic', 'users.gender', 'users.city', 'users.civilstat', 'user_prof_skills.skills', 'user_prof_e_b_s.field', 'user_prof_e_b_s.major', 'user_prof_work_exes.specialization')
+                ->where('users.city', 'LIKE', '%' . $request->town . '%')
+                ->inRandomOrder()
+                ->paginate(20);
         } else {
             $user = DB::table('users')
-            ->leftjoin('user_prof_e_b_s', 'user_prof_e_b_s.user_id', '=', 'users.id')
-            ->leftjoin('user_prof_work_exes', 'user_prof_work_exes.user_id', '=', 'users.id')
-            ->leftjoin('user_prof_skills', 'user_prof_skills.user_id', '=', 'users.id')
-            ->select('users.id','users.city','users.fname','users.lname','users.mname','users.prof_pic','users.gender','users.city','users.civilstat','user_prof_skills.skills','user_prof_e_b_s.field','user_prof_e_b_s.major','user_prof_work_exes.specialization')
-            ->inRandomOrder()
-            ->paginate(20);
+                ->leftjoin('user_prof_e_b_s', 'user_prof_e_b_s.user_id', '=', 'users.id')
+                ->leftjoin('user_prof_work_exes', 'user_prof_work_exes.user_id', '=', 'users.id')
+                ->leftjoin('user_prof_skills', 'user_prof_skills.user_id', '=', 'users.id')
+                ->select('users.id', 'users.city', 'users.fname', 'users.lname', 'users.mname', 'users.prof_pic', 'users.gender', 'users.city', 'users.civilstat', 'user_prof_skills.skills', 'user_prof_e_b_s.field', 'user_prof_e_b_s.major', 'user_prof_work_exes.specialization')
+                ->inRandomOrder()
+                ->paginate(20);
         }
         $user = $user->unique('id');
         $data = [

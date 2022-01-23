@@ -42,7 +42,6 @@ body {
 }
 
 .card-box .card-thumbnail {
-    max-height: 70px;
     max-width: 70px;
     border-radius: 10px;
     transition: 1s;
@@ -99,6 +98,10 @@ body {
 
 .card-box-c .card-thumbnail-c:hover {
     transform: scale(1.1);
+}
+
+.card-box-c .card-thumbnail-c {
+    max-width: 70px;
 }
 
 .card-box h3 a {

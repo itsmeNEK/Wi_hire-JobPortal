@@ -33,6 +33,7 @@ class CreateUsersTable extends Migration
             $table->string('HBnum')->nullable();
             $table->string('password');
             $table->string('prof_pic')->nullable();
+            $table->string('userID')->nullable();
             $table->string('stat')->default('1');
             $table->rememberToken();
             $table->timestamps();

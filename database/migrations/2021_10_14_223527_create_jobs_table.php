@@ -28,6 +28,7 @@ class CreateJobsTable extends Migration
             $table->string('prof_pic');
             $table->string('cname');
             $table->string('city');
+            $table->string('memo')->nullable();
             $table->string('stat')->default('1');
             $table->timestamps();
         });

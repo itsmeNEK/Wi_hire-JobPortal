@@ -154,6 +154,9 @@ use App\Http\Controllers\applicantsController;
     //route admin company file view
     Route::get('View_Company/{cid}/Viewfile/{id}', [FileUploadController::class, 'company_file_view'])->name('company_file_view');
 
+    //route admin company file view
+    Route::get('ViewJobMemo/{id}', [FileUploadController::class, 'ViewJobMemo'])->name('ViewJobMemo');
+
     //send mail user
     route::post('/send_mail_admin', [mail::class, 'store'])->name('a_send_mail_com');
 
@@ -195,8 +198,14 @@ use App\Http\Controllers\applicantsController;
         //route admin candidate blocked
         Route::get('/Admin_candidates_block_view', [adminController::class, 'a_candidate_block'])->name('a_candidate_block');
 
+        //route admin candidate verified
+        Route::get('/Admin_candidates_verified_view', [adminController::class, 'a_candidate_verified'])->name('a_candidate_verified');
+
         //route admin candidate
         Route::post('/Admin_candidates_blocked', [adminController::class, 'a_candidate_blocked'])->name('a_candidate_blocked');
+
+        //route admin verify candidate
+        Route::post('/Admin_candidates_Verify', [adminController::class, 'a_candidate_Verify'])->name('a_candidate_Verify');
 
         //route admin uncandidate
         Route::post('/Admin_candidates_unblocked', [adminController::class, 'a_candidate_unblocked'])->name('a_candidate_unblocked');
@@ -452,6 +461,12 @@ use App\Http\Controllers\applicantsController;
 
         //route user file upload
         Route::post('/user_file_upload', [FileUploadController::class, 'upload'])->name('u_file_upload');
+
+        //route user id upload
+        Route::post('/user_id_upload', [FileUploadController::class, 'u_id_upload'])->name('u_id_upload');
+
+        //route user id remove
+        Route::get('/user_id_remoce', [FileUploadController::class, 'u_id_remove'])->name('u_id_remove');
 
         //delete files user
         route::post('/user_file_delete', [FileUploadController::class, 'delete'])->name('u_file_delete');

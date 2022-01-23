@@ -264,7 +264,12 @@
                     <ul class="submenu collapse">
                         <li>
                             <a class="nav-link text-white fw-bold @yield('can-active')"
-                                href="{{ route('a_candidate') }}"><i class="bi bi-person-check-fill"></i> Active
+                                href="{{ route('a_candidate') }}"><i class="bi bi-person-plus-fill"></i>New
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-white fw-bold @yield('can-verified')"
+                                href="{{ route('a_candidate_verified') }}"><i class="bi bi-person-check-fill"></i>Verified
                             </a>
                         </li>
                         <li>
@@ -415,7 +420,12 @@
                     <ul class="submenu collapse">
                         <li>
                             <a class="nav-link text-white fw-bold @yield('can-active')"
-                                href="{{ route('a_candidate') }}"><i class="bi bi-person-check-fill"></i> Active
+                                href="{{ route('a_candidate') }}"><i class="bi bi-person-plus-fill"></i>New
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-white fw-bold @yield('can-verified')"
+                                href="{{ route('a_candidate_verified') }}"><i class="bi bi-person-check-fill"></i>Verified
                             </a>
                         </li>
                         <li>

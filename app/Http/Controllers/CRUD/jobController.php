@@ -5,6 +5,8 @@ namespace App\Http\Controllers\CRUD;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\jobs;
+use App\Helpers\Helper;
+use App\Models\companyfiles;
 use App\Models\company;
 
 class jobController extends Controller
@@ -49,32 +51,50 @@ class jobController extends Controller
             'postlev' => 'required',
             'city' => 'required',
         ]);
-        if($request->id!=null){
+
+        $company = company::where('id', '=', session('Loggedcompany'))->first();
+
+
+
+        if ($request->id != null) {
             $jobs = jobs::find($request->id);
             $message = 'Job Updated';
-        }else{
+        } else {
             $message = 'Job Posted';
             $jobs = new jobs;
-            $jobs->c_id=$request->c_id;
-            $jobs->prof_pic=$request->prof_pic;
-            $jobs->cname=$request->cname;
-            $jobs->city=$request->city;
+
+            if ($company->ComType == "2") {
+                $request->validate([
+                    'Job_file' => 'required|mimes:png,jpg,jpeg,doc,pdf,docx|max:5000'
+                ]);
+                $path = 'company_files/';
+                $newname = Helper::renameFile($path, $request->file('Job_file')->getClientOriginalName());
+
+                $upload = $request->Job_file->move(public_path($path), $newname);
+                $jobs->memo = $newname;
+                $jobs->Stat = 2;
+            }
+
+            $jobs->c_id = $request->c_id;
+            $jobs->prof_pic = $request->prof_pic;
+            $jobs->cname = $request->cname;
+            $jobs->city = $request->city;
         }
 
-        $jobs->jobtit=$request->jobtit;
-        $jobs->jobdes=$request->jobdes;
-        $jobs->qualification=$request->qualification;
-        $jobs->exreq=$request->exreq;
-        $jobs->special=$request->special;
-        $jobs->mimsal=$request->mimsal;
-        $jobs->maxsal=$request->maxsal;
-        $jobs->typerole=$request->typerole;
-        $jobs->postlev=$request->postlev;
+        $jobs->jobtit = $request->jobtit;
+        $jobs->jobdes = $request->jobdes;
+        $jobs->qualification = $request->qualification;
+        $jobs->exreq = $request->exreq;
+        $jobs->special = $request->special;
+        $jobs->mimsal = $request->mimsal;
+        $jobs->maxsal = $request->maxsal;
+        $jobs->typerole = $request->typerole;
+        $jobs->postlev = $request->postlev;
         $save = $jobs->save();
 
-        if($save){
-                return redirect()->route('c_manage')->with('success',$message);
-        }else{
+        if ($save) {
+            return redirect()->route('c_manage')->with('success', $message);
+        } else {
             return back()->with('fail', 'Something went wrong!');
         }
     }
