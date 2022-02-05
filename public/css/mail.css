@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 body {
     font-family: 'Muli', sans-serif;
+    word-break: break-all;
 }
 
 #exTab1 .tab-content {

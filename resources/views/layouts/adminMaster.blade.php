@@ -269,7 +269,8 @@
                         </li>
                         <li>
                             <a class="nav-link text-white fw-bold @yield('can-verified')"
-                                href="{{ route('a_candidate_verified') }}"><i class="bi bi-person-check-fill"></i>Verified
+                                href="{{ route('a_candidate_verified') }}"><i
+                                    class="bi bi-person-check-fill"></i>Verified
                             </a>
                         </li>
                         <li>
@@ -383,8 +384,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('a_logout') }}" class="fw-bold nav-link text-light align-middle px-2">
-
+                    <a class="fw-bold nav-link text-light align-middle px-2" data-bs-toggle="modal"
+                        data-bs-target="#logoutmodal">
                         <i class="bi bi-box-arrow-left" style=""></i> <span aria-current="page">
                             Logout</span>
                     </a>
@@ -425,7 +426,8 @@
                         </li>
                         <li>
                             <a class="nav-link text-white fw-bold @yield('can-verified')"
-                                href="{{ route('a_candidate_verified') }}"><i class="bi bi-person-check-fill"></i>Verified
+                                href="{{ route('a_candidate_verified') }}"><i
+                                    class="bi bi-person-check-fill"></i>Verified
                             </a>
                         </li>
                         <li>
@@ -536,8 +538,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('a_logout') }}" class="fw-bold nav-link text-light align-middle px-2">
-
+                    <a class="fw-bold nav-link text-light align-middle px-2" data-bs-toggle="modal"
+                        data-bs-target="#logoutmodal">
                         <i class="bi bi-box-arrow-left" style=""></i> <span aria-current="page">
                             Logout</span>
                     </a>
@@ -546,8 +548,27 @@
             <hr class="bg-light">
         </div>
     </div>
+
+    {{-- logout modal --}}
+    <div class="modal fade" id="logoutmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Warning!</h4>
+                </div>
+                <div id="jobmodaldet" class="modal-body">
+                    <span>Are you sure you want to logout?</span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                    <a type="button" href="{{ route('a_logout') }}" class="btn btn-success">Yes</a>
+                </div>
+            </div>
+        </div>
+    </div>
     @section('body')
     @show
+
     <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
         var s = document.createElement('script')
         s.src = "/js/sidebar.js";

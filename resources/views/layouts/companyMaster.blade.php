@@ -8,7 +8,8 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- CSS only -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
     <title>@yield('title')</title>
     <link rel="icon" href="/img/wihireicon copy.png" type="image/x-icon">
@@ -24,7 +25,7 @@
                 data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                 <span class="d-flex align-items-center text-light text-decoration-none" aria-expanded="false">
                     <img class="avatar rounded-circle border border-light " width="40px"
-                    src="/company/images/{{ $LoggedUserInfo['prof_pic'] }}">
+                        src="/company/images/{{ $LoggedUserInfo['prof_pic'] }}">
                 </span>
             </a>
             <a class="navbar-brand" href="{{ route('home') }}">
@@ -291,9 +292,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('c_logout') }}"
-                        class="fw-bold nav-link text-light align-middle px-2">
-
+                    <a class="fw-bold nav-link text-light align-middle px-2" data-bs-toggle="modal"
+                        data-bs-target="#logoutmodal">
                         <i class="bi bi-box-arrow-left" style=""></i> <span aria-current="page">
                             Logout</span>
                     </a>
@@ -306,7 +306,8 @@
                         <span aria-current="page">
                             Talent Search</span>
                     </a>
-                </li><li class="nav-item">
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('howto2') }}" class="fw-bold nav-link text-light align-middle px-2">
                         <span aria-current="page">
                             How to Use</span>
@@ -348,8 +349,7 @@
                     </a>
                 </li>
                 <li class="nav-item has-submenu">
-                    <a type="button"
-                        class="fw-bold nav-link text-light align-middle px-2 @yield('applicant')"
+                    <a type="button" class="fw-bold nav-link text-light align-middle px-2 @yield('applicant')"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                         <div class="row">
                             <div class="col-8 text-start">
@@ -411,15 +411,33 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('c_logout') }}"
-                        class="fw-bold nav-link text-light align-middle px-2">
-
+                    <a class="fw-bold nav-link text-light align-middle px-2" data-bs-toggle="modal"
+                        data-bs-target="#logoutmodal">
                         <i class="bi bi-box-arrow-left" style=""></i> <span aria-current="page">
                             Logout</span>
                     </a>
                 </li>
             </ul>
             <hr class="bg-light">
+        </div>
+    </div>
+
+
+    {{-- logout modal --}}
+    <div class="modal fade" id="logoutmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Warning!</h4>
+                </div>
+                <div id="jobmodaldet" class="modal-body">
+                    <span>Are you sure you want to logout?</span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                    <a type="button" href="{{ route('c_logout') }}" class="btn btn-success">Yes</a>
+                </div>
+            </div>
         </div>
     </div>
     @section('body')
