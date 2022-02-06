@@ -66,6 +66,7 @@
                             </div>
                         </div>
                         <hr>
+                        @if (($LoggedUserInfo->prev=="0") || ($LoggedUserInfo->prev=="2"))
                         <div class="row mt-2 text-center">
                             <div class="col-md-4 col-sm-4 col-lg-4">
                                 <div class="container rounded bg-danger text-white">
@@ -98,6 +99,8 @@
                                     </div>
                                 </div>
                             </div>
+                            @endif
+                @if (($LoggedUserInfo->prev=="0") || ($LoggedUserInfo->prev=="1"))
                             <div class="col-md-4 col-sm-4 col-lg-4">
                                 <div class="container rounded bg-success text-white">
                                     <div class="row mt-2">
@@ -126,6 +129,8 @@
                                     </div>
                                 </div>
                             </div>
+                            @endif
+                            @if (($LoggedUserInfo->prev=="0") || ($LoggedUserInfo->prev=="2"))
                             <div class="col-md-4 col-sm-4 col-lg-4">
                                 <div class="container rounded bg-secondary text-white">
                                     <div class="row mt-2">
@@ -152,6 +157,7 @@
                                     </div>
                                 </div>
                             </div>
+                            @endif
                         </div>
                         <hr>
                     </div>
@@ -160,6 +166,7 @@
 
         </div>
     </div>
+    @if (($LoggedUserInfo->prev=="0") || ($LoggedUserInfo->prev=="2"))
     <div class="row p-4">
         <div class="d-flex justify-content-center">
             <div class="container rounded bg-white ">
@@ -346,25 +353,24 @@
                                                     </td>
                                                     <td data-label="Status">
                                                         <a class="text-black text-decoration-none" href="">
-                                                            @if ($info->stat == "1")
+                                                            @if ($info->stat == '1')
                                                                 <span class="text-success">Posted</span>
-                                                            @elseif ($info->stat == "2")
-                                                            <span class="text-success">Pending</span>
-                                                            @elseif ($info->stat == "0")
-                                                            <span class="text-success">Deleted</span>
+                                                            @elseif ($info->stat == '2')
+                                                                <span class="text-success">Pending</span>
+                                                            @elseif ($info->stat == '0')
+                                                                <span class="text-success">Deleted</span>
                                                             @endif
                                                         </a>
                                                     </td>
                                                     <td data-label="Control">
                                                         <div class="btn-group" role="group"
                                                             aria-label="Basic example">
-                                                            <a
-                                                                href="ViewJobMemo/{{ Crypt::encrypt($info->id)}}" target="_blank"><button
-                                                                    type="button"
+                                                            <a href="ViewJobMemo/{{ Crypt::encrypt($info->id) }}"
+                                                                target="_blank"><button type="button"
                                                                     class="gbot btn btn-warning bi-eye-fill text-white"></button></a>
                                                             <button data-id="{{ $info->id }}"
-                                                                data-bs-toggle="modal"
-                                                                data-bs-target="#jobmodal" type="button"
+                                                                data-bs-toggle="modal" data-bs-target="#jobmodal"
+                                                                type="button"
                                                                 class="gbot btn bi-check text-white btn-success"></button>
 
                                                         </div>
@@ -449,7 +455,7 @@
         </div>
         <br>
     </div>
-</div>
+@endif
 </div>
 
 @endsection

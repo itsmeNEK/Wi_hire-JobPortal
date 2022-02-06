@@ -9,103 +9,128 @@
     <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
     <link rel="stylesheet" type="text/css" href="/css/dashboard.css">
     <link rel="stylesheet" type="text/css" href="/css/u_editProf.css">
-    @endsection
 
-    @section('body')
-        @parent
-    @section('settings', 'bg-danger')
+    <style>
+        .field-icon {
+            float: right;
+            margin-right: 10px;
+            margin-top: -30px;
+            position: relative;
+            z-index: 2;
+        }
 
-    <div id="main">
-        <div class="col py-3">
-            <div class="container">
-                <div class="row" style="margin-top:45px;">
-                    <div class="com-md-4 col-md-offset-4">
+    </style>
+@endsection
 
-                        <div class="container rounded bg-white ">
-                            <br>
-                            <!-- form card change password -->
-                            <div class="card card-outline-secondary">
-                                <div class="card-header">
-                                    <h4 class="mb-0">Change Password</h4>
-                                </div>
-                                <div class="card-body">
-                                    <form action="{{ route('u_cp') }}" method="POST" class="form"
-                                        role="form" autocomplete="off">
+@section('body')
+    @parent
+@section('settings', 'bg-danger')
+
+<div id="main">
+    <div class="col py-3">
+        <div class="container">
+            <div class="row" style="margin-top:45px;">
+                <div class="com-md-4 col-md-offset-4">
+
+                    <div class="container rounded bg-white ">
+                        <br>
+                        <!-- form card change password -->
+                        <div class="card card-outline-secondary">
+                            <div class="card-header">
+                                <h4 class="mb-0">Change Password</h4>
+                            </div>
+                            <div class="card-body">
+                                <form action="{{ route('u_cp') }}" method="POST" class="form" role="form"
+                                    autocomplete="off">
 
                                     <input name="id" type="hidden" value="{{ $LoggedUserInfo['id'] }}">
-                                        @if (Session::get('success'))
+                                    @if (Session::get('success'))
 
-                                            <div class="alert alert-success">
-                                                {{ Session::get('success') }}
-                                            </div>
-                                        @endif
+                                        <div class="alert alert-success">
+                                            {{ Session::get('success') }}
+                                        </div>
+                                    @endif
 
-                                        @if (Session::get('fail'))
+                                    @if (Session::get('fail'))
 
-                                            <div class="alert alert-danger">
-                                                {{ Session::get('fail') }}
-                                            </div>
-                                        @endif
+                                        <div class="alert alert-danger">
+                                            {{ Session::get('fail') }}
+                                        </div>
+                                    @endif
 
-                                        @csrf
-                                        <div class="form-group">
-                                            <label for="inputPasswordOld " class="fw-bold">Current
-                                                Password</label>
-                                            <input type="password" name="currentpass" class="form-control"
-                                                id="inputPasswordOld" required="">
+                                    @csrf
+
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" id="inputPasswordNewC"
+                                            name="currentpass" placeholder="Current Password" />
+                                        <span for="floatingPassword"
+                                            class=" field-icon bi text-danger bi-eye-slash-fill"
+                                            id="togglePasswordc"></span>
+                                        <label for="floatingPassword"><i class="bi text-danger bi-key-fill"></i>
+                                            Current Password </label>
+                                        <span style="color: #fa695f;"
+                                            class="text">@error('currentpass'){{ $message }}@enderror</span>
+                                        </div>
+                                        <br>
+                                        <div class="form-floating">
+                                            <input type="password" class="form-control" id="inputPasswordNew"
+                                                name="newpass" placeholder="New Password" />
+                                            <span for="floatingPassword"
+                                                class=" field-icon bi text-danger bi-eye-slash-fill"
+                                                id="togglePassword"></span>
+                                            <label for="floatingPassword"><i class="bi text-danger bi-key-fill"></i>
+                                                New Password </label>
+                                                <span class="form-text small text-muted">
+                                                    The password must be 6-20 characters.
+                                                </span>
                                             <span style="color: #fa695f;"
-                                                class="text">@error('currentpass'){{ $message }}
-                                                @enderror</span>
+                                                class="text">@error('newpass'){{ $message }}@enderror</span>
+                                            </div>
+                                            <br>
+                                            <div class="form-floating">
+                                                <input type="password" class="form-control" id="inputPasswordNewVerify"
+                                                    name="cpass" placeholder="Confirm Password" />
+                                                <span for="floatingPassword"
+                                                    class=" field-icon bi text-danger bi-eye-slash-fill"
+                                                    id="toggleCPassword"></span>
+                                                <label for="floatingPassword"><i class="bi text-danger bi-key-fill"></i>Confirm
+                                                    Password </label>
+                                                <span class="form-text small text-muted">
+                                                    To confirm, type the new password again.
+                                                </span>
+                                                <span style="color: #fa695f;"
+                                                    class="text">@error('cpass'){{ $message }}@enderror</span>
+                                                </div>
+                                                <br>
+                                                <div class="registrationFormAlert" id="divCheckPasswordMatch">
+                                                </div>
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn btn-danger btn-lg float-right">Save
+                                                    </button>
+                                                </div>
+                                            </form>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="inputPasswordNew" class="fw-bold">New Password</label>
-                                            <input type="password" name="newpass" class="form-control"
-                                                id="inputPasswordNew" required="">
-                                            <span style="color: #fa695f;"
-                                                class="text">@error('newpass'){{ $message }}
-                                                @enderror</span>
-                                            <span class="form-text small text-muted">
-                                                The password must be 6-20 characters.
-                                            </span>
-
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputPasswordNewVerify" class="fw-bold">Confirm
-                                                Password</label>
-                                            <input  type="password" name="cpass" class="form-control"
-                                                id="inputPasswordNewVerify" required="">
-                                            <span id="check-match" style="color: #fa695f;"
-                                                class="text">@error('cpass'){{ $message }}
-                                                @enderror</span>
-                                            <span class="form-text small text-muted">
-                                                To confirm, type the new password again.
-                                            </span>
-                                        </div>
-                                        <div class="registrationFormAlert" id="divCheckPasswordMatch">
-                                        </div>
-                                        <div class="form-group">
-                                            <button type="submit"
-                                                class="btn btn-danger btn-lg float-right">Save
-                                            </button>
-                                        </div>
-                                    </form>
+                                    </div>
+                                    <!-- /form card change password -->
+                                    <br>
                                 </div>
-                            </div>
-                            <!-- /form card change password -->
-                            <br>
-                        </div>
 
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    @endsection
+        @endsection
 
-    @section('customJS')
-    <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
-        var s = document.createElement('script')
-        s.src = "/js/u_changepw.js";
-        document.head.appendChild(s);
-    </script>
-    @endsection
+        @section('customJS')
+            <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+                var s = document.createElement('script')
+                s.src = "/js/u_changepw.js";
+                document.head.appendChild(s);
+            </script>
+            <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+                var s = document.createElement('script')
+                s.src = "/js/viewpass.js";
+                document.head.appendChild(s);
+            </script>
+        @endsection

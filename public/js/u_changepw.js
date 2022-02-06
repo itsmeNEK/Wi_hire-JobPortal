@@ -23,14 +23,27 @@ function checkPasswordMatch() {
     var password = $("#inputPasswordNew").val();
     var confirmPassword = $("#inputPasswordNewVerify").val();
 
-    if (password != confirmPassword)
+    if (password != confirmPassword) {
         $("#divCheckPasswordMatch").html("Passwords do not match!").css('color', 'red');
-    else if (password == '')
+        $("#inputPasswordNew").css('background', 'rgba(255, 0, 0, 0.433)');
+        $("#inputPasswordNewVerify").css('background', 'rgba(255, 0, 0, 0.433)');
+    } else if ((password == '') && (confirmPassword == '')) {
         $("#divCheckPasswordMatch").html("Enter Password!").css('color', 'red');
-    else if (confirmPassword == '')
+        $("#inputPasswordNew").css('background', 'white');
+        $("#inputPasswordNewVerify").css('background', 'white');
+    } else if (password == '') {
         $("#divCheckPasswordMatch").html("Enter Password!").css('color', 'red');
-    else
+        $("#inputPasswordNew").css('background', 'rgba(255, 0, 0, 0.433)');
+        $("#inputPasswordNewVerify").css('background', 'rgba(255, 0, 0, 0.433)');
+    } else if (confirmPassword == '') {
+        $("#divCheckPasswordMatch").html("Enter Password!").css('color', 'red');
+        $("#inputPasswordNew").css('background', 'rgba(255, 0, 0, 0.433)');
+        $("#inputPasswordNewVerify").css('background', 'rgba(255, 0, 0, 0.433)');
+    } else {
         $("#divCheckPasswordMatch").html("Passwords match.").css('color', 'green');
+        $("#inputPasswordNew").css('background', 'rgba(34, 255, 0, 0.433)');
+        $("#inputPasswordNewVerify").css('background', 'rgba(34, 255, 0, 0.433)');
+    }
 }
 
 $(document).ready(function() {

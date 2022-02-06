@@ -19,6 +19,7 @@ class CreateAdminsTable extends Migration
             $table->string('uname');
             $table->string('email');
             $table->string('password');
+            $table->string('prev');
             $table->string('prof_pic')->nullable();
             $table->timestamps();
         });

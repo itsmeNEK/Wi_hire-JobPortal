@@ -31,6 +31,47 @@ class adminController extends Controller
             return view('admin_login');
         }
     }
+    // a_addAdmin
+    public function a_addAdmin()
+    {
+
+        $user = Admin::where('id', '=', session('adminLogged'))->first();
+        $admin = admin::paginate(10);
+        $mailinfo = Mailing::where('to', '=', $user->email)
+            ->where('mail_active', '=', '1')
+            ->count();
+        $inbox = DB::table('mailings')
+            ->leftjoin('users', 'mailings.from', '=', 'users.email')
+            ->leftjoin('companies', 'mailings.from', '=', 'companies.email')
+            ->select('mailings.id', 'users.fname', 'companies.cname', 'mailings.subject', 'mailings.created_at', 'mailings.mail_active', 'mailings.from')
+            ->where('mailings.to', $user->email)
+            ->where('mail_active', '=', '1')
+            ->orderBy('created_at', 'desc')
+            ->get();
+        $comcountnew = DB::table('companies')
+            ->where('approved', '=', '1')
+            ->count();
+        $comcountnew_info = DB::table('companies')
+            ->where('approved', '=', '1')
+            ->orderBy('created_at', 'desc')
+            ->get();
+        $reportcount = reportbug::where('active', '=', '1')
+            ->count();
+        $reportcount_info = reportbug::where('active', '=', '1')
+            ->orderBy('created_at', 'desc')
+            ->get();
+        $data = [
+            'active' => $mailinfo,
+            'LoggedUserInfo' => $user,
+            'reportcount' => $reportcount,
+            'reportcount_info' => $reportcount_info,
+            'inbox' => $inbox,
+            'comcountnew' => $comcountnew,
+            'admin' => $admin,
+            'comcountnew_info' => $comcountnew_info,
+        ];
+        return view('admin.a_addAdmin', $data);
+    }
 
     //admin settings
     public function a_settings()
@@ -370,9 +411,9 @@ class adminController extends Controller
     public function a_candidate_unblocked(Request $request)
     {
         $candidates = User::find($request->id);
-        if($candidates->userID !=null){
+        if ($candidates->userID != null) {
             $candidates->stat = 2;
-        }else{
+        } else {
             $candidates->stat = 1;
         }
         $candidates->save();
@@ -894,6 +935,41 @@ class adminController extends Controller
             } else {
                 return back()->with('fail', 'Incorrect current password!');
             }
+        }
+    }
+    // add admin
+    public function a_add_ad(Request $request)
+    {
+        $request->validate([
+            'uname' => 'required|unique:admins',
+            'pass' => 'required|min:6',
+            'cpass' => 'required|min:6',
+            'prev' => 'required',
+        ]);
+
+        $user = new Admin;
+        $user->adminName = $request->adminName;
+        $user->uname = $request->uname;
+        $user->prev = $request->prev;
+        $user->email = "admin@admin.admin";
+        $user->password = Hash::make($request->pass);
+        $save = $user->save();
+        if ($request->pass = $request->cpass) {
+            if ($save) {
+                return back()->with('success', 'Administrator Added!');
+            } else {
+                return back()->with('fail', 'Something Went Wrong');
+            }
+        } else {
+            return back()->with('fail', 'Password do not Match!');
+        }
+    }
+    // del admin
+    public function a_admindel(Request $request)
+    {
+        $Admin = Admin::find($request->id)->delete();
+        if ($Admin) {
+            return back()->with('success', 'Admin Successfully Deleted');
         }
     }
     //admin mailbox sent

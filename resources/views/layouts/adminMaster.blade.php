@@ -255,6 +255,7 @@
                             Dashboard</span>
                     </a>
                 </li>
+                @if (($LoggedUserInfo->prev=="0") || ($LoggedUserInfo->prev=="1"))
                 <li class="nav-item has-submenu">
                     <a type="button" class="fw-bold  nav-link text-light align-middle px-2 @yield('candidates')"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -280,163 +281,8 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item has-submenu">
-                    <a type="button" class="fw-bold nav-link text-light align-middle px-2 @yield('company')"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="row">
-                            <div class="col-10 text-start">
-                                <span class="bi bi-card-list" aria-current="page"> Companies
-                                    <i class="bi-sm bi-caret-down-fill"></i>
-                                </span>
-                            </div>
-                            @if ($comcountnew != null)
-                                <div class="col-1 text-center">
-                                    <span class="badge bg-none">1</span>
-                                </div>
-                            @endif
-                        </div>
-                    </a>
-                    <ul class="submenu collapse">
-                        <li>
-                            <a class="nav-link text-white fw-bold @yield('new-com')"
-                                href="{{ route('a_companies') }}"><i class="bi bi-person-plus-fill"></i> New
-                                @if ($comcountnew != null)
-                                    <div class="col-1 text-center">
-                                        <span class="badge bg-none">1</span>
-                                    </div>
-                                @endif
-                            </a>
-
-                        </li>
-                        <li>
-                            <a class="nav-link text-white fw-bold @yield('app-com')"
-                                href="{{ route('a_companies_approved') }}"><i class="bi bi-person-check-fill"></i>
-                                Approve
-                            </a>
-                        </li>
-                        <li>
-                            <a class="nav-link text-white fw-bold @yield('block-com')"
-                                href="{{ route('a_companies_blocked') }}"><i class="bi bi-person-x-fill"></i>
-                                Blocked
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item has-submenu">
-                    <a type="button" class="fw-bold nav-link text-light align-middle px-2 @yield('jobs')"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="bi bi-person-badge"></i> <span aria-current="page">
-                            Jobs <i class="bi-sm bi-caret-down-fill"></i></span>
-                    </a>
-                    <ul class="submenu collapse">
-                        <li>
-                            <a class="nav-link text-white fw-bold @yield('active-jobs')"
-                                href="{{ route('a_jobs') }}"><i class="bi bi-person-plus-fill"></i> Active
-                            </a>
-                        </li>
-                        <li>
-                            <a class="nav-link text-white fw-bold @yield('inactive-jobs')"
-                                href="{{ route('a_jobs_nactive') }}"><i class="bi bi-check"></i> Inactive
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('a_mail_inbox') }}"
-                        class="fw-bold nav-link text-light align-middle px-2 @yield('mail')">
-                        <div class="row">
-                            <div class="col-8 text-start">
-                                <i class="bi bi-mailbox"></i> <span aria-current="page">
-                                    Mailbox
-                                </span>
-                            </div>
-                            @if ($active != null)
-                                <div class="col-2 text-center">
-                                    <span class="badge bg-none">{{ $active }}</span>
-                                </div>
-                            @endif
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('a_report') }}"
-                        class="fw-bold nav-link text-light align-middle px-2 @yield('report')">
-                        <div class="row">
-                            <div class="col-8 text-start">
-                                <i class="bi bi-bug-fill"></i> <span aria-current="page">
-                                    Report
-                                </span>
-                            </div>
-                            @if ($reportcount != null)
-                                <div class="col-2 text-center">
-                                    <span class="badge bg-none">{{ $reportcount }}</span>
-                                </div>
-                            @endif
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('a_settings') }}"
-                        class="fw-bold nav-link text-light align-middle px-2 @yield('settings')">
-
-                        <i class="bi bi-sliders"></i> <span aria-current="page">
-                            Settings</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="fw-bold nav-link text-light align-middle px-2" data-bs-toggle="modal"
-                        data-bs-target="#logoutmodal">
-                        <i class="bi bi-box-arrow-left" style=""></i> <span aria-current="page">
-                            Logout</span>
-                    </a>
-                </li>
-                <hr class="bg-light">
-            </ul>
-        </div>
-    </div>
-    <div id="mySidebar" class="sidebar bg-dark">
-        <button type="button" style="background-color:transparent; color:white; border:none;" href="javascript:void(0)"
-            class="closebtn" onclick="closeNav()">&times;</button>
-        <div>
-            <hr class="bg-light">
-            <span class="d-flex align-items-center text-light text-decoration-none" aria-expanded="false">
-                <img class="avatar rounded-circle border border-light " width="40px" src="/img/wihireicon copy.png">
-                <strong class="align-middle px-0 ms-1 d-sm-inline"><b> {{ $LoggedUserInfo['adminName'] }}</strong>
-            </span>
-            <hr class="bg-light">
-            <ul style="padding-left:10px;" class="" id=" menu">
-                <li class="nav-item">
-                    <a href="{{ route('a_dash') }}"
-                        class="fw-bold nav-link text-light align-middle px-2 @yield('dash')">
-                        <i class="bi bi-speedometer2"></i> <span aria-current="page">
-                            Dashboard</span>
-                    </a>
-                </li>
-                <li class="nav-item has-submenu">
-                    <a type="button" class="fw-bold  nav-link text-light align-middle px-2 @yield('candidates')"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="bi bi-person-fill"></i> <span aria-current="page">
-                            Candidates <i class="bi-sm bi-caret-down-fill"></i></span>
-                    </a>
-                    <ul class="submenu collapse">
-                        <li>
-                            <a class="nav-link text-white fw-bold @yield('can-active')"
-                                href="{{ route('a_candidate') }}"><i class="bi bi-person-plus-fill"></i>New
-                            </a>
-                        </li>
-                        <li>
-                            <a class="nav-link text-white fw-bold @yield('can-verified')"
-                                href="{{ route('a_candidate_verified') }}"><i
-                                    class="bi bi-person-check-fill"></i>Verified
-                            </a>
-                        </li>
-                        <li>
-                            <a class="nav-link text-white fw-bold @yield('can-blocked')"
-                                href="{{ route('a_candidate_block') }}"><i class="bi bi-person-x-fill"></i> Blocked
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                @endif
+                @if (($LoggedUserInfo->prev=="0") || ($LoggedUserInfo->prev=="2"))
                 <li class="nav-item has-submenu">
                     <a type="button" class="fw-bold nav-link text-light align-middle px-2 @yield('company')"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -495,6 +341,7 @@
                         </li>
                     </ul>
                 </li>
+                @endif
                 <li class="nav-item">
                     <a href="{{ route('a_mail_inbox') }}"
                         class="fw-bold nav-link text-light align-middle px-2 @yield('mail')">
@@ -512,6 +359,7 @@
                         </div>
                     </a>
                 </li>
+                @if (($LoggedUserInfo->prev=="0") || ($LoggedUserInfo->prev=="3"))
                 <li class="nav-item">
                     <a href="{{ route('a_report') }}"
                         class="fw-bold nav-link text-light align-middle px-2 @yield('report')">
@@ -529,10 +377,192 @@
                         </div>
                     </a>
                 </li>
+                @endif
+                @if ($LoggedUserInfo->prev=="0")
+                <li class="nav-item">
+                    <a href="{{ route('a_addAdmin') }}"
+                        class="fw-bold nav-link text-light align-middle px-2 @yield('add')">
+                        <div class="col-8 text-start">
+                            <i class="bi bi-person-bounding-box"></i> <span aria-current="page">
+                                Administrators
+                            </span>
+                        </div>
+                    </a>
+                </li>
+                @endif
                 <li class="nav-item">
                     <a href="{{ route('a_settings') }}"
                         class="fw-bold nav-link text-light align-middle px-2 @yield('settings')">
+                        <i class="bi bi-sliders"></i> <span aria-current="page">
+                            Settings</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="fw-bold nav-link text-light align-middle px-2" data-bs-toggle="modal"
+                        data-bs-target="#logoutmodal">
+                        <i class="bi bi-box-arrow-left" style=""></i> <span aria-current="page">
+                            Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="mySidebar" class="sidebar bg-dark">
+        <button type="button" style="background-color:transparent; color:white; border:none;" href="javascript:void(0)"
+            class="closebtn" onclick="closeNav()">&times;</button>
+        <div>
+            <hr class="bg-light">
+            <span class="d-flex align-items-center text-light text-decoration-none" aria-expanded="false">
+                <img class="avatar rounded-circle border border-light " width="40px" src="/img/wihireicon copy.png">
+                <strong class="align-middle px-0 ms-1 d-sm-inline"><b> {{ $LoggedUserInfo['adminName'] }}</strong>
+            </span>
+            <hr class="bg-light">
+            <ul style="padding-left:10px;" class="" id=" menu">
+                <li class="nav-item">
+                    <a href="{{ route('a_dash') }}"
+                        class="fw-bold nav-link text-light align-middle px-2 @yield('dash')">
+                        <i class="bi bi-speedometer2"></i> <span aria-current="page">
+                            Dashboard</span>
+                    </a>
+                </li>
+                @if (($LoggedUserInfo->prev=="0") || ($LoggedUserInfo->prev=="1"))
+                <li class="nav-item has-submenu">
+                    <a type="button" class="fw-bold  nav-link text-light align-middle px-2 @yield('candidates')"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="bi bi-person-fill"></i> <span aria-current="page">
+                            Candidates <i class="bi-sm bi-caret-down-fill"></i></span>
+                    </a>
+                    <ul class="submenu collapse">
+                        <li>
+                            <a class="nav-link text-white fw-bold @yield('can-active')"
+                                href="{{ route('a_candidate') }}"><i class="bi bi-person-plus-fill"></i>New
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-white fw-bold @yield('can-verified')"
+                                href="{{ route('a_candidate_verified') }}"><i
+                                    class="bi bi-person-check-fill"></i>Verified
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-white fw-bold @yield('can-blocked')"
+                                href="{{ route('a_candidate_block') }}"><i class="bi bi-person-x-fill"></i> Blocked
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                @endif
+                @if (($LoggedUserInfo->prev=="0") || ($LoggedUserInfo->prev=="2"))
+                <li class="nav-item has-submenu">
+                    <a type="button" class="fw-bold nav-link text-light align-middle px-2 @yield('company')"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="row">
+                            <div class="col-8 text-start">
+                                <span class="bi bi-card-list" aria-current="page"> Companies
+                                    <i class="bi-sm bi-caret-down-fill"></i>
+                                </span>
+                            </div>
+                            @if ($comcountnew != null)
+                                <div class="col-1 text-center">
+                                    <span class="badge bg-none">{{ $comcountnew }}</span>
+                                </div>
+                            @endif
+                        </div>
+                    </a>
+                    <ul class="submenu collapse">
+                        <li>
+                            <a class="nav-link text-white fw-bold @yield('new-com')"
+                                href="{{ route('a_companies') }}"><i class="bi bi-person-plus-fill"></i> New
+                                @if ($comcountnew != null)
+                                @endif
+                            </a>
 
+                        </li>
+                        <li>
+                            <a class="nav-link text-white fw-bold @yield('app-com')"
+                                href="{{ route('a_companies_approved') }}"><i class="bi bi-person-check-fill"></i>
+                                Approve
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-white fw-bold @yield('block-com')"
+                                href="{{ route('a_companies_blocked') }}"><i class="bi bi-person-x-fill"></i>
+                                Blocked
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-submenu">
+                    <a type="button" class="fw-bold nav-link text-light align-middle px-2 @yield('jobs')"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="bi bi-person-badge"></i> <span aria-current="page">
+                            Jobs <i class="bi-sm bi-caret-down-fill"></i></span>
+                    </a>
+                    <ul class="submenu collapse">
+                        <li>
+                            <a class="nav-link text-white fw-bold @yield('active-jobs')"
+                                href="{{ route('a_jobs') }}"><i class="bi bi-person-plus-fill"></i> Active
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-white fw-bold @yield('inactive-jobs')"
+                                href="{{ route('a_jobs_nactive') }}"><i class="bi bi-check"></i> Inactive
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                @endif
+                <li class="nav-item">
+                    <a href="{{ route('a_mail_inbox') }}"
+                        class="fw-bold nav-link text-light align-middle px-2 @yield('mail')">
+                        <div class="row">
+                            <div class="col-8 text-start">
+                                <i class="bi bi-mailbox"></i> <span aria-current="page">
+                                    Mailbox
+                                </span>
+                            </div>
+                            @if ($active != null)
+                                <div class="col-2 text-center">
+                                    <span class="badge bg-none">{{ $active }}</span>
+                                </div>
+                            @endif
+                        </div>
+                    </a>
+                </li>
+                @if (($LoggedUserInfo->prev=="0") || ($LoggedUserInfo->prev=="3"))
+                <li class="nav-item">
+                    <a href="{{ route('a_report') }}"
+                        class="fw-bold nav-link text-light align-middle px-2 @yield('report')">
+                        <div class="row">
+                            <div class="col-8 text-start">
+                                <i class="bi bi-bug-fill"></i> <span aria-current="page">
+                                    Report
+                                </span>
+                            </div>
+                            @if ($reportcount != null)
+                                <div class="col-2 text-center">
+                                    <span class="badge bg-none">{{ $reportcount }}</span>
+                                </div>
+                            @endif
+                        </div>
+                    </a>
+                </li>
+                @endif
+                @if ($LoggedUserInfo->prev=="0")
+                <li class="nav-item">
+                    <a href="{{ route('a_addAdmin') }}"
+                        class="fw-bold nav-link text-light align-middle px-2 @yield('add')">
+                        <div class="col-8 text-start">
+                            <i class="bi bi-person-bounding-box"></i> <span aria-current="page">
+                                Administrators
+                            </span>
+                        </div>
+                    </a>
+                </li>
+                @endif
+                <li class="nav-item">
+                    <a href="{{ route('a_settings') }}"
+                        class="fw-bold nav-link text-light align-middle px-2 @yield('settings')">
                         <i class="bi bi-sliders"></i> <span aria-current="page">
                             Settings</span>
                     </a>

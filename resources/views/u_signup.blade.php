@@ -51,8 +51,8 @@
                     </li>
                     &nbsp
                     <li>
-                        <a class="btn btn-danger rounded" type="button"
-                            href="{{ route('c_login') }}"><b>EMPLOYER LOGIN</b></a>
+                        <a class="btn btn-danger rounded" type="button" href="{{ route('c_login') }}"><b>EMPLOYER
+                                LOGIN</b></a>
                     </li>
                 </ul>
             </div>
@@ -115,11 +115,14 @@
                     <br>
                     <div class="form-floating">
                         <input type="password" class="form-control" id="inputPasswordNewVerify" name="cpassword"
-                            placeholder="Password" />
+                            placeholder="Confirm Password" />
+                        <span for="floatingPassword" class=" field-icon bi text-danger bi-eye-slash-fill"
+                            id="toggleCPassword"></span>
                         <label for="floatingPassword"><i class="bi text-danger bi-key-fill"></i>Confirm Password </label>
                         <span style="color: #fa695f;"
                             class="text">@error('cpassword'){{ $message }}@enderror</span>
                         </div>
+                        <br>
                         <span id='message'></span>
                         <div class="registrationFormAlert" id="divCheckPasswordMatch">
                         </div>

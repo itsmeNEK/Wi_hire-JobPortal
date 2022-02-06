@@ -121,12 +121,14 @@
                 </div>
                 <br>
                 <div class="form-floating">
-                    <input  type="password" class="form-control" id="inputPasswordNewVerify" name="cpassword"
-                        placeholder="Password" />
+                    <input type="password" class="form-control" id="inputPasswordNewVerify" name="cpassword"
+                        placeholder="Confirm Password" />
+                    <span for="floatingPassword" class=" field-icon bi text-danger bi-eye-slash-fill"
+                        id="toggleCPassword"></span>
                     <label for="floatingPassword"><i class="bi text-danger bi-key-fill"></i>Confirm Password </label>
                     <span style="color: #fa695f;"
                         class="text">@error('cpassword'){{ $message }}@enderror</span>
-                </div>
+                    </div>
                 <span id='message'></span>
                 <div class="registrationFormAlert" id="divCheckPasswordMatch">
                 </div>

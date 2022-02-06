@@ -177,6 +177,12 @@ use App\Http\Controllers\applicantsController;
         //route admin change pass
         Route::post('/admin_changepass', [adminController::class, 'a_cp'])->name('a_cp');
 
+        //route admin add admin
+        Route::post('/admin_delete', [adminController::class, 'a_admindel'])->name('a_admindel');
+
+        //route admin del adminj
+        Route::post('/admin_addd', [adminController::class, 'a_add_ad'])->name('a_add_ad');
+
         //route admin Bug
         Route::get('/admin_Reports', [adminController::class, 'a_report'])->name('a_report');
 
@@ -188,6 +194,9 @@ use App\Http\Controllers\applicantsController;
 
         //route admin dashboard
         Route::get('/admin_dashboard', [adminController::class, 'a_dash'])->name('a_dash');
+
+        //route admin dashboard
+        Route::get('/admin_add', [adminController::class, 'a_addAdmin'])->name('a_addAdmin');
 
         //route admin logout
         Route::get('/Admin_logout', [adminController::class, 'a_logout'])->name('a_logout');

@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             'adminName' => 'kenken',
             'uname' => 'kenken',
             'email' => 'admin@admin.admin',
+            'prev' => '0',
             'password' => Hash::make('kenken'),
         ]);
     }
