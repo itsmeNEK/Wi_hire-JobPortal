@@ -15,9 +15,15 @@ class CreateLoginhistoriesTable extends Migration
     {
         Schema::create('loginhistories', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('u_id')->nullable();
-            $table->string('c_id')->nullable();
+            $table->unsignedInteger('u_id')->nullable();
+            $table->unsignedInteger('c_id')->nullable();
             $table->string('device');
+            $table->foreign('u_id')
+            ->references('id')
+            ->on('users');
+            $table->foreign('c_id')
+            ->references('id')
+            ->on('companies');
             $table->timestamps();
         });
     }

@@ -257,12 +257,11 @@
                 </li>
                 @if (($LoggedUserInfo->prev=="0") || ($LoggedUserInfo->prev=="1"))
                 <li class="nav-item has-submenu">
-                    <a type="button" class="fw-bold  nav-link text-light align-middle px-2 @yield('candidates')"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a type="button" class="fw-bold  nav-link text-light align-middle px-2 @yield('candidates')">
                         <i class="bi bi-person-fill"></i> <span aria-current="page">
-                            Candidates <i class="bi-sm bi-caret-down-fill"></i></span>
+                            Candidates </i></span>
                     </a>
-                    <ul class="submenu collapse">
+                    <ul class="submenu">
                         <li>
                             <a class="nav-link text-white fw-bold @yield('can-active')"
                                 href="{{ route('a_candidate') }}"><i class="bi bi-person-plus-fill"></i>New
@@ -284,12 +283,11 @@
                 @endif
                 @if (($LoggedUserInfo->prev=="0") || ($LoggedUserInfo->prev=="2"))
                 <li class="nav-item has-submenu">
-                    <a type="button" class="fw-bold nav-link text-light align-middle px-2 @yield('company')"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a type="button" class="fw-bold nav-link text-light align-middle px-2 @yield('company')">
                         <div class="row">
                             <div class="col-8 text-start">
                                 <span class="bi bi-card-list" aria-current="page"> Companies
-                                    <i class="bi-sm bi-caret-down-fill"></i>
+
                                 </span>
                             </div>
                             @if ($comcountnew != null)
@@ -299,7 +297,7 @@
                             @endif
                         </div>
                     </a>
-                    <ul class="submenu collapse">
+                    <ul class="submenu">
                         <li>
                             <a class="nav-link text-white fw-bold @yield('new-com')"
                                 href="{{ route('a_companies') }}"><i class="bi bi-person-plus-fill"></i> New
@@ -323,12 +321,11 @@
                     </ul>
                 </li>
                 <li class="nav-item has-submenu">
-                    <a type="button" class="fw-bold nav-link text-light align-middle px-2 @yield('jobs')"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a type="button" class="fw-bold nav-link text-light align-middle px-2 @yield('jobs')">
                         <i class="bi bi-person-badge"></i> <span aria-current="page">
-                            Jobs <i class="bi-sm bi-caret-down-fill"></i></span>
+                            Jobs</span>
                     </a>
-                    <ul class="submenu collapse">
+                    <ul class="submenu">
                         <li>
                             <a class="nav-link text-white fw-bold @yield('active-jobs')"
                                 href="{{ route('a_jobs') }}"><i class="bi bi-person-plus-fill"></i> Active
@@ -427,12 +424,11 @@
                 </li>
                 @if (($LoggedUserInfo->prev=="0") || ($LoggedUserInfo->prev=="1"))
                 <li class="nav-item has-submenu">
-                    <a type="button" class="fw-bold  nav-link text-light align-middle px-2 @yield('candidates')"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a type="button" class="fw-bold  nav-link text-light align-middle px-2 @yield('candidates')">
                         <i class="bi bi-person-fill"></i> <span aria-current="page">
-                            Candidates <i class="bi-sm bi-caret-down-fill"></i></span>
+                            Candidates </i></span>
                     </a>
-                    <ul class="submenu collapse">
+                    <ul class="submenu">
                         <li>
                             <a class="nav-link text-white fw-bold @yield('can-active')"
                                 href="{{ route('a_candidate') }}"><i class="bi bi-person-plus-fill"></i>New
@@ -454,12 +450,11 @@
                 @endif
                 @if (($LoggedUserInfo->prev=="0") || ($LoggedUserInfo->prev=="2"))
                 <li class="nav-item has-submenu">
-                    <a type="button" class="fw-bold nav-link text-light align-middle px-2 @yield('company')"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a type="button" class="fw-bold nav-link text-light align-middle px-2 @yield('company')">
                         <div class="row">
                             <div class="col-8 text-start">
                                 <span class="bi bi-card-list" aria-current="page"> Companies
-                                    <i class="bi-sm bi-caret-down-fill"></i>
+
                                 </span>
                             </div>
                             @if ($comcountnew != null)
@@ -469,7 +464,7 @@
                             @endif
                         </div>
                     </a>
-                    <ul class="submenu collapse">
+                    <ul class="submenu">
                         <li>
                             <a class="nav-link text-white fw-bold @yield('new-com')"
                                 href="{{ route('a_companies') }}"><i class="bi bi-person-plus-fill"></i> New
@@ -493,12 +488,11 @@
                     </ul>
                 </li>
                 <li class="nav-item has-submenu">
-                    <a type="button" class="fw-bold nav-link text-light align-middle px-2 @yield('jobs')"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a type="button" class="fw-bold nav-link text-light align-middle px-2 @yield('jobs')">
                         <i class="bi bi-person-badge"></i> <span aria-current="page">
-                            Jobs <i class="bi-sm bi-caret-down-fill"></i></span>
+                            Jobs</span>
                     </a>
-                    <ul class="submenu collapse">
+                    <ul class="submenu">
                         <li>
                             <a class="nav-link text-white fw-bold @yield('active-jobs')"
                                 href="{{ route('a_jobs') }}"><i class="bi bi-person-plus-fill"></i> Active

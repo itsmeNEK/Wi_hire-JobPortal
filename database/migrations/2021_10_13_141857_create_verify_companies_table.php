@@ -17,7 +17,10 @@ class CreateVerifyCompaniesTable extends Migration
             $table->increments('id');
             $table->string('code')->nullable();
             $table->string('comany_email')->nullable();
-            $table->string('comany_id')->nullable();
+            $table->unsignedInteger('comany_id')->nullable();
+            $table->foreign('comany_id')
+            ->references('id')
+            ->on('companies');
             $table->timestamps();
         });
     }

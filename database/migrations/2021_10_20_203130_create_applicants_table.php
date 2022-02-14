@@ -16,13 +16,19 @@ class CreateApplicantsTable extends Migration
         Schema::create('applicants', function (Blueprint $table) {
             $table->increments('id');
             $table->string('jobID');
-            $table->string('u_id');
+            $table->unsignedInteger('u_id');
             $table->string('username');
-            $table->string('c_id');
+            $table->unsignedInteger('c_id');
             $table->string('jobtit');
             $table->string('typerole');
             $table->string('postlev');
             $table->string('stat')->default('0');
+            $table->foreign('u_id')
+            ->references('id')
+            ->on('users');
+            $table->foreign('c_id')
+            ->references('id')
+            ->on('companies');
             $table->timestamps();
         });
     }

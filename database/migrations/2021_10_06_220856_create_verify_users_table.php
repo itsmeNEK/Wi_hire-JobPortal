@@ -17,7 +17,10 @@ class CreateVerifyUsersTable extends Migration
             $table->id();
             $table->string('code');
             $table->string('user_email');
-            $table->string('user_id');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')
+            ->references('id')
+            ->on('users');
             $table->timestamps();
         });
     }

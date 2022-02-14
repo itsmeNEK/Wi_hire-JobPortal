@@ -15,8 +15,11 @@ class CreateUserFileUploadsTable extends Migration
     {
         Schema::create('user_file_uploads', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('user_id');
+            $table->unsignedInteger('user_id');
             $table->string('file_path');
+            $table->foreign('user_id')
+            ->references('id')
+            ->on('users');
             $table->timestamps();
         });
     }

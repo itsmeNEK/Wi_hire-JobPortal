@@ -15,8 +15,11 @@ class CreateCompanyfilesTable extends Migration
     {
         Schema::create('companyfiles', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('company_id');
+            $table->unsignedInteger('company_id');
             $table->string('file_path');
+            $table->foreign('company_id')
+            ->references('id')
+            ->on('companies');
             $table->timestamps();
         });
     }

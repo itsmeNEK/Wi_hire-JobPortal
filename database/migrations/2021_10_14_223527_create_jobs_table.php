@@ -24,12 +24,15 @@ class CreateJobsTable extends Migration
             $table->string('maxsal');
             $table->string('typerole');
             $table->string('postlev');
-            $table->string('c_id');
+            $table->unsignedInteger('c_id');
             $table->string('prof_pic');
             $table->string('cname');
             $table->string('city');
             $table->string('memo')->nullable();
             $table->string('stat')->default('1');
+            $table->foreign('c_id')
+            ->references('id')
+            ->on('companies');
             $table->timestamps();
         });
     }

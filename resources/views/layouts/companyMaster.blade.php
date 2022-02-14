@@ -227,7 +227,6 @@
                         <div class="row">
                             <div class="col-8 text-start">
                                 <span class="bi bi-card-list" aria-current="page"> Applicants
-                                    <i class="bi bi-caret-down-fill"></i>
                                 </span>
                             </div>
                             @if ($appcountnew != null)
@@ -237,7 +236,7 @@
                             @endif
                         </div>
                     </a>
-                    <ul class="submenu collapse">
+                    <ul class="submenu">
                         <li>
                             <a class="nav-link text-white fw-bold @yield('new-app')"
                                 href="{{ route('c_appManage') }}">
@@ -354,7 +353,6 @@
                         <div class="row">
                             <div class="col-8 text-start">
                                 <span class="bi bi-card-list" aria-current="page"> Applicants
-                                    <i class="bi bi-caret-down-fill"></i>
                                 </span>
                             </div>
                             @if ($appcountnew != null)
@@ -364,7 +362,7 @@
                             @endif
                         </div>
                     </a>
-                    <ul class="submenu collapse">
+                    <ul class="submenu">
                         <li>
                             <a class="nav-link text-white fw-bold @yield('new-app')"
                                 href="{{ route('c_appManage') }}"><i class="bi bi-person-plus-fill"></i> New
