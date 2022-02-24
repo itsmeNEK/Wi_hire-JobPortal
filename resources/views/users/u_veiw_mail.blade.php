@@ -191,18 +191,18 @@
         </div>
     </div>
 </div>
-<script>
-    let textid = document.getElementById("body").innerHTML;
+@endsection
 
-    function urlify(text) {
-        var urlRegex = /(https?:\/\/[^\s]+)/g;
-        return text.replace(urlRegex, function(url) {
-            return '<a href="' + url + '">' + url + '</a>';
-        })
-        // or alternatively
-        // return text.replace(urlRegex, '<a href="$1">$1</a>')
-    }
-    var html = urlify(textid);
-    document.getElementById("body").innerHTML = html;
+@section('customJS')
+@parent
+<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+    var s = document.createElement('script')
+    s.src = "/js/mail.js";
+    document.head.appendChild(s);
+</script>
+<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+    var s = document.createElement('script')
+    s.src = "/js/autolink.js";
+    document.head.appendChild(s);
 </script>
 @endsection

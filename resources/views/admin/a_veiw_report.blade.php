@@ -34,9 +34,9 @@
                             <br>
                         </div>
                         <div class="row">
-                            <div class="col-12">
-                                <p>
-                                    &emsp;{{ $mailInfo->body }}
+                            <div class="col-12 p-4 border border-dark rounded" >
+                                <p id="body">
+                                     {{ $mailInfo->body }}
                                 </p>
                             </div>
                         </div>
@@ -74,6 +74,11 @@
 <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
     var s = document.createElement('script')
     s.src = "/js/mail.js";
+    document.head.appendChild(s);
+</script>
+<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+    var s = document.createElement('script')
+    s.src = "/js/autolink.js";
     document.head.appendChild(s);
 </script>
 @endsection

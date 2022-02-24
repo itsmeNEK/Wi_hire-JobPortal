@@ -188,10 +188,15 @@
 @endsection
 
 @section('customJS')
-    @parent
-    <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
-        var s = document.createElement('script')
-        s.src = "/js/mail.js";
-        document.head.appendChild(s);
-    </script>
+@parent
+<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+    var s = document.createElement('script')
+    s.src = "/js/mail.js";
+    document.head.appendChild(s);
+</script>
+<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+    var s = document.createElement('script')
+    s.src = "/js/autolink.js";
+    document.head.appendChild(s);
+</script>
 @endsection
