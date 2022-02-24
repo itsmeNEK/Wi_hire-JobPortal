@@ -81,7 +81,7 @@
                 @endif
 
                 @csrf
-                <h3>Registration Form</h3>
+                <h3>Job Seeker Registration Form</h3>
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="floatingInput" name="fname" placeholder="FirstName"
                         value="{{ old('fname') }}">

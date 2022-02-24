@@ -46,7 +46,7 @@
                 @endif
                 <input type="hidden" name="id"value="{{ $user_info['id'] }}">
                 <input type="hidden" name="email"value="{{ $user_info['email'] }}">
-                <h3 class="fw-bold">Company / Employer Email Verification</h3>
+                <h3 class="fw-bold">Forgot Password Company / Employer Verification</h3>
                 hi! <b>{{ $user_info['fname'] }}</b> An verification code has been sent to <i><b>{{ $user_info['email'] }}</b></i>
                 check you email in the email address you inputed and enter the verification code below
 

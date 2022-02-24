@@ -140,9 +140,9 @@
                             <br>
                         </div>
                         <div class="row">
-                            <div class="col-12">
-                                <p>
-                                    &emsp;{{ $mailInfo->body }}
+                            <div class="col-12 p-4 border border-dark rounded" >
+                                <p id="body">
+                                     {{ $mailInfo->body }}
                                 </p>
                             </div>
                         </div>

@@ -7,7 +7,9 @@
 require('./bootstrap');
 
 window.Vue = require('vue').default;
-
+const Autolinker = require('autolinker');
+// note: npm wants an all-lowercase package name, but the utility is a class and
+// should be aliased with a capital letter
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

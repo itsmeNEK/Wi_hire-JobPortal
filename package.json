@@ -26,6 +26,7 @@
     },
     "dependencies": {
         "@popperjs/core": "^2.10.2",
+        "autolinker": "^3.14.3",
         "bootstrap-icons": "^1.5.0"
     }
 }
