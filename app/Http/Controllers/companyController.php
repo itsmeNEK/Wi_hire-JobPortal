@@ -94,6 +94,7 @@ class companyController extends Controller
         $user->street = $request->street;
         $user->barangay = $request->barangay;
         $user->HBnum = $request->HBnum;
+        $user->ComType = $request->ComType;
         $user->postcode = $request->postcode;
         $user->updated_at = $date;
         $user->save();

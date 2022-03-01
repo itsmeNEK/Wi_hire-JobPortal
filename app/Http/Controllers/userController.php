@@ -125,6 +125,7 @@ class userController extends Controller
             ->leftjoin('companies', 'applicants.c_id', '=', 'companies.id')
             ->select('applicants.jobtit', 'applicants.typerole', 'applicants.postlev', 'applicants.c_id', 'companies.cname', 'applicants.created_at', 'applicants.stat')
             ->where('u_id', $user->id)
+            ->where('stat', "1")
             ->orderBy('created_at', 'desc')
             ->paginate(10);
         $mailinfo = Mailing::where('to', '=', $user->email)
@@ -148,6 +149,36 @@ class userController extends Controller
         return view('users.u_manageApp', $data);
     }
 
+    //u_applicantion history
+    public function u_applicantionH()
+    {
+        $user = User::where('id', '=', session('LoggedUser'))->first();
+        $app = DB::table('applicants')
+            ->leftjoin('companies', 'applicants.c_id', '=', 'companies.id')
+            ->select('applicants.jobtit', 'applicants.typerole', 'applicants.postlev', 'applicants.c_id', 'companies.cname', 'applicants.created_at', 'applicants.stat')
+            ->where('u_id', $user->id)
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+        $mailinfo = Mailing::where('to', '=', $user->email)
+            ->where('mail_active', '=', '1')
+            ->count();
+        $inbox = DB::table('mailings')
+            ->leftjoin('companies', 'mailings.from', '=', 'companies.email')
+            ->select('mailings.id', 'companies.cname', 'mailings.subject', 'mailings.created_at', 'mailings.mail_active', 'mailings.from')
+            ->where('mailings.to', $user->email)
+            ->where('mail_active', '=', '1')
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        $data = [
+            'active' => $mailinfo,
+            'inbox' => $inbox,
+            'jobinfo' => $app,
+
+            'LoggedUserInfo' => $user
+        ];
+        return view('users.u_manageAppH', $data);
+    }
     //add EB
     public function u_addEB()
     {

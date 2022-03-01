@@ -73,7 +73,7 @@
                                             <div class="p-3 py-5">
                                                 <div class="row">
                                                     <div class="col-md-8 col-sm-8 col-lg-8 text-start">
-                                                        <h4 class="">Applicantions</h4>
+                                                        <h4 class="">Applicantion History</h4>
                                                     </div>
                                                 </div>
                                                 <hr>

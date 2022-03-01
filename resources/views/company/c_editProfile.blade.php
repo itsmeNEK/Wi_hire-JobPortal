@@ -70,6 +70,22 @@
                                         class="fw-bold text-center form-control"
                                         value="{{ $LoggedUserInfo['cname'] }}">
                                 </div>
+                                <div class="col-sm-6">
+                                    <label for="Select">Company Type</label>
+                                    <select name="ComType" class="form-select" id="Select" aria-label="label select example">
+                                      <option> Click this select menu</option>
+                                      <option
+                                      @if ( $LoggedUserInfo['ComType'] == '1')
+                                      selected
+                                      @endif
+                                      value="1">Small Business</option>
+                                      <option
+                                      @if ( $LoggedUserInfo['ComType'] == '2')
+                                      selected
+                                      @endif value="2">Company</option>
+                                    </select>
+
+                                  </div>
                                 <div class="col-sm-12"><label class="labels fw-bold">Company
                                         Description</label>
                                     <textarea class="form-control" id="message" name="cdescription" rows="12"
@@ -139,13 +155,13 @@
                     </form>
 
 
-                    <div class="row-mt-2">
+                    <div class="row-mt-2 p-4 outline-dark">
                         <div class="col-md-6 text-start">
                             <h3 class="text-start text-secondary">Attach document</h3>
-                            <p class="text-danger" style="font-size: 14px"> Note: Since you are a company, you are required to attach a document
+                            <p class="text-danger p-2" style="font-size: 14px"> Note: Since you are a company, you are required to attach a document
                             supporting youre job post. Thankyou!</p>
                         </div>
-                        <div class="col-md-6 text-end">
+                        <div class="col-md-6 text-end p-2">
                             <form action="{{ route('c_file_upload') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="userid" value="{{ $LoggedUserInfo['id'] }}">
@@ -162,6 +178,7 @@
                             </form>
                         </div>
                         <div class="col-sm-12">
+                            <h3 class="text-start text-secondary">Documents</h3>
                             <table style="" class="table table-responsive-stack" id="tableOne">
                                 <thead>
                                     <tr>
@@ -173,7 +190,9 @@
                                     @if ($companyfiles != null)
                                         @foreach ($companyfiles as $info)
                                             <tr>
-                                                <td><i class="bi bi-file-earmark"></i><a>{{ $info->file_path }}</a>
+                                                <td><i class="bi bi-file-earmark"></i><a type="button" target="_blank"
+                                                    href="/View_Company/{{ Crypt::encrypt($LoggedUserInfo['id']) }}/Viewfile/{{ Crypt::encrypt($info->id) }}"
+                                                    >{{ $info->file_path }}</a>
                                                 </td>
                                                 <td class="text-end">
                                                     <button type="button" data-id="{{ $info->id }}"

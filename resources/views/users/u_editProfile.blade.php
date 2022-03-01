@@ -176,7 +176,7 @@
                 <hr>
                 <div class="row mt-2">
                     <div class="col-md-6 text-start">
-                        <h4 class="text-secondary text-start">Account Verification</h4> <span class="text-danger">NOTE! Please Upload a Valid ID to be Verified.</span><br>
+                        <h4 class="text-secondary text-start">Account Verification</h4> <span class="text-danger">NOTE! Please Upload a Government Issued ID or any valid ID to be Verified.</span><br>
                     </div>
                     @if ($LoggedUserInfo['userID'] == null)
                         <div class="col-md-6">

@@ -390,6 +390,9 @@ use App\Http\Controllers\applicantsController;
         //route user manage app
         Route::get('/user_applications', [userController::class, 'u_applicantion'])->name('u_applicantion');
 
+        //route user manage app
+        Route::get('/user_applications_History', [userController::class, 'u_applicantionH'])->name('u_applicantionH');
+
         //route sign up
         Route::get('/user_signup', [userController::class, 'u_signup'])->name('u_signup');
 
