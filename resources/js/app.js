@@ -6,6 +6,13 @@
 
 require('./bootstrap');
 
+window.$ = window.jQuery = require('jquery');
+window.Popper = require('popper.js');
+require('bootstrap');
+
+window.Vue = require('vue').default;
+import 'bootstrap';
+
 window.Vue = require('vue').default;
 const Autolinker = require('autolinker');
 // note: npm wants an all-lowercase package name, but the utility is a class and

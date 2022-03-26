@@ -345,7 +345,7 @@
                         <div class="row-mt-2">
                             <div class="col-sm-12">
                                 <div class="alert alert-dark text-lg-center " role="alert">
-                                    <h1>Company Found</h1>
+                                    <h1>No Company Found</h1>
                                 </div>
                             </div>
                         </div>

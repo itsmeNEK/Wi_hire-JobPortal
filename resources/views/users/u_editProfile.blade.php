@@ -19,59 +19,60 @@
     <div class="d-flex flex-column align-items-center text-center p-4 py-5">
         <div class="card card-outline-secondary rounded">
             <div class="d-flex justify-content-center">
-                <form action="{{ route('u_updatePI') }}" method="post" enctype="multipart/form-data">
-                    @csrf
-                    <div class="row">
-                        <div class="p-3 py-5">
-                            <div class="rounded bg-transaprent">
-                                <div class="row" style="margin-top:-40px;">
-                                    <div class="col-12 text-start fw-bold">
-                                        <a class=" text-danger" href="{{ route('u_dash') }}">
-                                            Profile
-                                        </a>/
-                                        <a>
-                                            Edit Profile
-                                        </a>
-                                    </div>
+                <div class="row">
+                    <div class="p-3 py-5">
+                        <div class="rounded bg-transaprent">
+                            <div class="row" style="margin-top:-40px;">
+                                <div class="col-12 text-start fw-bold">
+                                    <a class=" text-danger" href="{{ route('u_dash') }}">
+                                        Profile
+                                    </a>/
+                                    <a>
+                                        Edit Profile
+                                    </a>
                                 </div>
-                                <div class="p-4 py-5">
+                            </div>
+                            <div class="p-4 py-5">
 
-                                    @if (Session::get('fail'))
-                                        <div style="background-color: #fa695f; /* Red */color: white;">
-                                            {{ Session::get('fail') }}
-                                        </div>
-                                    @endif
-                                    <div class="text-center">
-                                        <div class="picture-container">
-                                            <div class="picture">
-                                                <img src="/users/images/{{ $LoggedUserInfo['prof_pic'] }}"
-                                                    alt="your image" class="picture-src" id="avatarPicturePreview"
-                                                    title="">
-                                                <input accept="image/*" class="picture-src" type="file"
-                                                    id="avatar-picture" name="avatar">
-                                                <span class="text-danger">@error('avatar'){{ $message }}
-                                                    @enderror</span>
-                                            </div>
-                                        </div>
-                                        <br>
-                                        <h4 class=" text-start text-secondary">Personal Information</h4>
-                                        <br>
+                                @if (Session::get('fail'))
+                                    <div style="background-color: #fa695f; /* Red */color: white;">
+                                        {{ Session::get('fail') }}
                                     </div>
-                                    <!-- user id -->
-                                    <input type="hidden" value="{{ $LoggedUserInfo['id'] }}" name="id">
-                                    @if (Session::get('success'))
-
-                                        <div class="alert alert-success">
-                                            {{ Session::get('success') }}
+                                @endif
+                                <div class="text-center">
+                                    <div class="picture-container">
+                                        <div class="picture">
+                                            <img src="/users/images/{{ $LoggedUserInfo['prof_pic'] }}"
+                                                alt="your image" class="picture-src" id="avatarPicturePreview"
+                                                title="">
+                                            <input accept="image/*" class="picture-src" type="file"
+                                                id="avatar-picture" name="avatar">
+                                            <span class="text-danger">
+                                                @error('avatar')
+                                                    {{ $message }}
+                                                @enderror
+                                            </span>
                                         </div>
-                                    @endif
+                                    </div>
+                                    <br>
+                                    <h4 class=" text-start text-secondary">Personal Information</h4>
+                                    <br>
+                                </div>
+                                <!-- user id -->
+                                <input type="hidden" value="{{ $LoggedUserInfo['id'] }}" name="id">
+                                @if (Session::get('success'))
+                                    <div class="alert alert-success">
+                                        {{ Session::get('success') }}
+                                    </div>
+                                @endif
 
-                                    @if (Session::get('fail'))
-
-                                        <div class="alert alert-danger">
-                                            {{ Session::get('fail') }}
-                                        </div>
-                                    @endif
+                                @if (Session::get('fail'))
+                                    <div class="alert alert-danger">
+                                        {{ Session::get('fail') }}
+                                    </div>
+                                @endif
+                                <form action="{{ route('u_updatePI') }}" method="post" enctype="multipart/form-data">
+                                    @csrf
                                     <div class="row mt-3">
                                         <div class="col-sm-4"><label
                                                 class="labels fw-bold">FirstName</label><input name="fname" type="text"
@@ -169,55 +170,59 @@
                                                 Cancel
                                             </a>
                                         </div>
-
                                     </div>
-
-                </form>
-                <hr>
-                <div class="row mt-2">
-                    <div class="col-md-6 text-start">
-                        <h4 class="text-secondary text-start">Account Verification</h4> <span class="text-danger">NOTE! Please Upload a Government Issued ID or any valid ID to be Verified.</span><br>
-                    </div>
-                    @if ($LoggedUserInfo['userID'] == null)
-                        <div class="col-md-6">
-                            <form action="{{ route('u_id_upload') }}" method="post" enctype="multipart/form-data">
-                                @csrf
-                                <input type="hidden" name="userid" value="{{ $LoggedUserInfo['id'] }}">
-                                <div class="input-group input-group-sm mb-3">
-                                    <input name="user_files" type="file" class="fileIn "
-                                        accept=".jpg,.jpeg,.png">
-                                    <div class="input-group-prepend">
-                                        <button type="submit" class="btnUp btn-danger rounded">Upload</button>
+                                </form>
+                                <hr>
+                                <div class="row mt-2">
+                                    <div class="col-md-6 text-start">
+                                        <h4 class="text-secondary text-start">Account Verification</h4> <span
+                                            class="text-danger">NOTE! Please Upload
+                                            a Government Issued ID or any valid ID to be Verified.</span><br>
                                     </div>
-                                    <span class="text-danger">@error('user_files'){{ $message }}
-                                        @enderror
-                                    </span>
+                                    @if ($LoggedUserInfo['userID'] == null)
+                                        <div class="col-md-6">
+                                            <form action="{{ route('u_id_upload') }}" method="post"
+                                                enctype="multipart/form-data">
+                                                @csrf
+                                                <input type="hidden" name="userid"
+                                                    value="{{ $LoggedUserInfo['id'] }}">
+                                                <div class="input-group input-group-sm mb-3">
+                                                    <input name="user_files" type="file" class="fileIn "
+                                                        accept=".jpg,.jpeg,.png">
+                                                    <div class="input-group-prepend">
+                                                        <button type="submit"
+                                                            class="btnUp btn-danger rounded">Upload</button>
+                                                    </div>
+                                                    <span class="text-danger">
+                                                        @error('user_files')
+                                                            {{ $message }}
+                                                        @enderror
+                                                    </span>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    @elseif ($LoggedUserInfo['stat'] == '2')
+                                        <div class="col-md-6 text-end text-success">
+                                            Verified<i class="bi bi-check-lg"></i>
+                                        </div>
+                                    @else
+                                        <div class="col-md-6 text-end">
+                                            ID Uploaded, Wait for Verification.
+                                            <form action="{{ route('u_id_remove') }}" method="get">
+                                                <button id="reupload" class="btn btn-danger fw-bold">
+                                                    ReUpload?
+                                                </button>
+                                            </form>
+                                        </div>
+                                    @endif
                                 </div>
-                            </form>
+                            </div>
                         </div>
-                    @elseif ($LoggedUserInfo['stat'] == '2')
-                        <div class="col-md-6 text-end text-success">
-                            Verified<i class="bi bi-check-lg"></i>
-                        </div>
-                    @else
-                        <div class="col-md-6 text-end">
-                            ID Uploaded, Wait for Verification.
-                            <form action="{{ route('u_id_remove') }}" method="get">
-                                <button id="reupload" class="btn btn-danger fw-bold">
-                                    ReUpload?
-                                </button>
-                            </form>
-                        </div>
-                    @endif
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-</div>
-</div>
-<br>
-</div>
 </div>
 @endsection
 

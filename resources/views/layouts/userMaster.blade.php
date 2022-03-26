@@ -32,53 +32,6 @@
             <a class="navbar-brand" href="{{ route('home') }}">
                 <img src="/img/wihireicon copy.png" alt="..." height="30">
                 <b>WiHire</b></a>
-            <div class="d-flex flex-row bd-highlight">
-                <div class="btn-group dropstart">
-                    <a type="button" class="bell-nonfull border-0 btn-lg bg-none" data-bs-toggle="dropdown"
-                        aria-expanded="false" data-bs-target="#notif" aria-controls="notif">
-                        <i class="bi bi-bell-fill text-light"></i>
-                        @if ($active != null)
-                            <span class="position-absolute top-10 start-90 translate-middle p-2">
-                                <i class="iActive bi text-danger bi-circle-fill"></i>
-                            </span>
-                        @endif
-                    </a>
-                    <ul class="dropdown-menu bg-light" id="notif">
-                        <b class="ml-1">Notifications</b>
-                        <div class="list-group">
-                            @if ($active != null)
-                                <div class="list-group-item list-group-item-action bg-light border-0">
-                                    <span class="text-secondary fw-bold">Mailbox</span>
-                                    @forelse ( $inbox as $info)
-                                        <a aria-current="true" href="view_mail/{{ Crypt::encrypt($info->id) }}"
-                                            class="nav-link text-dark bg-light">
-
-                                            <div class="p-1 py-1">
-                                                <b>
-                                                    @if ($info->cname != null)
-                                                        {{ $info->cname }}
-                                                    @else
-                                                        Admin
-                                                    @endif
-                                                </b> <br>
-                                                <div class="d-flex w-100 justify-content-between">
-                                                    {{ $info->subject }}
-                                                </div>
-                                                <div style="font-size: 12px" class="col-sm-12 text-end">
-                                                    <small
-                                                        class="text-secondary">{{ Carbon\Carbon::parse($info->created_at)->diffForHumans() }}</small>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    @empty
-                                    @endforelse
-                                </div>
-
-                            @endif
-                        </div>
-                    </ul>
-                </div>
-            </div>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -92,51 +45,51 @@
                     </li>
                 </ul>
             </div>
-        </div>
-        <div class="btn-group dropstart">
-            <a type="button" class="bell-full border-0 btn-lg bg-none" data-bs-toggle="dropdown" aria-expanded="false"
-                data-bs-target="#notif" aria-controls="notif">
-                <i class="bi bi-bell-fill text-light"></i>
-                @if ($active != null)
-                    <span class="position-absolute top-10 start-90 translate-middle p-2">
-                        <i class="iActive bi text-danger bi-circle-fill"></i>
-                    </span>
-                @endif
-            </a>
-            <ul class="dropdown-menu bg-light" id="notif">
-                <b class="ml-1">Notifications</b>
-                <div class="list-group">
+            <div class="btn-group dropstart">
+                <a type="button" class="border-0 btn-lg bg-none" data-bs-toggle="dropdown" aria-expanded="false"
+                    data-bs-target="#notif" aria-controls="notif">
+                    <i class="bi bi-bell-fill text-light"></i>
                     @if ($active != null)
-                        <div class="list-group-item list-group-item-action bg-light border-0">
-                            <span class="text-secondary fw-bold">Mailbox</span>
-                            @forelse ( $inbox as $info)
-                                <a aria-current="true" href="view_mail/{{ Crypt::encrypt($info->id) }}"
-                                    class="nav-link text-dark bg-light">
-
-                                    <div class="p-1 py-1">
-                                        <b>
-                                            @if ($info->cname != null)
-                                                {{ $info->cname }}
-                                            @else
-                                                Admin
-                                            @endif
-                                        </b> <br>
-                                        <div class="d-flex w-100 justify-content-between">
-                                            {{ $info->subject }}
-                                        </div>
-                                        <div style="font-size: 12px" class="col-sm-12 text-end">
-                                            <small
-                                                class="text-secondary">{{ Carbon\Carbon::parse($info->created_at)->diffForHumans() }}</small>
-                                        </div>
-                                    </div>
-                                </a>
-                            @empty
-                            @endforelse
-                        </div>
-
+                        <span class="position-absolute top-10 start-90 translate-middle p-2">
+                            <i class="iActive bi text-danger bi-circle-fill"></i>
+                        </span>
                     @endif
-                </div>
-            </ul>
+                </a>
+                <ul class="dropdown-menu bg-light" id="notif">
+                    <b class="ml-1">Notifications</b>
+                    <div class="list-group">
+                        @if ($active != null)
+                            <div class="list-group-item list-group-item-action bg-light border-0">
+                                <span class="text-secondary fw-bold">Mailbox</span>
+                                @forelse ( $inbox as $info)
+                                    <a aria-current="true" href="view_mail/{{ Crypt::encrypt($info->id) }}"
+                                        class="nav-link text-dark bg-light">
+
+                                        <div class="p-1 py-1">
+                                            <b>
+                                                @if ($info->cname != null)
+                                                    {{ $info->cname }}
+                                                @else
+                                                    Admin
+                                                @endif
+                                            </b> <br>
+                                            <div class="d-flex w-100 justify-content-between">
+                                                {{ $info->subject }}
+                                            </div>
+                                            <div style="font-size: 12px" class="col-sm-12 text-end">
+                                                <small
+                                                    class="text-secondary">{{ Carbon\Carbon::parse($info->created_at)->diffForHumans() }}</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                @empty
+                                @endforelse
+                            </div>
+
+                        @endif
+                    </div>
+                </ul>
+            </div>
         </div>
     </nav>
     <!-- Navbar -->
@@ -150,6 +103,21 @@
                 <strong class="align-middle px-0 ms-1 d-sm-inline"><b> {{ $LoggedUserInfo['fname'] }}
                         {{ $LoggedUserInfo['lname'] }}</b></strong>
             </span>
+            <div class="text-center">
+                <span>
+                    @if ($LoggedUserInfo['stat'] === '1')
+                        <a href="{{ route('u_update') }}">
+                            <button class="btn-outline-danger btn-sm bg-dark">
+                                Unverified
+                            </button>
+                        </a>
+                    @elseif ($LoggedUserInfo['stat'] ==='2')
+                        <button class="btn-outline-success btn-sm" disabled>
+                            Verified
+                        </button>
+                    @endif
+                </span>
+            </div>
             <hr class="bg-light">
             <ul style="padding-left:10px;" class="" id=" menu">
                 <li class="nav-item">

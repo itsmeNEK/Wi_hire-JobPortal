@@ -315,10 +315,14 @@
 @endsection
 @section('customJS')
 @parent
-@parent
 <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
     var s = document.createElement('script')
     s.src = "/js/viewimage.js";
+    document.head.appendChild(s);
+</script>
+<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+    var s = document.createElement('script')
+    s.src = "/js/viewID.js";
     document.head.appendChild(s);
 </script>
 <script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">

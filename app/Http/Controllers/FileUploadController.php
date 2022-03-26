@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Helpers\Helper;
-use App\Http\Controllers\CRUD\jobController;
 use App\Models\companyfiles;
 use App\Models\user_file_upload;
 use App\Models\Mailing;

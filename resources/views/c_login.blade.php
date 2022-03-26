@@ -60,16 +60,6 @@
         <div class="inner">
             <form action="{{ route('c_check') }}" method="post">
                 @csrf
-                @if (Session::get('fail'))
-                    <div style="background-color: #fa695f; /* Red */color: white;font-weight:bold;text-align:center;">
-                        {{ Session::get('fail') }}
-                    </div>
-                @endif
-                @if (Session::get('success'))
-                    <div style="background-color: #3cf84c; /* Red */color: white;font-weight:bold;text-align:center;">
-                        {{ Session::get('success') }}
-                    </div>
-                @endif
                 <h3 class="fw-bold">Employer Login</h3>
                 <br>
                 <div class="row">
@@ -85,6 +75,17 @@
                     </div>
                 </div>
                 <hr>
+                @if (Session::get('fail'))
+                    <div style="background-color: #fa695f; /* Red */color: white;font-weight:bold;text-align:center;">
+                        {{ Session::get('fail') }}
+                    </div>
+                @endif
+                @if (Session::get('success'))
+                    <div style="background-color: #3cf84c; /* Red */color: white;font-weight:bold;text-align:center;">
+                        {{ Session::get('success') }}
+                    </div>
+                @endif
+                <br>
                 <div class="form-floating mb-3">
                     <input type="email" class="form-control" id="floatingInput" name="email"
                         placeholder="name@example.com">
